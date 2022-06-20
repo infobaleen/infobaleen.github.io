@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../../img/favicon.ico">
+        <title>Sources - CS docs</title>
+        <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../../..">CS docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Start <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../..">Infobaleen Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internal procedures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../Internal procedures/Overview-presentations/">Overview presentation</a>
+</li>
+                                    
+<li >
+    <a href="../../../../Internal procedures/Add-ons and Solutions/Cases/">Add-ons and Solutions</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Editing the wiki</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Internal procedures/Editing the wiki/Editing-procedures/">Editing procedures</a>
+</li>
+            
+<li >
+    <a href="../../../../Internal procedures/Editing the wiki/Writing-in-markdown/">Writing in markdown</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../../../Internal procedures/G-suite/Create-new-user/">G-suite</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Workflows</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../../Internal procedures/Workflows/GA data/">GA data</a>
+</li>
+            
+<li >
+    <a href="../../../../Internal procedures/Workflows/How-to-create-an-API-key-and-URL-to-fetch-product-recommendations/">How to create an API key and URL to fetch product rec</a>
+</li>
+            
+<li >
+    <a href="../../../../Internal procedures/Workflows/Platform-setup-(import-files,-sources-and-datamodel)/">Platform setup (import files, sources and datamodel)</a>
+</li>
+            
+<li >
+    <a href="../../../../Internal procedures/Workflows/Other/">Other</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kube <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../../Kube/Creating-new-platform/">Creating new platform</a>
+</li>
+                                    
+<li >
+    <a href="../../../../Kube/Public-IP/">Public IP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Analytics</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Analytics/Dashboards/">Dashboards</a>
+</li>
+            
+<li >
+    <a href="../../../Analytics/Customer Insights/">Customer Insights</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Menu</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Account</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Account/API Keys/">API Keys</a>
+</li>
+            
+<li >
+    <a href="../../Account/Logout/">Logout</a>
+</li>
+            
+<li >
+    <a href="../../Account/Users/">Users</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Admin</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Admin/Clear CH chache/">Clear CH chache</a>
+</li>
+            
+<li >
+    <a href="../../Admin/Configuration/">Configuration</a>
+</li>
+            
+<li >
+    <a href="../../Admin/Connections/">Connections</a>
+</li>
+            
+<li >
+    <a href="../../Admin/Events/">Events</a>
+</li>
+            
+<li >
+    <a href="../../Admin/Secrets/">Secrets.md</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Documentation</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Documentation/Agent/">Agent</a>
+</li>
+            
+<li >
+    <a href="../../Documentation/API/">API</a>
+</li>
+            
+<li >
+    <a href="../../Documentation/New Issue/">New Issue</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Manage Data</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../Data Models/">Data Models</a>
+</li>
+            
+<li >
+    <a href="../Import Files/">Import Files</a>
+</li>
+            
+<li >
+    <a href="../Manage-Data/">Manage-Data</a>
+</li>
+            
+<li >
+    <a href="../Results/">Results</a>
+</li>
+            
+<li class="active">
+    <a href="./">Sources</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Model</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Model/Interactions/">Interactions</a>
+</li>
+            
+<li >
+    <a href="../../Model/Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../../Model/Products/">Products</a>
+</li>
+            
+<li >
+    <a href="../../Model/Users/">Users</a>
+</li>
+    </ul>
+  </li>
+            
+<li >
+    <a href="../../Other/Overlaps/">Other</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Segmentations</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Segmentations/Auto-targeting/">Auto-targeting</a>
+</li>
+            
+<li >
+    <a href="../../../Segmentations/Clustering/">Clustering</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../../Recommendations/Recommendations/">Recommendations</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../Results/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../../Model/Interactions/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
+        <li class="main "><a href="#create-sources">Create sources</a></li>
+        <li class="main "><a href="#frontpage-columns">Frontpage columns</a></li>
+            <li><a href="#name">Name</a></li>
+            <li><a href="#id">id</a></li>
+            <li><a href="#cnf-version">Cnf Version</a></li>
+            <li><a href="#count">Count</a></li>
+            <li><a href="#tags">Tags</a></li>
+            <li><a href="#drivers">Drivers</a></li>
+            <li><a href="#sync">Sync</a></li>
+            <li><a href="#dependencies">Dependencies</a></li>
+            <li><a href="#updated-at">Updated At</a></li>
+            <li><a href="#synced-at">Synced At</a></li>
+        <li class="main "><a href="#top-menu">Top Menu</a></li>
+            <li><a href="#delete">Delete</a></li>
+            <li><a href="#tag">Tag</a></li>
+            <li><a href="#migrate">Migrate</a></li>
+            <li><a href="#truncate">Truncate</a></li>
+            <li><a href="#sync_1">Sync</a></li>
+            <li><a href="#enable">Enable</a></li>
+            <li><a href="#disable">Disable</a></li>
+            <li><a href="#create">Create</a></li>
+        <li class="main "><a href="#source-settigs">Source settigs</a></li>
+            <li><a href="#name_1">Name</a></li>
+            <li><a href="#id-columns">Id columns</a></li>
+            <li><a href="#runevery">RunEvery</a></li>
+            <li><a href="#comment">Comment</a></li>
+            <li><a href="#merge-filter">Merge filter</a></li>
+        <li class="main "><a href="#overview">Overview</a></li>
+        <li class="main "><a href="#query">Query</a></li>
+            <li><a href="#database-connection">Database connection</a></li>
+            <li><a href="#load-saved-query">Load saved query</a></li>
+            <li><a href="#preprocessor-directives">Preprocessor directives</a></li>
+        <li class="main "><a href="#query-expressions">Query expressions</a></li>
+            <li><a href="#create-a-custom-source">create a custom source</a></li>
+            <li><a href="#union">UNION</a></li>
+        <li class="main "><a href="#standard-queries">Standard Queries</a></li>
+            <li><a href="#centra-queries">Centra Queries</a></li>
+            <li><a href="#voyado-queries">Voyado Queries</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol>
+<li><a href="#create-sources">Create sources</a></li>
+<li><a href="#frontpage-columns">Frontpage columns</a><ol>
+<li><a href="#name">Name</a></li>
+<li><a href="#id">id</a></li>
+<li><a href="#cnf-version">Cnf Version</a></li>
+<li><a href="#count">Count</a></li>
+<li><a href="#tags">Tags</a></li>
+<li><a href="#drivers">Drivers</a></li>
+<li><a href="#sync">Sync</a></li>
+<li><a href="#dependencies">Dependencies </a></li>
+<li><a href="#updated-at">Updated At</a></li>
+<li><a href="#synced-at">Synced At</a></li>
+</ol>
+</li>
+<li><a href="#top-menu">Top Menu</a><ol>
+<li><a href="#delete">Delete</a></li>
+<li><a href="#tag">Tag</a></li>
+<li><a href="#migrate">Migrate</a></li>
+<li><a href="#truncate">Truncate</a></li>
+<li><a href="#sync">Sync</a></li>
+<li><a href="#enable">Enable</a></li>
+<li><a href="#disable">Disable </a></li>
+<li><a href="#create">Create</a></li>
+</ol>
+</li>
+<li><a href="#source-settigs">Source settigs</a><ol>
+<li><a href="#name">Name</a></li>
+<li><a href="#id-columns">Id columns </a></li>
+<li><a href="#runevery">RunEvery</a></li>
+<li><a href="#comment">Comment</a></li>
+<li><a href="#merge-filter">Merge filter </a></li>
+</ol>
+</li>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#query">Query</a><ol>
+<li><a href="#database-connection">Database connection</a></li>
+<li><a href="#load-saved-query">Load saved query</a></li>
+<li><a href="#preprocessor-directives">Preprocessor directives</a></li>
+</ol>
+</li>
+<li><a href="#query-expressions">Query expressions</a><ol>
+<li><a href="#union">UNION </a></li>
+</ol>
+</li>
+<li><a href="#standard-queries">Standard Queries</a><ol>
+<li><a href="#centra-queries">Centra Queries</a><ol>
+<li><a href="#procedure">Procedure</a></li>
+<li><a href="#interactions">Interactions  </a></li>
+<li><a href="#items">Items</a></li>
+<li><a href="#users">Users</a></li>
+<li><a href="#no-size-model">No size model </a></li>
+<li><a href="#example-rows-with-explanation">Example rows with explanation</a></li>
+</ol>
+</li>
+<li><a href="#voyado-queries">Voyado Queries</a><ol>
+<li><a href="#procedure">Procedure</a></li>
+<li><a href="#interactions">Interactions</a></li>
+<li><a href="#items">Items</a></li>
+<li><a href="#users">Users</a>
+<a href="#table-of-contents"></a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="create-sources">Create sources</h1>
+<p>When the <a href="https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Import%20Files.md">data is imported</a>, go to <code>Manage Data -&gt; Sources</code> and create a new source by clicking the purple plus sign as seen in the below image. </p>
+<ol>
+<li>Name the source <code>import_[source of data]_[type of data]</code> where <code>[source of data]</code> specifies where the data comes from (centra, voyado, etc), and the <code>[type of data]</code> specifies the data type (items, users, interactions, etc). </li>
+</ol>
+<p><img width="1050" alt="Screenshot 2022-05-10 at 10 53 48" src="https://user-images.githubusercontent.com/4352260/167589964-27e4a8fe-d3d0-4382-a696-21d759331cd9.png"></p>
+<ol>
+<li>Choose an identifier for the source using the <code>Id columns</code> field.  If the source you’re creating is for:<ul>
+<li><strong>interactions</strong>: we want to identify each interaction through a user, an item and the time of the purchase, therefore choose user,ts,item under id columns and then press create.</li>
+<li><strong>items</strong>: we want to identify each item by using an item id (often sku or variant). </li>
+<li><strong>users</strong>: we want to identify each user by using a user id. </li>
+</ul>
+</li>
+</ol>
+<p>The fields <code>Comment</code> and <code>Merge Filter</code> can be left empty, and you can press <code>CREATE</code>. </p>
+<ol>
+<li>Choose database connection and create a <code>QUERY</code> 
+If it’s a centra/voyado customer choose that option, if the files were uploaded manually, choose imports.</li>
+</ol>
+<p>You can now see the query stage, as standard <code>“SELECT * FROM `*`”</code> will show, if you press “EXECUTE PREVIEW SUMMARY” you will see all the imported files you can choose to gather data from. Copy the filename you want to use and enter that name in the query above, like <code>SELECT * FROM [ENTER FILENAME HERE]</code>.</p>
+<p>Copy the queries (depending on what system the customer has) from here:</p>
+<ul>
+<li><a href="https://github.com/infobaleen/customer-success/wiki/Manage-Data#centra-queries">Centra queries</a></li>
+<li><a href="https://github.com/infobaleen/customer-success/wiki/Manage-Data#voyado-queries">Voyado queries</a></li>
+</ul>
+<p>The import file is now done, press sync and save to exit. </p>
+<ol>
+<li>Now repeat the "Create source"-step 2 but name the file <code>model_[source of data]_[type of data]</code> (the use same identifier as in the import file). <ul>
+<li>In the <code>Choose database connection</code> now choose <code>source</code> instead, and press <code>execute preview summary</code>, now choose the import source file and edit the query to select from that, like "<code>SELECT * FROM ENTER_SOURCENAME_HERE</code>" and then press <code>Save and sync</code>.</li>
+</ul>
+</li>
+</ol>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="frontpage-columns">Frontpage columns</h1>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="name">Name</h2>
+<p>Name of source</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="id">id</h2>
+<p>every source has an unique id wich is used to show dependencies between sources.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="cnf-version">Cnf Version</h2>
+<p>???</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="count">Count</h2>
+<p>Count describes how many rows the source have. There can only be 1 row for every unique key column. if there are multiple rows with the same key all but 1 is removed.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="tags">Tags</h2>
+<p>you can tag a source to keep track of how it is used.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="drivers">Drivers</h2>
+<p>The drivers show whatdriver is used and also if it is active (green) or inactive (red). If a source has multiple queries there will be multiple drivers, here you can see wich source is active and wich are not.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="sync">Sync</h2>
+<p>What syntax is this???
+<code>DailyAt:6</code></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Dependencies for a source show what other sources the are used to build up the source.<br />
+an example for this is </p>
+<pre><code>SELECT * FROM Source1  
+LEFT JOIN Source2 on Source2.id = Source1.id  
+UNION  
+SELECT * FROM Source3  
+</code></pre>
+
+<p>This will show the id for source 1,2,3 in the Dependencies for the new source.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="updated-at">Updated At</h2>
+<p>Shows how long ago the source was last modified.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="synced-at">Synced At</h2>
+<p>Shows how long ago the source was last synced.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="top-menu">Top Menu</h1>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="delete">Delete</h2>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="tag">Tag</h2>
+<p>Select a source, click Tag and write a new tag or select an old tag.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="migrate">Migrate</h2>
+<p>???</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="truncate">Truncate</h2>
+<p>Trucate wipes the source of all data. This is usefull if you have changed key column for example because if you just sync the data the old data is not removed. 
+[Note that some sources only read 1 week data at the time to save time, if you truc a source like this all historic data is removed wich is bad]</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="sync_1">Sync</h2>
+<p>Manually syncs the source.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="enable">Enable</h2>
+<p>doesnt work</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="disable">Disable</h2>
+<p>doesnt work</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="create">Create</h2>
+<p>Creates a new source.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="source-settigs">Source settigs</h1>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="name_1">Name</h2>
+<p>Just a name</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="id-columns">Id columns</h2>
+<p>The Id columns has to be choosen to be unique. if the id is not unique (the same id for many rows) only 1 row will be saved and all others are removed.<br />
+For the interaction table the id has to contain user AND id or ts,item. The reason user has to be an id column is because when user is the first id column all interactions are sorted on user first. this lets you use expressions such as agg.i wich count number of interactions a user has made. if the interaction table is not sorted on user first the aggregation functions doesnt work.<br />
+For multiple id columns they are sorted in the order they are written.
+User,ts,item is sorted first on user, then on ts and lastly on item.  </p>
+<p>SELECT CUSTOM COLUMNS is usefull if you want other names than the predefined such as SKU.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="runevery">RunEvery</h2>
+<p>set a sync</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="comment">Comment</h2>
+<p>why???</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="merge-filter">Merge filter</h2>
+<p>lets you filter out your query before you save it.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="overview">Overview</h1>
+<p>Shows what is in the source currently</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="query">Query</h1>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="database-connection">Database connection</h2>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="load-saved-query">Load saved query</h2>
+<p>lets you reload previously run queries</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="preprocessor-directives">Preprocessor directives</h2>
+<p>when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.  </p>
+<pre><code>SELECT * FROM `url:https://files.channable.com/o2lQPJiYXk7KrY1DW2BJ3A==.xml`  
+</code></pre>
+
+<p>[Note that you have to write <strong>url:</strong> before https://]  </p>
+<p>start by writing<br />
+<code>decoder=xml</code><br />
+to show the file structure, in this case it looks like this.
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/169991270-10e97b4e-b5fd-4df8-968c-320119f9ee71.png" /></p>
+<p><strong>decoder:</strong> describes what file format, xml, csv, json etc.<br />
+<strong>root:</strong> navigates the file and shows where you want to read data.<br />
+<strong>rowtag:</strong> selects the object.<br />
+<strong>pluck:</strong> inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  </p>
+<p>In the above example this is the resulting preprocessing directives to get<br />
+<code>decoder=xml</code><br />
+<code>root=rss.channel</code><br />
+<code>rowtag=item</code><br />
+<code>pluck=google_product_category,price</code><br />
+resulting in this outcome
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="query-expressions">Query expressions</h1>
+<p>you need to enclose variable names that contain other characters than letters and numbers with <code>backticks</code> ``,<br />
+this includes whitespace ' ', dot '.', etc...</p>
+<h2 id="create-a-custom-source">create a custom source</h2>
+<p>SELECT * FROM <code>raw: 
+id,item
+1,item1
+2,item2</code>
+this returns a table.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="union">UNION</h2>
+<p>A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order</p>
+<pre><code>SELECT * FROM `table 1`
+UNION
+SELECT * FROM `table 2`
+</code></pre>
+
+<p>if you have overlapping id rows in <code>table 1</code> and <code>table 2</code> the id in <code>table 1</code> will be saved and <code>table 2</code> will be discared.
+ex. 
+to try this, create a test source</p>
+<pre><code>select 
+incr(1,50) AS id,
+'table 1' AS item
+from `&lt;RANDOM_SOURCE&gt;`
+
+UNION
+select 
+incr(1,1) AS id,
+'table 2' AS item
+from `&lt;RANDOM_SOURCE&gt;`
+</code></pre>
+
+<p>then create a new source </p>
+<pre><code>SELECT * FROM `&lt;TEST_SOURCE&gt;`
+</code></pre>
+
+<p>this will show that all overlapping ids will have item from <code>table 1</code>.</p>
+<p>A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates, meaning much faster execution but leaves duplicate rows if they exist.</p>
+<p>SELECT * </p>
+<p>LEFT JOIN</p>
+<p>coalese</p>
+<p>toFloat()</p>
+<p>unixTimestamp()</p>
+<p>split()</p>
+<p>slice()</p>
+<p>etc...</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="standard-queries">Standard Queries</h1>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="centra-queries">Centra Queries</h2>
+<hr />
+<p>Procedure   1</p>
+<p>Interactions    1</p>
+<p>Items   2</p>
+<p>Users   3</p>
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="procedure">Procedure</h3>
+<p>Setup config
+Make arbitrary query toward centra
+This will trigger proxy sync, the .gz files will appear once completed, duration 1-5h</p>
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="interactions">Interactions</h3>
+<p>Id columns: id i import / user,id i model source</p>
+<pre><code>SELECT  
+  `line.Id` AS id,
+  `order.Customer.Id` AS user,
+  unixTimestamp(`order.OrderDate`, '2006-01-02T15:04:05-0700') AS ts,  
+  concat(`line.ProductVariant.Id`,'_',`line.ProductSize.Size.Id`) AS item,  
+  toFloat(`line.LineValue.FormattedValue`)*toFloat(`order.CurrencyBaseRate`) AS revenue,  
+  round(`line.Quantity`*`order.CurrencyBaseRate`*`line.UnitOriginalPrice.FormattedValue`,2) AS full_price,  
+  `line.ProductVariant.Id` AS variant_id,  
+  `line.ProductVariant.Product.Id` AS product_id,  
+  `line.ProductVariant.VariantNumber` AS variant_number,  
+  `line.ProductSize.Id` AS product_size,  
+  `line.ProductSize.SKU` AS size_sku,  
+  `line.ProductSize.SizeNumber` AS size_number,  
+  `line.ProductSize.GTIN` AS size_gtin,  
+  `line.ProductSize.Size.Id` AS size_id,  
+  `line.ProductSize.Size.Name` AS size_name,  
+  toFloat(`line.LineValue.FormattedValue`) AS Non_converted_value,  
+  `line.UnitPrice.FormattedValue` AS Unitprice_formatted_value,  
+  `line.UnitOriginalPrice.FormattedValue` AS Unit_original_price_formatted_value,  
+  `line.Quantity` AS quantity,  
+  `line.ReturnedQuantity` AS returned_quantity,  
+  `line.CancelledQuantity` AS cancelled_quantity,  
+  `line.ProductNumber` AS product_number,  
+  `line.TypeName` AS type,  
+  round(`line.DiscountPercent`,0) AS discount_percent,  
+  `line.TaxPercent` AS tax_percent,  
+  `order.Id` AS order_id,  
+  `order.Number` AS order_number,  
+  unixTimestamp(`order.CreatedAt`, '2006-01-02T15:04:05-0700') AS order_created_at,  
+  `order.Status` AS order_status,  
+  `order.GrandTotal.FormattedValue` AS total order value inc VAT,  
+  `order.Shipments[0].CarrierInformation.ServiceName` AS carrier_service_name,  
+  `order.Shipments[0].CarrierInformation.CarrierName` AS carrier_name,  
+  `order.Market.Name` AS order_market,  
+  `order.Store.Name` AS store,  
+  `order.Country.Name` AS country,  
+  `order.PaymentMethod.Name` AS order_payment_method,  
+  `order.Totals.LineValues` AS order_totals_values,  
+  `order.Totals.Shipping` AS order_total_shipping,  
+  `order.Totals.Discounts` AS order_total_discounts,  
+  `order.Totals.Handling` AS order_totals_handling,  
+  `order.CurrencyBaseRate` AS order_currency_base_rate,  
+  `order.Discounts` AS order_discounts,  
+  `order.Discounts.Len` AS order_discounts_len,  
+  `order.DiscountsApplied.Name` AS discount_name,  
+  `order.DiscountsApplied.Method` AS order_discounts_applied_method,  
+  `order.DiscountsApplied.Value` AS order_discounts_applied_value,  
+  `order.DiscountsApplied.Discount.Codes` discount_codes,  
+  Currency AS currency,  
+  CurrencyOK AS currency_ok  
+FROM`interactions.gz`  
+</code></pre>
+
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="items">Items</h3>
+<p>Id columns : item</p>
+<pre><code>SELECT
+    concat(`variant.Id`,'_',`variant.productSize.Size.Id`) AS item, 
+    `prod.Name` AS prod_name,  
+    `variant.MediaURL` AS variant_media_url,  
+    `variant.Id` AS id,  
+    `variant.Name` AS variant_name,  
+    `variant.Status` AS variant_status,  
+    `variant.StockOffset` AS variant_stock_offset,  
+    `variant.InternalName` AS variant_internal_name,  
+    `variant.variantNumber` AS variant_variant_number,  
+    `variant.UnitCost.FormattedValue` AS variant_unit_cost_formatted_value,  
+    `variant.productSize.Id` AS variant_product_size_id,  
+    `variant.productSize.GTIN` AS variant_product_size_gtin,  
+    `variant.productSize.SizeNumber` AS variant_product_size_size_number,  
+    `variant.productSize.SKU` AS variant_product_size_sku,  
+    `variant.productSize.Size.Id` AS variant_product_size_size_id,  
+    `variant.productSize.Size.Name` AS variant_product_size_size_name,  
+    `prod.Id` AS prod_id,  
+    `prod.ProductNumber` AS prod_product_number,  
+    `prod.Brand.Name` AS prod_brand_name,  
+    `prod.CountryOfOrigin.Name` AS prod_country_of_origin_name,  
+    `prod.Collection.Name` AS prod_collection_name,  
+    `prod.Status` AS prod_status,  
+    `prod.HarmonizedCommodityCode` AS prod_harmonized_commodity_code,  
+    `prod.Folder.Name` AS prod_folder_name,  
+    `display.Store.Name` AS display_store_name,  
+    `display.Status` AS display_status,  
+    `display.Name` AS display_name,  
+    `display.DisplayItem.Id` AS display_display_item_id,  
+    `display.Categories` AS display_categories,  
+    `display.Category1` AS display_category_1,  
+    `display.Category2` AS display_category_2,  
+    `display.Category3` AS display_category_3,  
+    `display.CategoryUri` AS display_category_uri,  
+    `display.Uri` AS display_uri,  
+    `variant.productSize.Size.AvailableNowQuantity` AS variant_product_size_size_available_now_quantity,  
+    `variant.Price` AS variant_price,  
+    `variant.Currency` AS variant_currency,  
+    `variant.Campaign_DiscountPercent` AS variant_campaign_discount_percent,  
+    `variant.Campaign_FixedPrice` AS variant_campaign_fixed_price,  
+    `variant.Campaign_FixedPrice_Currency` AS variant_campaign_fixed_price_currency,  
+    market AS market,  
+
+      concat(`prod.Brand.Name`, ', ', `prod.Name`,   
+         if(`variant.Name` != '' OR `variant.productSize.Size.Name` != '', ' ', ''),  
+         if(`variant.Name` != '', concat('[',`variant.Name`, ']'),''),  
+         if(`variant.productSize.Size.Name` != '', concat('[',`variant.productSize.Size.Name`,']'), '')   
+         ) format
+FROM `items.gz`
+</code></pre>
+
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="users">Users</h3>
+<p>Id columns : user</p>
+<pre><code>SELECT  
+`customer.Id` AS user,  
+    `customer.IsAnonymized` AS anonymized,  
+    `customer.TotalOrders` AS total_orders,  
+    unixTimestamp(`customer.CreatedAt`, '2006-01-02T15:04:05-0700') AS created_at,  
+    unixTimestamp(`customer.UpdatedAt`, '2006-01-02T15:04:05-0700') AS updated_at,  
+    `customer.Store.Name` AS store,  
+    `customer.Email` AS email,  
+    `customer.CellPhoneNumber` AS phone  
+FROM `users.gz`  
+</code></pre>
+
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="no-size-model">No size model</h3>
+<p>for Item source called ‘no size model - items’</p>
+<pre><code>SELECT 
+    variantId AS id,  
+    groupcoalesce(format) AS format,  
+    groupcoalesce(productName) AS product_name,  
+    groupcoalesce(variantName) AS variant_name,  
+    groupcoalesce(variantStatus) AS variant_status,  
+    groupcoalesce(brand) AS brand,  
+    groupcoalesce(`prod.Folder.Name`) AS prod_folder_name,  
+    groupcoalesce(collection) AS collection,  
+    groupcoalesce(productNumber) AS product_number,  
+    groupcoalesce(price) AS price,  
+    groupcoalesce(availableNowQuantity) AS available_now_quantity,  
+    groupcoalesce(countryOfOrigin) AS country_of_origin,  
+    groupcoalesce(mediaURL) AS media_url,  
+    groupcoalesce(unitCost) AS unit_cost,  
+    groupcoalesce(productStatus) AS product_status,  
+    groupcoalesce(variantInternalName) AS variant_internal_name,  
+    groupcoalesce(displayCategory1) AS display_category_1,  
+    groupcoalesce(displayCategory2) AS display_category_2,  
+    groupcoalesce(displayCategory3) AS display_category_3,  
+    groupcoalesce(displayItemId) AS display_item_id  
+
+FROM `centra_products_import`  
+
+GROUP BY variantId  
+</code></pre>
+
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="example-rows-with-explanation">Example rows with explanation</h3>
+<p>Coalesce (<code>display.Name</code>, <code>prod.Name</code>, <code>variant.Id</code>) AS format 
+Explanation: Choose display.Name if it exists, otherwise check prod.Name, and lastly variant.Id.  </p>
+<p>Concat (<code>line.ProductVariant.Id</code>,'<em>',<code>line.ProductSize.Size.Id</code>) AS item 
+Explanation: This will merge the two lines, for example Concat (Hello, '</em>', you) would concat to Hello_you </p>
+<p>unixTimestamp (<code>order.CreatedAt</code>, '2006-01-02T15:04:05-0700') AS order_created_at, 
+    Explanation: This will convert a date into number form </p>
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="voyado-queries">Voyado Queries</h2>
+<hr />
+<p>Procedure   1</p>
+<p>Items   2  </p>
+<p>Users   3</p>
+<p>Interactions    4  </p>
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="procedure_1">Procedure</h3>
+<p>Setup config</p>
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="interactions_1">Interactions</h3>
+<pre><code>SELECT
+    *
+FROM
+    `items.gz`
+</code></pre>
+
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="items_1">Items</h3>
+<pre><code>SELECT
+    *
+FROM
+    `items.gz`
+</code></pre>
+
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="users_1">Users</h3>
+<pre><code>SELECT
+    *
+FROM
+    `items.gz`
+</code></pre>
+
+<hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../../../js/base.js" defer></script>
+        <script src="../../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
