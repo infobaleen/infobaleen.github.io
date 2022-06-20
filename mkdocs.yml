@@ -1,46 +1,59 @@
-site_name: CS docs
-site_description: Documentation for Infobaleen Customer Success team
+site_name: Docs
+site_description: Documentation for Infobaleen Platform
 nav:
     - Start:
         - index.md
 
-    - Platform:
-        - Analytics:
-            - Dashboards: Platform/Analytics/Dashboards.md
-            - Customer Insights: Platform/Analytics/Customer Insights.md
-        - Menu:
-            - Account:
-                - API Keys: Platform/Menu/Account/API Keys.md
-                - Logout: Platform/Menu/Account/Logout.md
-                - Users: Platform/Menu/Account/Users.md
-            - Admin:
-                - Clear CH chache: Platform/Menu/Admin/Clear CH chache.md
-                - Configuration: Platform/Menu/Admin/Configuration.md
-                - Connections: Platform/Menu/Admin/Connections.md
-                - Events: Platform/Menu/Admin/Events.md
-                - Secrets.md: Platform/Menu/Admin/Secrets.md
-            - Documentation:
-                - Agent: Platform/Menu/Documentation/Agent.md
-                - API: Platform/Menu/Documentation/API.md
-                - New Issue: Platform/Menu/Documentation/New Issue.md
-            - Manage Data:
-                - Data Models: Platform/Menu/Manage Data/Data Models.md
-                - Import Files: Platform/Menu/Manage Data/Import Files.md
-                - Manage-Data: Platform/Menu/Manage Data/Manage-Data.md
-                - Results: Platform/Menu/Manage Data/Results.md
-                - Sources: Platform/Menu/Manage Data/Sources.md
-            - Model:
-                - Interactions: Platform/Menu/Model/Interactions.md
-                - Overview: Platform/Menu/Model/Overview.md
-                - Products: Platform/Menu/Model/Products.md
-                - Users: Platform/Menu/Model/Users.md
-            - Other: Platform/Menu/Other/Overlaps.md
-        - Segmentations:
-            - Auto-targeting: Platform/Segmentations/Auto-targeting.md
-            - Clustering: Platform/Segmentations/Clustering.md
-        - Recommendations: Platform/Recommendations/Recommendations.md
+    - Analytics:
+        - Dashboards: Platform/Analytics/Dashboards.md
+        - Customer Insights: Platform/Analytics/Customer Insights.md
+    - Segmentations:
+        - Auto-targeting: Platform/Segmentations/Auto-targeting.md
+        - Clustering: Platform/Segmentations/Clustering.md
+    - Recommendations: Platform/Recommendations/Recommendations.md
+    - Menu:
+        - Account:
+            - API Keys: Platform/Menu/Account/API Keys.md
+            - Logout: Platform/Menu/Account/Logout.md
+            - Users: Platform/Menu/Account/Users.md
+        - Admin:
+            - Clear CH chache: Platform/Menu/Admin/Clear CH chache.md
+            - Configuration: Platform/Menu/Admin/Configuration.md
+            - Connections: Platform/Menu/Admin/Connections.md
+            - Events: Platform/Menu/Admin/Events.md
+            - Secrets.md: Platform/Menu/Admin/Secrets.md
+        - Documentation:
+            - Agent: Platform/Menu/Documentation/Agent.md
+            - API: Platform/Menu/Documentation/API.md
+            - New Issue: Platform/Menu/Documentation/New Issue.md
+        - Manage Data:
+            - Data Models: Platform/Menu/Manage Data/Data Models.md
+            - Import Files: Platform/Menu/Manage Data/Import Files.md
+            - Manage-Data: Platform/Menu/Manage Data/Manage-Data.md
+            - Results: Platform/Menu/Manage Data/Results.md
+            - Sources: Platform/Menu/Manage Data/Sources.md
+        - Model:
+            - Interactions: Platform/Menu/Model/Interactions.md
+            - Overview: Platform/Menu/Model/Overview.md
+            - Products: Platform/Menu/Model/Products.md
+            - Users: Platform/Menu/Model/Users.md
+        - Other: Platform/Menu/Other/Overlaps.md
 
             
+    # - Internal procedures:
+    #     - Overview presentation: Internal procedures/Overview-presentations.md
+    #     - Add-ons and Solutions: Internal procedures/Add-ons and Solutions/Cases.md
+    #     - Editing the wiki:
+    #         - Editing procedures: Internal procedures/Editing the wiki/Editing-procedures.md
+    #         - Writing in markdown: Internal procedures/Editing the wiki/Writing-in-markdown.md
+    #     - G-suite: Internal procedures/G-suite/Create-new-user.md
+    #     - Workflows:
+    #         - GA data: Internal procedures/Workflows/GA data.md
+    #         - How to create an API key and URL to fetch product rec: Internal procedures/Workflows/How-to-create-an-API-key-and-URL-to-fetch-product-recommendations.md
+    #         - Platform setup (import files, sources and datamodel): Internal procedures/Workflows/Platform-setup-(import-files,-sources-and-datamodel).md
+    #         - Other: Internal procedures/Workflows/Other.md
+    # - Kube:
+    #     - Creating new platform: Kube/Creating-new-platform.md
+    #     - Public IP: Kube/Public-IP.md
 
       
-    
