@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Platform setup (import files, sources and datamodel) - CS docs</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">CS docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Start <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../..">Infobaleen Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internal procedures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../Overview-presentations/">Overview presentation</a>
+</li>
+                                    
+<li >
+    <a href="../../Add-ons and Solutions/Cases/">Add-ons and Solutions</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Editing the wiki</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Editing the wiki/Editing-procedures/">Editing procedures</a>
+</li>
+            
+<li >
+    <a href="../../Editing the wiki/Writing-in-markdown/">Writing in markdown</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../G-suite/Create-new-user/">G-suite</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Workflows</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../GA data/">GA data</a>
+</li>
+            
+<li >
+    <a href="../How-to-create-an-API-key-and-URL-to-fetch-product-recommendations/">How to create an API key and URL to fetch product rec</a>
+</li>
+            
+<li class="active">
+    <a href="./">Platform setup (import files, sources and datamodel)</a>
+</li>
+            
+<li >
+    <a href="../Other/">Other</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kube <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../Kube/Creating-new-platform/">Creating new platform</a>
+</li>
+                                    
+<li >
+    <a href="../../../Kube/Public-IP/">Public IP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Analytics</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Platform/Analytics/Dashboards/">Dashboards</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Analytics/Customer Insights/">Customer Insights</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Menu</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Account</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Platform/Menu/Account/API Keys/">API Keys</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Account/Logout/">Logout</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Account/Users/">Users</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Admin</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Platform/Menu/Admin/Clear CH chache/">Clear CH chache</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Admin/Configuration/">Configuration</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Admin/Connections/">Connections</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Admin/Events/">Events</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Admin/Secrets/">Secrets.md</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Documentation</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Platform/Menu/Documentation/Agent/">Agent</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Documentation/API/">API</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Documentation/New Issue/">New Issue</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Manage Data</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Platform/Menu/Manage Data/Data Models/">Data Models</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Manage Data/Import Files/">Import Files</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Manage Data/Manage-Data/">Manage-Data</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Manage Data/Results/">Results</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Manage Data/Sources/">Sources</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Model</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Platform/Menu/Model/Interactions/">Interactions</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Model/Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Model/Products/">Products</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Menu/Model/Users/">Users</a>
+</li>
+    </ul>
+  </li>
+            
+<li >
+    <a href="../../../Platform/Menu/Other/Overlaps/">Other</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Segmentations</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Platform/Segmentations/Auto-targeting/">Auto-targeting</a>
+</li>
+            
+<li >
+    <a href="../../../Platform/Segmentations/Clustering/">Clustering</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../../Platform/Recommendations/Recommendations/">Recommendations</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../How-to-create-an-API-key-and-URL-to-fetch-product-recommendations/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Other/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
+        <li class="main "><a href="#platform-setup">Platform setup</a></li>
+            <li><a href="#1-import-data-to-platform">1. Import data to platform</a></li>
+            <li><a href="#2-create-sources">2. Create sources</a></li>
+            <li><a href="#3-create-data-model">3. Create data model</a></li>
+            <li><a href="#4-create-dashboards">4. Create dashboards</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol>
+<li><a href="#platform-setup">Platform setup </a><ol>
+<li><a href="#1-import-data-to-platform">1. Import data to platform</a><ol>
+<li><a href="#using-a-database-connection-for-centra-voyado-etc">Using a database connection (for Centra, Voyado, etc)</a><ol>
+<li><a href="#set-up-a-configuration">Set up a configuration</a></li>
+<li><a href="#make-arbitrary-query-what-does-this-mean-and-where-to-do-it???">Make arbitrary query [What does this mean, and where to do it???]</a></li>
+<li><a href="#how-to-verify-that-the-sync-works?">How to verify that the sync works?</a></li>
+</ol>
+</li>
+<li><a href="#using-a-file">Using a file</a></li>
+</ol>
+</li>
+<li><a href="#2-create-sources">2. Create sources</a></li>
+<li><a href="#3-create-data-model">3. Create data model</a></li>
+<li><a href="#4-create-dashboards">4. Create dashboards</a><ol>
+<li><a href="#add-expressions">Add expressions</a></li>
+<li><a href="#tip-copy-a-dashboard-to-another-data-model">Tip: Copy a dashboard to another data model</a>
+<a href="#table-of-contents"></a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="platform-setup">Platform setup</h1>
+<p>In order to create dashboards we need to complete three steps: </p>
+<ol>
+<li>Import data to the platform</li>
+<li>Create sources that contain data from one or more imported files</li>
+<li>Create a data model based upon the sources</li>
+<li>Create dashboards</li>
+</ol>
+<p>Testing can be done at <a href="https://d15.infobaleen.com/">d15.infobaleen.com</a> that consists of testdata created by us. </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="1-import-data-to-platform">1. Import data to platform</h2>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="using-a-database-connection-for-centra-voyado-etc">Using a database connection (for Centra, Voyado, etc)</h3>
+<p>Go to the platform and then to <code>Admin -&gt; Configuration</code> (can be found at the top right menu by clicking the three dots, see example image below).</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h4 id="set-up-a-configuration">Set up a configuration</h4>
+<p>Add a database and name the <code>Database</code> based on the system they use (centra, voyado, etc), and choose the matching <code>Driver</code>. In the <code>Config</code> field, check the standard URL provided by the corresponding ecommerce platform. </p>
+<p><strong>Notes:</strong>
+<em> A key or token is needed to access the databases. This key is listed under <code>Admin -&gt; Secrets</code>. 
+</em> For Centra customers there are fields that need to be specified:
+    * <code>"Limit":100000</code> : This is a limit so that we do not overload Centra servers when fetching data
+    * <code>"Store":1,"Market":3,"PriceList":19,"Warehouses":[2,3]</code>: These are specifications to fetch the correct data, the customer seldom knows this but Centra should have the information. 
+* There is an option also to <code>Add Integration</code>. This part can be skipped, it is only used when we send data to customers. </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h4 id="make-arbitrary-query-what-does-this-mean-and-where-to-do-it">Make arbitrary query [What does this mean, and where to do it???]</h4>
+<p>Create a source and make an arbitrary query similar to <code>SELECT * FROM `users.gz`</code>. </p>
+<p>This will trigger a proxy sync, and the <code>.gz</code> files will appear once completed. This normally takes 1-5 hours.</p>
+<p><img width="1198" alt="Screenshot 2022-05-10 at 10 31 03" src="https://user-images.githubusercontent.com/4352260/167585099-4bbcfd77-008e-455d-93bf-89e257d6b306.png"></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h4 id="how-to-verify-that-the-sync-works">How to verify that the sync works?</h4>
+<p>Choose the source you created and press the pen to edit it. Go to the <code>ADD QUERY</code> tab and choose <code>“SELECT * FROM `*`”</code>. </p>
+<p>If the sync is ready, you will see a list of files to choose from, for example, <code>users.gz</code>, <code>items.gz</code>, <code>interactions.gz</code>, see image below. If you see the files imported you are now ready to create sources!</p>
+<p><img width="954" alt="Screenshot 2022-05-10 at 14 59 33" src="https://user-images.githubusercontent.com/4352260/167635009-bee5c795-271c-49f9-a92c-840a415f120f.png"></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="using-a-file">Using a file</h3>
+<p>Go to the platform and then to <code>Manage data -&gt; Import files</code> (can be found at the top right menu by clicking the three dots, see example image below). </p>
+<p>If the customer sent their data in a csv-file, drag it to the drop box for importing files.</p>
+<p>Uploaded files are available from the "imports (csv-fs)" database connection when creating new sources (see next step).</p>
+<p><img width="1216" alt="Screenshot 2022-05-10 at 10 31 52" src="https://user-images.githubusercontent.com/4352260/167585247-b7f840a9-a43a-4a7d-bf76-1757e4f688cb.png"></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="2-create-sources">2. Create sources</h2>
+<p>When the data is imported, go to <code>Manage Data -&gt; Sources</code> and create a new source by clicking the purple plus sign as seen in the below image. </p>
+<ol>
+<li>Name the source <code>import_[source of data]_[type of data]</code> where <code>[source of data]</code> specifies where the data comes from (centra, voyado, etc), and the <code>[type of data]</code> specifies the data type (items, users, interactions, etc). </li>
+</ol>
+<p><img width="1050" alt="Screenshot 2022-05-10 at 10 53 48" src="https://user-images.githubusercontent.com/4352260/167589964-27e4a8fe-d3d0-4382-a696-21d759331cd9.png"></p>
+<ol>
+<li>Choose an identifier for the source using the <code>Id columns</code> field.  If the source you’re creating is for:<ul>
+<li><strong>interactions</strong>: we want to identify each interaction through a user, an item and the time of the purchase, therefore choose user,ts,item under id columns and then press create.</li>
+<li><strong>items</strong>: we want to identify each item by using an item id (often sku or variant). </li>
+<li><strong>users</strong>: we want to identify each user by using a user id. </li>
+</ul>
+</li>
+</ol>
+<p>The fields <code>Comment</code> and <code>Merge Filter</code> can be left empty, and you can press <code>CREATE</code>. </p>
+<ol>
+<li>Choose database connection and create a <code>QUERY</code> 
+If it’s a centra/voyado customer choose that option, if the files were uploaded manually, choose imports.</li>
+</ol>
+<p>You can now see the query stage, as standard <code>“SELECT * FROM `*`”</code> will show, if you press “EXECUTE PREVIEW SUMMARY” you will see all the imported files you can choose to gather data from. Copy the filename you want to use and enter that name in the query above, like <code>SELECT * FROM [ENTER FILENAME HERE]</code>.</p>
+<p>Copy the queries (depending on what system the customer has) from here:</p>
+<ul>
+<li><a href="https://github.com/infobaleen/customer-success/wiki/Manage-Data#centra-queries">Centra queries</a></li>
+<li><a href="https://github.com/infobaleen/customer-success/wiki/Manage-Data#voyado-queries">Voyado queries</a></li>
+</ul>
+<p>The import file is now done, press sync and save to exit. </p>
+<ol>
+<li>Now repeat the "Create source"-step 2 but name the file <code>model_[source of data]_[type of data]</code> (the use same identifier as in the import file). <ul>
+<li>In the <code>Choose database connection</code> now choose <code>source</code> instead, and press <code>execute preview summary</code>, now choose the import source file and edit the query to select from that, like "<code>SELECT * FROM ENTER_SOURCENAME_HERE</code>" and then press <code>Save and sync</code>.</li>
+</ul>
+</li>
+</ol>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="3-create-data-model">3. Create data model</h2>
+<p>The next step is to create a data model using the sources we just created. Go to the three dots on the top right corner of the screen and select <code>Manage Data -&gt; Data models</code>. </p>
+<p>Create a new data model (the purple plus sign on the right side) and choose a representative data model name.
+ * If it’s a Centra customer you can, for example, name the data model “Centra”
+ * If it’s a customer with manually added files you can, for example, name the data model “Customer name” </p>
+<p>Select the correct source in the data model for interactions, users and items and press <code>Save</code>.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="4-create-dashboards">4. Create dashboards</h2>
+<p>To create a dashboard, press the <code>Analytics</code> button in the top left corner and then press the <code>+</code> icon. Note that each data model have different dashboards, on the top right side of the screen you can select what data model the dashboards should use.</p>
+<ul>
+<li><code>Name</code>: The name of the dashboard. Preferred is to use Title Case, i.e. not "Customer purchases" but "Customer Purchases" for naming. </li>
+<li><code>Select Role</code>:</li>
+<li><strong>interactions</strong>: If the dashboard shows data of interactions between for example a user, an item and the time of the purchase</li>
+<li><strong>user</strong>: If the dashboard shows data about users</li>
+<li><strong>item</strong>:  If the dashboard shows data about items</li>
+<li><code>Select number of columns</code>: This specifies the grid size of the dashboard. The grid is used when you move dashboard elements and they "snap" to the grid.</li>
+</ul>
+<p><img width="941" alt="Screenshot 2022-05-10 at 14 03 54" src="https://user-images.githubusercontent.com/4352260/167624147-1a3adf8e-6c9f-4552-bd42-56a54422b690.png"></p>
+<p>To create richer dashboards, there is often a need to create expressions based on the data. To do this, see the info in the section below.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="add-expressions">Add expressions</h3>
+<p>Open the data model and press <code>Edit</code> (the pen in the right top corner). Now press <code>Add suggested expressions</code> located under each segment for interactions/users/items.</p>
+<ul>
+<li><a href="https://github.com/infobaleen/customer-success/wiki/Expressions">Example of Data model expressions</a></li>
+</ul>
+<p>When you have created standard expressions based on the data used, scroll down and save. </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="tip-copy-a-dashboard-to-another-data-model">Tip: Copy a dashboard to another data model</h3>
+<p>After you have set up your dashboard, do the following:</p>
+<ol>
+<li>Go to the dashboard overview and create a copy of your dashboard, see below image.</li>
+</ol>
+<p><img width="1014" alt="Screenshot 2022-05-11 at 11 14 04" src="https://user-images.githubusercontent.com/4352260/167815562-d7e0ed47-7827-4b46-ab79-abe9ea9af0ad.png"></p>
+<ol>
+<li>Edit your newly created dashboard, click <code>Dashboard Settings</code>, and change the data model. If all expressions exists in the other model, the dashboard will be copied. Remember to <code>SAVE</code> the dashboard after the changes.</li>
+</ol>
+<p><img width="1015" alt="Screenshot 2022-05-11 at 11 15 33" src="https://user-images.githubusercontent.com/4352260/167815065-9a1f0580-e86d-4b49-a6c7-e5facb76e241.png">
+<img width="1043" alt="Screenshot 2022-05-11 at 11 16 12" src="https://user-images.githubusercontent.com/4352260/167815073-b1af1b0f-8d4b-48cd-a944-9c6345d3d216.png">
+<img width="1074" alt="Screenshot 2022-05-11 at 11 16 17" src="https://user-images.githubusercontent.com/4352260/167815392-c2a11126-c4d7-4bf1-91a8-f010ca29b446.png"></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

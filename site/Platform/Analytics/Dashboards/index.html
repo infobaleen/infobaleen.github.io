@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Dashboards - CS docs</title>
+        <link href="../../../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../../..">CS docs</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Start <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../..">Infobaleen Documentation</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Internal procedures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../Internal procedures/Overview-presentations/">Overview presentation</a>
+</li>
+                                    
+<li >
+    <a href="../../../Internal procedures/Add-ons and Solutions/Cases/">Add-ons and Solutions</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Editing the wiki</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Internal procedures/Editing the wiki/Editing-procedures/">Editing procedures</a>
+</li>
+            
+<li >
+    <a href="../../../Internal procedures/Editing the wiki/Writing-in-markdown/">Writing in markdown</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../../Internal procedures/G-suite/Create-new-user/">G-suite</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Workflows</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../../Internal procedures/Workflows/GA data/">GA data</a>
+</li>
+            
+<li >
+    <a href="../../../Internal procedures/Workflows/How-to-create-an-API-key-and-URL-to-fetch-product-recommendations/">How to create an API key and URL to fetch product rec</a>
+</li>
+            
+<li >
+    <a href="../../../Internal procedures/Workflows/Platform-setup-(import-files,-sources-and-datamodel)/">Platform setup (import files, sources and datamodel)</a>
+</li>
+            
+<li >
+    <a href="../../../Internal procedures/Workflows/Other/">Other</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kube <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li >
+    <a href="../../../Kube/Creating-new-platform/">Creating new platform</a>
+</li>
+                                    
+<li >
+    <a href="../../../Kube/Public-IP/">Public IP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Platform <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Analytics</a>
+    <ul class="dropdown-menu">
+            
+<li class="active">
+    <a href="./">Dashboards</a>
+</li>
+            
+<li >
+    <a href="../Customer Insights/">Customer Insights</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Menu</a>
+    <ul class="dropdown-menu">
+            
+  <li class="dropdown-submenu">
+    <a href="#">Account</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Menu/Account/API Keys/">API Keys</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Account/Logout/">Logout</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Account/Users/">Users</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Admin</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Menu/Admin/Clear CH chache/">Clear CH chache</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Admin/Configuration/">Configuration</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Admin/Connections/">Connections</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Admin/Events/">Events</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Admin/Secrets/">Secrets.md</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Documentation</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Menu/Documentation/Agent/">Agent</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Documentation/API/">API</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Documentation/New Issue/">New Issue</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Manage Data</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Menu/Manage Data/Data Models/">Data Models</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Manage Data/Import Files/">Import Files</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Manage Data/Manage-Data/">Manage-Data</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Manage Data/Results/">Results</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Manage Data/Sources/">Sources</a>
+</li>
+    </ul>
+  </li>
+            
+  <li class="dropdown-submenu">
+    <a href="#">Model</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Menu/Model/Interactions/">Interactions</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Model/Overview/">Overview</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Model/Products/">Products</a>
+</li>
+            
+<li >
+    <a href="../../Menu/Model/Users/">Users</a>
+</li>
+    </ul>
+  </li>
+            
+<li >
+    <a href="../../Menu/Other/Overlaps/">Other</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#">Segmentations</a>
+    <ul class="dropdown-menu">
+            
+<li >
+    <a href="../../Segmentations/Auto-targeting/">Auto-targeting</a>
+</li>
+            
+<li >
+    <a href="../../Segmentations/Clustering/">Clustering</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li >
+    <a href="../../Recommendations/Recommendations/">Recommendations</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="../../../Kube/Public-IP/">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li >
+                                <a rel="prev" href="../Customer Insights/">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
+        <li class="main "><a href="#add-element">Add element</a></li>
+            <li><a href="#metric">Metric</a></li>
+            <li><a href="#bar-chart">Bar Chart</a></li>
+            <li><a href="#line-chart">Line Chart</a></li>
+            <li><a href="#histogram">Histogram</a></li>
+            <li><a href="#date-filter">Date filter</a></li>
+            <li><a href="#range-filter">Range filter</a></li>
+            <li><a href="#filter">Filter</a></li>
+            <li><a href="#metric-selector">Metric selector</a></li>
+            <li><a href="#alluvial-chart">Alluvial Chart</a></li>
+            <li><a href="#markov-chart">Markov Chart</a></li>
+            <li><a href="#table">Table</a></li>
+            <li><a href="#pivot">Pivot</a></li>
+            <li><a href="#image-grid">Image grid</a></li>
+            <li><a href="#segments">Segments</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#text-content">Text Content</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="table-of-contents">Table of Contents</h1>
+<ol>
+<li><a href="#add-element">Add element</a><ol>
+<li><a href="#metric">Metric</a></li>
+<li><a href="#bar-chart">Bar Chart</a></li>
+<li><a href="#line-chart">Line Chart</a><ol>
+<li><a href="#default-line-chart">Default (line chart)</a></li>
+<li><a href="#style-line-chart">Style (line chart)</a></li>
+<li><a href="#advanced-line-chart">Advanced (line chart)</a><ol>
+<li><a href="#select-group-key">Select group key</a></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a href="#histogram">Histogram</a></li>
+<li><a href="#date-filter">Date filter</a></li>
+<li><a href="#range-filter">Range filter</a></li>
+<li><a href="#filter">Filter</a></li>
+<li><a href="#metric-selector">Metric selector</a></li>
+<li><a href="#alluvial-chart">Alluvial Chart</a></li>
+<li><a href="#markov-chart">Markov Chart</a></li>
+<li><a href="#table">Table</a></li>
+<li><a href="#pivot">Pivot</a></li>
+<li><a href="#image-grid">Image grid</a></li>
+<li><a href="#segments">Segments</a></li>
+<li><a href="#categories">Categories</a></li>
+<li><a href="#text-content">Text Content</a>
+<a href="#table-of-contents"></a></li>
+</ol>
+</li>
+</ol>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="add-element">Add element</h1>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="metric">Metric</h2>
+<p>A metric is a single number, wich means that you can not show a field in a metric element (a field is an array of metrics). you can convert a field into a metric by writing an expression ex. SUM(field) this returns a metric.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169268739-3bfe1569-0bc7-4bf6-b02b-2fe887f7c84e.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="bar-chart">Bar Chart</h2>
+<p>A bar chart shows <code>categorical data</code> with rectangular bars indicating the <code>distributions of the data</code>, in the picture below, we for example see amount of <code>unique customers per country</code>, the bar charts can be used to adapt the dashboard to show only data from one specific country. Simply press the country you want to see information about, and the dashboard will update accordingly.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/103515314/169268249-5b36de6b-d749-4950-bae0-d777b15afd6f.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="line-chart">Line Chart</h2>
+<p>A line chart plots a graph with data points connected to a chosen metric, example below for example shows revenue over time.<br />
+Hovering over the line chart data points, the revenue for that time will show.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169269164-27b0ddf6-1a72-4641-b929-7e2ac5f72377.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="default-line-chart">Default (line chart)</h3>
+<p>Under default you can choose what values you want to include in your line chart, you can also select if you want the view to be from day to week, month etc. The <code>Format</code> selection lets you choose how many decimals you want, if you want the values to be shown as a percentage (%). The <code>Limit</code> lets you decide how many data points you want to show (the dots marked on the line). </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="style-line-chart">Style (line chart)</h3>
+<p>Here you can change the appearance of the linechart in the dashboards, feel free to test how the different margin settings affect the look of the line chart! By changing the <code>Title</code> or the <code>Sub title</code> no values will be changed, by changing it the chosen values only gets an alias.  </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="advanced-line-chart">Advanced (line chart)</h3>
+<p>In the advanced tab you can select a <code>Group key</code>, you can read what that means <a href="https://github.com/infobaleen/customer-success/wiki/Manage-Data#centra-queries">here</a></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h4 id="select-group-key">Select group key</h4>
+<p>By addining a field in the select group key the line chart will show multiple lines where each line represents a category in the selected field.
+This function should be combined with a bar chart where you can create a filter for the selected field. by filtering out categories in the barchart the line chart will show the remaning categories.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169793194-e95c40cc-f767-44f3-8b51-b93325029023.png" /></p>
+<p>By filtering out a category in the barchart the line representing this category is removed from the line chart.
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169793357-46fd7c3b-1413-4b51-8713-1330b07b155e.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="histogram">Histogram</h2>
+<p>A histogram is a graphical representation that shows data in specified ranges as vertical bins. It's similar to a bar chart.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169790400-89b40628-b7b3-4bd9-b98d-0795c974f512.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="date-filter">Date filter</h2>
+<p>The <code>Date filter</code> lets you adapt your dashboards to only show data for a chosen period of time, there are some premade limits, for example last week, last year etc. These can be found and chosen on the top of the date filter box after pressing it, you can also select a specified range of days by using the calendar.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169789844-0fc3eb0c-c776-4623-b016-f473464ffbda.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="range-filter">Range filter</h2>
+<p><code>Range filter</code> allows you to only show data in the dashboards where a chosen value is within the chosen limit, for example if you only want to show data for items with prices between 100sek to 200sek.  </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="filter">Filter</h2>
+<p>Filter can be used to only show one category of chosen metric, and update the dashboard accordingly.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169792451-0d7d5128-fc8f-4a3a-ac7d-320ff9e54a65.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="metric-selector">Metric selector</h2>
+<p>In the different <code>elements</code> added to your dashboard, for example a bar chart or line chart, there's the opportunity to select <code>*metric*</code>, if you then add a <code>Metric selector</code> and choose a metric, all the elements where <code>*metric*</code> has been chosen, will be updated to match the chosen metric in the <code>Metric selector</code>. Using this will allow quicker changes of the data shown, as you can use the metric selector instead of manually changing the other elements.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169789635-791ba427-1f84-474f-bad4-8ae9019a5461.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="alluvial-chart">Alluvial Chart</h2>
+<p>An alluvial chart can be described as a flow diagram that represents changes in structures over time, for us this is mostly used to represent how segments of customers are changed over time, going from new, to lapsed (lost) customers.  </p>
+<p>(There's a <code>Color scale</code> option under <code>Style</code> where the colors can be changed to blue/green/yellow/red instead of different shades of blue) 
+Example of alluvial chart shown below.
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169789543-fcdca3ef-b325-459b-b381-206caf973f3c.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="markov-chart">Markov Chart</h2>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="table">Table</h2>
+<p>This element adds a table to the dashboard, if the table gets to wide there's a scroll bar furthest down in the table allowing horizontal scrolling. The table can be <code>sorted</code> by pressing on the value/text you want to sort by. Under <code>Style</code> in the edit screen of a table, there's an opportunity to add a <code>Backround bar</code> which visualize how large/small the different values in the table are in comparison to the others. </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="pivot">Pivot</h2>
+<p>A pivot table is used to visualize patterns and trends in large amounts of data, it can for example be used to show amount of lapsed customers per order cohort shown in the example below. 
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169789394-1f691c1e-f189-4fab-bc3b-b01d13ecb467.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="image-grid">Image grid</h2>
+<p>The image grid shows pictures of products in a dashboard.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169791317-67fc1463-e9ea-4d7f-b077-5fb0d4d2282d.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="segments">Segments</h2>
+<p>Lets you show data for only a chosen segment, these segments can be created under the <code>Segmentations</code> part of the platform.</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="categories">Categories</h2>
+<p>Similar to barchart, categories let's you choose what category to show data for, when the data is several categories in one cell, for example Color = <code>[red;blue]</code> where red and blue are not correlated.  </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="text-content">Text Content</h2>
+<p>The text content element is the most used element, it's basically just text that can be adapted through markdown language, for example # = header1 (largest) ## = header2, ### header3 etc.<br />
+<img alt="image" src="https://user-images.githubusercontent.com/103515314/169791387-54ccec3b-5099-44aa-90e6-303bde780b7d.png" /></p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
