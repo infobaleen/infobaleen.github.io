@@ -70,7 +70,7 @@ Uploaded files are available from the "imports (csv-fs)" database connection whe
 
 # Find Voyado files to import
 
-1. Go to [portal.azure.com](portal.azure.com)
+1. Go to portal.azure.com
 2. Login with the dedicated Infobaleen user (credentials can be sent by Customer Success team). Choose "Work or School" as account type. 
 3. When logged in you will see something similar to the screenshot below:
 4. Go to `All resources`

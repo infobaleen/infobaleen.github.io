@@ -1,8 +1,9 @@
-site_name: Docs
+site_name: Documentation
 site_description: Documentation for Infobaleen Platform
+extra_css:
+  - custom/extra.css
 nav:
-    - Start:
-        - index.md
+    - Home: index.md
 
     - Analytics:
         - Dashboards: Platform/Analytics/Dashboards.md
