@@ -122,7 +122,7 @@
 </li>
             
 <li >
-    <a href="../../Menu/Admin/Secrets/">Secrets.md</a>
+    <a href="../../Menu/Admin/Secrets/">Secrets</a>
 </li>
     </ul>
   </li>
@@ -155,10 +155,6 @@
             
 <li >
     <a href="../../Menu/Manage Data/Import Files/">Import Files</a>
-</li>
-            
-<li >
-    <a href="../../Menu/Manage Data/Manage-Data/">Manage-Data</a>
 </li>
             
 <li >
@@ -228,7 +224,7 @@
         <li class="main "><a href="#recommendations-ui">Recommendations UI</a></li>
             <li><a href="#settings">Settings</a></li>
             <li><a href="#front-page">Front page</a></li>
-        <li class="main "><a href="#data-available-in-recommendations">data available in recommendations</a></li>
+        <li class="main "><a href="#data-available-in-recommendations">Data available in recommendations</a></li>
             <li><a href="#ml-meta">ml meta</a></li>
             <li><a href="#ml-filter">ml filter</a></li>
         <li class="main "><a href="#recommendations-in-emails">Recommendations in emails</a></li>
@@ -276,7 +272,7 @@
 </li>
 </ol>
 </li>
-<li><a href="#data-available-in-recommendations">data available in recommendations</a><ol>
+<li><a href="#data-available-in-recommendations">Data available in recommendations</a><ol>
 <li><a href="#ml-meta">ml meta</a></li>
 <li><a href="#ml-filter">ml filter</a></li>
 </ol>
@@ -324,13 +320,11 @@ example.<br />
 this returns <code>True</code> for all products with a price larger than 100 thus removing all items with a price lower than 100.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="boost-expression">Boost expression</h3>
-<p>????</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="interactionfilter">InteractionFilter</h3>
-<p>???</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="trend">Trend</h3>
-<p>Trend limits the time intervall wich the recomendations are based on. <code>Max trend</code> uses a short timeintervall resulting in the ML model only recomends products that are trending last few weeks. <code>None trend</code> <strong>IS THIS TRUE?</strong></p>
+<p>Trend limits the time intervall wich the recomendations are based on. <code>Max trend</code> uses a short timeintervall resulting in the ML model only recomends products that are trending last few weeks.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="limit">Limit</h3>
 <p>Limit decides how many recomended items are returned. limit 4 = 4 recommended items. Limit 12 = 12 recommended items.</p>
@@ -383,7 +377,6 @@ The expression <code>hasAny(split(bought_phone_model,","),makeArray(phone_model)
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/171145795-877fb7b8-6e02-4bf0-857b-985deafe6efd.png" /></p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="api">API</h3>
-<p>This is what the customer use to call the recomendation profile????</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="add-field-limit">Add field limit</h3>
 <p>Field limit lets you set a filter on how many of each category should be recommended.  </p>
@@ -407,7 +400,6 @@ The expression <code>hasAny(split(bought_phone_model,","),makeArray(phone_model)
 <p>saved profiles</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="refresh">Refresh</h3>
-<p>????</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="clear-user-and-items">Clear user and items</h3>
 <p>removes selected items and user</p>
@@ -419,8 +411,7 @@ The expression <code>hasAny(split(bought_phone_model,","),makeArray(phone_model)
 <p>same as <strong>search for items</strong> but adds a random item.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="add-random-user">Add random user</h3>
-<p>Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. 
-You can find the user by XXXXXX????</p>
+<p>Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. </p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="recommendation-output">Recommendation output</h3>
 <p>The output is what the API returns to the customer.<br />
@@ -430,7 +421,7 @@ With image active:
 With image inactive:
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/170311416-cd596ff0-02d8-44b8-91d9-483ddcccb075.png" /></p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h1 id="data-available-in-recommendations">data available in recommendations</h1>
+<h1 id="data-available-in-recommendations">Data available in recommendations</h1>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="ml-meta">ml meta</h2>
 <p>To show an image and name on your recomendations you have to choose a format field and an image field under items AND activate the ml meta for these fields.</p>
@@ -498,14 +489,14 @@ Vid tydliga könsrelaterade produkter: Se om man bara ska rekommendera produtker
 <h4 id="check-out-rekommendation-check-out">Check-out rekommendation: Check-out</h4>
 <p>Rekommendera billigare produkter utifrån vad kunden lagt i sin varukorg<br />
 <strong>Syfte:</strong> Öka AOV med en relevant produkt i det lägre prissegmentet<br />
-<strong>Expression:</strong> tofloat(Price) &lt; tofloat(last(basketArticlePrice))*0.8<br />
-<strong>Trend:</strong> </p>
+<strong>Expression:</strong> <code>tofloat(Price) &lt; tofloat(last(basketArticlePrice))*0.8</code>
+<strong>Trend:</strong></p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="tack-for-senast-order-rekommendation-last-purchase">Tack för senast order rekommendation: Last purchase</h4>
 <p>Rekommendera mest sannolika produkter utifrån kundens senaste order<br />
 <strong>Syfte:</strong> Öka andelen kunder som gör ett nästa köp<br />
 <strong>Expression:</strong><br />
-<strong>Trend:</strong> None trend???</p>
+<strong>Trend:</strong> </p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="produkter-pa-rea-rekommendationer-on-sale">Produkter på rea rekommendationer: On sale</h4>
 <p>Rekommendera produkter som är på rea<br />

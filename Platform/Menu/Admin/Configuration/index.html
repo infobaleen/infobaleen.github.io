@@ -122,7 +122,7 @@
 </li>
             
 <li >
-    <a href="../Secrets/">Secrets.md</a>
+    <a href="../Secrets/">Secrets</a>
 </li>
     </ul>
   </li>
@@ -155,10 +155,6 @@
             
 <li >
     <a href="../../Manage Data/Import Files/">Import Files</a>
-</li>
-            
-<li >
-    <a href="../../Manage Data/Manage-Data/">Manage-Data</a>
 </li>
             
 <li >
@@ -230,10 +226,6 @@
         <li class="main "><a href="#rule">Rule</a></li>
             <li><a href="#configuration">Configuration</a></li>
             <li><a href="#api-keys">API Keys</a></li>
-            <li><a href="#update-this_1">Update this</a></li>
-        <li class="main "><a href="#facebook">Facebook</a></li>
-            <li><a href="#kund">Kund</a></li>
-            <li><a href="#infobaleen">Infobaleen</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -251,18 +243,6 @@
 <li><a href="#data-sync">Data sync</a></li>
 <li><a href="#cli">CLI</a></li>
 <li><a href="#admin">Admin</a></li>
-</ol>
-</li>
-<li><a href="#update-this">Update this</a></li>
-</ol>
-</li>
-<li><a href="#facebook">Facebook</a><ol>
-<li><a href="#kund">Kund</a></li>
-<li><a href="#infobaleen">Infobaleen</a><ol>
-<li><a href="#1-lägg-till-kunds-annonskonto">1. Lägg till kunds annonskonto</a></li>
-<li><a href="#2-lägg-till-fb-integrationen-i-plattformen">2. Lägg till FB-integrationen i plattformen</a></li>
-<li><a href="#3-testa-att-integrationen-är-lyckad">3. Testa att integrationen är lyckad</a>
-<a href="#table-of-contents"></a></li>
 </ol>
 </li>
 </ol>
@@ -291,7 +271,7 @@
 <strong>Driver:</strong> rule<br />
 <strong>config:</strong> {"ApiKey":"${rule_api_key}","KeyField":"email"}<br />
 where <code>"ApiKey":"${rule_api_key}"</code> is set in Secrets<br />
-and "KeyField":"email" is set ????????just a name????????<br />
+and "KeyField":"email" is set 
 <strong>Default User Field:</strong> <code>field name</code> + <code>KeyField</code> wich is set to <code>email</code> in this case<br />
 ex. if field name = email the Default user field becomes <code>email email</code>
 <strong>Name used in exports:</strong> ${PARENT_NAME}: ${INDEX_NAME}
@@ -317,54 +297,9 @@ ex. if field name = email the Default user field becomes <code>email email</code
 <strong>Db:</strong> <code>Inactive</code> dont know  </p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="admin">Admin</h3>
-<p><strong>Note:</strong> ?????<br />
+<p><strong>Note:</strong> 
 <strong>Immutable:</strong> An immutable key can never be updated (only removed). Useful if you want to share a key an be sure that the scope does not change by mistake<br />
-<strong>AllowAll:</strong> Activates everything? or just recomendations tags?</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h2 id="update-this_1">Update this</h2>
-<hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h1 id="facebook">Facebook</h1>
-<p>Denna integrering möjliggör uppladdning av segment som custom audiences i Facebooks Ads. </p>
-<p>Kräver användare med admin access till Infobaleens facebook-konto.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h2 id="kund">Kund</h2>
-<ul>
-<li>Kund lägger till oss som partner för sitt annons konto.<ul>
-<li>Be dem gå till fliken Annonskonto i Business Manager och klicka tilldela partner.</li>
-<li>Lägg till Infobaleens business-id 147664085678726 och välj en roll (Full control).</li>
-</ul>
-</li>
-</ul>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h2 id="infobaleen">Infobaleen</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h3 id="1-lagg-till-kunds-annonskonto">1. Lägg till kunds annonskonto</h3>
-<ul>
-<li>När vi har fått access till annonskonto, lägg till kunds annonskonto som tillgång för vår användare <em><strong>“Sysadmin”</strong></em> via https://business.facebook.com/settings/system-users, se bilder nedan. Klicka på knappen <code>Add Assets</code>/<code>Lägg till resurser</code> och välj <code>Ad Accounts</code>/<code>Annonskonton</code>. Välj kundens annonskonto och tilldela Full control.</li>
-</ul>
-<p><img width="1277" alt="Screenshot 2022-05-31 at 10 23 44" src="https://user-images.githubusercontent.com/4352260/171128213-3adacf8c-c680-433d-aa63-659c954e1477.png">
-<img width="1160" alt="Screenshot 2022-05-31 at 10 24 45" src="https://user-images.githubusercontent.com/4352260/171128231-3a1e5d93-a8e7-4b0f-bb9b-829a49f53d35.png"></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h3 id="2-lagg-till-fb-integrationen-i-plattformen">2. Lägg till FB-integrationen i plattformen</h3>
-<p>Gå till kundens plattform, välj <code>Admin -&gt; Configuration</code> och lägg in en Integration med namn <code>facebook-[KUNDNAMN]</code> och driver <code>facebook</code> (finns ej i gamla versioner av plattformen) med exempel-config enligt nedan. För field <code>Name used in exports</code> kan man specificera <code>${PARENT_NAME}: ${INDEX_NAME}</code>. </p>
-<pre><code>{&quot;Token&quot;:&quot;${fb-token}&quot;, &quot;AppSecret&quot;:&quot;${fb-app-secret}&quot;, &quot;AdAccountId&quot;:&quot;act_${fb-adaccount}&quot;, &quot;KeyField&quot;:&quot;email&quot;, &quot;Description&quot;:&quot;Generated by Infobaleen.&quot;}
-</code></pre>
-
-<p><img width="814" alt="Screenshot 2022-06-01 at 10 11 19" src="https://user-images.githubusercontent.com/4352260/171358579-48dc48f4-bca3-4f47-a55b-0c67f2722b46.png"></p>
-<ul>
-<li><strong>Token:</strong> Genereras för en användare i Facebook, i det här fallet för vår systemanvändare “Sysadmin”. Finns i Bitwarden under <code>Collection = Infobaleen</code> och objektet <code>Facebook</code>.</li>
-<li><strong>AppSecret:</strong> Genereras från vår Facebook app. Finns i Bitwarden enligt tidigare beskrivning.</li>
-<li><strong>AdAccountId:</strong> Kundens adaccount-id. Notera att den måste ha prefix <code>act_</code> enligt exempel-config ovan. Se bild nedan för var du hittar id.</li>
-</ul>
-<p><img width="1117" alt="Screenshot 2022-05-31 at 12 12 59" src="https://user-images.githubusercontent.com/4352260/171150944-8e4460c8-6703-4b2b-b89a-c3de3b834c47.png"></p>
-<ul>
-<li><strong>KeyField:</strong> Ange det fält på användare som innehåller email-adress.</li>
-<li><strong>Description:</strong> Beskrivning som syns på segmentet i Facebook Ad Manager.</li>
-</ul>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h3 id="3-testa-att-integrationen-ar-lyckad">3. Testa att integrationen är lyckad</h3>
-<p>Det vi kan se från vår sida är att uppladdningen går igenom, dels via meddelande i plattformen och sen loggar i proxyn. Bästa sättet är nog att be kunden kontrollera att det skapats ett audience i deras FB-konto.</p>
+<strong>AllowAll:</strong> Activates everything or just recomendations tags</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
         </div>
 

@@ -122,7 +122,7 @@
 </li>
             
 <li >
-    <a href="../../Admin/Secrets/">Secrets.md</a>
+    <a href="../../Admin/Secrets/">Secrets</a>
 </li>
     </ul>
   </li>
@@ -155,10 +155,6 @@
             
 <li >
     <a href="../Import Files/">Import Files</a>
-</li>
-            
-<li >
-    <a href="../Manage-Data/">Manage-Data</a>
 </li>
             
 <li >
@@ -260,9 +256,16 @@
         <li class="main "><a href="#query-expressions">Query expressions</a></li>
             <li><a href="#create-a-custom-source">create a custom source</a></li>
             <li><a href="#union">UNION</a></li>
+            <li><a href="#insert-into">INSERT INTO</a></li>
+            <li><a href="#left-join">LEFT JOIN</a></li>
+            <li><a href="#firstseen">firstSeen()</a></li>
+        <li class="main "><a href="#query-solutions">Query solutions</a></li>
+            <li><a href="#connect-historic-and-new-data-that-has-overlapping-transactions-items-and-users">Connect historic and new data that has overlapping transactions, items and users.</a></li>
+            <li><a href="#create-a-custom-useragg">create a custom user.agg.</a></li>
         <li class="main "><a href="#standard-queries">Standard Queries</a></li>
             <li><a href="#centra-queries">Centra Queries</a></li>
             <li><a href="#voyado-queries">Voyado Queries</a></li>
+            <li><a href="#google-feed-query">Google Feed Query</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
@@ -310,6 +313,7 @@
 </ol>
 </li>
 <li><a href="#query-expressions">Query expressions</a><ol>
+<li><a href="#create-a-custom-source">create a custom source</a></li>
 <li><a href="#union">UNION </a></li>
 </ol>
 </li>
@@ -327,7 +331,13 @@
 <li><a href="#procedure">Procedure</a></li>
 <li><a href="#interactions">Interactions</a></li>
 <li><a href="#items">Items</a></li>
-<li><a href="#users">Users</a>
+<li><a href="#users">Users</a></li>
+</ol>
+</li>
+<li><a href="#google-feed-query">Google Feed Query</a><ol>
+<li><a href="#procedure">Procedure</a></li>
+<li><a href="#import-query">Import Query</a></li>
+<li><a href="#preprocess-directives">Preprocess Directives</a>
 <a href="#table-of-contents"></a></li>
 </ol>
 </li>
@@ -377,7 +387,6 @@ If it’s a centra/voyado customer choose that option, if the files were uploade
 <p>every source has an unique id wich is used to show dependencies between sources.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="cnf-version">Cnf Version</h2>
-<p>???</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="count">Count</h2>
 <p>Count describes how many rows the source have. There can only be 1 row for every unique key column. if there are multiple rows with the same key all but 1 is removed.</p>
@@ -389,8 +398,7 @@ If it’s a centra/voyado customer choose that option, if the files were uploade
 <p>The drivers show whatdriver is used and also if it is active (green) or inactive (red). If a source has multiple queries there will be multiple drivers, here you can see wich source is active and wich are not.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="sync">Sync</h2>
-<p>What syntax is this???
-<code>DailyAt:6</code></p>
+<p>You can set a daily sync for the source, for example <code>DailyAt:6</code>.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="dependencies">Dependencies</h2>
 <p>Dependencies for a source show what other sources the are used to build up the source.<br />
@@ -417,7 +425,6 @@ SELECT * FROM Source3
 <p>Select a source, click Tag and write a new tag or select an old tag.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="migrate">Migrate</h2>
-<p>???</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="truncate">Truncate</h2>
 <p>Trucate wipes the source of all data. This is usefull if you have changed key column for example because if you just sync the data the old data is not removed. 
@@ -448,13 +455,13 @@ User,ts,item is sorted first on user, then on ts and lastly on item.  </p>
 <p>SELECT CUSTOM COLUMNS is usefull if you want other names than the predefined such as SKU.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="runevery">RunEvery</h2>
-<p>set a sync</p>
+<p>Set a sync</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="comment">Comment</h2>
-<p>why???</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="merge-filter">Merge filter</h2>
 <p>lets you filter out your query before you save it.</p>
+<p>A Merge filter discards everything that is not true before saving the table. For example if you add a query similar to <code>toFloat(ts) &gt; now()-100*24*3600</code>, then all timestamp (ts) data from later than 100 days will be discarded.</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="overview">Overview</h1>
 <p>Shows what is in the source currently</p>
@@ -480,8 +487,11 @@ to show the file structure, in this case it looks like this.
 <strong>root:</strong> navigates the file and shows where you want to read data.<br />
 <strong>rowtag:</strong> selects the object.<br />
 <strong>pluck:</strong> inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  </p>
-<p>In the above example this is the resulting preprocessing directives to get<br />
-<code>decoder=xml</code><br />
+<p>Below is one example with <code>root=feed.channel</code> and one example with <code>root=rss.channel</code>:</p>
+<p><img width="543" alt="Screenshot 2022-06-10 at 08 26 05" src="https://user-images.githubusercontent.com/4352260/173004337-734dcc11-992c-4920-975b-3d87f5ad362d.png">
+<img width="549" alt="Screenshot 2022-06-10 at 08 26 46" src="https://user-images.githubusercontent.com/4352260/173004348-827d98b1-e609-4d09-aa5f-63ce9034443e.png"></p>
+<p>In the first image example, the resulting preprocessing directives to fetch the feed are:  </p>
+<p><code>decoder=xml</code><br />
 <code>root=rss.channel</code><br />
 <code>rowtag=item</code><br />
 <code>pluck=google_product_category,price</code><br />
@@ -489,8 +499,9 @@ resulting in this outcome
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png" /></p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="query-expressions">Query expressions</h1>
-<p>you need to enclose variable names that contain other characters than letters and numbers with <code>backticks</code> ``,<br />
+<p>you need to enclose variable names that contain other characters than letters and numbers with <code>backticks</code> <code></code>,<br />
 this includes whitespace ' ', dot '.', etc...</p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="create-a-custom-source">create a custom source</h2>
 <p>SELECT * FROM <code>raw: 
 id,item
@@ -526,8 +537,23 @@ from `&lt;RANDOM_SOURCE&gt;`
 
 <p>this will show that all overlapping ids will have item from <code>table 1</code>.</p>
 <p>A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates, meaning much faster execution but leaves duplicate rows if they exist.</p>
-<p>SELECT * </p>
-<p>LEFT JOIN</p>
+<h2 id="insert-into">INSERT INTO</h2>
+<p>insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.</p>
+<pre><code>INSERT INTO &lt;table_name&gt;
+SELECT * FROM `&lt;source_name&gt;`
+;
+</code></pre>
+
+<p>The <code>;</code> is needed to mark where the table end. 
+When using the table you created with INSERT INTO you use the <table_name> not the <source_name>
+ex.</p>
+<pre><code>LEFT JOIN &lt;table_name&gt; ON &lt;table_name&gt;.id = XXX.id
+</code></pre>
+
+<h2 id="left-join">LEFT JOIN</h2>
+<p>LEFT JOIN lets you append more columns to an existing table </p>
+<h2 id="firstseen">firstSeen()</h2>
+<p>firstseen(<field>) saves only the first encountered row for </p>
 <p>coalese</p>
 <p>toFloat()</p>
 <p>unixTimestamp()</p>
@@ -535,6 +561,38 @@ from `&lt;RANDOM_SOURCE&gt;`
 <p>slice()</p>
 <p>etc...</p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h1 id="query-solutions">Query solutions</h1>
+<h2 id="connect-historic-and-new-data-that-has-overlapping-transactions-items-and-users">Connect historic and new data that has overlapping transactions, items and users.</h2>
+<pre><code class="mermaid">classDiagram
+email_model --* messages_transactions
+email_model --* messages_users
+email_model --* messages_campaigns
+
+</code></pre>
+
+<h2 id="create-a-custom-useragg">create a custom user.agg.<field></h2>
+<p>the datamodel creates aggregate functions such as user.agg.revenue.
+to create one yourself do the following.
+In the below example I create <code>user.agg.margin</code> similar to <code>user.agg.revenue</code></p>
+<pre><code>--aggregates margins per user same as user.agg.revenue but with margin
+INSERT INTO margin
+SELECT
+    user AS user,
+    concat('',SUM(margin)) AS total_margin
+FROM `s3 - transactions`;
+
+SELECT 
+UI.user AS user,
+margin.total_margin AS total_margin,
+UI.other fields...
+FROM `user_import` AS UI
+
+LEFT JOIN margin ON margin.user = UI.user
+</code></pre>
+
+<p>Note that you need to add <code>concat('',)</code> to the sum expression.
+this is because you cant LEFT JOIN a float. <code>concat('',)</code> converts it into a string.
+<code>concat('',SUM(margin)) AS total_margin</code></p>
 <h1 id="standard-queries">Standard Queries</h1>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="centra-queries">Centra Queries</h2>
@@ -757,6 +815,31 @@ FROM
 </code></pre>
 
 <hr />
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h2 id="google-feed-query">Google Feed Query</h2>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="procedure_2">Procedure</h3>
+<p>Get the link to the customer's Google feed (link to a .xml file), this is something most customers can easily supply upon request. Usually, there are multiple feeds to cover all different markets. The link to a specific market is a URL like <em>https://some.domain/api/feed/google_se/SOMEKEY</em> </p>
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="import-query">Import Query</h3>
+<pre><code>SELECT
+    *
+FROM `url:GOOGLE_FEED_LINK`
+</code></pre>
+
+<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<h3 id="preprocess-directives">Preprocess Directives</h3>
+<p>In the Preprocessor Directives field, set the xml properties as follows. There may be other useful field to include in the <code>pluck</code> line as well.</p>
+<pre><code>decoder=xml
+root=rss.channel
+rowTag=item
+pluck=id,title,image_link,availability,price,sale_price,google_product_category,product_type,brand
+</code></pre>
+
+<p><strong>Note:</strong> Stray Ampersands are currently not accepted, but Google handles these. If you get errors with this, you can read feeds with non-escaped ampersands using this as the first line in the preprocessor:</p>
+<pre><code>preprocess=[[&quot;replace&quot;,&quot;&amp;&quot;,&quot;&quot;]]
+</code></pre>
+
 <p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
         </div>
 
