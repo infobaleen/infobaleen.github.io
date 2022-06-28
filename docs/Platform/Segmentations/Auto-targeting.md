@@ -15,7 +15,7 @@
 
 1. Choose the data model and edit it
 2. Scroll to the bottom and enable the ML Engine, see image below, and click Save
-3. Make sure the platform has been added to the `k8s-ml-registry`
+3. Make sure the platform has been added to the `k8s-ml-registry` (should be done by Infobaleen)
 
 <img src="../../../images/Segmentations/segmentations-0.png" width="556"/>
 
