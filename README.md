@@ -34,6 +34,7 @@ To install MkDocs, run the following command from the command line (requires pyt
     	* `git push`
 
 4. Push changes and update the online Github page (using the terminal)
+     * `mkdocs build`, and after that 
      * `mkdocs gh-deploy` 
 
 5. Shortly afterwards you should be able to see the changes at [https://infobaleen.github.io/](https://infobaleen.github.io/)
