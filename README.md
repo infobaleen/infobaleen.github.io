@@ -28,11 +28,10 @@ To install MkDocs, run the following command from the command line (requires pyt
 2. Copy the folder `customer-success/Documentation/Platform` and replace the old one in `infobaleen.github.io/docs/`
 
 3. Push changes to Github
-
-If you did any changes in step 2, push these to Github by:
-`git add -A`
-`git commit -m "Your comment: Added latest changes"`
-`git push`
+    * If you did any changes in step 2, push these to Github by:
+    	* `git add -A`
+    	* `git commit -m "Your comment: Added latest changes"`
+    	* `git push`
 
 4. Push changes and update the online Github page (using the terminal)
      * `mkdocs gh-deploy` 
