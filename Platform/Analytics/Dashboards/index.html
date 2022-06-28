@@ -220,7 +220,8 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#add-element">Add element</a></li>
+        <li class="main active"><a href="#dashboards">Dashboards</a></li>
+        <li class="main "><a href="#add-element">Add element</a></li>
             <li><a href="#metric">Metric</a></li>
             <li><a href="#bar-chart">Bar Chart</a></li>
             <li><a href="#line-chart">Line Chart</a></li>
@@ -241,6 +242,21 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
+<h1 id="dashboards">Dashboards</h1>
+<p>You customize a dashboard to visualize various information and results based on your data.</p>
+<p>You create a new dashboard by clicking the + icon in the dropdown menu, or by clicking the purple plus sign in the upper right corner of the dashboard card.</p>
+<p><img width="479" alt="Screenshot 2022-06-28 at 14 39 01" src="https://user-images.githubusercontent.com/4352260/176180577-0b7eec7b-516d-487d-938a-823aed14d26a.png"></p>
+<p><img width="825" alt="Screenshot 2022-06-28 at 14 39 42" src="https://user-images.githubusercontent.com/4352260/176180678-e9e00ee6-f207-4160-9774-16fc66284bee.png"></p>
+<p>When you create a dashboard your are asked for the below fieds:</p>
+<ul>
+<li><code>Name</code>: The name you want to give to your dashboard. You can change this name later. </li>
+<li><code>Select Role</code>: One of <code>interaction</code>, <code>user</code>, and <code>item</code>. Defines what data the dashboard should be based on, and in most cases it should be <code>interaction</code>.</li>
+<li><code>Select number of columns</code>: Specifies the number of columns used in the grid system to fit dashboards. The default value is used in most cases. </li>
+<li><code>Import config</code>: This field can be used if you want to copy or export a dashboard from another platform. It is left blank in most cases.</li>
+</ul>
+<p><img width="846" alt="Screenshot 2022-06-28 at 14 41 45" src="https://user-images.githubusercontent.com/4352260/176181082-ec55c555-6a8c-4731-afbd-e7b345f2e235.png"></p>
+<p>Click <code>Create</code> to create the dashboard. You are now ready to add elements!</p>
+<p><img width="863" alt="Screenshot 2022-06-28 at 14 47 35" src="https://user-images.githubusercontent.com/4352260/176182387-0007cbff-e150-42e1-8946-302f8718fe88.png"></p>
 <h1 id="add-element">Add element</h1>
 <h2 id="metric">Metric</h2>
 <p>A metric is a single number, wich means that you can not show a field in a metric element (a field is an array of metrics). you can convert a field into a metric by writing an expression ex. SUM(field) this returns a metric.<br />
