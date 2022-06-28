@@ -1,9 +1,3 @@
-# Table of Contents
-1. [Clustering](#clustering)
-[](#table-of-contents)
-
-[*Back to top*](#table-of-contents)
-
 # Clustering
 
 Clustering makes it possible to group users and items into a specified number of clusters. For finding cluster, there are three different algorithms that can be used:
@@ -13,5 +7,3 @@ Clustering makes it possible to group users and items into a specified number of
 3. `modularity`, network-based [modularity optimization](https://en.wikipedia.org/wiki/Louvain_modularity)run separately.
 
 `embedding` is the fastest method since it uses the trained machine-learning model.
-
-[*Back to top*](#table-of-contents)

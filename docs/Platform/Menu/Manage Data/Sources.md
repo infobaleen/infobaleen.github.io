@@ -1,60 +1,3 @@
-# Table of Contents
-1. [Create sources](#create-sources)
-1. [Frontpage columns](#frontpage-columns)
-    1. [Name](#name)
-    1. [id](#id)
-    1. [Cnf Version](#cnf-version)
-    1. [Count](#count)
-    1. [Tags](#tags)
-    1. [Drivers](#drivers)
-    1. [Sync](#sync)
-    1. [Dependencies ](#dependencies)
-    1. [Updated At](#updated-at)
-    1. [Synced At](#synced-at)
-1. [Top Menu](#top-menu)
-    1. [Delete](#delete)
-    1. [Tag](#tag)
-    1. [Migrate](#migrate)
-    1. [Truncate](#truncate)
-    1. [Sync](#sync)
-    1. [Enable](#enable)
-    1. [Disable ](#disable)
-    1. [Create](#create)
-1. [Source settigs](#source-settigs)
-    1. [Name](#name)
-    1. [Id columns ](#id-columns)
-    1. [RunEvery](#runevery)
-    1. [Comment](#comment)
-    1. [Merge filter ](#merge-filter)
-1. [Overview](#overview)
-1. [Query](#query)
-    1. [Database connection](#database-connection)
-    1. [Load saved query](#load-saved-query)
-    1. [Preprocessor directives](#preprocessor-directives)
-1. [Query expressions](#query-expressions)
-    1. [create a custom source](#create-a-custom-source)
-    1. [UNION ](#union)
-1. [Standard Queries](#standard-queries)
-    1. [Centra Queries](#centra-queries)
-        1. [Procedure](#procedure)
-        1. [Interactions  ](#interactions)
-        1. [Items](#items)
-        1. [Users](#users)
-        1. [No size model ](#no-size-model)
-        1. [Example rows with explanation](#example-rows-with-explanation)
-    1. [Voyado Queries](#voyado-queries)
-        1. [Procedure](#procedure)
-        1. [Interactions](#interactions)
-        1. [Items](#items)
-        1. [Users](#users)
-    1. [Google Feed Query](#google-feed-query)
-        1. [Procedure](#procedure)
-        1. [Import Query](#import-query)
-        1. [Preprocess Directives](#preprocess-directives)
-[](#table-of-contents)
-
-[*Back to top*](#table-of-contents)
-
 # Create sources
 When the [data is imported](https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Import%20Files.md), go to `Manage Data -> Sources` and create a new source by clicking the purple plus sign as seen in the below image. 
 
@@ -84,46 +27,46 @@ The import file is now done, press sync and save to exit.
 4. Now repeat the "Create source"-step 2 but name the file `model_[source of data]_[type of data]` (the use same identifier as in the import file). 
     * In the `Choose database connection` now choose `source` instead, and press `execute preview summary`, now choose the import source file and edit the query to select from that, like "`SELECT * FROM ENTER_SOURCENAME_HERE`" and then press `Save and sync`.
 
-[*Back to top*](#table-of-contents)
+
 
 # Frontpage columns
 
-[*Back to top*](#table-of-contents)
+
 
 ## Name
 Name of source
 
-[*Back to top*](#table-of-contents)
+
 
 ## id
 every source has an unique id wich is used to show dependencies between sources.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Cnf Version
 
 
-[*Back to top*](#table-of-contents)
+
 
 ## Count
 Count describes how many rows the source have. There can only be 1 row for every unique key column. if there are multiple rows with the same key all but 1 is removed.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Tags
 you can tag a source to keep track of how it is used.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Drivers
 The drivers show whatdriver is used and also if it is active (green) or inactive (red). If a source has multiple queries there will be multiple drivers, here you can see wich source is active and wich are not.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Sync
 You can set a daily sync for the source, for example `DailyAt:6`.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Dependencies 
 Dependencies for a source show what other sources the are used to build up the source.  
@@ -136,69 +79,69 @@ SELECT * FROM Source3
 ```
 This will show the id for source 1,2,3 in the Dependencies for the new source.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Updated At
 Shows how long ago the source was last modified.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Synced At
 Shows how long ago the source was last synced.
 
-[*Back to top*](#table-of-contents)
+
 
 # Top Menu
 
-[*Back to top*](#table-of-contents)
+
 
 ## Delete
 
-[*Back to top*](#table-of-contents)
+
 
 ## Tag
 Select a source, click Tag and write a new tag or select an old tag.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Migrate
 
-[*Back to top*](#table-of-contents)
+
 
 ## Truncate
 Trucate wipes the source of all data. This is usefull if you have changed key column for example because if you just sync the data the old data is not removed. 
 [Note that some sources only read 1 week data at the time to save time, if you truc a source like this all historic data is removed wich is bad]
 
-[*Back to top*](#table-of-contents)
+
 
 ## Sync
 Manually syncs the source.
 
-[*Back to top*](#table-of-contents)
+
 
 ## Enable
 doesnt work
 
-[*Back to top*](#table-of-contents)
+
 
 ## Disable 
 doesnt work
 
-[*Back to top*](#table-of-contents)
+
 
 ## Create
 Creates a new source.
 
-[*Back to top*](#table-of-contents)
+
 
 # Source settigs
 
-[*Back to top*](#table-of-contents)
+
 
 ## Name
 Just a name
 
-[*Back to top*](#table-of-contents)
+
 
 ## Id columns 
 The Id columns has to be choosen to be unique. if the id is not unique (the same id for many rows) only 1 row will be saved and all others are removed.  
@@ -208,42 +151,42 @@ User,ts,item is sorted first on user, then on ts and lastly on item.
 
 SELECT CUSTOM COLUMNS is usefull if you want other names than the predefined such as SKU.
 
-[*Back to top*](#table-of-contents)
+
 
 ## RunEvery
 Set a sync
 
-[*Back to top*](#table-of-contents)
+
 
 ## Comment
 
 
-[*Back to top*](#table-of-contents)
+
 
 ## Merge filter 
 lets you filter out your query before you save it.
 
 A Merge filter discards everything that is not true before saving the table. For example if you add a query similar to `toFloat(ts) > now()-100*24*3600`, then all timestamp (ts) data from later than 100 days will be discarded.
 
-[*Back to top*](#table-of-contents)
+
 
 # Overview
 Shows what is in the source currently
 
-[*Back to top*](#table-of-contents)
+
 
 # Query
 
-[*Back to top*](#table-of-contents)
+
 
 ## Database connection
 
-[*Back to top*](#table-of-contents)
+
 
 ## Load saved query
 lets you reload previously run queries
 
-[*Back to top*](#table-of-contents)
+
 
 ## Preprocessor directives
 when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.  
@@ -276,13 +219,13 @@ In the first image example, the resulting preprocessing directives to fetch the 
 resulting in this outcome
 ![image](https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png)
 
-[*Back to top*](#table-of-contents)
+
 
 # Query expressions
 you need to enclose variable names that contain other characters than letters and numbers with `backticks` ` `,  
 this includes whitespace ' ', dot '.', etc...
 
-[*Back to top*](#table-of-contents)
+
 
 ## create a custom source
 SELECT * FROM `raw: 
@@ -291,7 +234,7 @@ id,item
 2,item2`
 this returns a table.
 
-[*Back to top*](#table-of-contents)
+
 
 ## UNION 
 A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order
@@ -354,7 +297,7 @@ slice()
 
 etc...
 
-[*Back to top*](#table-of-contents)
+
 
 # Query solutions
 ## Connect historic and new data that has overlapping transactions, items and users.
@@ -395,7 +338,7 @@ this is because you cant LEFT JOIN a float. `concat('',)` converts it into a str
 	
 # Standard Queries
 
-[*Back to top*](#table-of-contents)
+
 
 ## Centra Queries
 _____________________________________________________________________________________________________________________
@@ -409,7 +352,7 @@ Users	3
 
 _____________________________________________________________________________________________________________________
 
-[*Back to top*](#table-of-contents)
+
 
 ### Procedure
 Setup config
@@ -417,7 +360,7 @@ Make arbitrary query toward centra
 This will trigger proxy sync, the .gz files will appear once completed, duration 1-5h
 _____________________________________________________________________________________________________________________
 
-[*Back to top*](#table-of-contents)
+
 
 ### Interactions  
 Id columns: id i import / user,id i model source
@@ -477,7 +420,7 @@ FROM`interactions.gz`
 ```
 _____________________________________________________________________________________________________________________
 
-[*Back to top*](#table-of-contents)
+
 
 ### Items
 Id columns : item
@@ -534,7 +477,7 @@ FROM `items.gz`
 ```
 _____________________________________________________________________________________________________________________
 
-[*Back to top*](#table-of-contents)
+
 
 ### Users
 Id columns : user
@@ -552,7 +495,7 @@ FROM `users.gz`
 ```
 _____________________________________________________________________________________________________________________
 
-[*Back to top*](#table-of-contents)
+
 
 ### No size model 
 for Item source called ‘no size model - items’
@@ -585,7 +528,7 @@ GROUP BY variantId
 ```
 _____________________________________________________________________________________________________________________
 
-[*Back to top*](#table-of-contents)
+
 
 ### Example rows with explanation
 
@@ -599,7 +542,7 @@ unixTimestamp (`order.CreatedAt`, '2006-01-02T15:04:05-0700') AS order_created_a
 	Explanation: This will convert a date into number form 
 _____________________________________________________________________________________________________________________
 
-[*Back to top*](#table-of-contents)
+
 
 ## Voyado Queries
 ___
@@ -612,13 +555,13 @@ Users	3
 Interactions	4  
 ___
 
-[*Back to top*](#table-of-contents)
+
 
 ### Procedure
 Setup config
 ___
 
-[*Back to top*](#table-of-contents)
+
 
 ### Interactions
 ```
@@ -629,7 +572,7 @@ FROM
 ```
 ___
 
-[*Back to top*](#table-of-contents)
+
 
 ### Items
 ```
@@ -640,7 +583,7 @@ FROM
 ```
 ___
 
-[*Back to top*](#table-of-contents)
+
 
 ### Users
 ```
@@ -651,17 +594,17 @@ FROM
 ```
 ___
 
-[*Back to top*](#table-of-contents)
+
 
 ## Google Feed Query
 
-[*Back to top*](#table-of-contents)
+
 
 ### Procedure
 
 Get the link to the customer's Google feed (link to a .xml file), this is something most customers can easily supply upon request. Usually, there are multiple feeds to cover all different markets. The link to a specific market is a URL like *https://some.domain/api/feed/google_se/SOMEKEY* 
 
-[*Back to top*](#table-of-contents)
+
 
 ### Import Query
 
@@ -671,7 +614,7 @@ SELECT
 FROM `url:GOOGLE_FEED_LINK`
 ```
 
-[*Back to top*](#table-of-contents)
+
 
 ### Preprocess Directives
 
@@ -690,4 +633,4 @@ pluck=id,title,image_link,availability,price,sale_price,google_product_category,
 preprocess=[["replace","&",""]]
 ```
 
-[*Back to top*](#table-of-contents)
+

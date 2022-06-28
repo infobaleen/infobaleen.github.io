@@ -1,14 +1,3 @@
-# Table of Contents
-1. [Auto-targeting](#auto-targeting)
-    1. [Using Auto-targeting](#using-auto-targeting)
-        1. [Step 1: Initiate auto-targeting campaign](#step-1-initiate-auto-targeting-campaign)
-        1. [Step 2: Choose recipients ](#step-2-choose-recipients)
-        1. [Step 3: Create advertisements ](#step-3-create-advertisements)
-1. [Clustering](#clustering)
-[](#table-of-contents)
-
-[*Back to top*](#table-of-contents)
-
 # Auto-targeting
 
 **Note! Before Segmentations you need to train the machine-learning model**
@@ -33,7 +22,7 @@ The default settings should be fine most of the time. Especially if the customer
 The first limit should probably be clarified a bit. Maybe "Min interactions per item", because I suspect that it excludes items that have fewer than the specified number of interactions. This makes sense because we can't really learn anything useful about items that have very few transactions (I guess that is fairly intuitive, there's just no information to look at)
 </details>
 
-[*Back to top*](#table-of-contents)
+
 
 ## Using Auto-targeting
 
@@ -55,7 +44,7 @@ graph TD;
     SelectItems3-->AddFilters3;
 ```
 
-[*Back to top*](#table-of-contents)
+
 
 ### Step 1: Initiate auto-targeting campaign
 
@@ -66,7 +55,7 @@ graph TD;
 
 <img src="../../../images/Segmentations/segmentations-1.png" width="921"/>
 
-[*Back to top*](#table-of-contents)
+
 
 ### Step 2: Choose recipients 
 After the campaign has been created, now it's time to set the recipients (audience) for the campaign.
@@ -79,7 +68,7 @@ After the campaign has been created, now it's time to set the recipients (audien
 
 <img src="../../../images/Segmentations/segmentations-3.png" width="834"/>
 
-[*Back to top*](#table-of-contents)
+
 
 ### Step 3: Create advertisements 
 
@@ -100,7 +89,7 @@ This will trigger some settings to pop up above.
 
 <img src="../../../images/Segmentations/segmentations-5.png" width="849"/>
 
-[*Back to top*](#table-of-contents)
+
 
 # Clustering
 
@@ -111,4 +100,4 @@ Clustering makes it possible to group users and items into a specified number of
 
 `embedding` is the fastest method since it uses the trained machine-learning model.
 
-[*Back to top*](#table-of-contents)
+
