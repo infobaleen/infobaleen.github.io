@@ -22,6 +22,7 @@
         1. [alias](#alias)
         1. [role](#role)
     1. [User Expressions](#user-expressions)
+        1. [Persona](#persona)
 1. [Custom properties](#custom-properties)
 1. [Expression syntax (Click house)](#expression-syntax-click-house)
 1. [Data model expression examples ](#data-model-expression-examples)
@@ -32,9 +33,21 @@
 [*Back to top*](#table-of-contents)
 
 # What is a datamodel? 
-A datamodel can seen as the `product of three sources put in a package`, an interaction source, an item source and a user source. The interaction config in the data model consists of a user and an item from two of the three sources. When we have created a datamodel and chosen what sources we want, we can start creating information through expressions. These can later be seen in dashboards (dashboard are always based upon a datamodel) 
+A datamodel is made up of of 3 tables (from the sources), an interaction, user and item table. Each line in the interaction table is linked to a user and an item in the item and user table. When we have chosen what sources should make up our interaction, item and user table we can create a datamodel. After this we can start creating additional information through expressions. These can later be used in dashboards (dashboards are based upon a datamodel).
 
-However, when a datamodel is used for email analysis, the interaction becomes a specific `email sent to a user`, the user becomes `the one receiving the email`, and the email that was sent is treated as an item.
+```mermaid
+classDiagram
+`Interaction table` --* Datamodel
+`Item table` --* Datamodel
+`User table` --* Datamodel
+Datamodel: Fields
+Datamodel: Expressions
+Datamodel --* Dashboards
+Datamodel --* Segmentation
+Datamodel --* Recommendations
+```
+
+When a datamodel is used for email analysis, the interaction becomes a specific `email sent to a user`, the user becomes `the one receiving the email`, and the email that was sent is treated as an item.
 
 [*Back to top*](#table-of-contents)
 
@@ -86,10 +99,10 @@ If you want to make a histogram you can only use fields with role **Number** bec
 All fields that can not be classified as a **Number** are classified as a **Category**. **Category**'s are used in for example [Bar charts](https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Analytics/Dashboards.md "Open: Dashboards").
 
 **Enum**  
-???????????   
+
 
 **EnumCategories**  
-???????????   
+
 
 [*Back to top*](#table-of-contents)
 
@@ -150,12 +163,14 @@ dont know as in Interaction...
 
 ### MLMeta
 The MLMeta toggle button controles what is returned when when you make an API call. This is to give you control what data you want to return to the customer. you dont want to activate MLMeta on all fields because this will result in you return alot of "trash columns" to the customer that they have to filter in turn get the relevant data. [Note that you also have to select the role `Image` and `Format` for the product to show]
-(MLMeta is only relevant in the recomendations???? dashboard???)
+(MLMeta is only relevant in the recomendations view)
 
 [*Back to top*](#table-of-contents)
 
 ### MLFilter
 The MLFilter lets you write expressions and filter your data in in the [Recommendations](https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Recommendations/Recommendation-profiles.md "Open: Recommendation profiles"). You should only activate MLFilter for the fields you actually want to create a filter for, the reason for this is that when you activate **MLFilter** for a field this will store all data in the memory and every time the API calls for a recommendation the datamodel have to itterate through all fields with **MLFilter** resulting in a bad performance on the customers side (when the customer want to load our recomendations on their site the load speed will depend on how many **MLFilters** you have activated.  
+
+<img width="892" alt="Screenshot 2022-06-10 at 08 16 47" src="https://user-images.githubusercontent.com/4352260/173002754-8885b8fa-1b5c-4dad-a74d-732f1d409eda.png">
 
 [*Back to top*](#table-of-contents)
 
@@ -215,6 +230,15 @@ same as in Interaction
 
 [*Back to top*](#table-of-contents)
 
+### Persona
+The Persona toggle button controles what columns are used in the recommendations. For example, if we activate the field `gender` as a Persona, the recommendation engine will base the recommendations on what gender the user has. If we active the field `age` it will be used as a dimension in the recommendation, and so on.
+
+**Note:** Use a maximum of 2 columns to define persona. Alternatively, make sure that the cardinality (number of groups) is less than 1000. (ex gender: 2 different and cities: 500 different, which means `2*500 = 1000` groups)
+
+<img width="883" alt="Screenshot 2022-06-10 at 08 16 38" src="https://user-images.githubusercontent.com/4352260/173002716-64dd3abf-fc87-4b0d-942b-19b46b6e98b7.png">
+
+[*Back to top*](#table-of-contents)
+
 # Custom properties
 Great feature with good UX **BUT**
 only works for a specific preprogrammed examples (RFM, CustomerLifcycle).  
@@ -222,22 +246,22 @@ only works for a specific preprogrammed examples (RFM, CustomerLifcycle).
 [*Back to top*](#table-of-contents)
 
 # Expression syntax (Click house)
-SUM()
 
-uniq()
+`SUM()` Summarize a value, for example SUM(returned_quantity) returns the total amount of returned quantity (over chosen period of time) 
 
-uniqExact()
+`uniq()` counts the amount of unique values, for example uniq(user) returns the amount of unique users.  
 
-countIf()
+`uniqExact()` Is almost the same as uniq(), however uniq() may have a very small inaccuracy (that most often doesn't matter at all), but if it's important to have for example 100.002 (correct) instead of 100.000, use uniqExact(). The reason for this is simply that uniq() is less demanding.
 
-sumIf()
+`countIf()` this counts +1 for each time an argument is correct on an interaction (row). `Example`: let's say there's 10 interactions (ten rows) in a table with a column that's currency. On 7 of the 10 rows the currency column consists of 'SEK', if we now use countIf(currency = 'SEK') we will get the value 7.  
 
-uniqIf()
+`sumIf()`  
+sumIf(Value that will be summarized when, X = N)  `Example`: sumIf(revenue, currency = 'SEK')  
+
+`uniqIf()`
 
 multiIf(boolean, result_1, boolean, result_2, ..., boolean, result_n, else_this)  
 multiIf(name = 'red', colour, name = 'big', 'size', 'no data')
-
-etc...
 
 [*Back to top*](#table-of-contents)
 
@@ -311,12 +335,15 @@ SUM(item.variant_product_size_size_available_now_quantity)/count()
 **Users > 1 order**  
 uniqIf(user,user.agg.orders>1)/uniq(user)
 
-ITEMS
-Sold items [item based dashboards]
-SUM(article_number.agg.trans)
-Available quantity [item based dashboards]
-SUM(item.in_stock)
-SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price) 
-SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)
+## ITEM expressions  
+Sold items [item based dashboards]  
+SUM(article_number.agg.trans)  
+
+Available quantity [item based dashboards]  
+SUM(item.in_stock)  
+
+SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price)   
+SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)  
+
 
 [*Back to top*](#table-of-contents)

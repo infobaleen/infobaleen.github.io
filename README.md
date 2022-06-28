@@ -9,22 +9,25 @@ To install MkDocs, run the following command from the command line (requires pyt
 ```pip install mkdocs```
 
 
+### Run the documentation locally (using the terminal)
+
+1. Download the github pages repo:
+    * `git clone https://github.com/infobaleen/infobaleen.github.io.git`
+
+2. Check the generated version
+    * Run `mkodcs serve`. This will serve the local version of the documentation at `http://127.0.0.1:8000`
+    * In the command window you might se `WARNING` messages. This is often for files that are not included in the documentation. Add these in the menu in `mkdocs.yml`
+
+
 ### Procudure for updating the online documentation 
 
 1. Download the customer-succes repo:
     * First time its done: Run `git clone https://github.com/infobaleen/customer-success.git` 
-    * Subsequently: Go to the local folder and run `git pull`
+    * Subsequent runs: Go to the local folder `customer-success` and run `git pull`
 
-2. Check the generated version
-    * Run `mkodcs serve`. This will serve the local version at `http://127.0.0.1:8000`
-    * In the command window you might se `WARNING` messages. This is often for files that are not included in the documentation. Add these in the menu in `mkdocs.yml`
+2. Copy the folder `customer-success/Documentation/Platform` and replace the old one in `infobaleen.github.io/docs/`
 
-3. Push changes to Github
-    * If you did any changes in step 2, push these to Github by:
-        1. `git add -A`
-        2. `git commit -m "Added latest changes"`
-        3. `git push`
-
-
-4. Push changes to the online Github page
+3. Push changes and update the online Github page
      * `mkdocs gh-deploy` 
+
+4. Shortly afterwards you should be able to see the changes at [https://infobaleen.github.io/](https://infobaleen.github.io/)

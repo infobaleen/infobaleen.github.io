@@ -5,7 +5,7 @@
         1. [Make arbitrary query ](#make-arbitrary-query)
         1. [How to verify that the sync works?](#how-to-verify-that-the-sync-works?)
     1. [Using a file](#using-a-file)
-1. [Find Voyado files to import](#find-voyado-files-to-import)
+
 [](#table-of-contents)
 
 [*Back to top*](#table-of-contents)
@@ -68,31 +68,3 @@ Uploaded files are available from the "imports (csv-fs)" database connection whe
 
 [*Back to top*](#table-of-contents)
 
-# Find Voyado files to import
-
-1. Go to portal.azure.com
-2. Login with the dedicated Infobaleen user (credentials can be sent by Customer Success team). Choose "Work or School" as account type. 
-3. When logged in you will see something similar to the screenshot below:
-4. Go to `All resources`
-
-![image (17)](https://user-images.githubusercontent.com/4352260/170219135-5acdf146-fd71-460d-b5b0-0c4b7b7ece08.png)
-
-5. Click `Subscription` and choose `All`. Be sure to check that all is being marked, you might need to tick off and click one time to ensure this.
-
-![image (18)](https://user-images.githubusercontent.com/4352260/170219341-79f7f704-a74e-4e9c-ac0c-e14b001b99a2.png)
-
-You will now see the subscribed folders listed
-
-![image (19)](https://user-images.githubusercontent.com/4352260/170219716-386afb30-fe1e-4494-a229-9b3d43b52473.png)
-
-6. Navigate to the `Data Explorer` by clicking the customer folder, It will probably be named something like "[customer_name]corestoralsprod" or "voyado[customer_name]prod"
-
-![image (20)](https://user-images.githubusercontent.com/4352260/170220055-c065a709-fa7e-4f14-9778-bbf7f0753b0b.png)
-
-7. In the file tree you will see the  .csv-files that Infobaleen fetches
-
-![image (21)](https://user-images.githubusercontent.com/4352260/170220230-14c59b1e-24f3-4abb-84da-d9a2081c3bd1.png)
-
-These files will be used when configuring the platform to import files. 
-
-[*Back to top*](#table-of-contents)

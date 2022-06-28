@@ -32,6 +32,7 @@
     1. [Load saved query](#load-saved-query)
     1. [Preprocessor directives](#preprocessor-directives)
 1. [Query expressions](#query-expressions)
+    1. [create a custom source](#create-a-custom-source)
     1. [UNION ](#union)
 1. [Standard Queries](#standard-queries)
     1. [Centra Queries](#centra-queries)
@@ -46,6 +47,10 @@
         1. [Interactions](#interactions)
         1. [Items](#items)
         1. [Users](#users)
+    1. [Google Feed Query](#google-feed-query)
+        1. [Procedure](#procedure)
+        1. [Import Query](#import-query)
+        1. [Preprocess Directives](#preprocess-directives)
 [](#table-of-contents)
 
 [*Back to top*](#table-of-contents)
@@ -96,7 +101,7 @@ every source has an unique id wich is used to show dependencies between sources.
 [*Back to top*](#table-of-contents)
 
 ## Cnf Version
-???
+
 
 [*Back to top*](#table-of-contents)
 
@@ -116,8 +121,7 @@ The drivers show whatdriver is used and also if it is active (green) or inactive
 [*Back to top*](#table-of-contents)
 
 ## Sync
-What syntax is this???
-`DailyAt:6`
+You can set a daily sync for the source, for example `DailyAt:6`.
 
 [*Back to top*](#table-of-contents)
 
@@ -158,7 +162,6 @@ Select a source, click Tag and write a new tag or select an old tag.
 [*Back to top*](#table-of-contents)
 
 ## Migrate
-???
 
 [*Back to top*](#table-of-contents)
 
@@ -208,17 +211,19 @@ SELECT CUSTOM COLUMNS is usefull if you want other names than the predefined suc
 [*Back to top*](#table-of-contents)
 
 ## RunEvery
-set a sync
+Set a sync
 
 [*Back to top*](#table-of-contents)
 
 ## Comment
-why???
+
 
 [*Back to top*](#table-of-contents)
 
 ## Merge filter 
 lets you filter out your query before you save it.
+
+A Merge filter discards everything that is not true before saving the table. For example if you add a query similar to `toFloat(ts) > now()-100*24*3600`, then all timestamp (ts) data from later than 100 days will be discarded.
 
 [*Back to top*](#table-of-contents)
 
@@ -257,7 +262,13 @@ to show the file structure, in this case it looks like this.
 **rowtag:** selects the object.  
 **pluck:** inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  
 
-In the above example this is the resulting preprocessing directives to get  
+Below is one example with `root=feed.channel` and one example with `root=rss.channel`:
+
+<img width="543" alt="Screenshot 2022-06-10 at 08 26 05" src="https://user-images.githubusercontent.com/4352260/173004337-734dcc11-992c-4920-975b-3d87f5ad362d.png">
+<img width="549" alt="Screenshot 2022-06-10 at 08 26 46" src="https://user-images.githubusercontent.com/4352260/173004348-827d98b1-e609-4d09-aa5f-63ce9034443e.png">
+
+In the first image example, the resulting preprocessing directives to fetch the feed are:  
+
 `decoder=xml`  
 `root=rss.channel`  
 `rowtag=item`  
@@ -268,8 +279,10 @@ resulting in this outcome
 [*Back to top*](#table-of-contents)
 
 # Query expressions
-you need to enclose variable names that contain other characters than letters and numbers with `backticks` ``,  
+you need to enclose variable names that contain other characters than letters and numbers with `backticks` ` `,  
 this includes whitespace ' ', dot '.', etc...
+
+[*Back to top*](#table-of-contents)
 
 ## create a custom source
 SELECT * FROM `raw: 
@@ -310,9 +323,24 @@ this will show that all overlapping ids will have item from `table 1`.
 
 A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates, meaning much faster execution but leaves duplicate rows if they exist.
 
-SELECT * 
+## INSERT INTO
+insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.
+```
+INSERT INTO <table_name>
+SELECT * FROM `<source_name>`
+;
+``` 
+The `;` is needed to mark where the table end. 
+When using the table you created with INSERT INTO you use the <table_name> not the <source_name>
+ex.
+```
+LEFT JOIN <table_name> ON <table_name>.id = XXX.id
+```
+## LEFT JOIN
+LEFT JOIN lets you append more columns to an existing table 
 
-LEFT JOIN
+## firstSeen()
+firstseen(<field>) saves only the first encountered row for 
 
 coalese
 
@@ -328,6 +356,43 @@ etc...
 
 [*Back to top*](#table-of-contents)
 
+# Query solutions
+## Connect historic and new data that has overlapping transactions, items and users.
+
+```mermaid
+classDiagram
+email_model --* messages_transactions
+email_model --* messages_users
+email_model --* messages_campaigns
+
+```
+
+
+## create a custom user.agg.<field>
+the datamodel creates aggregate functions such as user.agg.revenue.
+to create one yourself do the following.
+In the below example I create `user.agg.margin` similar to `user.agg.revenue`
+	
+```
+--aggregates margins per user same as user.agg.revenue but with margin
+INSERT INTO margin
+SELECT
+	user AS user,
+	concat('',SUM(margin)) AS total_margin
+FROM `s3 - transactions`;
+	
+SELECT 
+UI.user AS user,
+margin.total_margin AS total_margin,
+UI.other fields...
+FROM `user_import` AS UI
+	
+LEFT JOIN margin ON margin.user = UI.user
+```
+Note that you need to add `concat('',)` to the sum expression.
+this is because you cant LEFT JOIN a float. `concat('',)` converts it into a string.
+`concat('',SUM(margin)) AS total_margin`
+	
 # Standard Queries
 
 [*Back to top*](#table-of-contents)
@@ -585,5 +650,44 @@ FROM
 	`items.gz`
 ```
 ___
+
+[*Back to top*](#table-of-contents)
+
+## Google Feed Query
+
+[*Back to top*](#table-of-contents)
+
+### Procedure
+
+Get the link to the customer's Google feed (link to a .xml file), this is something most customers can easily supply upon request. Usually, there are multiple feeds to cover all different markets. The link to a specific market is a URL like *https://some.domain/api/feed/google_se/SOMEKEY* 
+
+[*Back to top*](#table-of-contents)
+
+### Import Query
+
+```
+SELECT
+    *
+FROM `url:GOOGLE_FEED_LINK`
+```
+
+[*Back to top*](#table-of-contents)
+
+### Preprocess Directives
+
+In the Preprocessor Directives field, set the xml properties as follows. There may be other useful field to include in the `pluck` line as well.
+
+```
+decoder=xml
+root=rss.channel
+rowTag=item
+pluck=id,title,image_link,availability,price,sale_price,google_product_category,product_type,brand
+```
+
+**Note:** Stray Ampersands are currently not accepted, but Google handles these. If you get errors with this, you can read feeds with non-escaped ampersands using this as the first line in the preprocessor:
+
+```
+preprocess=[["replace","&",""]]
+```
 
 [*Back to top*](#table-of-contents)

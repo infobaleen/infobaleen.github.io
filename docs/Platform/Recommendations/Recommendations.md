@@ -27,7 +27,7 @@
         1. [Add random item](#add-random-item)
         1. [Add random user](#add-random-user)
         1. [Recommendation output](#recommendation-output)
-1. [data available in recommendations](#data-available-in-recommendations)
+1. [Data available in recommendations](#data-available-in-recommendations)
     1. [ml meta](#ml-meta)
     1. [ml filter](#ml-filter)
 1. [Recommendations in emails](#recommendations-in-emails)
@@ -74,17 +74,17 @@ this returns `True` for all products with a price larger than 100 thus removing 
 [*Back to top*](#table-of-contents)
 
 ### Boost expression
-????
+
 
 [*Back to top*](#table-of-contents)
 
 ### InteractionFilter
-???
+
 
 [*Back to top*](#table-of-contents)
 
 ### Trend
-Trend limits the time intervall wich the recomendations are based on. `Max trend` uses a short timeintervall resulting in the ML model only recomends products that are trending last few weeks. `None trend` **IS THIS TRUE?**
+Trend limits the time intervall wich the recomendations are based on. `Max trend` uses a short timeintervall resulting in the ML model only recomends products that are trending last few weeks.
 
 [*Back to top*](#table-of-contents)
 
@@ -158,7 +158,6 @@ See example:
 [*Back to top*](#table-of-contents)
 
 ### API
-This is what the customer use to call the recomendation profile????
 
 [*Back to top*](#table-of-contents)
 
@@ -199,7 +198,7 @@ saved profiles
 [*Back to top*](#table-of-contents)
 
 ### Refresh
-????
+
 
 [*Back to top*](#table-of-contents)
 
@@ -220,7 +219,6 @@ same as **search for items** but adds a random item.
 
 ### Add random user
 Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. 
-You can find the user by XXXXXX????
 
 [*Back to top*](#table-of-contents)
 
@@ -234,7 +232,7 @@ With image inactive:
 
 [*Back to top*](#table-of-contents)
 
-# data available in recommendations
+# Data available in recommendations
 
 [*Back to top*](#table-of-contents)
 
@@ -334,8 +332,8 @@ Rekommendera mest sannolika produkter en kund kommer köpa utifrån historiskt k
 #### Check-out rekommendation: Check-out 
 Rekommendera billigare produkter utifrån vad kunden lagt i sin varukorg  
 **Syfte:** Öka AOV med en relevant produkt i det lägre prissegmentet  
-**Expression:** tofloat(Price) < tofloat(last(basketArticlePrice))*0.8  
-**Trend:** 
+**Expression:** `tofloat(Price) < tofloat(last(basketArticlePrice))*0.8`
+**Trend:**
 
 [*Back to top*](#table-of-contents)
 
@@ -343,7 +341,7 @@ Rekommendera billigare produkter utifrån vad kunden lagt i sin varukorg
 Rekommendera mest sannolika produkter utifrån kundens senaste order  
 **Syfte:** Öka andelen kunder som gör ett nästa köp  
 **Expression:**  
-**Trend:** None trend???
+**Trend:** 
 
 [*Back to top*](#table-of-contents)
 

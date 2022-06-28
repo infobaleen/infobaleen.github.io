@@ -22,7 +22,7 @@ nav:
             - Configuration: Platform/Menu/Admin/Configuration.md
             - Connections: Platform/Menu/Admin/Connections.md
             - Events: Platform/Menu/Admin/Events.md
-            - Secrets.md: Platform/Menu/Admin/Secrets.md
+            - Secrets: Platform/Menu/Admin/Secrets.md
         - Documentation:
             - Agent: Platform/Menu/Documentation/Agent.md
             - API: Platform/Menu/Documentation/API.md
@@ -30,7 +30,6 @@ nav:
         - Manage Data:
             - Data Models: Platform/Menu/Manage Data/Data Models.md
             - Import Files: Platform/Menu/Manage Data/Import Files.md
-            - Manage-Data: Platform/Menu/Manage Data/Manage-Data.md
             - Results: Platform/Menu/Manage Data/Results.md
             - Sources: Platform/Menu/Manage Data/Sources.md
         - Model:
