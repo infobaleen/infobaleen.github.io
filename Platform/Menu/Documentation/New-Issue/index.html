@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../../../../img/favicon.ico">
-        <title>Import Files - Documentation</title>
+        <title>Table of Contents - Documentation</title>
         <link href="../../../../css/bootstrap-custom.min.css" rel="stylesheet">
         <link href="../../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../../css/base.css" rel="stylesheet">
@@ -59,7 +59,7 @@
 </li>
                                     
 <li >
-    <a href="../../../Analytics/Customer Insights/">Customer Insights</a>
+    <a href="../../../Analytics/Customer Insights.md">Customer Insights</a>
 </li>
                                 </ul>
                             </li>
@@ -79,7 +79,7 @@
                             <li >
                                 <a href="../../../Recommendations/Recommendations/">Recommendations</a>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -88,7 +88,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../Account/API Keys/">API Keys</a>
+    <a href="../../Account/API Keys.md">API Keys</a>
 </li>
             
 <li >
@@ -106,7 +106,7 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../Admin/Clear CH chache/">Clear CH chache</a>
+    <a href="../../Admin/Clear CH chache.md">Clear CH chache</a>
 </li>
             
 <li >
@@ -132,15 +132,15 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../../Documentation/Agent/">Agent</a>
+    <a href="../Agent/">Agent</a>
 </li>
             
 <li >
-    <a href="../../Documentation/API/">API</a>
+    <a href="../API/">API</a>
 </li>
             
 <li >
-    <a href="../../Documentation/New Issue/">New Issue</a>
+    <a href="../New Issue.md">New Issue</a>
 </li>
     </ul>
   </li>
@@ -150,19 +150,19 @@
     <ul class="dropdown-menu">
             
 <li >
-    <a href="../Data Models/">Data Models</a>
-</li>
-            
-<li class="active">
-    <a href="./">Import Files</a>
+    <a href="../../Manage Data/Data Models.md">Data Models</a>
 </li>
             
 <li >
-    <a href="../Results/">Results</a>
+    <a href="../../Manage Data/Import Files.md">Import Files</a>
 </li>
             
 <li >
-    <a href="../Sources/">Sources</a>
+    <a href="../../Manage Data/Results/">Results</a>
+</li>
+            
+<li >
+    <a href="../../Manage Data/Sources/">Sources</a>
 </li>
     </ul>
   </li>
@@ -202,16 +202,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li >
-                                <a rel="next" href="../Data Models/">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li >
-                                <a rel="prev" href="../Results/">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -221,62 +211,19 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
-        <li class="main "><a href="#import-data-to-the-platform">Import data to the platform</a></li>
-            <li><a href="#using-a-database-connection-for-centra-voyado-etc">Using a database connection (for Centra, Voyado, etc)</a></li>
-            <li><a href="#using-a-file">Using a file</a></li>
+        <li class="main "><a href="#new-issue">New issue</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="table-of-contents">Table of Contents</h1>
 <ol>
-<li><a href="#import-data-to-the-platform">Import data to the platform</a><ol>
-<li><a href="#using-a-database-connection-for-centra-voyado-etc">Using a database connection (for Centra, Voyado, etc)</a><ol>
-<li><a href="#set-up-a-configuration">Set up a configuration</a></li>
-<li><a href="#make-arbitrary-query">Make arbitrary query </a></li>
-<li><a href="#how-to-verify-that-the-sync-works?">How to verify that the sync works?</a></li>
+<li><a href="#new-issue">New issue</a>
+<a href="#table-of-contents"></a></li>
 </ol>
-</li>
-<li><a href="#using-a-file">Using a file</a></li>
-</ol>
-</li>
-</ol>
-<p><a href="#table-of-contents"></a></p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h1 id="import-data-to-the-platform">Import data to the platform</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h2 id="using-a-database-connection-for-centra-voyado-etc">Using a database connection (for Centra, Voyado, etc)</h2>
-<p>First, make sure you know the origin files to fetch
-* <a href="#find-voyado-files-to-import">For Voyado </a></p>
-<p>Go to the platform and then to <code>Admin -&gt; Configuration</code> (can be found at the top right menu by clicking the three dots, see example image below).</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h3 id="set-up-a-configuration">Set up a configuration</h3>
-<p>Add a database and name the <code>Database</code> based on the what system they use (centra, voyado, etc), and choose the matching <code>Driver</code>. In the <code>Config</code> field, check the standard URL provided by the corresponding ecommerce platform. </p>
-<p><strong>Notes:</strong>
-<em> A key or token is needed to access the databases. This key is listed under <code>Admin -&gt; Secrets</code>. 
-</em> For <strong>Centra</strong> customers there are fields that need to be specified:
-    * <code>"Limit":100000</code> : This is a limit so that we do not overload Centra servers when fetching data
-    * <code>"Store":1,"Market":3,"PriceList":19,"Warehouses":[2,3]</code>: These are specifications to fetch the correct data, the customer seldom knows this but Centra should have the information. 
-<em> For <strong>Voyado</strong> customers there are fields that need to be specified:
-    * <code>"Directories"</code>: These are the directories that can be found in the <a href="(#find-voyado-files-to-import)">Azure data lake</a>
-    * There are defauly directories that will be accessible without specifying them, these are <code>store/</code>, <code>receiptItems/</code>, <code>article/</code> and <code>allContacts/</code>
-</em> There is an option also to <code>Add Integration</code>. This part can be skipped, it is only used when we send data to customers. </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h3 id="make-arbitrary-query">Make arbitrary query</h3>
-<p>Create a source and make an arbitrary query similar to <code>SELECT * FROM `users.gz`</code> for Centra. You can list possible paths by using <code>SELECT * FROM `*`</code>. </p>
-<p>This will trigger a proxy sync, and if a Centra customer the <code>.gz</code> files will appear once completed. This normally takes 1-5 hours.</p>
-<p><img width="1198" alt="Screenshot 2022-05-10 at 10 31 03" src="https://user-images.githubusercontent.com/4352260/167585099-4bbcfd77-008e-455d-93bf-89e257d6b306.png"></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h3 id="how-to-verify-that-the-sync-works">How to verify that the sync works?</h3>
-<p>Choose the source you created and press the pen to edit it. Go to the <code>ADD QUERY</code> tab and choose <code>“SELECT * FROM `*`”</code>. </p>
-<p>If the sync is ready, you will see a list of files to choose from, for example, <code>users.gz</code>, <code>items.gz</code>, <code>interactions.gz</code>, see image below. If you see the files imported you are now ready to <a href="https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md">create sources!</a></p>
-<p><img width="954" alt="Screenshot 2022-05-10 at 14 59 33" src="https://user-images.githubusercontent.com/4352260/167635009-bee5c795-271c-49f9-a92c-840a415f120f.png"></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
-<h2 id="using-a-file">Using a file</h2>
-<p>Go to the platform and then to <code>Manage data -&gt; Import files</code> (can be found at the top right menu by clicking the three dots, see example image below). </p>
-<p>If the customer sent their data in a csv-file, drag it to the drop box for importing files.</p>
-<p>Uploaded files are available from the "imports (csv-fs)" database connection when creating new sources (see next step).</p>
-<p><img width="1216" alt="Screenshot 2022-05-10 at 10 31 52" src="https://user-images.githubusercontent.com/4352260/167585247-b7f840a9-a43a-4a7d-bf76-1757e4f688cb.png"></p>
+<h1 id="new-issue">New issue</h1>
+<p>If you've found something not working properly an issue should be created, it's shortly explained a ticket for what's wrong in the current situation, and how it should be changed to. The link takes you to github where the issue will be addressed.  </p>
 <p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
         </div>
 
