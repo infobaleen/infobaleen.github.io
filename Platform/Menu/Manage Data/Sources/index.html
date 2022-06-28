@@ -220,8 +220,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
-        <li class="main "><a href="#create-sources">Create sources</a></li>
+        <li class="main active"><a href="#create-sources">Create sources</a></li>
         <li class="main "><a href="#frontpage-columns">Frontpage columns</a></li>
             <li><a href="#name">Name</a></li>
             <li><a href="#id">id</a></li>
@@ -270,81 +269,6 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="table-of-contents">Table of Contents</h1>
-<ol>
-<li><a href="#create-sources">Create sources</a></li>
-<li><a href="#frontpage-columns">Frontpage columns</a><ol>
-<li><a href="#name">Name</a></li>
-<li><a href="#id">id</a></li>
-<li><a href="#cnf-version">Cnf Version</a></li>
-<li><a href="#count">Count</a></li>
-<li><a href="#tags">Tags</a></li>
-<li><a href="#drivers">Drivers</a></li>
-<li><a href="#sync">Sync</a></li>
-<li><a href="#dependencies">Dependencies </a></li>
-<li><a href="#updated-at">Updated At</a></li>
-<li><a href="#synced-at">Synced At</a></li>
-</ol>
-</li>
-<li><a href="#top-menu">Top Menu</a><ol>
-<li><a href="#delete">Delete</a></li>
-<li><a href="#tag">Tag</a></li>
-<li><a href="#migrate">Migrate</a></li>
-<li><a href="#truncate">Truncate</a></li>
-<li><a href="#sync">Sync</a></li>
-<li><a href="#enable">Enable</a></li>
-<li><a href="#disable">Disable </a></li>
-<li><a href="#create">Create</a></li>
-</ol>
-</li>
-<li><a href="#source-settigs">Source settigs</a><ol>
-<li><a href="#name">Name</a></li>
-<li><a href="#id-columns">Id columns </a></li>
-<li><a href="#runevery">RunEvery</a></li>
-<li><a href="#comment">Comment</a></li>
-<li><a href="#merge-filter">Merge filter </a></li>
-</ol>
-</li>
-<li><a href="#overview">Overview</a></li>
-<li><a href="#query">Query</a><ol>
-<li><a href="#database-connection">Database connection</a></li>
-<li><a href="#load-saved-query">Load saved query</a></li>
-<li><a href="#preprocessor-directives">Preprocessor directives</a></li>
-</ol>
-</li>
-<li><a href="#query-expressions">Query expressions</a><ol>
-<li><a href="#create-a-custom-source">create a custom source</a></li>
-<li><a href="#union">UNION </a></li>
-</ol>
-</li>
-<li><a href="#standard-queries">Standard Queries</a><ol>
-<li><a href="#centra-queries">Centra Queries</a><ol>
-<li><a href="#procedure">Procedure</a></li>
-<li><a href="#interactions">Interactions  </a></li>
-<li><a href="#items">Items</a></li>
-<li><a href="#users">Users</a></li>
-<li><a href="#no-size-model">No size model </a></li>
-<li><a href="#example-rows-with-explanation">Example rows with explanation</a></li>
-</ol>
-</li>
-<li><a href="#voyado-queries">Voyado Queries</a><ol>
-<li><a href="#procedure">Procedure</a></li>
-<li><a href="#interactions">Interactions</a></li>
-<li><a href="#items">Items</a></li>
-<li><a href="#users">Users</a></li>
-</ol>
-</li>
-<li><a href="#google-feed-query">Google Feed Query</a><ol>
-<li><a href="#procedure">Procedure</a></li>
-<li><a href="#import-query">Import Query</a></li>
-<li><a href="#preprocess-directives">Preprocess Directives</a>
-<a href="#table-of-contents"></a></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="create-sources">Create sources</h1>
 <p>When the <a href="https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Import%20Files.md">data is imported</a>, go to <code>Manage Data -&gt; Sources</code> and create a new source by clicking the purple plus sign as seen in the below image. </p>
 <ol>
@@ -377,29 +301,20 @@ If it’s a centra/voyado customer choose that option, if the files were uploade
 </ul>
 </li>
 </ol>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="frontpage-columns">Frontpage columns</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="name">Name</h2>
 <p>Name of source</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="id">id</h2>
 <p>every source has an unique id wich is used to show dependencies between sources.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="cnf-version">Cnf Version</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="count">Count</h2>
 <p>Count describes how many rows the source have. There can only be 1 row for every unique key column. if there are multiple rows with the same key all but 1 is removed.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="tags">Tags</h2>
 <p>you can tag a source to keep track of how it is used.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="drivers">Drivers</h2>
 <p>The drivers show whatdriver is used and also if it is active (green) or inactive (red). If a source has multiple queries there will be multiple drivers, here you can see wich source is active and wich are not.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="sync">Sync</h2>
 <p>You can set a daily sync for the source, for example <code>DailyAt:6</code>.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="dependencies">Dependencies</h2>
 <p>Dependencies for a source show what other sources the are used to build up the source.<br />
 an example for this is </p>
@@ -410,69 +325,47 @@ SELECT * FROM Source3
 </code></pre>
 
 <p>This will show the id for source 1,2,3 in the Dependencies for the new source.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="updated-at">Updated At</h2>
 <p>Shows how long ago the source was last modified.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="synced-at">Synced At</h2>
 <p>Shows how long ago the source was last synced.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="top-menu">Top Menu</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="delete">Delete</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="tag">Tag</h2>
 <p>Select a source, click Tag and write a new tag or select an old tag.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="migrate">Migrate</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="truncate">Truncate</h2>
 <p>Trucate wipes the source of all data. This is usefull if you have changed key column for example because if you just sync the data the old data is not removed. 
 [Note that some sources only read 1 week data at the time to save time, if you truc a source like this all historic data is removed wich is bad]</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="sync_1">Sync</h2>
 <p>Manually syncs the source.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="enable">Enable</h2>
 <p>doesnt work</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="disable">Disable</h2>
 <p>doesnt work</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="create">Create</h2>
 <p>Creates a new source.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="source-settigs">Source settigs</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="name_1">Name</h2>
 <p>Just a name</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="id-columns">Id columns</h2>
 <p>The Id columns has to be choosen to be unique. if the id is not unique (the same id for many rows) only 1 row will be saved and all others are removed.<br />
 For the interaction table the id has to contain user AND id or ts,item. The reason user has to be an id column is because when user is the first id column all interactions are sorted on user first. this lets you use expressions such as agg.i wich count number of interactions a user has made. if the interaction table is not sorted on user first the aggregation functions doesnt work.<br />
 For multiple id columns they are sorted in the order they are written.
 User,ts,item is sorted first on user, then on ts and lastly on item.  </p>
 <p>SELECT CUSTOM COLUMNS is usefull if you want other names than the predefined such as SKU.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="runevery">RunEvery</h2>
 <p>Set a sync</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="comment">Comment</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="merge-filter">Merge filter</h2>
 <p>lets you filter out your query before you save it.</p>
 <p>A Merge filter discards everything that is not true before saving the table. For example if you add a query similar to <code>toFloat(ts) &gt; now()-100*24*3600</code>, then all timestamp (ts) data from later than 100 days will be discarded.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="overview">Overview</h1>
 <p>Shows what is in the source currently</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="query">Query</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="database-connection">Database connection</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="load-saved-query">Load saved query</h2>
 <p>lets you reload previously run queries</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="preprocessor-directives">Preprocessor directives</h2>
 <p>when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.  </p>
 <pre><code>SELECT * FROM `url:https://files.channable.com/o2lQPJiYXk7KrY1DW2BJ3A==.xml`  
@@ -497,18 +390,15 @@ to show the file structure, in this case it looks like this.
 <code>pluck=google_product_category,price</code><br />
 resulting in this outcome
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png" /></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="query-expressions">Query expressions</h1>
 <p>you need to enclose variable names that contain other characters than letters and numbers with <code>backticks</code> <code></code>,<br />
 this includes whitespace ' ', dot '.', etc...</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="create-a-custom-source">create a custom source</h2>
 <p>SELECT * FROM <code>raw: 
 id,item
 1,item1
 2,item2</code>
 this returns a table.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="union">UNION</h2>
 <p>A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order</p>
 <pre><code>SELECT * FROM `table 1`
@@ -560,7 +450,6 @@ ex.</p>
 <p>split()</p>
 <p>slice()</p>
 <p>etc...</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="query-solutions">Query solutions</h1>
 <h2 id="connect-historic-and-new-data-that-has-overlapping-transactions-items-and-users">Connect historic and new data that has overlapping transactions, items and users.</h2>
 <pre><code class="mermaid">classDiagram
@@ -594,7 +483,6 @@ LEFT JOIN margin ON margin.user = UI.user
 this is because you cant LEFT JOIN a float. <code>concat('',)</code> converts it into a string.
 <code>concat('',SUM(margin)) AS total_margin</code></p>
 <h1 id="standard-queries">Standard Queries</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="centra-queries">Centra Queries</h2>
 <hr />
 <p>Procedure   1</p>
@@ -602,13 +490,11 @@ this is because you cant LEFT JOIN a float. <code>concat('',)</code> converts it
 <p>Items   2</p>
 <p>Users   3</p>
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="procedure">Procedure</h3>
 <p>Setup config
 Make arbitrary query toward centra
 This will trigger proxy sync, the .gz files will appear once completed, duration 1-5h</p>
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="interactions">Interactions</h3>
 <p>Id columns: id i import / user,id i model source</p>
 <pre><code>SELECT  
@@ -665,7 +551,6 @@ FROM`interactions.gz`
 </code></pre>
 
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="items">Items</h3>
 <p>Id columns : item</p>
 <pre><code>SELECT
@@ -720,7 +605,6 @@ FROM `items.gz`
 </code></pre>
 
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="users">Users</h3>
 <p>Id columns : user</p>
 <pre><code>SELECT  
@@ -736,7 +620,6 @@ FROM `users.gz`
 </code></pre>
 
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="no-size-model">No size model</h3>
 <p>for Item source called ‘no size model - items’</p>
 <pre><code>SELECT 
@@ -767,7 +650,6 @@ GROUP BY variantId
 </code></pre>
 
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="example-rows-with-explanation">Example rows with explanation</h3>
 <p>Coalesce (<code>display.Name</code>, <code>prod.Name</code>, <code>variant.Id</code>) AS format 
 Explanation: Choose display.Name if it exists, otherwise check prod.Name, and lastly variant.Id.  </p>
@@ -776,7 +658,6 @@ Explanation: This will merge the two lines, for example Concat (Hello, '</em>', 
 <p>unixTimestamp (<code>order.CreatedAt</code>, '2006-01-02T15:04:05-0700') AS order_created_at, 
     Explanation: This will convert a date into number form </p>
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="voyado-queries">Voyado Queries</h2>
 <hr />
 <p>Procedure   1</p>
@@ -784,11 +665,9 @@ Explanation: This will merge the two lines, for example Concat (Hello, '</em>', 
 <p>Users   3</p>
 <p>Interactions    4  </p>
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="procedure_1">Procedure</h3>
 <p>Setup config</p>
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="interactions_1">Interactions</h3>
 <pre><code>SELECT
     *
@@ -797,7 +676,6 @@ FROM
 </code></pre>
 
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="items_1">Items</h3>
 <pre><code>SELECT
     *
@@ -806,7 +684,6 @@ FROM
 </code></pre>
 
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="users_1">Users</h3>
 <pre><code>SELECT
     *
@@ -815,19 +692,15 @@ FROM
 </code></pre>
 
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="google-feed-query">Google Feed Query</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="procedure_2">Procedure</h3>
 <p>Get the link to the customer's Google feed (link to a .xml file), this is something most customers can easily supply upon request. Usually, there are multiple feeds to cover all different markets. The link to a specific market is a URL like <em>https://some.domain/api/feed/google_se/SOMEKEY</em> </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="import-query">Import Query</h3>
 <pre><code>SELECT
     *
 FROM `url:GOOGLE_FEED_LINK`
 </code></pre>
 
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="preprocess-directives">Preprocess Directives</h3>
 <p>In the Preprocessor Directives field, set the xml properties as follows. There may be other useful field to include in the <code>pluck</code> line as well.</p>
 <pre><code>decoder=xml
@@ -838,9 +711,7 @@ pluck=id,title,image_link,availability,price,sale_price,google_product_category,
 
 <p><strong>Note:</strong> Stray Ampersands are currently not accepted, but Google handles these. If you get errors with this, you can read feeds with non-escaped ampersands using this as the first line in the preprocessor:</p>
 <pre><code>preprocess=[[&quot;replace&quot;,&quot;&amp;&quot;,&quot;&quot;]]
-</code></pre>
-
-<p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

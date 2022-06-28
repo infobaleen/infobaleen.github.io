@@ -220,8 +220,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
-        <li class="main "><a href="#voyado">Voyado</a></li>
+        <li class="main active"><a href="#voyado">Voyado</a></li>
             <li><a href="#update-this">Update this</a></li>
         <li class="main "><a href="#rule">Rule</a></li>
             <li><a href="#configuration">Configuration</a></li>
@@ -230,26 +229,6 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="table-of-contents">Table of Contents</h1>
-<ol>
-<li><a href="#voyado">Voyado</a><ol>
-<li><a href="#update-this">Update this</a></li>
-</ol>
-</li>
-<li><a href="#rule">Rule</a><ol>
-<li><a href="#configuration">Configuration</a></li>
-<li><a href="#api-keys">API Keys</a><ol>
-<li><a href="#recommendations">Recommendations</a></li>
-<li><a href="#data-sync">Data sync</a></li>
-<li><a href="#cli">CLI</a></li>
-<li><a href="#admin">Admin</a></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="voyado">Voyado</h1>
 <p>The voyado config needs three parameters that are the same for all lakes. These can be found on Bitwarden under Infobaleen/Voyado. The fourth parameter is the lake endpoint. This is found in Voyado's <a href="(#find-voyado-files-to-import)">Azure data lake</a></p>
 <p>Example:</p>
@@ -259,12 +238,9 @@
 <p>Some comments:
 <em> <code>"Directories"</code>: These are the directories that can be found in the <a href="(#find-voyado-files-to-import)">Azure data lake</a>
 </em> There are defauly directories that will be accessible without specifying them, these are <code>store/</code>, <code>receiptItems/</code>, <code>article/</code> and <code>allContacts/</code></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="update-this">Update this</h2>
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="rule">Rule</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="configuration">Configuration</h2>
 <p><em>Integration with rule enables you export your <strong>Segmentation</strong> campaigns to rule</em>  </p>
 <p><strong>Name:</strong> should be set to <code>rule</code> as standard<br />
@@ -276,10 +252,8 @@ and "KeyField":"email" is set
 ex. if field name = email the Default user field becomes <code>email email</code>
 <strong>Name used in exports:</strong> ${PARENT_NAME}: ${INDEX_NAME}
 <strong>Optional User Fields:</strong> No idea.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="api-keys">API Keys</h2>
 <p><strong>Name:</strong> should be set to <code>rule-recommendations</code>  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="recommendations">Recommendations</h3>
 <p><strong>ItemsToItems:</strong> <code>Active</code> dont know<br />
 <strong>UserToItems:</strong> <code>Active</code> dont know<br />
@@ -287,20 +261,16 @@ ex. if field name = email the Default user field becomes <code>email email</code
 <strong>ModelInfo:</strong> <code>Inactive</code> dont know<br />
 <strong>Data Models:</strong> [Choose your data model with the recommendations of intrest]<br />
 <strong>Profiles:</strong> [Choose the recommendation profiles you want to use]  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="data-sync">Data sync</h3>
 <p><strong>SourceSync:</strong> <code>Inactive</code> dont know<br />
 <strong>Buffers:</strong> <code>Inactive</code> dont know  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="cli">CLI</h3>
 <p><strong>MLDump:</strong> <code>Inactive</code> dont know<br />
 <strong>Db:</strong> <code>Inactive</code> dont know  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="admin">Admin</h3>
 <p><strong>Note:</strong> 
 <strong>Immutable:</strong> An immutable key can never be updated (only removed). Useful if you want to share a key an be sure that the scope does not change by mistake<br />
-<strong>AllowAll:</strong> Activates everything or just recomendations tags</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
+<strong>AllowAll:</strong> Activates everything or just recomendations tags</p></div>
         </div>
 
         <footer class="col-md-12">

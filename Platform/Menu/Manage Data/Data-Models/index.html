@@ -220,8 +220,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
-        <li class="main "><a href="#what-is-a-datamodel">What is a datamodel?</a></li>
+        <li class="main active"><a href="#what-is-a-datamodel">What is a datamodel?</a></li>
         <li class="main "><a href="#interaction-config">Interaction config</a></li>
             <li><a href="#fields">Fields</a></li>
             <li><a href="#interaction-expressions">Interaction Expressions</a></li>
@@ -241,56 +240,6 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="table-of-contents">Table of Contents</h1>
-<ol>
-<li><a href="#what-is-a-datamodel?">What is a datamodel? </a></li>
-<li><a href="#interaction-config">Interaction config</a><ol>
-<li><a href="#fields">Fields</a><ol>
-<li><a href="#field">field</a></li>
-<li><a href="#alias">alias</a></li>
-<li><a href="#role">role</a></li>
-<li><a href="#active">Active</a></li>
-</ol>
-</li>
-<li><a href="#interaction-expressions">Interaction Expressions</a></li>
-</ol>
-</li>
-<li><a href="#item-config">Item config</a><ol>
-<li><a href="#fields">Fields</a><ol>
-<li><a href="#field">field</a></li>
-<li><a href="#alias">alias</a></li>
-<li><a href="#role">role</a></li>
-<li><a href="#mlmeta">MLMeta</a></li>
-<li><a href="#mlfilter">MLFilter</a></li>
-<li><a href="#active">Active</a></li>
-</ol>
-</li>
-<li><a href="#item-expressions">Item Expressions</a></li>
-</ol>
-</li>
-<li><a href="#user-config">User config</a><ol>
-<li><a href="#fields">Fields</a><ol>
-<li><a href="#field">field</a></li>
-<li><a href="#alias">alias</a></li>
-<li><a href="#role">role</a></li>
-</ol>
-</li>
-<li><a href="#user-expressions">User Expressions</a><ol>
-<li><a href="#persona">Persona</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><a href="#custom-properties">Custom properties</a></li>
-<li><a href="#expression-syntax-click-house">Expression syntax (Click house)</a></li>
-<li><a href="#data-model-expression-examples">Data model expression examples </a><ol>
-<li><a href="#interaction-expression">Interaction expression</a></li>
-<li><a href="#user-expressions">User expressions</a>
-<a href="#table-of-contents"></a></li>
-</ol>
-</li>
-</ol>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="what-is-a-datamodel">What is a datamodel?</h1>
 <p>A datamodel is made up of of 3 tables (from the sources), an interaction, user and item table. Each line in the interaction table is linked to a user and an item in the item and user table. When we have chosen what sources should make up our interaction, item and user table we can create a datamodel. After this we can start creating additional information through expressions. These can later be used in dashboards (dashboards are based upon a datamodel).</p>
 <pre><code class="mermaid">classDiagram
@@ -305,18 +254,13 @@ Datamodel --* Recommendations
 </code></pre>
 
 <p>When a datamodel is used for email analysis, the interaction becomes a specific <code>email sent to a user</code>, the user becomes <code>the one receiving the email</code>, and the email that was sent is treated as an item.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="interaction-config">Interaction config</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="fields">Fields</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="field">field</h3>
 <p>This is the name of the given in the source query (it can not be changed in the data model).  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="alias">alias</h3>
 <p>By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation.
 In Recommendation the field name is allways shown even if an alias is added.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="role">role</h3>
 <p><strong>Categories</strong><br />
 <code>Categories</code> is used when data is made up of multiple <code>category</code>'s. The data format for <code>categories</code> has to be [<code>category1</code>;<code>category2</code>;<code>category3</code>;<code>etc</code>]</p>
@@ -339,22 +283,15 @@ If you want to make a histogram you can only use fields with role <strong>Number
 All fields that can not be classified as a <strong>Number</strong> are classified as a <strong>Category</strong>. <strong>Category</strong>'s are used in for example <a href="https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Analytics/Dashboards.md" title="Open: Dashboards">Bar charts</a>.</p>
 <p><strong>Enum</strong>  </p>
 <p><strong>EnumCategories</strong>  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="active">Active</h3>
 <p>The Active toggle button lets you activate/deactivate a field. a deactivated field can not be used in dashboards.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="interaction-expressions">Interaction Expressions</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="item-config">Item config</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="fields_1">Fields</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="field_1">field</h3>
 <p>same as in Interaction  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="alias_1">alias</h3>
 <p>same as in Interaction  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="role_1">role</h3>
 <p><strong>Categories</strong><br />
 same as in Interaction  </p>
@@ -373,30 +310,21 @@ same as in Interaction  </p>
 dont know as in Interaction...  </p>
 <p><strong>EnumCategories</strong><br />
 dont know as in Interaction...  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="mlmeta">MLMeta</h3>
 <p>The MLMeta toggle button controles what is returned when when you make an API call. This is to give you control what data you want to return to the customer. you dont want to activate MLMeta on all fields because this will result in you return alot of "trash columns" to the customer that they have to filter in turn get the relevant data. [Note that you also have to select the role <code>Image</code> and <code>Format</code> for the product to show]
 (MLMeta is only relevant in the recomendations view)</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="mlfilter">MLFilter</h3>
 <p>The MLFilter lets you write expressions and filter your data in in the <a href="https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Recommendations/Recommendation-profiles.md" title="Open: Recommendation profiles">Recommendations</a>. You should only activate MLFilter for the fields you actually want to create a filter for, the reason for this is that when you activate <strong>MLFilter</strong> for a field this will store all data in the memory and every time the API calls for a recommendation the datamodel have to itterate through all fields with <strong>MLFilter</strong> resulting in a bad performance on the customers side (when the customer want to load our recomendations on their site the load speed will depend on how many <strong>MLFilters</strong> you have activated.  </p>
 <p><img width="892" alt="Screenshot 2022-06-10 at 08 16 47" src="https://user-images.githubusercontent.com/4352260/173002754-8885b8fa-1b5c-4dad-a74d-732f1d409eda.png"></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="active_1">Active</h3>
 <p>Same as in Interaction  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="item-expressions">Item Expressions</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="user-config">User config</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="fields_2">Fields</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="field_2">field</h3>
 <p>same as in Interaction  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="alias_2">alias</h3>
 <p>same as in Interaction  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="role_2">role</h3>
 <p><strong>Categories</strong><br />
 same as in Interaction  </p>
@@ -412,18 +340,14 @@ same as in Interaction  </p>
 ????  </p>
 <p><strong>EnumCategories</strong><br />
 ????</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="user-expressions">User Expressions</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="persona">Persona</h3>
 <p>The Persona toggle button controles what columns are used in the recommendations. For example, if we activate the field <code>gender</code> as a Persona, the recommendation engine will base the recommendations on what gender the user has. If we active the field <code>age</code> it will be used as a dimension in the recommendation, and so on.</p>
 <p><strong>Note:</strong> Use a maximum of 2 columns to define persona. Alternatively, make sure that the cardinality (number of groups) is less than 1000. (ex gender: 2 different and cities: 500 different, which means <code>2*500 = 1000</code> groups)</p>
 <p><img width="883" alt="Screenshot 2022-06-10 at 08 16 38" src="https://user-images.githubusercontent.com/4352260/173002716-64dd3abf-fc87-4b0d-942b-19b46b6e98b7.png"></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="custom-properties">Custom properties</h1>
 <p>Great feature with good UX <strong>BUT</strong>
 only works for a specific preprogrammed examples (RFM, CustomerLifcycle).  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="expression-syntax-click-house">Expression syntax (Click house)</h1>
 <p><code>SUM()</code> Summarize a value, for example SUM(returned_quantity) returns the total amount of returned quantity (over chosen period of time) </p>
 <p><code>uniq()</code> counts the amount of unique values, for example uniq(user) returns the amount of unique users.  </p>
@@ -434,9 +358,7 @@ sumIf(Value that will be summarized when, X = N)  <code>Example</code>: sumIf(re
 <p><code>uniqIf()</code></p>
 <p>multiIf(boolean, result_1, boolean, result_2, ..., boolean, result_n, else_this)<br />
 multiIf(name = 'red', colour, name = 'big', 'size', 'no data')</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="data-model-expression-examples">Data model expression examples</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="interaction-expression">Interaction expression</h2>
 <p><strong>Days since previous order cohort</strong><br />
 multiIf (agg.daysFromPrev &lt;=30,'1.&lt;30', agg.daysFromPrev &lt;=60,'2.30-60', agg.daysFromPrev &lt;=90,'3.60-90', agg.daysFromPrev &lt;=180,'4.90-180', agg.daysFromPrev &lt;=360,'5.180-360', agg.daysFromPrev &lt;=720,'6. 360-720', agg.daysFromPrev &lt;=4000,'7.&gt;720', '8.New')</p>
@@ -477,7 +399,6 @@ SUM(returned_quantity)</p>
 multiIf(returned_quantity &gt; 0, 'Return', 'No return')</p>
 <p><strong>Available quantity</strong><br />
 SUM(item.variant_product_size_size_available_now_quantity)/count()</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="user-expressions_1">User expressions</h2>
 <p><strong>Users &gt; 1 order</strong><br />
 uniqIf(user,user.agg.orders&gt;1)/uniq(user)</p>
@@ -487,8 +408,7 @@ SUM(article_number.agg.trans)  </p>
 <p>Available quantity [item based dashboards]<br />
 SUM(item.in_stock)  </p>
 <p>SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price) <br />
-SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)  </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
+SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)  </p></div>
         </div>
 
         <footer class="col-md-12">

@@ -220,8 +220,7 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#table-of-contents">Table of Contents</a></li>
-        <li class="main "><a href="#recommendations-ui">Recommendations UI</a></li>
+        <li class="main active"><a href="#recommendations-ui">Recommendations UI</a></li>
             <li><a href="#settings">Settings</a></li>
             <li><a href="#front-page">Front page</a></li>
         <li class="main "><a href="#data-available-in-recommendations">Data available in recommendations</a></li>
@@ -236,112 +235,31 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="table-of-contents">Table of Contents</h1>
-<ol>
-<li><a href="#recommendations-ui">Recommendations UI</a><ol>
-<li><a href="#settings">Settings</a><ol>
-<li><a href="#search">Search</a></li>
-<li><a href="#columns">Columns</a></li>
-<li><a href="#filter-expression">Filter expression</a></li>
-<li><a href="#boost-expression">Boost expression</a></li>
-<li><a href="#interactionfilter">InteractionFilter</a></li>
-<li><a href="#trend">Trend</a></li>
-<li><a href="#limit">Limit</a></li>
-<li><a href="#max-orders">Max orders</a></li>
-<li><a href="#max-interactions">Max interactions</a></li>
-<li><a href="#allow-items-from-history">Allow items from history</a></li>
-<li><a href="#shuffled">shuffled</a></li>
-<li><a href="#advanced">Advanced</a></li>
-<li><a href="#api">API</a></li>
-<li><a href="#add-field-limit">Add field limit </a></li>
-<li><a href="#save-as-new-profile">Save as new profile</a></li>
-<li><a href="#save-profile">Save profile</a></li>
-<li><a href="#delete-profile">Delete profile</a></li>
-</ol>
-</li>
-<li><a href="#front-page">Front page</a><ol>
-<li><a href="#search-for-items">Search for items</a></li>
-<li><a href="#profile">Profile</a></li>
-<li><a href="#refresh">Refresh</a></li>
-<li><a href="#clear-user-and-items">Clear user and items</a></li>
-<li><a href="#bench">Bench</a></li>
-<li><a href="#add-random-item">Add random item</a></li>
-<li><a href="#add-random-user">Add random user</a></li>
-<li><a href="#recommendation-output">Recommendation output</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><a href="#data-available-in-recommendations">Data available in recommendations</a><ol>
-<li><a href="#ml-meta">ml meta</a></li>
-<li><a href="#ml-filter">ml filter</a></li>
-</ol>
-</li>
-<li><a href="#recommendations-in-emails">Recommendations in emails</a><ol>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#partners">Partners</a><ol>
-<li><a href="#voyado">Voyado</a></li>
-</ol>
-</li>
-</ol>
-</li>
-<li><a href="#recommendation-profiles">Recommendation profiles</a><ol>
-<li><a href="#infobaleen-rekommendationsbibliotek">Infobaleen rekommendationsbibliotek</a><ol>
-<li><a href="#olika-rekommendationer">Olika rekommendationer</a><ol>
-<li><a href="#standard-rekommendation-standard">Standard rekommendation: Standard</a></li>
-<li><a href="#liknande-produkter-rekommendation-similar">Liknande produkter rekommendation: Similar</a></li>
-<li><a href="#inspiration-rekommendation-inspiration">Inspiration rekommendation: Inspiration</a></li>
-<li><a href="#win-back-rekommendation-win-back">Win-back rekommendation: Win-back</a></li>
-<li><a href="#check-out-rekommendation-check-out">Check-out rekommendation: Check-out </a></li>
-<li><a href="#tack-för-senast-order-rekommendation-last-purchase">Tack för senast order rekommendation: Last purchase </a></li>
-<li><a href="#produkter-på-rea-rekommendationer-on-sale">Produkter på rea rekommendationer: On sale</a>
-<a href="#table-of-contents"></a></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="recommendations-ui">Recommendations UI</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="settings">Settings</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="search">Search</h3>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="columns">Columns</h3>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="filter-expression">Filter expression</h3>
 <p>Write an expression that returns a boolean result.<br />
 <code>True</code> = not filtered <code>False</code> = filtered.
 example.<br />
 <code>price</code> &gt; <code>100</code>
 this returns <code>True</code> for all products with a price larger than 100 thus removing all items with a price lower than 100.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="boost-expression">Boost expression</h3>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="interactionfilter">InteractionFilter</h3>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="trend">Trend</h3>
 <p>Trend limits the time intervall wich the recomendations are based on. <code>Max trend</code> uses a short timeintervall resulting in the ML model only recomends products that are trending last few weeks.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="limit">Limit</h3>
 <p>Limit decides how many recomended items are returned. limit 4 = 4 recommended items. Limit 12 = 12 recommended items.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="max-orders">Max orders</h3>
 <p>Number of orders that are taken into concideration when recommending products. <code>Max orders = 1</code> means only the items included in the latest order are used as purchase history for that user. <code>Max orders = 2</code> means the items in the two latest orders are taken into account.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="max-interactions">Max interactions</h3>
 <p>Number of items that are taken into concideration when recommending products. <code>Max items = 1</code> means only the latest purchased item is used as purchase history for that user. <code>Max items = 2</code> means the two latest items are taken into account.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="allow-items-from-history">Allow items from history</h3>
 <p>sets a filter so that all items the user have bought cannot be recommended. </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="shuffled">shuffled</h3>
 <p>If Limit is set to 10 the items are recomended in order (most likly next purchase is at the top).<br />
 by enabling <code>shuffled</code> it still recommends the top 10 items but the order of the top 10 items are shuffled. </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="advanced">Advanced</h3>
 <p>Name: is the variable name.
 Field: the field wich you are taking data from
@@ -375,44 +293,30 @@ The expression <code>hasAny(split(bought_phone_model,","),makeArray(phone_model)
 <p>[NOTE! when adding an item to in the <code>Search for items</code> you <strong>DO NOT</strong> add this item to your purchase history, these items are sent in from the API meaning they will only be affected by a filter expression if you use the option <code>item</code> instead of <code>all</code>]  </p>
 <p>See example:
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/171145795-877fb7b8-6e02-4bf0-857b-985deafe6efd.png" /></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="api">API</h3>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="add-field-limit">Add field limit</h3>
 <p>Field limit lets you set a filter on how many of each category should be recommended.  </p>
 <p>This is usually used on product category where you only want to include ex. max 2 of each product category.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="save-as-new-profile">Save as new profile</h3>
 <p>Saves the current configuration as a profile new</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="save-profile">Save profile</h3>
 <p>Overrides the current profile with the current configuration.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="delete-profile">Delete profile</h3>
 <p>Delets selected profile.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="front-page">Front page</h2>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="search-for-items">Search for items</h3>
-<p><strong>I THINK</strong> items added in the search items window are counted as items given to the platform through the API call. This means they dont not affected by <code>boughtArticleGroup</code> but affects <code>basketArticleGroup</code>. </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
+<p>Items added in the search items window are counted as items given to the platform through the API call. This means they dont not affected by <code>boughtArticleGroup</code> but affects <code>basketArticleGroup</code>. </p>
 <h3 id="profile">Profile</h3>
 <p>saved profiles</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="refresh">Refresh</h3>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="clear-user-and-items">Clear user and items</h3>
 <p>removes selected items and user</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="bench">Bench</h3>
 <p>Shows how fast the recommendation are returend when making an API call. (if your datamodel has MLFilter active for many fields the recommendations will be slower).</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="add-random-item">Add random item</h3>
 <p>same as <strong>search for items</strong> but adds a random item.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="add-random-user">Add random user</h3>
 <p>Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="recommendation-output">Recommendation output</h3>
 <p>The output is what the API returns to the customer.<br />
 All fields active in the <strong>Columns</strong> section are returnerd. if the <code>image</code> is active the output will only show the image and format. by disabling the image you can see all other fields that are returned.<br />
@@ -420,23 +324,16 @@ With image active:
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/170311295-0a3f1097-cc4f-4829-a4fb-8962b3b5d5e7.png" />
 With image inactive:
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/170311416-cd596ff0-02d8-44b8-91d9-483ddcccb075.png" /></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="data-available-in-recommendations">Data available in recommendations</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="ml-meta">ml meta</h2>
 <p>To show an image and name on your recomendations you have to choose a format field and an image field under items AND activate the ml meta for these fields.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="ml-filter">ml filter</h2>
 <p>To write filter expressions based on fields you have to activate ml filter for these fields</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="recommendations-in-emails">Recommendations in emails</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="introduction">Introduction</h2>
 <p>We can supply personalized recommendations in automated email flows. The technical integration varies between partners, but the main difference compared to segments is that we supply an individually customized set of products per user.</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="partners">Partners</h2>
 <p>Here we specify how the process works between us and specified partners</p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="voyado">Voyado</h3>
 <p>Voyado has an ftp server to which we push a file of the form</p>
 <pre><code>ContactId,Skus,ExpiryDate
@@ -449,9 +346,7 @@ With image inactive:
 <p>-- Insert how to setup Voyado Export here --</p>
 <p>Once the recommendation flow is set up and an initial export has been sent, the recommendations can be previewed in Voyado. This is done by us selecting a few contactIds from the platform for them to check. Then the customer triggers a support ticket by sending an email to support@revide.se (revide is the old name, this may be updated) with the contactIds and requests checking the preview.</p>
 <p><strong>Note:</strong> Historically there has been some issues due to contacts being labeled as "Contact" instead of "Member". This should be resolved as of April 2022, but to be safe, it could be a good idea to locate and include a user labeled "Contact" that has a purchase history. </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h1 id="recommendation-profiles">Recommendation profiles</h1>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h2 id="infobaleen-rekommendationsbibliotek">Infobaleen rekommendationsbibliotek</h2>
 <p>2022-03-24</p>
 <p>Grundinställningar:<br />
@@ -459,51 +354,42 @@ Produkter i lager<br />
 Vid tydliga könsrelaterade produkter: Se om man bara ska rekommendera produtker med samma gender<br />
 …  </p>
 <hr />
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h3 id="olika-rekommendationer">Olika rekommendationer</h3>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="standard-rekommendation-standard">Standard rekommendation: Standard</h4>
 <p>Rekommendera det mest sannolika nästa köpet (medium trend)<br />
 <strong>Syfte:</strong> Hög sannolik att konvertera<br />
 <strong>Expression:</strong><br />
 <strong>Trend:</strong> </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="liknande-produkter-rekommendation-similar">Liknande produkter rekommendation: Similar</h4>
 <p>Rekommendera produkter ur samma kategori<br />
 <strong>Syfte:</strong> Hög igenkänningsfaktor<br />
 <strong>Expression:</strong><br />
 <strong>Trend:</strong> </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="inspiration-rekommendation-inspiration">Inspiration rekommendation: Inspiration</h4>
 <p>Rekommendera produkter inom kategorier kunden ej handlat inom tidigare / vald produkt<br />
 <strong>Syfte:</strong> Inspirera till köp i de mest relevanta kategorier man ännu ej handlat inom / produkten ej är i<br />
 <strong>Expression:</strong><br />
 <strong>Trend:</strong> </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="win-back-rekommendation-win-back">Win-back rekommendation: Win-back</h4>
 <p>Rekommendera mest sannolika produkter en kund kommer köpa utifrån historiskt köpbeteende<br />
 <strong>Syfte:</strong> Presenter de produkter en churnad kund har högst sannolikhet att köpa<br />
 <strong>Expression:</strong><br />
 <strong>Trend:</strong> </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="check-out-rekommendation-check-out">Check-out rekommendation: Check-out</h4>
 <p>Rekommendera billigare produkter utifrån vad kunden lagt i sin varukorg<br />
 <strong>Syfte:</strong> Öka AOV med en relevant produkt i det lägre prissegmentet<br />
 <strong>Expression:</strong> <code>tofloat(Price) &lt; tofloat(last(basketArticlePrice))*0.8</code>
 <strong>Trend:</strong></p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="tack-for-senast-order-rekommendation-last-purchase">Tack för senast order rekommendation: Last purchase</h4>
 <p>Rekommendera mest sannolika produkter utifrån kundens senaste order<br />
 <strong>Syfte:</strong> Öka andelen kunder som gör ett nästa köp<br />
 <strong>Expression:</strong><br />
 <strong>Trend:</strong> </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p>
 <h4 id="produkter-pa-rea-rekommendationer-on-sale">Produkter på rea rekommendationer: On sale</h4>
 <p>Rekommendera produkter som är på rea<br />
 <strong>Syfte:</strong> Öka rea fsg genom att visa relevanta produkter på rea.<br />
 <strong>Expression:</strong><br />
-<strong>Trend:</strong> </p>
-<p><a href="#table-of-contents"><em>Back to top</em></a></p></div>
+<strong>Trend:</strong> </p></div>
         </div>
 
         <footer class="col-md-12">
