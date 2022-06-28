@@ -1,3 +1,27 @@
+# Dashboards 
+
+You customize a dashboard to visualize various information and results based on your data.
+
+You create a new dashboard by clicking the + icon in the dropdown menu, or by clicking the purple plus sign in the upper right corner of the dashboard card.
+
+<img width="479" alt="Screenshot 2022-06-28 at 14 39 01" src="https://user-images.githubusercontent.com/4352260/176180577-0b7eec7b-516d-487d-938a-823aed14d26a.png">
+
+<img width="825" alt="Screenshot 2022-06-28 at 14 39 42" src="https://user-images.githubusercontent.com/4352260/176180678-e9e00ee6-f207-4160-9774-16fc66284bee.png">
+
+When you create a dashboard your are asked for the below fieds:
+
+* `Name`: The name you want to give to your dashboard. You can change this name later. 
+* `Select Role`: One of `interaction`, `user`, and `item`. Defines what data the dashboard should be based on, and in most cases it should be `interaction`.
+* `Select number of columns`: Specifies the number of columns used in the grid system to fit dashboards. The default value is used in most cases. 
+* `Import config`: This field can be used if you want to copy or export a dashboard from another platform. It is left blank in most cases.
+
+<img width="846" alt="Screenshot 2022-06-28 at 14 41 45" src="https://user-images.githubusercontent.com/4352260/176181082-ec55c555-6a8c-4731-afbd-e7b345f2e235.png">
+
+Click `Create` to create the dashboard. You are now ready to add elements!
+
+<img width="863" alt="Screenshot 2022-06-28 at 14 47 35" src="https://user-images.githubusercontent.com/4352260/176182387-0007cbff-e150-42e1-8946-302f8718fe88.png">
+
+
 # Add element
 
 
