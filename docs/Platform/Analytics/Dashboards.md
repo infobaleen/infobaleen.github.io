@@ -1,8 +1,8 @@
 # Dashboards 
 
-You customize a dashboard to visualize various information and results based on your data.
+You can customize dashboards to visualize various information and results based on your data.
 
-You create a new dashboard by clicking the + icon in the dropdown menu, or by clicking the purple plus sign in the upper right corner of the dashboard card.
+Dashboards can be created by clicking the + icon in the dropdown menu, or by clicking the purple plus sign in the upper right corner of the dashboard card.
 
 <img width="479" alt="Screenshot 2022-06-28 at 14 39 01" src="https://user-images.githubusercontent.com/4352260/176180577-0b7eec7b-516d-487d-938a-823aed14d26a.png">
 

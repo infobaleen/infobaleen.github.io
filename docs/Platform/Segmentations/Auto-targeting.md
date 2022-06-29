@@ -1,30 +1,4 @@
-# Auto-targeting
-
-**Note! Before Segmentations you need to train the machine-learning model**
-
-1. Choose the data model and edit it
-2. Scroll to the bottom and enable the ML Engine, see image below, and click Save
-3. Make sure the platform has been added to the `k8s-ml-registry` (should be done by Infobaleen)
-
-<img src="../../../images/Segmentations/segmentations-0.png" width="556"/>
-
-After the machine-learning model has been trained you can create segmentations.
-
-<details>
-<summary>What about the parameters in the ML model?</summary>
-<br>
-The problem with the model and the parameters is that this really isn't straightforward. In principle you want as much data as possible. The default settings just prevent blowing up the worker with an enormous dataset accidentally.
-
-There are a few dataset specific details that may make smaller limits sensible. For example, if a customer has high item turnover and you want to exclude old transactions and items that don't really contribute to current recommendations anymore if they are included in the model. But that is fairly difficult to reason about
-
-The default settings should be fine most of the time. Especially if the customer has less than 1000 actively sold items at the moment I wouldn't expect the limits to have much of an effect.
-
-The first limit should probably be clarified a bit. Maybe "Min interactions per item", because I suspect that it excludes items that have fewer than the specified number of interactions. This makes sense because we can't really learn anything useful about items that have very few transactions (I guess that is fairly intuitive, there's just no information to look at)
-</details>
-
-
-
-## Using Auto-targeting
+## Auto-targeting
 
 Auto-targeting identifies optimal combinations of items and users that helps increase conversion in campaigns. The results are based on the results from the machine-learning models. 
 
