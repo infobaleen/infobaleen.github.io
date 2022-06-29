@@ -221,30 +221,15 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#auto-targeting">Auto-targeting</a></li>
-            <li><a href="#using-auto-targeting">Using Auto-targeting</a></li>
+            <li><a href="#step-1-initiate-auto-targeting-campaign">Step 1: Initiate auto-targeting campaign</a></li>
+            <li><a href="#step-2-choose-recipients">Step 2: Choose recipients</a></li>
+            <li><a href="#step-3-create-advertisements">Step 3: Create advertisements</a></li>
         <li class="main "><a href="#clustering">Clustering</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="auto-targeting">Auto-targeting</h1>
-<p><strong>Note! Before Segmentations you need to train the machine-learning model</strong></p>
-<ol>
-<li>Choose the data model and edit it</li>
-<li>Scroll to the bottom and enable the ML Engine, see image below, and click Save</li>
-<li>Make sure the platform has been added to the <code>k8s-ml-registry</code> (should be done by Infobaleen)</li>
-</ol>
-<p><img src="../../../images/Segmentations/segmentations-0.png" width="556"/></p>
-<p>After the machine-learning model has been trained you can create segmentations.</p>
-<p><details>
-<summary>What about the parameters in the ML model?</summary>
-<br>
-The problem with the model and the parameters is that this really isn't straightforward. In principle you want as much data as possible. The default settings just prevent blowing up the worker with an enormous dataset accidentally.</p>
-<p>There are a few dataset specific details that may make smaller limits sensible. For example, if a customer has high item turnover and you want to exclude old transactions and items that don't really contribute to current recommendations anymore if they are included in the model. But that is fairly difficult to reason about</p>
-<p>The default settings should be fine most of the time. Especially if the customer has less than 1000 actively sold items at the moment I wouldn't expect the limits to have much of an effect.</p>
-<p>The first limit should probably be clarified a bit. Maybe "Min interactions per item", because I suspect that it excludes items that have fewer than the specified number of interactions. This makes sense because we can't really learn anything useful about items that have very few transactions (I guess that is fairly intuitive, there's just no information to look at)
-</details></p>
-<h2 id="using-auto-targeting">Using Auto-targeting</h2>
+<h2 id="auto-targeting">Auto-targeting</h2>
 <p>Auto-targeting identifies optimal combinations of items and users that helps increase conversion in campaigns. The results are based on the results from the machine-learning models. </p>
 <p>The result is groups with recommended users-items combinations to use in the advertisements, see the overview below:</p>
 <pre><code class="mermaid">graph TD;
