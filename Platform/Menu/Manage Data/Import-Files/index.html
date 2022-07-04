@@ -136,7 +136,7 @@
 </li>
             
 <li >
-    <a href="../../Documentation/API/">API</a>
+    <a href="../../Documentation/Recommendations/">Recommendations API</a>
 </li>
             
 <li >
@@ -223,14 +223,15 @@
         <li class="main active"><a href="#import-data-to-the-platform">Import data to the platform</a></li>
             <li><a href="#using-a-database-connection-for-centra-voyado-etc">Using a database connection (for Centra, Voyado, etc)</a></li>
             <li><a href="#using-a-file">Using a file</a></li>
+            <li><a href="#using-a-feed">Using a feed</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="import-data-to-the-platform">Import data to the platform</h1>
+<p>There are various ways to import data to the platform, here we present the most common use cases.</p>
 <h2 id="using-a-database-connection-for-centra-voyado-etc">Using a database connection (for Centra, Voyado, etc)</h2>
-<p>First, make sure you know the origin files to fetch
-* <a href="#find-voyado-files-to-import">For Voyado </a></p>
+<p>First, make sure you know the origin files to fetch. If files are fetched from </p>
 <p>Go to the platform and then to <code>Admin -&gt; Configuration</code> (can be found at the top right menu by clicking the three dots, see example image below).</p>
 <h3 id="set-up-a-configuration">Set up a configuration</h3>
 <p>Add a database and name the <code>Database</code> based on the what system they use (centra, voyado, etc), and choose the matching <code>Driver</code>. In the <code>Config</code> field, check the standard URL provided by the corresponding ecommerce platform. </p>
@@ -255,7 +256,41 @@
 <p>Go to the platform and then to <code>Manage data -&gt; Import files</code> (can be found at the top right menu by clicking the three dots, see example image below). </p>
 <p>If the customer sent their data in a csv-file, drag it to the drop box for importing files.</p>
 <p>Uploaded files are available from the "imports (csv-fs)" database connection when creating new sources (see next step).</p>
-<p><img width="1216" alt="Screenshot 2022-05-10 at 10 31 52" src="https://user-images.githubusercontent.com/4352260/167585247-b7f840a9-a43a-4a7d-bf76-1757e4f688cb.png"></p></div>
+<p><img width="1216" alt="Screenshot 2022-05-10 at 10 31 52" src="https://user-images.githubusercontent.com/4352260/167585247-b7f840a9-a43a-4a7d-bf76-1757e4f688cb.png"></p>
+<h2 id="using-a-feed">Using a feed</h2>
+<p>A feed is a file that contains a list of products that often is used to advertise through Google Merchant Center. Often these feeds are updated with latest information which means Infobaleen can use the feed to add relevant product details to the platform, such as image link data.</p>
+<p>Feeds are most often published as a public URL in format <code>.xml</code>, see below an example:</p>
+<p><img width="842" alt="Screenshot 2022-06-03 at 15 59 39" src="https://user-images.githubusercontent.com/4352260/171869182-84200505-15de-48e9-a099-d5ed04c8bdca.png"></p>
+<h3 id="adding-a-feed-as-a-data-source">Adding a feed as a data source</h3>
+<ol>
+<li>Get the public URL of the feed</li>
+<li>Add a new <code>source</code>, often it is a good idea to add a "Merge Filter" to avoid fetching too much data (you can for example add <code>now() &lt; toFloat(last_seen) + 7*24*3600</code>)</li>
+<li>Add a query similar to below and also add <code>decoder=head</code> in the field <code>Preprocessor directives</code> to show the file structure. Note that you have to write <code>url:</code> before <code>https://</code>, see example below</li>
+</ol>
+<pre><code>SELECT
+    *
+FROM `url:https://shop.com/plugin-export/shoppingfeed/se`  
+</code></pre>
+
+<p>[Note that you have to write <strong>url:</strong> before https://]  </p>
+<h3 id="preprocessor-directives">Preprocessor directives</h3>
+<p>Start by writing <code>decoder=xml</code> (or <code>=feed</code>)</p>
+<p>to show the file structure, in this case it looks like this.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/102239423/169991270-10e97b4e-b5fd-4df8-968c-320119f9ee71.png" /></p>
+<p><strong>decoder:</strong> describes what file format, xml, csv, json etc.<br />
+<strong>root:</strong> navigates the file and shows where you want to read data.<br />
+<strong>rowtag:</strong> selects the object.<br />
+<strong>pluck:</strong> inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  </p>
+<p>Below is one example with <code>root=feed.channel</code> and one example with <code>root=rss.channel</code>:</p>
+<p><img width="543" alt="Screenshot 2022-06-10 at 08 26 05" src="https://user-images.githubusercontent.com/4352260/173004337-734dcc11-992c-4920-975b-3d87f5ad362d.png">
+<img width="549" alt="Screenshot 2022-06-10 at 08 26 46" src="https://user-images.githubusercontent.com/4352260/173004348-827d98b1-e609-4d09-aa5f-63ce9034443e.png"></p>
+<p>In the first image example, the resulting preprocessing directives to fetch the feed are:  </p>
+<p><code>decoder=xml</code><br />
+<code>root=rss.channel</code><br />
+<code>rowtag=item</code><br />
+<code>pluck=google_product_category,price</code><br />
+resulting in this outcome
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png" /></p></div>
         </div>
 
         <footer class="col-md-12">

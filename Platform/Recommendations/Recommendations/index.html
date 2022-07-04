@@ -136,7 +136,7 @@
 </li>
             
 <li >
-    <a href="../../Menu/Documentation/API/">API</a>
+    <a href="../../Menu/Documentation/Recommendations/">Recommendations API</a>
 </li>
             
 <li >
@@ -221,60 +221,83 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#recommendations-ui">Recommendations UI</a></li>
-            <li><a href="#settings">Settings</a></li>
-            <li><a href="#front-page">Front page</a></li>
+        <li class="main "><a href="#settings">Settings</a></li>
+            <li><a href="#search">Search</a></li>
+            <li><a href="#columns">Columns</a></li>
+            <li><a href="#filter-expression">Filter expression</a></li>
+            <li><a href="#boost-expression">Boost expression</a></li>
+            <li><a href="#interactionfilter">InteractionFilter</a></li>
+            <li><a href="#trend">Trend</a></li>
+            <li><a href="#limit">Limit</a></li>
+            <li><a href="#max-orders">Max orders</a></li>
+            <li><a href="#max-interactions">Max interactions</a></li>
+            <li><a href="#allow-items-from-history">Allow items from history</a></li>
+            <li><a href="#shuffled">Shuffled</a></li>
+            <li><a href="#advanced">Advanced</a></li>
+            <li><a href="#add-field-limit">Add field limit</a></li>
+            <li><a href="#save-as-new-profile">Save as new profile</a></li>
+            <li><a href="#save-profile">Save profile</a></li>
+            <li><a href="#delete-profile">Delete profile</a></li>
+        <li class="main "><a href="#front-page">Front page</a></li>
+            <li><a href="#search-for-items">Search for items</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#refresh">Refresh</a></li>
+            <li><a href="#clear-user-and-items">Clear user and items</a></li>
+            <li><a href="#bench">Bench</a></li>
+            <li><a href="#add-random-item">Add random item</a></li>
+            <li><a href="#add-random-user">Add random user</a></li>
+            <li><a href="#recommendation-output">Recommendation output</a></li>
         <li class="main "><a href="#data-available-in-recommendations">Data available in recommendations</a></li>
-            <li><a href="#ml-meta">ml meta</a></li>
-            <li><a href="#ml-filter">ml filter</a></li>
+            <li><a href="#mlmeta">MlMeta</a></li>
+            <li><a href="#mlfilter">MlFilter</a></li>
         <li class="main "><a href="#recommendations-in-emails">Recommendations in emails</a></li>
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#partners">Partners</a></li>
-        <li class="main "><a href="#recommendation-profiles">Recommendation profiles</a></li>
-            <li><a href="#infobaleen-rekommendationsbibliotek">Infobaleen rekommendationsbibliotek</a></li>
+        <li class="main "><a href="#infobaleen-recommended-recommendation-profiles">Infobaleen recommended recommendation profiles</a></li>
+            <li><a href="#basic-settings">Basic settings</a></li>
+            <li><a href="#olika-rekommendationer">Olika rekommendationer</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="recommendations-ui">Recommendations UI</h1>
-<h2 id="settings">Settings</h2>
-<h3 id="search">Search</h3>
-<h3 id="columns">Columns</h3>
-<h3 id="filter-expression">Filter expression</h3>
-<p>Write an expression that returns a boolean result.<br />
-<code>True</code> = not filtered <code>False</code> = filtered.
-example.<br />
-<code>price</code> &gt; <code>100</code>
-this returns <code>True</code> for all products with a price larger than 100 thus removing all items with a price lower than 100.</p>
-<h3 id="boost-expression">Boost expression</h3>
-<h3 id="interactionfilter">InteractionFilter</h3>
-<h3 id="trend">Trend</h3>
-<p>Trend limits the time intervall wich the recomendations are based on. <code>Max trend</code> uses a short timeintervall resulting in the ML model only recomends products that are trending last few weeks.</p>
-<h3 id="limit">Limit</h3>
-<p>Limit decides how many recomended items are returned. limit 4 = 4 recommended items. Limit 12 = 12 recommended items.</p>
-<h3 id="max-orders">Max orders</h3>
+<p>You can use the platform to create personalized product recommendations that can be added to your website, checkout flow or in email campaigns. </p>
+<p>You can create customizable API recommendations profiles with filters and rules based on your product meta data, and apply them to different use cases. Below is an example how the recommendations tab can look. By clicking the cog wheel you will open the settings.</p>
+<p><img width="970" alt="Screenshot 2022-07-01 at 10 52 52" src="https://user-images.githubusercontent.com/4352260/176861100-b9b6f25e-dffb-4a4e-8103-51d25d6f0d2d.png"></p>
+<h1 id="settings">Settings</h1>
+<p>Here we explain the different settings fields that can be seen after clicing the cog wheel.</p>
+<p><img width="1019" alt="Screenshot 2022-07-01 at 11 12 12" src="https://user-images.githubusercontent.com/4352260/176864507-439bac1e-4029-4aa3-800e-d4c14e8423e0.png"></p>
+<h2 id="search">Search</h2>
+<h2 id="columns">Columns</h2>
+<p>Columns are the data columns that can be used to create filters and rules. These are activated in the data model with the <code>MlFilter</code> toggle (MlFilter = Machine Learning Filter), see the image below. </p>
+<p><img width="890" alt="Screenshot 2022-07-01 at 11 01 15" src="https://user-images.githubusercontent.com/4352260/176862636-6659b5fd-594f-4049-a349-45e774c39201.png"></p>
+<h2 id="filter-expression">Filter expression</h2>
+<p>Here you can write an expression that creates a filter for your recommendation profile. For example, perhaps you just want to recommend products in a specific category, then you would write something like <code>category = 'Kaffe &amp; Te'</code>, or <code>price</code> &gt; <code>100</code></p>
+<p>If the expression is <code>True</code> the product will be included in the recommendation, and it the expression is <code>False</code> the product will be filtered. In the case of <code>price</code> &gt; <code>100</code>, the expression will return <code>True</code> for all products with a price larger than 100 thus removing all items with a price lower than 100 from the recommendations.</p>
+<h2 id="boost-expression">Boost expression</h2>
+<h2 id="interactionfilter">InteractionFilter</h2>
+<h2 id="trend">Trend</h2>
+<p>Trend limits the time interval for the data that the recomendations are based on. <code>Max trend</code> uses a short time interval resulting in the machine-learning model only recommending products that are trending last few weeks.</p>
+<h2 id="limit">Limit</h2>
+<p>Limit decides how many recomended items are returned. For example, Limit 4 = Four recommended items. Limit 12 = 12 recommended items.</p>
+<h2 id="max-orders">Max orders</h2>
 <p>Number of orders that are taken into concideration when recommending products. <code>Max orders = 1</code> means only the items included in the latest order are used as purchase history for that user. <code>Max orders = 2</code> means the items in the two latest orders are taken into account.</p>
-<h3 id="max-interactions">Max interactions</h3>
+<h2 id="max-interactions">Max interactions</h2>
 <p>Number of items that are taken into concideration when recommending products. <code>Max items = 1</code> means only the latest purchased item is used as purchase history for that user. <code>Max items = 2</code> means the two latest items are taken into account.</p>
-<h3 id="allow-items-from-history">Allow items from history</h3>
-<p>sets a filter so that all items the user have bought cannot be recommended. </p>
-<h3 id="shuffled">shuffled</h3>
+<h2 id="allow-items-from-history">Allow items from history</h2>
+<p>Sets a filter so that all items the user have bought cannot be recommended. </p>
+<h2 id="shuffled">Shuffled</h2>
 <p>If Limit is set to 10 the items are recomended in order (most likly next purchase is at the top).<br />
 by enabling <code>shuffled</code> it still recommends the top 10 items but the order of the top 10 items are shuffled. </p>
-<h3 id="advanced">Advanced</h3>
-<p>Name: is the variable name.
-Field: the field wich you are taking data from
-Option: "all" means all items in the users purchase history. "items" means all items sent in through the API by the customer. When the customer makes an API call for the recommendation they can include items in the API call. for example items in the basket, the item you are currently looking at etc.
-Example below where <code>boughtArticleGroup</code> returns a comma seperated string <code>'item1,item2,item3,item4'</code>.
-to convert this into a filter</p>
-<pre><code>hasany(split(basketArticleGroup,','),makearray('Thin Case'))
-</code></pre>
-
-<p>example of advanced query.  </p>
-<pre><code>{&quot;Context&quot;:[{&quot;Name&quot;:&quot;boughtArticleGroup&quot;,&quot;Field&quot;:&quot;prod_collection_name&quot;,&quot;Option&quot;:&quot;all&quot;}, {&quot;Name&quot;:&quot;basketArticleGroup&quot;,&quot;Field&quot;:&quot;prod_collection_name&quot;,&quot;Option&quot;:&quot;items&quot;}]}
-</code></pre>
-
-<p><strong>Examples</strong><br />
-<em>Advanced:</em></p>
+<h2 id="advanced">Advanced</h2>
+<p>Create an advanced filter. </p>
+<ul>
+<li>Name: is the variable name.</li>
+<li>Field: the field wich you are taking data from</li>
+<li>Option: "all" means all items in the users purchase history. "items" means all items sent in through the API by the customer. When the customer makes an API call for the recommendation they can include items in the API call. for example items in the basket, the item you are currently looking at etc.</li>
+</ul>
+<p>See an example below:</p>
+<h3 id="example-of-advanced-quey">Example of advanced quey</h3>
 <pre><code>{&quot;Context&quot;:[{&quot;Name&quot;:&quot;bought_phone_model&quot;,&quot;Field&quot;:&quot;phone_model&quot;,&quot;Option&quot;:&quot;all&quot;}]}
 </code></pre>
 
@@ -282,7 +305,7 @@ to convert this into a filter</p>
 <pre><code>hasAny(split(bought_phone_model,&quot;,&quot;),makeArray(phone_model))
 </code></pre>
 
-<p><code>split(bought_phone_model,",")</code> returns an array of your purchase history ("Field":"phone_model"): ['bought_phone_model_1','bought_phone_model_2','bought_phone_model_3','bought_phone_model_4']  </p>
+<p><code>split(bought_phone_model,",")</code> returns an array of your purchase history <code>("Field":"phone_model"): ['bought_phone_model_1','bought_phone_model_2','bought_phone_model_3','bought_phone_model_4']</code></p>
 <p><code>makeArray(phone_model)</code> returns an array of all <code>phone_model</code>: ['phone_model_1','phone_model_2','phone_model_3','phone_model_n']  </p>
 <p><code>hasAny</code> checks if elements in <code>array 1</code> is contained in <code>array 2</code>  </p>
 <p>in this case the customers purchase history includes <code>iPhone 12/Pro MagSafe</code> and <code>iPhone 12/Pro</code>
@@ -293,41 +316,38 @@ The expression <code>hasAny(split(bought_phone_model,","),makeArray(phone_model)
 <p>[NOTE! when adding an item to in the <code>Search for items</code> you <strong>DO NOT</strong> add this item to your purchase history, these items are sent in from the API meaning they will only be affected by a filter expression if you use the option <code>item</code> instead of <code>all</code>]  </p>
 <p>See example:
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/171145795-877fb7b8-6e02-4bf0-857b-985deafe6efd.png" /></p>
-<h3 id="api">API</h3>
-<h3 id="add-field-limit">Add field limit</h3>
-<p>Field limit lets you set a filter on how many of each category should be recommended.  </p>
-<p>This is usually used on product category where you only want to include ex. max 2 of each product category.</p>
-<h3 id="save-as-new-profile">Save as new profile</h3>
+<h2 id="add-field-limit">Add field limit</h2>
+<p>Field limit lets you set a filter on how many of each category should be recommended. This is usually used on product category where you only want to include ex. max 2 of each product category.</p>
+<h2 id="save-as-new-profile">Save as new profile</h2>
 <p>Saves the current configuration as a profile new</p>
-<h3 id="save-profile">Save profile</h3>
+<h2 id="save-profile">Save profile</h2>
 <p>Overrides the current profile with the current configuration.</p>
-<h3 id="delete-profile">Delete profile</h3>
+<h2 id="delete-profile">Delete profile</h2>
 <p>Delets selected profile.</p>
-<h2 id="front-page">Front page</h2>
-<h3 id="search-for-items">Search for items</h3>
+<h1 id="front-page">Front page</h1>
+<h2 id="search-for-items">Search for items</h2>
 <p>Items added in the search items window are counted as items given to the platform through the API call. This means they dont not affected by <code>boughtArticleGroup</code> but affects <code>basketArticleGroup</code>. </p>
-<h3 id="profile">Profile</h3>
-<p>saved profiles</p>
-<h3 id="refresh">Refresh</h3>
-<h3 id="clear-user-and-items">Clear user and items</h3>
-<p>removes selected items and user</p>
-<h3 id="bench">Bench</h3>
+<h2 id="profile">Profile</h2>
+<p>Saved profiles</p>
+<h2 id="refresh">Refresh</h2>
+<h2 id="clear-user-and-items">Clear user and items</h2>
+<p>Removes selected items and user</p>
+<h2 id="bench">Bench</h2>
 <p>Shows how fast the recommendation are returend when making an API call. (if your datamodel has MLFilter active for many fields the recommendations will be slower).</p>
-<h3 id="add-random-item">Add random item</h3>
-<p>same as <strong>search for items</strong> but adds a random item.</p>
-<h3 id="add-random-user">Add random user</h3>
+<h2 id="add-random-item">Add random item</h2>
+<p>Same as <strong>search for items</strong> but adds a random item.</p>
+<h2 id="add-random-user">Add random user</h2>
 <p>Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. </p>
-<h3 id="recommendation-output">Recommendation output</h3>
-<p>The output is what the API returns to the customer.<br />
-All fields active in the <strong>Columns</strong> section are returnerd. if the <code>image</code> is active the output will only show the image and format. by disabling the image you can see all other fields that are returned.<br />
+<h2 id="recommendation-output">Recommendation output</h2>
+<p>The output is what the API returns to the customer. All fields active in the <strong>Columns</strong> section are returnerd. if the <code>image</code> is active the output will only show the image and format. by disabling the image you can see all other fields that are returned.<br />
 With image active:
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/170311295-0a3f1097-cc4f-4829-a4fb-8962b3b5d5e7.png" />
 With image inactive:
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/170311416-cd596ff0-02d8-44b8-91d9-483ddcccb075.png" /></p>
 <h1 id="data-available-in-recommendations">Data available in recommendations</h1>
-<h2 id="ml-meta">ml meta</h2>
+<h2 id="mlmeta">MlMeta</h2>
 <p>To show an image and name on your recomendations you have to choose a format field and an image field under items AND activate the ml meta for these fields.</p>
-<h2 id="ml-filter">ml filter</h2>
+<h2 id="mlfilter">MlFilter</h2>
 <p>To write filter expressions based on fields you have to activate ml filter for these fields</p>
 <h1 id="recommendations-in-emails">Recommendations in emails</h1>
 <h2 id="introduction">Introduction</h2>
@@ -346,50 +366,35 @@ With image inactive:
 <p>-- Insert how to setup Voyado Export here --</p>
 <p>Once the recommendation flow is set up and an initial export has been sent, the recommendations can be previewed in Voyado. This is done by us selecting a few contactIds from the platform for them to check. Then the customer triggers a support ticket by sending an email to support@revide.se (revide is the old name, this may be updated) with the contactIds and requests checking the preview.</p>
 <p><strong>Note:</strong> Historically there has been some issues due to contacts being labeled as "Contact" instead of "Member". This should be resolved as of April 2022, but to be safe, it could be a good idea to locate and include a user labeled "Contact" that has a purchase history. </p>
-<h1 id="recommendation-profiles">Recommendation profiles</h1>
-<h2 id="infobaleen-rekommendationsbibliotek">Infobaleen rekommendationsbibliotek</h2>
-<p>2022-03-24</p>
-<p>Grundinställningar:<br />
-Produkter i lager<br />
-Vid tydliga könsrelaterade produkter: Se om man bara ska rekommendera produtker med samma gender<br />
-…  </p>
-<hr />
-<h3 id="olika-rekommendationer">Olika rekommendationer</h3>
-<h4 id="standard-rekommendation-standard">Standard rekommendation: Standard</h4>
+<h1 id="infobaleen-recommended-recommendation-profiles">Infobaleen recommended recommendation profiles</h1>
+<h2 id="basic-settings">Basic settings</h2>
+<ul>
+<li>Products in stock</li>
+<li>For clear gender-related products: See if you should only recommend products with the same gender</li>
+</ul>
+<h2 id="olika-rekommendationer">Olika rekommendationer</h2>
+<h3 id="standard-rekommendation-standard">Standard rekommendation: Standard</h3>
 <p>Rekommendera det mest sannolika nästa köpet (medium trend)<br />
-<strong>Syfte:</strong> Hög sannolik att konvertera<br />
-<strong>Expression:</strong><br />
-<strong>Trend:</strong> </p>
-<h4 id="liknande-produkter-rekommendation-similar">Liknande produkter rekommendation: Similar</h4>
+<strong>Syfte:</strong> Hög sannolik att konvertera  </p>
+<h3 id="liknande-produkter-rekommendation-similar">Liknande produkter rekommendation: Similar</h3>
 <p>Rekommendera produkter ur samma kategori<br />
-<strong>Syfte:</strong> Hög igenkänningsfaktor<br />
-<strong>Expression:</strong><br />
-<strong>Trend:</strong> </p>
-<h4 id="inspiration-rekommendation-inspiration">Inspiration rekommendation: Inspiration</h4>
+<strong>Syfte:</strong> Hög igenkänningsfaktor  </p>
+<h3 id="inspiration-rekommendation-inspiration">Inspiration rekommendation: Inspiration</h3>
 <p>Rekommendera produkter inom kategorier kunden ej handlat inom tidigare / vald produkt<br />
-<strong>Syfte:</strong> Inspirera till köp i de mest relevanta kategorier man ännu ej handlat inom / produkten ej är i<br />
-<strong>Expression:</strong><br />
-<strong>Trend:</strong> </p>
-<h4 id="win-back-rekommendation-win-back">Win-back rekommendation: Win-back</h4>
+<strong>Syfte:</strong> Inspirera till köp i de mest relevanta kategorier man ännu ej handlat inom / produkten ej är i  </p>
+<h3 id="win-back-rekommendation-win-back">Win-back rekommendation: Win-back</h3>
 <p>Rekommendera mest sannolika produkter en kund kommer köpa utifrån historiskt köpbeteende<br />
-<strong>Syfte:</strong> Presenter de produkter en churnad kund har högst sannolikhet att köpa<br />
-<strong>Expression:</strong><br />
-<strong>Trend:</strong> </p>
-<h4 id="check-out-rekommendation-check-out">Check-out rekommendation: Check-out</h4>
+<strong>Syfte:</strong> Presenter de produkter en churnad kund har högst sannolikhet att köpa  </p>
+<h3 id="check-out-rekommendation-check-out">Check-out rekommendation: Check-out</h3>
 <p>Rekommendera billigare produkter utifrån vad kunden lagt i sin varukorg<br />
 <strong>Syfte:</strong> Öka AOV med en relevant produkt i det lägre prissegmentet<br />
-<strong>Expression:</strong> <code>tofloat(Price) &lt; tofloat(last(basketArticlePrice))*0.8</code>
-<strong>Trend:</strong></p>
-<h4 id="tack-for-senast-order-rekommendation-last-purchase">Tack för senast order rekommendation: Last purchase</h4>
+<strong>Expression:</strong> <code>tofloat(Price) &lt; tofloat(last(basketArticlePrice))*0.8</code></p>
+<h3 id="tack-for-senast-order-rekommendation-last-purchase">Tack för senast order rekommendation: Last purchase</h3>
 <p>Rekommendera mest sannolika produkter utifrån kundens senaste order<br />
-<strong>Syfte:</strong> Öka andelen kunder som gör ett nästa köp<br />
-<strong>Expression:</strong><br />
-<strong>Trend:</strong> </p>
-<h4 id="produkter-pa-rea-rekommendationer-on-sale">Produkter på rea rekommendationer: On sale</h4>
+<strong>Syfte:</strong> Öka andelen kunder som gör ett nästa köp  </p>
+<h3 id="produkter-pa-rea-rekommendationer-on-sale">Produkter på rea rekommendationer: On sale</h3>
 <p>Rekommendera produkter som är på rea<br />
-<strong>Syfte:</strong> Öka rea fsg genom att visa relevanta produkter på rea.<br />
-<strong>Expression:</strong><br />
-<strong>Trend:</strong> </p></div>
+<strong>Syfte:</strong> Öka rea fsg genom att visa relevanta produkter på rea.  </p></div>
         </div>
 
         <footer class="col-md-12">

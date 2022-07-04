@@ -136,7 +136,7 @@
 </li>
             
 <li >
-    <a href="../../Documentation/API/">API</a>
+    <a href="../../Documentation/Recommendations/">Recommendations API</a>
 </li>
             
 <li >
@@ -221,6 +221,7 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#what-is-a-datamodel">What is a datamodel?</a></li>
+            <li><a href="#edit-a-data-model">Edit a data model</a></li>
         <li class="main "><a href="#interaction-config">Interaction config</a></li>
             <li><a href="#fields">Fields</a></li>
             <li><a href="#interaction-expressions">Interaction Expressions</a></li>
@@ -234,27 +235,39 @@
         <li class="main "><a href="#expression-syntax-click-house">Expression syntax (Click house)</a></li>
         <li class="main "><a href="#data-model-expression-examples">Data model expression examples</a></li>
             <li><a href="#interaction-expression">Interaction expression</a></li>
+            <li><a href="#item-expressions_1">Item expressions</a></li>
             <li><a href="#user-expressions_1">User expressions</a></li>
-            <li><a href="#item-expressions_1">ITEM expressions</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="what-is-a-datamodel">What is a datamodel?</h1>
-<p>A datamodel is made up of of 3 tables (from the sources), an interaction, user and item table. Each line in the interaction table is linked to a user and an item in the item and user table. When we have chosen what sources should make up our interaction, item and user table we can create a datamodel. After this we can start creating additional information through expressions. These can later be used in dashboards (dashboards are based upon a datamodel).</p>
+<p>A datamodel is made up of of 3 tables (from the sources):</p>
+<ul>
+<li>Interaction table</li>
+<li>User table </li>
+<li>Item table </li>
+</ul>
+<p>Each line in the interaction table is linked to a user and an item in the item and user table. When we have chosen what sources should be our interaction, item and user tables we can create a datamodel. After this we can start creating additional information through expressions. These can later be used in dashboards (dashboards are based upon a datamodel).</p>
 <pre><code class="mermaid">classDiagram
-`Interaction table` --* Datamodel
-`Item table` --* Datamodel
-`User table` --* Datamodel
+`Interaction table` --&gt; Datamodel
+`Item table` --&gt; Datamodel
+`User table` --&gt; Datamodel
 Datamodel: Fields
 Datamodel: Expressions
-Datamodel --* Dashboards
-Datamodel --* Segmentation
-Datamodel --* Recommendations
+Datamodel --&gt; Dashboards
+Datamodel --&gt; Segmentations
+Datamodel --&gt; Recommendations
 </code></pre>
 
 <p>When a datamodel is used for email analysis, the interaction becomes a specific <code>email sent to a user</code>, the user becomes <code>the one receiving the email</code>, and the email that was sent is treated as an item.</p>
+<h2 id="edit-a-data-model">Edit a data model</h2>
+<p>To edit and see the detailed info about a data model, you need to edit it. You can edit it by clicking the "pen" either after clicking the data model, or in the data-models list, see images below.</p>
+<p><img width="988" alt="Screenshot 2022-07-01 at 11 52 24" src="https://user-images.githubusercontent.com/4352260/176871921-4f7f72ce-e6de-453d-b24d-ad035c61e38b.png"></p>
+<p><img width="782" alt="Screenshot 2022-07-01 at 11 52 33" src="https://user-images.githubusercontent.com/4352260/176872229-94b65f4b-35b1-447d-aa21-3c8eb40f66d6.png"></p>
 <h1 id="interaction-config">Interaction config</h1>
+<p>The interaction table specifies info about the interaction (a user interacting with an item) that includes a timestamp (ts). An interaction config can look something like below:</p>
+<p><img width="948" alt="Screenshot 2022-07-01 at 11 51 54" src="https://user-images.githubusercontent.com/4352260/176872296-06aea3bd-878a-499c-bc0e-8767dc6796a8.png"></p>
 <h2 id="fields">Fields</h2>
 <h3 id="field">field</h3>
 <p>This is the name of the given in the source query (it can not be changed in the data model).  </p>
@@ -285,8 +298,12 @@ All fields that can not be classified as a <strong>Number</strong> are classifie
 <p><strong>EnumCategories</strong>  </p>
 <h3 id="active">Active</h3>
 <p>The Active toggle button lets you activate/deactivate a field. a deactivated field can not be used in dashboards.</p>
+<h3 id="info">Info</h3>
+<p>Click here to see some data from the table.</p>
 <h2 id="interaction-expressions">Interaction Expressions</h2>
 <h1 id="item-config">Item config</h1>
+<p>The item table specifies info about the items, i.e. the products.</p>
+<p><img width="976" alt="Screenshot 2022-07-01 at 11 58 21" src="https://user-images.githubusercontent.com/4352260/176872773-89453cc1-56eb-4175-88c1-e5aa6de16019.png"></p>
 <h2 id="fields_1">Fields</h2>
 <h3 id="field_1">field</h3>
 <p>same as in Interaction  </p>
@@ -320,6 +337,8 @@ dont know as in Interaction...  </p>
 <p>Same as in Interaction  </p>
 <h2 id="item-expressions">Item Expressions</h2>
 <h1 id="user-config">User config</h1>
+<p>The user table specifies info about the users, i.e. the customers. </p>
+<p><img width="968" alt="Screenshot 2022-07-01 at 12 00 26" src="https://user-images.githubusercontent.com/4352260/176873224-8e8d99ba-3f06-48bf-80f7-3b289ab2b266.png"></p>
 <h2 id="fields_2">Fields</h2>
 <h3 id="field_2">field</h3>
 <p>same as in Interaction  </p>
@@ -399,16 +418,16 @@ SUM(returned_quantity)</p>
 multiIf(returned_quantity &gt; 0, 'Return', 'No return')</p>
 <p><strong>Available quantity</strong><br />
 SUM(item.variant_product_size_size_available_now_quantity)/count()</p>
-<h2 id="user-expressions_1">User expressions</h2>
-<p><strong>Users &gt; 1 order</strong><br />
-uniqIf(user,user.agg.orders&gt;1)/uniq(user)</p>
-<h2 id="item-expressions_1">ITEM expressions</h2>
+<h2 id="item-expressions_1">Item expressions</h2>
 <p>Sold items [item based dashboards]<br />
 SUM(article_number.agg.trans)  </p>
 <p>Available quantity [item based dashboards]<br />
 SUM(item.in_stock)  </p>
 <p>SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price) <br />
-SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)  </p></div>
+SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)  </p>
+<h2 id="user-expressions_1">User expressions</h2>
+<p><strong>Users &gt; 1 order</strong><br />
+uniqIf(user,user.agg.orders&gt;1)/uniq(user)</p></div>
         </div>
 
         <footer class="col-md-12">

@@ -136,7 +136,7 @@
 </li>
             
 <li >
-    <a href="../../Documentation/API/">API</a>
+    <a href="../../Documentation/Recommendations/">Recommendations API</a>
 </li>
             
 <li >
@@ -220,16 +220,26 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#voyado">Voyado</a></li>
-            <li><a href="#update-this">Update this</a></li>
-        <li class="main "><a href="#rule">Rule</a></li>
-            <li><a href="#configuration">Configuration</a></li>
-            <li><a href="#api-keys">API Keys</a></li>
+        <li class="main active"><a href="#configuration">Configuration</a></li>
+            <li><a href="#databases">Databases</a></li>
+            <li><a href="#integrations">Integrations</a></li>
+        <li class="main "><a href="#partner-configuration">Partner configuration</a></li>
+            <li><a href="#voyado">Voyado</a></li>
+            <li><a href="#rule">Rule</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="voyado">Voyado</h1>
+<h1 id="configuration">Configuration</h1>
+<p>In the configuration page you can add connections to data, for example databases, and you can also add connections to integrations that you want to export data to, for example an email service.</p>
+<h2 id="databases">Databases</h2>
+<p>A database configuration is set up to fetch data into the platform, and it can be a connection to something like a data lake or a mysql server. It can look something like in the image below. Note that a parameter like <code>${db-user}</code> needs to be added in the <code>Secrets</code> page.</p>
+<p><img width="976" alt="Screenshot 2022-07-01 at 11 28 48" src="https://user-images.githubusercontent.com/4352260/176867875-be6a64af-1a67-48d9-88f5-689d763718d7.png"></p>
+<h2 id="integrations">Integrations</h2>
+<p>An integration configuration is set up to export data from the platform.  It can look something like the facebook-export in the image below (emails are exported to Facebook). Note that a parameter like <code>${fb-token}</code> needs to be added in the <code>Secrets</code> page.</p>
+<p><img width="837" alt="Screenshot 2022-07-01 at 11 34 13" src="https://user-images.githubusercontent.com/4352260/176868658-b99b6f52-8a53-48f6-8e9e-b42275d10329.png"></p>
+<h1 id="partner-configuration">Partner configuration</h1>
+<h2 id="voyado">Voyado</h2>
 <p>The voyado config needs three parameters that are the same for all lakes. These can be found on Bitwarden under Infobaleen/Voyado. The fourth parameter is the lake endpoint. This is found in Voyado's <a href="(#find-voyado-files-to-import)">Azure data lake</a></p>
 <p>Example:</p>
 <pre><code>{&quot;Root&quot;:&quot;/voyado/export&quot;, &quot;Directories&quot;: ['receipts'], &quot;ClientId&quot;: &quot;${CLIENT_ID}&quot;, &quot;ClientSecret&quot;: &quot;${CLIENT_SECRET}&quot;, &quot;DirectoryId&quot;: &quot;${DIRECTORY_ID}&quot;, &quot;LakeUri&quot;:&quot;bangerhadcorestordlsprod.azuredatalakestore.net&quot;}
@@ -238,10 +248,7 @@
 <p>Some comments:
 <em> <code>"Directories"</code>: These are the directories that can be found in the <a href="(#find-voyado-files-to-import)">Azure data lake</a>
 </em> There are defauly directories that will be accessible without specifying them, these are <code>store/</code>, <code>receiptItems/</code>, <code>article/</code> and <code>allContacts/</code></p>
-<h2 id="update-this">Update this</h2>
-<hr />
-<h1 id="rule">Rule</h1>
-<h2 id="configuration">Configuration</h2>
+<h2 id="rule">Rule</h2>
 <p><em>Integration with rule enables you export your <strong>Segmentation</strong> campaigns to rule</em>  </p>
 <p><strong>Name:</strong> should be set to <code>rule</code> as standard<br />
 <strong>Driver:</strong> rule<br />
@@ -251,26 +258,7 @@ and "KeyField":"email" is set
 <strong>Default User Field:</strong> <code>field name</code> + <code>KeyField</code> wich is set to <code>email</code> in this case<br />
 ex. if field name = email the Default user field becomes <code>email email</code>
 <strong>Name used in exports:</strong> ${PARENT_NAME}: ${INDEX_NAME}
-<strong>Optional User Fields:</strong> No idea.</p>
-<h2 id="api-keys">API Keys</h2>
-<p><strong>Name:</strong> should be set to <code>rule-recommendations</code>  </p>
-<h3 id="recommendations">Recommendations</h3>
-<p><strong>ItemsToItems:</strong> <code>Active</code> dont know<br />
-<strong>UserToItems:</strong> <code>Active</code> dont know<br />
-<strong>ItemData:</strong> <code>Active</code> dont know<br />
-<strong>ModelInfo:</strong> <code>Inactive</code> dont know<br />
-<strong>Data Models:</strong> [Choose your data model with the recommendations of intrest]<br />
-<strong>Profiles:</strong> [Choose the recommendation profiles you want to use]  </p>
-<h3 id="data-sync">Data sync</h3>
-<p><strong>SourceSync:</strong> <code>Inactive</code> dont know<br />
-<strong>Buffers:</strong> <code>Inactive</code> dont know  </p>
-<h3 id="cli">CLI</h3>
-<p><strong>MLDump:</strong> <code>Inactive</code> dont know<br />
-<strong>Db:</strong> <code>Inactive</code> dont know  </p>
-<h3 id="admin">Admin</h3>
-<p><strong>Note:</strong> 
-<strong>Immutable:</strong> An immutable key can never be updated (only removed). Useful if you want to share a key an be sure that the scope does not change by mistake<br />
-<strong>AllowAll:</strong> Activates everything or just recomendations tags</p></div>
+<strong>Optional User Fields:</strong> No idea.</p></div>
         </div>
 
         <footer class="col-md-12">

@@ -136,7 +136,7 @@
 </li>
             
 <li >
-    <a href="../../Documentation/API/">API</a>
+    <a href="../../Documentation/Recommendations/">Recommendations API</a>
 </li>
             
 <li >
@@ -221,12 +221,28 @@
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="main active"><a href="#api-keys">API Keys</a></li>
+        <li class="main "><a href="#test-your-api-request">" Test your API request</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
 <h1 id="api-keys">API Keys</h1>
-<p>An API key can be seen as a unique identifier used to authenticate a user to permit data sharing/collection. The API process starts with one API calling another API, and then sharing the API to gain access.</p></div>
+<p>API keys are primarily used for accessing the recommendation API to fetch product recommendations to your website or your email campaigns. </p>
+<h1 id="test-your-api-request">" Test your API request</h1>
+<ul>
+<li>Create a new API key</li>
+<li>Open ubuntu</li>
+<li>Copy from your  API key </li>
+</ul>
+<pre><code>  curl 'https://`PLATFORM`.infobaleen.com/api/v1/api-profiles/`473`/recommendations/user-to-items' -d '{&quot;Limit&quot;:3,&quot;User&quot;:&quot;`X`&quot;}' -H 'Authorization: `KEY`'
+</code></pre>
+
+<ul>
+<li>Use <strong>Rex</strong> in the user table under Model &gt; Users and replace X in the curl to verify you get the same results as the recommendations for that user</li>
+</ul>
+<p><strong>NOTE:</strong> If you try to use the curl command in Windows it will not work note the difference from the curl above with <code>\</code> and <code>.exe</code> </p>
+<pre><code>curl`.exe` 'https://PLATFORM.infobaleen.com/api/v1/api-profiles/473/recommendations/user-to-items' -d '{`\`&quot;Limit`\`&quot;:3,`\`&quot;User`\`&quot;:`\`&quot;X`\`&quot;}' -H 'Authorization: KEY'
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">

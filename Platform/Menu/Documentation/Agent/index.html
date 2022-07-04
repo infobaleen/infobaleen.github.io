@@ -136,7 +136,7 @@
 </li>
             
 <li >
-    <a href="../API/">API</a>
+    <a href="../Recommendations/">Recommendations API</a>
 </li>
             
 <li >
@@ -208,7 +208,7 @@
                                 </a>
                             </li>
                             <li >
-                                <a rel="prev" href="../API/">
+                                <a rel="prev" href="../Recommendations/">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -220,12 +220,137 @@
         <div class="container">
                 <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
-        <li class="main active"><a href="#agent">Agent</a></li>
+        <li class="main active"><a href="#agent-filesystem-query-helper-functions">Agent: Filesystem query helper functions</a></li>
+            <li><a href="#operators-and-functions">Operators and Functions</a></li>
+            <li><a href="#join">Join</a></li>
+            <li><a href="#sub-queries">Sub queries</a></li>
+            <li><a href="#practical-examples">Practical Examples</a></li>
     </ul>
 </div></div>
                 <div class="col-md-9" role="main">
 
-<h1 id="agent">Agent</h1></div>
+<h1 id="agent-filesystem-query-helper-functions">Agent: Filesystem query helper functions</h1>
+<p>The agent supports a powerful query language for CSV files. Below are available helper
+functions and some practical examples that might be useful when setting up your sources.</p>
+<h2 id="operators-and-functions">Operators and Functions</h2>
+<ul>
+<li><code>x LIKE format</code></li>
+<li><code>x IN(a,b,...)</code></li>
+<li><code>a OR b</code></li>
+<li><code>a AND b</code></li>
+<li><code>a = b</code></li>
+<li><code>a &lt; b</code></li>
+<li><code>a &gt; b</code></li>
+<li><code>a &lt;= b</code></li>
+<li><code>a &gt;= b</code></li>
+<li><code>a &lt;&gt; b</code></li>
+<li><code>multiIf(cond1,val1,...,defaultVal)</code> Ex: <code>multiIf(a &gt; 1, 'a&gt;1', 'a&lt;=1')</code></li>
+<li><code>sleep(millisec)</code></li>
+</ul>
+<h3 id="numerical">Numerical</h3>
+<ul>
+<li><code>abs(x)</code></li>
+<li><code>floor(x)</code></li>
+<li><code>ceil(x)</code></li>
+<li><code>round(x)</code></li>
+<li><code>least(a,b)</code></li>
+<li><code>greatest(a,b)</code></li>
+</ul>
+<h3 id="time-uses-gos-time-formatting-eg-2006-01-02-150405">Time (uses go's time formatting: eg. 2006-01-02 15:04:05)</h3>
+<ul>
+<li><code>unixTimestamp(x [,format])</code> Ex: <code>unixTimestamp('2015-01-01', '2006-01-02')</code> =&gt; <code>1420070400</code></li>
+<li><code>fromUnixtime(x [,format])</code> Ex: <code>fromUnixTime(1420070400, '2006-01-02')</code> =&gt; <code>2015-01-01</code></li>
+<li><code>now()</code> Ex: <code>now()</code> =&gt; <code>1571038684</code></li>
+</ul>
+<h3 id="string">String</h3>
+<ul>
+<li><code>sluggify(x)</code> Ex: <code>sluggify('HelloWorld')</code> =&gt; <code>hello-world</code></li>
+<li><code>queryescape(x)</code> QueryEscape escapes the string so it can be safely placed inside a URL query.</li>
+<li><code>match(pattern,name)</code> (uses go's <code>path.Match</code>)</li>
+<li><code>slice(x, start, stop, delimiter)</code> Ex: <code>slice('a-b-c', 0, 1, '-')</code> =&gt; <code>a</code></li>
+<li><code>sort(x,delimiter)</code> Ex: <code>sort('c-a-b')</code> =&gt; <code>a-b-c</code></li>
+<li><code>reverse(x, delimiter)</code> Ex: <code>reverse('abc', '')</code> =&gt; <code>cba</code>, <code>reverse('a-b-c')</code> =&gt; <code>c-b-a</code></li>
+<li><code>concatWs(delimiter,xs...)</code> Ex: <code>concatWs('-', 'a', 'b')</code> =&gt; <code>a-b</code></li>
+<li><code>coalesce(xs...)</code> Ex: <code>coalesce('', 'fallback')</code> =&gt; <code>fallback</code></li>
+<li><code>concat(xs...)</code>  Ex: <code>concat('a', 'b')</code> =&gt; <code>ab</code></li>
+<li><code>replace(x,old,new)</code> Ex: <code>replace('foobar', 'bar', 'baz')</code> =&gt; <code>foobaz</code> </li>
+<li><code>lower(x)</code></li>
+<li><code>upper(x)</code></li>
+<li><code>length(x)</code></li>
+</ul>
+<h3 id="json">JSON</h3>
+<ul>
+<li><code>pickJson(x, fields...)</code> Ex: <code>pickJson('{"foo":1, "bar":2, "baz":3}', 'foo', 'bar')</code> =&gt; <code>{"foo":1, "bar":2}</code></li>
+</ul>
+<h3 id="hashrand">Hash/rand</h3>
+<ul>
+<li><code>rand()</code></li>
+<li><code>randInt()</code></li>
+<li><code>randInt(x)</code></li>
+<li><code>md5(x)</code></li>
+<li><code>xxHash63(x)</code></li>
+<li><code>xxHash64(x)</code></li>
+<li><code>identity(x)</code> Ex: <code>identity('a')</code> =&gt; <code>a</code></li>
+</ul>
+<h3 id="file-details">File Details</h3>
+<ul>
+<li><code>size()</code></li>
+<li><code>path()</code></li>
+<li><code>modifiedAt()</code></li>
+<li><code>depth()</code></li>
+</ul>
+<h3 id="special">Special</h3>
+<ul>
+<li><code>analyse()</code> Anlayse column data. Ex: <code>select analyse(price) from ...</code> =&gt; <code>{"CountNum":431359,"CountEmpty":0,"CountString":0,"Sum":555691303,"Average":1288.2339364285353,"Min":1,"Max":618993.5625}</code></li>
+</ul>
+<h2 id="join">Join</h2>
+<p>Inner joins are supported, but limited to only one joined table. The join must be written in the following format.
+Note that joins must load the secondary table data into RAM, so use this feature wisely. </p>
+<pre><code>SELECT *, u.* from `transaction.csv` t JOIN `users.csv` u ON t.user_id = u.id
+</code></pre>
+
+<p>Note that when referring to the joined table in the <code>select</code>, you must use an alias, but not for the <code>from</code> file.</p>
+<h2 id="sub-queries">Sub queries</h2>
+<p>Support for sub queries.
+Since the join support is limited, this is the typical use case for using sub queries </p>
+<pre><code>SELECT * from `transactions.csv` WHERE user_id IN (SELECT id FROM `users.csv`) t
+</code></pre>
+
+<h2 id="practical-examples">Practical Examples</h2>
+<h3 id="convert-date-to-unix-timestamp">Convert date to unix timestamp</h3>
+<p>Uploaded interaction data requires a column with unix timestamp data, making this function useful.
+See different examples below depending on date format (go date format). See [https://yourbasic.org/golang/format-parse-string-time-date-example/]</p>
+<pre><code>unix_timestamp(ts_string,&lt;FORMAT&gt;)
+unix_timestamp(ts_string,&quot;2006-01-02 15:04:05&quot;)
+unix_timestamp(ts_string,&quot;2006-01-02T15:04:05Z&quot;)
+</code></pre>
+
+<h4 id="example-age-from-time-string">Example: Age from time string</h4>
+<pre><code>round((now() - unix_timestamp(birth_year,&quot;2006-01-02&quot;)) / (60 * 60 * 24 * 365)) as age
+</code></pre>
+
+<h3 id="string-concatenation">String concatenation</h3>
+<pre><code>concat(title, '(', author, ', ', year, ')') as displayName
+</code></pre>
+
+<h4 id="example-building-image-urls">Example: Building image urls</h4>
+<pre><code class="3">concat('/api/v1/image?w=300&amp;h=200&amp;label=', queryEscape(english_title)) as dummy_image
+</code></pre>
+
+<h3 id="multi-if">Multi if</h3>
+<h4 id="example-build-filter-variables">Example: Build filter variables</h4>
+<p>For item id's that you want to exclude, build a variable and then filter on it
+in the data model setup.</p>
+<pre><code>multiIf(_id IN (123, 456, 789) OR category_4='Candy', 1, 0) as is_irrelevant
+</code></pre>
+
+<h4 id="example-name-from-id">Example: Name from id</h4>
+<pre><code>multiIf(
+    store_id = &quot;b92a0b68-3b4b-4fba-8711-a69100e940e9&quot;,&quot;Umeå&quot;,
+    store_id = &quot;48292bda-f26c-428e-8de5-a69100e940e9&quot;,&quot;Göteborg&quot;,
+    store_id = &quot;8d46721c-2368-480b-913a-a69100e940e9&quot;,&quot;Stockholm&quot;,
+'unknown_store') as store,
+</code></pre></div>
         </div>
 
         <footer class="col-md-12">
