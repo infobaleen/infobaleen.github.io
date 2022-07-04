@@ -23,7 +23,13 @@ nav:
     - Segmentations:
         - Auto-targeting: Platform/Segmentations/Auto-targeting.md
         - Clustering: Platform/Segmentations/Clustering.md
-    - Recommendations: Platform/Recommendations/Recommendations.md
+    - Recommendations:
+        - Platform/Recommendations/Recommendations.md
+        - Platform/Recommendations/Settings.md
+        - Platform/Recommendations/Front page.md
+        - Platform/Recommendations/Data available in recommendations.md
+        - Platform/Recommendations/Recommendations in emails.md
+        - Platform/Recommendations/Infobaleen recommended recommendation profiles.md
     - Menu:
         - Account:
             - API Keys: Platform/Menu/Account/API-Keys.md
