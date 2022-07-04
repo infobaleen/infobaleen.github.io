@@ -2,6 +2,23 @@
 
 The documentation uses [MkDocs](https://www.mkdocs.org/), which is a fast and simple static site generator geared towards building project documentation. Documentation source files are written in Markdown, and configured with a single YAML configuration file.
 
+
+## How to create a static website for the docs?
+
+We highly recommend to create a python virtual environment.
+
+    - $ virtualenv venv -p python3
+
+Activate the virtual environment:
+
+    - $ source venv/bin/activate
+
+Install the requirements:
+
+    - $ pip install -r requirements.txt
+
+
+
 ### Install MKDocs
 
 To install MkDocs, run the following command from the command line (requires python):

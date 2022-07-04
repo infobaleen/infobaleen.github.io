@@ -1,5 +1,17 @@
 site_name: Documentation
-site_description: Documentation for Infobaleen Platform
+site_description: Documentation for the Infobaleen Platform
+theme:
+    name: material
+    palette:
+        primary: deep purple
+    logo: assets/logo.png
+    favicon: images/favicon.png
+    custom_dir: overrides
+    features:
+        - navigation.tabs
+        - navigation.tabs.sticky
+        - navigation.sections
+        - navigation.expand
 extra_css:
   - custom/extra.css
 nav:

@@ -1,4 +1,4 @@
-# Customer Insights - Propensity to Purchase
+## Customer Insights - Propensity to Purchase
 
 The Propensity to Purchase-model classifies customers by their likelihood to purchase in the future - based on historical data. This insight can be integrated into marketing and sales strategies.
 

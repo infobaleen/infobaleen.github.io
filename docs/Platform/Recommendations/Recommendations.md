@@ -1,4 +1,4 @@
-# Recommendations UI
+## Recommendations UI
 
 You can use the platform to create personalized product recommendations that can be added to your website, checkout flow or in email campaigns. 
 
@@ -7,54 +7,54 @@ You can create customizable API recommendations profiles with filters and rules 
 <img width="970" alt="Screenshot 2022-07-01 at 10 52 52" src="https://user-images.githubusercontent.com/4352260/176861100-b9b6f25e-dffb-4a4e-8103-51d25d6f0d2d.png">
 
 
-# Settings
+## Settings
 
 Here we explain the different settings fields that can be seen after clicing the cog wheel.
 
 <img width="1019" alt="Screenshot 2022-07-01 at 11 12 12" src="https://user-images.githubusercontent.com/4352260/176864507-439bac1e-4029-4aa3-800e-d4c14e8423e0.png">
 
 
-## Search
+### Search
 
 
-## Columns
+### Columns
 
 Columns are the data columns that can be used to create filters and rules. These are activated in the data model with the `MlFilter` toggle (MlFilter = Machine Learning Filter), see the image below. 
 
 <img width="890" alt="Screenshot 2022-07-01 at 11 01 15" src="https://user-images.githubusercontent.com/4352260/176862636-6659b5fd-594f-4049-a349-45e774c39201.png">
 
-## Filter expression
+### Filter expression
 Here you can write an expression that creates a filter for your recommendation profile. For example, perhaps you just want to recommend products in a specific category, then you would write something like `category = 'Kaffe & Te'`, or `price` > `100`
 
 If the expression is `True` the product will be included in the recommendation, and it the expression is `False` the product will be filtered. In the case of `price` > `100`, the expression will return `True` for all products with a price larger than 100 thus removing all items with a price lower than 100 from the recommendations.
 
-## Boost expression
+### Boost expression
 
 
-## InteractionFilter
+### InteractionFilter
 
 
-## Trend
+### Trend
 Trend limits the time interval for the data that the recomendations are based on. `Max trend` uses a short time interval resulting in the machine-learning model only recommending products that are trending last few weeks.
 
-## Limit
+### Limit
 Limit decides how many recomended items are returned. For example, Limit 4 = Four recommended items. Limit 12 = 12 recommended items.
 
-## Max orders
+### Max orders
 Number of orders that are taken into concideration when recommending products. `Max orders = 1` means only the items included in the latest order are used as purchase history for that user. `Max orders = 2` means the items in the two latest orders are taken into account.
 
-## Max interactions
+### Max interactions
 Number of items that are taken into concideration when recommending products. `Max items = 1` means only the latest purchased item is used as purchase history for that user. `Max items = 2` means the two latest items are taken into account.
 
-## Allow items from history
+### Allow items from history
 Sets a filter so that all items the user have bought cannot be recommended. 
 
-## Shuffled
+### Shuffled
 If Limit is set to 10 the items are recomended in order (most likly next purchase is at the top).  
 by enabling `shuffled` it still recommends the top 10 items but the order of the top 10 items are shuffled. 
 
 
-## Advanced
+### Advanced
 Create an advanced filter. 
 
 * Name: is the variable name.
@@ -63,7 +63,7 @@ Create an advanced filter.
 
 See an example below:
 
-### Example of advanced quey
+#### Example of advanced quey
 ```
 {"Context":[{"Name":"bought_phone_model","Field":"phone_model","Option":"all"}]}
 ```
@@ -91,64 +91,64 @@ See example:
 ![image](https://user-images.githubusercontent.com/102239423/171145795-877fb7b8-6e02-4bf0-857b-985deafe6efd.png)
 
 
-## Add field limit 
+### Add field limit 
 Field limit lets you set a filter on how many of each category should be recommended. This is usually used on product category where you only want to include ex. max 2 of each product category.
 
-## Save as new profile
+### Save as new profile
 Saves the current configuration as a profile new
 
-## Save profile
+### Save profile
 Overrides the current profile with the current configuration.
 
-## Delete profile
+### Delete profile
 Delets selected profile.
 
-# Front page
+## Front page
 
-## Search for items
+### Search for items
 Items added in the search items window are counted as items given to the platform through the API call. This means they dont not affected by `boughtArticleGroup` but affects `basketArticleGroup`. 
 
-## Profile
+### Profile
 Saved profiles
 
-## Refresh
+### Refresh
 
-## Clear user and items
+### Clear user and items
 Removes selected items and user
 
-## Bench
+### Bench
 Shows how fast the recommendation are returend when making an API call. (if your datamodel has MLFilter active for many fields the recommendations will be slower).
 
-## Add random item
+### Add random item
 Same as **search for items** but adds a random item.
 
-## Add random user
+### Add random user
 Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. 
 
-## Recommendation output
+### Recommendation output
 The output is what the API returns to the customer. All fields active in the **Columns** section are returnerd. if the `image` is active the output will only show the image and format. by disabling the image you can see all other fields that are returned.  
 With image active:
 ![image](https://user-images.githubusercontent.com/102239423/170311295-0a3f1097-cc4f-4829-a4fb-8962b3b5d5e7.png)
 With image inactive:
 ![image](https://user-images.githubusercontent.com/102239423/170311416-cd596ff0-02d8-44b8-91d9-483ddcccb075.png)
 
-# Data available in recommendations
+## Data available in recommendations
 
-## MlMeta
+### MlMeta
 To show an image and name on your recomendations you have to choose a format field and an image field under items AND activate the ml meta for these fields.
 
-## MlFilter
+### MlFilter
 To write filter expressions based on fields you have to activate ml filter for these fields
 
-# Recommendations in emails
+## Recommendations in emails
 
-## Introduction
+### Introduction
 We can supply personalized recommendations in automated email flows. The technical integration varies between partners, but the main difference compared to segments is that we supply an individually customized set of products per user.
 
-## Partners
+### Partners
 Here we specify how the process works between us and specified partners
 
-### Voyado
+#### Voyado
 Voyado has an ftp server to which we push a file of the form
 ```
 ContactId,Skus,ExpiryDate
@@ -169,40 +169,40 @@ Once the recommendation flow is set up and an initial export has been sent, the 
 
 
 
-## Basic settings
+### Basic settings
 
 * Products in stock
 * For clear gender-related products: See if you should only recommend products with the same gender
 
-## Olika rekommendationer
+### Olika rekommendationer
 
-### Standard rekommendation: Standard
+#### Standard rekommendation: Standard
 Rekommendera det mest sannolika nästa köpet (medium trend)  
 **Syfte:** Hög sannolik att konvertera  
 
-### Liknande produkter rekommendation: Similar
+#### Liknande produkter rekommendation: Similar
 Rekommendera produkter ur samma kategori  
 **Syfte:** Hög igenkänningsfaktor  
 
 
-### Inspiration rekommendation: Inspiration
+#### Inspiration rekommendation: Inspiration
 Rekommendera produkter inom kategorier kunden ej handlat inom tidigare / vald produkt  
 **Syfte:** Inspirera till köp i de mest relevanta kategorier man ännu ej handlat inom / produkten ej är i  
 
-### Win-back rekommendation: Win-back
+#### Win-back rekommendation: Win-back
 Rekommendera mest sannolika produkter en kund kommer köpa utifrån historiskt köpbeteende  
 **Syfte:** Presenter de produkter en churnad kund har högst sannolikhet att köpa  
 
 
-### Check-out rekommendation: Check-out 
+#### Check-out rekommendation: Check-out 
 Rekommendera billigare produkter utifrån vad kunden lagt i sin varukorg  
 **Syfte:** Öka AOV med en relevant produkt i det lägre prissegmentet  
 **Expression:** `tofloat(Price) < tofloat(last(basketArticlePrice))*0.8`
 
-### Tack för senast order rekommendation: Last purchase 
+#### Tack för senast order rekommendation: Last purchase 
 Rekommendera mest sannolika produkter utifrån kundens senaste order  
 **Syfte:** Öka andelen kunder som gör ett nästa köp  
 
-### Produkter på rea rekommendationer: On sale
+#### Produkter på rea rekommendationer: On sale
 Rekommendera produkter som är på rea  
 **Syfte:** Öka rea fsg genom att visa relevanta produkter på rea.  
