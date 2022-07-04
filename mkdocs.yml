@@ -57,21 +57,9 @@ nav:
             - Users: Platform/Menu/Model/Users.md
         - Other: Platform/Menu/Other/Overlaps.md
 
-            
-    # - Internal procedures:
-    #     - Overview presentation: Internal procedures/Overview-presentations.md
-    #     - Add-ons and Solutions: Internal procedures/Add-ons and Solutions/Cases.md
-    #     - Editing the wiki:
-    #         - Editing procedures: Internal procedures/Editing the wiki/Editing-procedures.md
-    #         - Writing in markdown: Internal procedures/Editing the wiki/Writing-in-markdown.md
-    #     - G-suite: Internal procedures/G-suite/Create-new-user.md
-    #     - Workflows:
-    #         - GA data: Internal procedures/Workflows/GA data.md
-    #         - How to create an API key and URL to fetch product rec: Internal procedures/Workflows/How-to-create-an-API-key-and-URL-to-fetch-product-recommendations.md
-    #         - Platform setup (import files, sources and datamodel): Internal procedures/Workflows/Platform-setup-(import-files,-sources-and-datamodel).md
-    #         - Other: Internal procedures/Workflows/Other.md
-    # - Kube:
-    #     - Creating new platform: Kube/Creating-new-platform.md
-    #     - Public IP: Kube/Public-IP.md
-
-      
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

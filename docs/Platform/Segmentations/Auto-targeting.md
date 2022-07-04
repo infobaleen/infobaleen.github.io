@@ -4,7 +4,19 @@ Auto-targeting identifies optimal combinations of items and users that helps inc
 
 The result is groups with recommended users-items combinations to use in the advertisements, see the overview below:
 
-<img width="600" alt="Screenshot 2022-06-28 at 14 54 24" src="https://user-images.githubusercontent.com/4352260/176858714-803dade8-166a-4936-9e24-645ed4d18f1b.png">
+```mermaid
+graph TD;
+    Campaign-->SelectRecipients;
+    SelectRecipients-->Advertisement1;
+    SelectRecipients-->Advertisement2;
+    SelectRecipients-->Advertisement3;
+    Advertisement1-->SelectItems1;
+    Advertisement2-->SelectItems2;
+    Advertisement3-->SelectItems3;
+    SelectItems1-->AddFilters1;
+    SelectItems2-->AddFilters2;
+    SelectItems3-->AddFilters3;
+```
 
 ### Step 1: Initiate auto-targeting campaign
 

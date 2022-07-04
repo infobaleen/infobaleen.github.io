@@ -42,4 +42,3 @@ Welcome to the docs!
         </div>
     </div>
 </div>
-
