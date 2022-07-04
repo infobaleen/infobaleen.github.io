@@ -1073,16 +1073,18 @@
 <ul>
 <li>Create a new API key</li>
 <li>Open ubuntu</li>
-<li>Copy from your  API key </li>
+<li>
+<p>Copy from your  API key 
+<div class="highlight"><pre><span></span><code>  curl &#39;https://`PLATFORM`.infobaleen.com/api/v1/api-profiles/`473`/recommendations/user-to-items&#39; -d &#39;{&quot;Limit&quot;:3,&quot;User&quot;:&quot;`X`&quot;}&#39; -H &#39;Authorization: `KEY`&#39;
+</code></pre></div></p>
+</li>
+<li>
+<p>Use <strong>Rex</strong> in the user table under Model &gt; Users and replace X in the curl to verify you get the same results as the recommendations for that user</p>
+</li>
 </ul>
-<pre><code>  curl 'https://`PLATFORM`.infobaleen.com/api/v1/api-profiles/`473`/recommendations/user-to-items' -d '{&quot;Limit&quot;:3,&quot;User&quot;:&quot;`X`&quot;}' -H 'Authorization: `KEY`'
-</code></pre>
-<ul>
-<li>Use <strong>Rex</strong> in the user table under Model &gt; Users and replace X in the curl to verify you get the same results as the recommendations for that user</li>
-</ul>
-<p><strong>NOTE:</strong> If you try to use the curl command in Windows it will not work note the difference from the curl above with <code>\</code> and <code>.exe</code> </p>
-<pre><code>curl`.exe` 'https://PLATFORM.infobaleen.com/api/v1/api-profiles/473/recommendations/user-to-items' -d '{`\`&quot;Limit`\`&quot;:3,`\`&quot;User`\`&quot;:`\`&quot;X`\`&quot;}' -H 'Authorization: KEY'
-</code></pre>
+<p><strong>NOTE:</strong> If you try to use the curl command in Windows it will not work note the difference from the curl above with <code>\</code> and <code>.exe</code> 
+<div class="highlight"><pre><span></span><code>curl`.exe` &#39;https://PLATFORM.infobaleen.com/api/v1/api-profiles/473/recommendations/user-to-items&#39; -d &#39;{`\`&quot;Limit`\`&quot;:3,`\`&quot;User`\`&quot;:`\`&quot;X`\`&quot;}&#39; -H &#39;Authorization: KEY&#39;
+</code></pre></div></p>
 
               
             </article>

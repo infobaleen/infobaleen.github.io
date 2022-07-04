@@ -1487,45 +1487,45 @@ functions and some practical examples that might be useful when setting up your 
 </ul>
 <h2 id="join">Join</h2>
 <p>Inner joins are supported, but limited to only one joined table. The join must be written in the following format.
-Note that joins must load the secondary table data into RAM, so use this feature wisely. </p>
-<pre><code>SELECT *, u.* from `transaction.csv` t JOIN `users.csv` u ON t.user_id = u.id
-</code></pre>
-<p>Note that when referring to the joined table in the <code>select</code>, you must use an alias, but not for the <code>from</code> file.</p>
+Note that joins must load the secondary table data into RAM, so use this feature wisely. 
+<div class="highlight"><pre><span></span><code>SELECT *, u.* from `transaction.csv` t JOIN `users.csv` u ON t.user_id = u.id
+</code></pre></div>
+Note that when referring to the joined table in the <code>select</code>, you must use an alias, but not for the <code>from</code> file.</p>
 <h2 id="sub-queries">Sub queries</h2>
 <p>Support for sub queries.
-Since the join support is limited, this is the typical use case for using sub queries </p>
-<pre><code>SELECT * from `transactions.csv` WHERE user_id IN (SELECT id FROM `users.csv`) t
-</code></pre>
+Since the join support is limited, this is the typical use case for using sub queries 
+<div class="highlight"><pre><span></span><code>SELECT * from `transactions.csv` WHERE user_id IN (SELECT id FROM `users.csv`) t
+</code></pre></div></p>
 <h2 id="practical-examples">Practical Examples</h2>
 <h3 id="convert-date-to-unix-timestamp">Convert date to unix timestamp</h3>
 <p>Uploaded interaction data requires a column with unix timestamp data, making this function useful.
-See different examples below depending on date format (go date format). See [https://yourbasic.org/golang/format-parse-string-time-date-example/]</p>
-<pre><code>unix_timestamp(ts_string,&lt;FORMAT&gt;)
+See different examples below depending on date format (go date format). See [https://yourbasic.org/golang/format-parse-string-time-date-example/]
+<div class="highlight"><pre><span></span><code>unix_timestamp(ts_string,&lt;FORMAT&gt;)
 unix_timestamp(ts_string,&quot;2006-01-02 15:04:05&quot;)
 unix_timestamp(ts_string,&quot;2006-01-02T15:04:05Z&quot;)
-</code></pre>
+</code></pre></div></p>
 <h4 id="example-age-from-time-string">Example: Age from time string</h4>
-<pre><code>round((now() - unix_timestamp(birth_year,&quot;2006-01-02&quot;)) / (60 * 60 * 24 * 365)) as age
-</code></pre>
+<div class="highlight"><pre><span></span><code>round((now() - unix_timestamp(birth_year,&quot;2006-01-02&quot;)) / (60 * 60 * 24 * 365)) as age
+</code></pre></div>
 <h3 id="string-concatenation">String concatenation</h3>
-<pre><code>concat(title, '(', author, ', ', year, ')') as displayName
-</code></pre>
+<div class="highlight"><pre><span></span><code>concat(title, &#39;(&#39;, author, &#39;, &#39;, year, &#39;)&#39;) as displayName
+</code></pre></div>
 <h4 id="example-building-image-urls">Example: Building image urls</h4>
-<pre><code class="language-3">concat('/api/v1/image?w=300&amp;h=200&amp;label=', queryEscape(english_title)) as dummy_image
-</code></pre>
+<div class="highlight"><pre><span></span><code>concat(&#39;/api/v1/image?w=300&amp;h=200&amp;label=&#39;, queryEscape(english_title)) as dummy_image
+</code></pre></div>
 <h3 id="multi-if">Multi if</h3>
 <h4 id="example-build-filter-variables">Example: Build filter variables</h4>
 <p>For item id's that you want to exclude, build a variable and then filter on it
-in the data model setup.</p>
-<pre><code>multiIf(_id IN (123, 456, 789) OR category_4='Candy', 1, 0) as is_irrelevant
-</code></pre>
+in the data model setup.
+<div class="highlight"><pre><span></span><code>multiIf(_id IN (123, 456, 789) OR category_4=&#39;Candy&#39;, 1, 0) as is_irrelevant
+</code></pre></div></p>
 <h4 id="example-name-from-id">Example: Name from id</h4>
-<pre><code>multiIf(
+<div class="highlight"><pre><span></span><code>multiIf(
     store_id = &quot;b92a0b68-3b4b-4fba-8711-a69100e940e9&quot;,&quot;Umeå&quot;,
     store_id = &quot;48292bda-f26c-428e-8de5-a69100e940e9&quot;,&quot;Göteborg&quot;,
     store_id = &quot;8d46721c-2368-480b-913a-a69100e940e9&quot;,&quot;Stockholm&quot;,
-'unknown_store') as store,
-</code></pre>
+&#39;unknown_store&#39;) as store,
+</code></pre></div>
 
               
             </article>

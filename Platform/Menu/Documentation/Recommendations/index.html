@@ -1381,19 +1381,19 @@ Given a user id, a list of recommended items is returned.</p>
 </tbody>
 </table>
 <p><strong>cURL</strong> example</p>
-<pre><code>curl -X POST ${IB_API_URL}/api/v1/data-models/&lt;id&gt;/recommendations/user-to-items \
+<div class="highlight"><pre><span></span><code>curl -X POST ${IB_API_URL}/api/v1/data-models/&lt;id&gt;/recommendations/user-to-items \
 -H &quot;Authorization: ${IB_API_KEY}&quot; \
--d '{&quot;User&quot;: &quot;123&quot;, &quot;Limit&quot;: 10, &quot;Recurring&quot;: false}'
-</code></pre>
+-d &#39;{&quot;User&quot;: &quot;123&quot;, &quot;Limit&quot;: 10, &quot;Recurring&quot;: false}&#39;
+</code></pre></div>
 <p><strong>Response</strong>
 The response contains the top recommended items ordered according to the relevance score. The item object contains <code>Id</code>
 and all meta-data fields that is specified in the data-model configuration.</p>
-<pre><code>[
+<div class="highlight"><pre><span></span><code>[
     {&quot;Id&quot;:&quot;7942856970334767135&quot;, ...},
     {&quot;Id&quot;:&quot;9136495236170061780&quot;, ...},
     ...
 ]
-</code></pre>
+</code></pre></div>
 
               
             </article>

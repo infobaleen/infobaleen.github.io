@@ -1139,8 +1139,8 @@
 <h2 id="voyado">Voyado</h2>
 <p>The voyado config needs three parameters that are the same for all lakes. These can be found on Bitwarden under Infobaleen/Voyado. The fourth parameter is the lake endpoint. This is found in Voyado's <a href="(#find-voyado-files-to-import)">Azure data lake</a></p>
 <p>Example:</p>
-<pre><code>{&quot;Root&quot;:&quot;/voyado/export&quot;, &quot;Directories&quot;: ['receipts'], &quot;ClientId&quot;: &quot;${CLIENT_ID}&quot;, &quot;ClientSecret&quot;: &quot;${CLIENT_SECRET}&quot;, &quot;DirectoryId&quot;: &quot;${DIRECTORY_ID}&quot;, &quot;LakeUri&quot;:&quot;bangerhadcorestordlsprod.azuredatalakestore.net&quot;}
-</code></pre>
+<div class="highlight"><pre><span></span><code>{&quot;Root&quot;:&quot;/voyado/export&quot;, &quot;Directories&quot;: [&#39;receipts&#39;], &quot;ClientId&quot;: &quot;${CLIENT_ID}&quot;, &quot;ClientSecret&quot;: &quot;${CLIENT_SECRET}&quot;, &quot;DirectoryId&quot;: &quot;${DIRECTORY_ID}&quot;, &quot;LakeUri&quot;:&quot;bangerhadcorestordlsprod.azuredatalakestore.net&quot;}
+</code></pre></div>
 <p>Some comments:
 * <code>"Directories"</code>: These are the directories that can be found in the <a href="(#find-voyado-files-to-import)">Azure data lake</a>
 * There are defauly directories that will be accessible without specifying them, these are <code>store/</code>, <code>receiptItems/</code>, <code>article/</code> and <code>allContacts/</code></p>

@@ -1164,7 +1164,17 @@
 <h2 id="auto-targeting">Auto-targeting</h2>
 <p>Auto-targeting identifies optimal combinations of items and users that helps increase conversion in campaigns. The results are based on the results from the machine-learning models. </p>
 <p>The result is groups with recommended users-items combinations to use in the advertisements, see the overview below:</p>
-<p><img width="600" alt="Screenshot 2022-06-28 at 14 54 24" src="https://user-images.githubusercontent.com/4352260/176858714-803dade8-166a-4936-9e24-645ed4d18f1b.png"></p>
+<pre class="mermaid"><code>graph TD;
+    Campaign--&gt;SelectRecipients;
+    SelectRecipients--&gt;Advertisement1;
+    SelectRecipients--&gt;Advertisement2;
+    SelectRecipients--&gt;Advertisement3;
+    Advertisement1--&gt;SelectItems1;
+    Advertisement2--&gt;SelectItems2;
+    Advertisement3--&gt;SelectItems3;
+    SelectItems1--&gt;AddFilters1;
+    SelectItems2--&gt;AddFilters2;
+    SelectItems3--&gt;AddFilters3;</code></pre>
 <h3 id="step-1-initiate-auto-targeting-campaign">Step 1: Initiate auto-targeting campaign</h3>
 <ol>
 <li>Choose the <strong>Auto Targeting</strong> tab</li>

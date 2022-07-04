@@ -1272,12 +1272,12 @@
 <ol>
 <li>Get the public URL of the feed</li>
 <li>Add a new <code>source</code>, often it is a good idea to add a "Merge Filter" to avoid fetching too much data (you can for example add <code>now() &lt; toFloat(last_seen) + 7*24*3600</code>)</li>
-<li>Add a query similar to below and also add <code>decoder=head</code> in the field <code>Preprocessor directives</code> to show the file structure. Note that you have to write <code>url:</code> before <code>https://</code>, see example below</li>
-</ol>
-<pre><code>SELECT
+<li>Add a query similar to below and also add <code>decoder=head</code> in the field <code>Preprocessor directives</code> to show the file structure. Note that you have to write <code>url:</code> before <code>https://</code>, see example below
+<div class="highlight"><pre><span></span><code>SELECT
     *
 FROM `url:https://shop.com/plugin-export/shoppingfeed/se`  
-</code></pre>
+</code></pre></div></li>
+</ol>
 <p>[Note that you have to write <strong>url:</strong> before https://]  </p>
 <h3 id="preprocessor-directives">Preprocessor directives</h3>
 <p>Start by writing <code>decoder=xml</code> (or <code>=feed</code>)</p>

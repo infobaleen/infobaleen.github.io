@@ -1115,13 +1115,13 @@ If it’s a centra/voyado customer choose that option, if the files were uploade
 <p>You can set a daily sync for the source, for example <code>DailyAt:6</code>.</p>
 <h2 id="dependencies">Dependencies</h2>
 <p>Dependencies for a source show what other sources the are used to build up the source.<br />
-an example for this is </p>
-<pre><code>SELECT * FROM Source1  
+an example for this is 
+<div class="highlight"><pre><span></span><code>SELECT * FROM Source1  
 LEFT JOIN Source2 on Source2.id = Source1.id  
 UNION  
 SELECT * FROM Source3  
-</code></pre>
-<p>This will show the id for source 1,2,3 in the Dependencies for the new source.</p>
+</code></pre></div>
+This will show the id for source 1,2,3 in the Dependencies for the new source.</p>
 <h2 id="updated-at">Updated At</h2>
 <p>Shows how long ago the source was last modified.</p>
 <h2 id="synced-at">Synced At</h2>
@@ -1164,10 +1164,10 @@ User,ts,item is sorted first on user, then on ts and lastly on item.  </p>
 <h2 id="load-saved-query">Load saved query</h2>
 <p>lets you reload previously run queries</p>
 <h2 id="preprocessor-directives">Preprocessor directives</h2>
-<p>when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.  </p>
-<pre><code>SELECT * FROM `url:https://files.channable.com/o2lQPJiYXk7KrY1DW2BJ3A==.xml`  
-</code></pre>
-<p>[Note that you have to write <strong>url:</strong> before https://]  </p>
+<p>when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.<br />
+<div class="highlight"><pre><span></span><code>SELECT * FROM `url:https://files.channable.com/o2lQPJiYXk7KrY1DW2BJ3A==.xml`  
+</code></pre></div>
+[Note that you have to write <strong>url:</strong> before https://]  </p>
 <p>start by writing<br />
 <code>decoder=xml</code><br />
 to show the file structure, in this case it looks like this.
@@ -1196,41 +1196,41 @@ id,item
 2,item2</code>
 this returns a table.</p>
 <h2 id="union">UNION</h2>
-<p>A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order</p>
-<pre><code>SELECT * FROM `table 1`
+<p>A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order
+<div class="highlight"><pre><span></span><code>SELECT * FROM `table 1`
 UNION
 SELECT * FROM `table 2`
-</code></pre>
-<p>if you have overlapping id rows in <code>table 1</code> and <code>table 2</code> the id in <code>table 1</code> will be saved and <code>table 2</code> will be discared.
+</code></pre></div>
+if you have overlapping id rows in <code>table 1</code> and <code>table 2</code> the id in <code>table 1</code> will be saved and <code>table 2</code> will be discared.
 ex. 
-to try this, create a test source</p>
-<pre><code>select 
+to try this, create a test source
+<div class="highlight"><pre><span></span><code>select 
 incr(1,50) AS id,
-'table 1' AS item
+&#39;table 1&#39; AS item
 from `&lt;RANDOM_SOURCE&gt;`
 
 UNION
 select 
 incr(1,1) AS id,
-'table 2' AS item
+&#39;table 2&#39; AS item
 from `&lt;RANDOM_SOURCE&gt;`
-</code></pre>
-<p>then create a new source </p>
-<pre><code>SELECT * FROM `&lt;TEST_SOURCE&gt;`
-</code></pre>
-<p>this will show that all overlapping ids will have item from <code>table 1</code>.</p>
+</code></pre></div>
+then create a new source 
+<div class="highlight"><pre><span></span><code>SELECT * FROM `&lt;TEST_SOURCE&gt;`
+</code></pre></div>
+this will show that all overlapping ids will have item from <code>table 1</code>.</p>
 <p>A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates, meaning much faster execution but leaves duplicate rows if they exist.</p>
 <h2 id="insert-into">INSERT INTO</h2>
-<p>insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.</p>
-<pre><code>INSERT INTO &lt;table_name&gt;
+<p>insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.
+<div class="highlight"><pre><span></span><code>INSERT INTO &lt;table_name&gt;
 SELECT * FROM `&lt;source_name&gt;`
 ;
-</code></pre>
-<p>The <code>;</code> is needed to mark where the table end. 
+</code></pre></div>
+The <code>;</code> is needed to mark where the table end. 
 When using the table you created with INSERT INTO you use the <table_name> not the <source_name>
-ex.</p>
-<pre><code>LEFT JOIN &lt;table_name&gt; ON &lt;table_name&gt;.id = XXX.id
-</code></pre>
+ex.
+<div class="highlight"><pre><span></span><code>LEFT JOIN &lt;table_name&gt; ON &lt;table_name&gt;.id = XXX.id
+</code></pre></div></p>
 <h2 id="left-join">LEFT JOIN</h2>
 <p>LEFT JOIN lets you append more columns to an existing table </p>
 <h2 id="firstseen">firstSeen()</h2>
@@ -1243,21 +1243,20 @@ ex.</p>
 <p>etc...</p>
 <h1 id="query-solutions">Query solutions</h1>
 <h2 id="connect-historic-and-new-data-that-has-overlapping-transactions-items-and-users">Connect historic and new data that has overlapping transactions, items and users.</h2>
-<pre><code class="language-mermaid">classDiagram
+<pre class="mermaid"><code>classDiagram
 email_model --* messages_transactions
 email_model --* messages_users
 email_model --* messages_campaigns
-
 </code></pre>
 <h2 id="create-a-custom-useragg">create a custom user.agg.<field></h2>
 <p>the datamodel creates aggregate functions such as user.agg.revenue.
 to create one yourself do the following.
 In the below example I create <code>user.agg.margin</code> similar to <code>user.agg.revenue</code></p>
-<pre><code>--aggregates margins per user same as user.agg.revenue but with margin
+<p><div class="highlight"><pre><span></span><code>--aggregates margins per user same as user.agg.revenue but with margin
 INSERT INTO margin
 SELECT
     user AS user,
-    concat('',SUM(margin)) AS total_margin
+    concat(&#39;&#39;,SUM(margin)) AS total_margin
 FROM `s3 - transactions`;
 
 SELECT 
@@ -1267,8 +1266,8 @@ UI.other fields...
 FROM `user_import` AS UI
 
 LEFT JOIN margin ON margin.user = UI.user
-</code></pre>
-<p>Note that you need to add <code>concat('',)</code> to the sum expression.
+</code></pre></div>
+Note that you need to add <code>concat('',)</code> to the sum expression.
 this is because you cant LEFT JOIN a float. <code>concat('',)</code> converts it into a string.
 <code>concat('',SUM(margin)) AS total_margin</code></p>
 <h1 id="standard-queries">Standard Queries</h1>
@@ -1286,11 +1285,11 @@ This will trigger proxy sync, the .gz files will appear once completed, duration
 <hr />
 <h3 id="interactions">Interactions</h3>
 <p>Id columns: id i import / user,id i model source</p>
-<pre><code>SELECT  
+<div class="highlight"><pre><span></span><code>SELECT  
   `line.Id` AS id,
   `order.Customer.Id` AS user,
-  unixTimestamp(`order.OrderDate`, '2006-01-02T15:04:05-0700') AS ts,  
-  concat(`line.ProductVariant.Id`,'_',`line.ProductSize.Size.Id`) AS item,  
+  unixTimestamp(`order.OrderDate`, &#39;2006-01-02T15:04:05-0700&#39;) AS ts,  
+  concat(`line.ProductVariant.Id`,&#39;_&#39;,`line.ProductSize.Size.Id`) AS item,  
   toFloat(`line.LineValue.FormattedValue`)*toFloat(`order.CurrencyBaseRate`) AS revenue,  
   round(`line.Quantity`*`order.CurrencyBaseRate`*`line.UnitOriginalPrice.FormattedValue`,2) AS full_price,  
   `line.ProductVariant.Id` AS variant_id,  
@@ -1314,7 +1313,7 @@ This will trigger proxy sync, the .gz files will appear once completed, duration
   `line.TaxPercent` AS tax_percent,  
   `order.Id` AS order_id,  
   `order.Number` AS order_number,  
-  unixTimestamp(`order.CreatedAt`, '2006-01-02T15:04:05-0700') AS order_created_at,  
+  unixTimestamp(`order.CreatedAt`, &#39;2006-01-02T15:04:05-0700&#39;) AS order_created_at,  
   `order.Status` AS order_status,  
   `order.GrandTotal.FormattedValue` AS total order value inc VAT,  
   `order.Shipments[0].CarrierInformation.ServiceName` AS carrier_service_name,  
@@ -1337,12 +1336,12 @@ This will trigger proxy sync, the .gz files will appear once completed, duration
   Currency AS currency,  
   CurrencyOK AS currency_ok  
 FROM`interactions.gz`  
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="items">Items</h3>
-<p>Id columns : item</p>
-<pre><code>SELECT
-    concat(`variant.Id`,'_',`variant.productSize.Size.Id`) AS item, 
+<p>Id columns : item
+<div class="highlight"><pre><span></span><code>SELECT
+    concat(`variant.Id`,&#39;_&#39;,`variant.productSize.Size.Id`) AS item, 
     `prod.Name` AS prod_name,  
     `variant.MediaURL` AS variant_media_url,  
     `variant.Id` AS id,  
@@ -1384,31 +1383,31 @@ FROM`interactions.gz`
     `variant.Campaign_FixedPrice_Currency` AS variant_campaign_fixed_price_currency,  
     market AS market,  
 
-      concat(`prod.Brand.Name`, ', ', `prod.Name`,   
-         if(`variant.Name` != '' OR `variant.productSize.Size.Name` != '', ' ', ''),  
-         if(`variant.Name` != '', concat('[',`variant.Name`, ']'),''),  
-         if(`variant.productSize.Size.Name` != '', concat('[',`variant.productSize.Size.Name`,']'), '')   
+      concat(`prod.Brand.Name`, &#39;, &#39;, `prod.Name`,   
+         if(`variant.Name` != &#39;&#39; OR `variant.productSize.Size.Name` != &#39;&#39;, &#39; &#39;, &#39;&#39;),  
+         if(`variant.Name` != &#39;&#39;, concat(&#39;[&#39;,`variant.Name`, &#39;]&#39;),&#39;&#39;),  
+         if(`variant.productSize.Size.Name` != &#39;&#39;, concat(&#39;[&#39;,`variant.productSize.Size.Name`,&#39;]&#39;), &#39;&#39;)   
          ) format
 FROM `items.gz`
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h3 id="users">Users</h3>
-<p>Id columns : user</p>
-<pre><code>SELECT  
+<p>Id columns : user
+<div class="highlight"><pre><span></span><code>SELECT  
 `customer.Id` AS user,  
     `customer.IsAnonymized` AS anonymized,  
     `customer.TotalOrders` AS total_orders,  
-    unixTimestamp(`customer.CreatedAt`, '2006-01-02T15:04:05-0700') AS created_at,  
-    unixTimestamp(`customer.UpdatedAt`, '2006-01-02T15:04:05-0700') AS updated_at,  
+    unixTimestamp(`customer.CreatedAt`, &#39;2006-01-02T15:04:05-0700&#39;) AS created_at,  
+    unixTimestamp(`customer.UpdatedAt`, &#39;2006-01-02T15:04:05-0700&#39;) AS updated_at,  
     `customer.Store.Name` AS store,  
     `customer.Email` AS email,  
     `customer.CellPhoneNumber` AS phone  
 FROM `users.gz`  
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h3 id="no-size-model">No size model</h3>
-<p>for Item source called ‘no size model - items’</p>
-<pre><code>SELECT 
+<p>for Item source called ‘no size model - items’
+<div class="highlight"><pre><span></span><code>SELECT 
     variantId AS id,  
     groupcoalesce(format) AS format,  
     groupcoalesce(productName) AS product_name,  
@@ -1433,7 +1432,7 @@ FROM `users.gz`
 FROM `centra_products_import`  
 
 GROUP BY variantId  
-</code></pre>
+</code></pre></div></p>
 <hr />
 <h3 id="example-rows-with-explanation">Example rows with explanation</h3>
 <p>Coalesce (<code>display.Name</code>, <code>prod.Name</code>, <code>variant.Id</code>) AS format 
@@ -1454,44 +1453,44 @@ Explanation: This will merge the two lines, for example Concat (Hello, '</em>', 
 <p>Setup config</p>
 <hr />
 <h3 id="interactions_1">Interactions</h3>
-<pre><code>SELECT
+<div class="highlight"><pre><span></span><code>SELECT
     *
 FROM
     `items.gz`
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="items_1">Items</h3>
-<pre><code>SELECT
+<div class="highlight"><pre><span></span><code>SELECT
     *
 FROM
     `items.gz`
-</code></pre>
+</code></pre></div>
 <hr />
 <h3 id="users_1">Users</h3>
-<pre><code>SELECT
+<div class="highlight"><pre><span></span><code>SELECT
     *
 FROM
     `items.gz`
-</code></pre>
+</code></pre></div>
 <hr />
 <h2 id="google-feed-query">Google Feed Query</h2>
 <h3 id="procedure_2">Procedure</h3>
 <p>Get the link to the customer's Google feed (link to a .xml file), this is something most customers can easily supply upon request. Usually, there are multiple feeds to cover all different markets. The link to a specific market is a URL like <em>https://some.domain/api/feed/google_se/SOMEKEY</em> </p>
 <h3 id="import-query">Import Query</h3>
-<pre><code>SELECT
+<div class="highlight"><pre><span></span><code>SELECT
     *
 FROM `url:GOOGLE_FEED_LINK`
-</code></pre>
+</code></pre></div>
 <h3 id="preprocess-directives">Preprocess Directives</h3>
 <p>In the Preprocessor Directives field, set the xml properties as follows. There may be other useful field to include in the <code>pluck</code> line as well.</p>
-<pre><code>decoder=xml
+<div class="highlight"><pre><span></span><code>decoder=xml
 root=rss.channel
 rowTag=item
 pluck=id,title,image_link,availability,price,sale_price,google_product_category,product_type,brand
-</code></pre>
+</code></pre></div>
 <p><strong>Note:</strong> Stray Ampersands are currently not accepted, but Google handles these. If you get errors with this, you can read feeds with non-escaped ampersands using this as the first line in the preprocessor:</p>
-<pre><code>preprocess=[[&quot;replace&quot;,&quot;&amp;&quot;,&quot;&quot;]]
-</code></pre>
+<div class="highlight"><pre><span></span><code>preprocess=[[&quot;replace&quot;,&quot;&amp;&quot;,&quot;&quot;]]
+</code></pre></div>
 
               
             </article>

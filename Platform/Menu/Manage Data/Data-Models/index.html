@@ -1121,7 +1121,7 @@
 <li>Item table </li>
 </ul>
 <p>Each line in the interaction table is linked to a user and an item in the item and user table. When we have chosen what sources should be our interaction, item and user tables we can create a datamodel. After this we can start creating additional information through expressions. These can later be used in dashboards (dashboards are based upon a datamodel).</p>
-<pre><code class="language-mermaid">classDiagram
+<pre class="mermaid"><code>classDiagram
 `Interaction table` --&gt; Datamodel
 `Item table` --&gt; Datamodel
 `User table` --&gt; Datamodel
@@ -1129,8 +1129,7 @@ Datamodel: Fields
 Datamodel: Expressions
 Datamodel --&gt; Dashboards
 Datamodel --&gt; Segmentations
-Datamodel --&gt; Recommendations
-</code></pre>
+Datamodel --&gt; Recommendations</code></pre>
 <p>When a datamodel is used for email analysis, the interaction becomes a specific <code>email sent to a user</code>, the user becomes <code>the one receiving the email</code>, and the email that was sent is treated as an item.</p>
 <h2 id="edit-a-data-model">Edit a data model</h2>
 <p>To edit and see the detailed info about a data model, you need to edit it. You can edit it by clicking the "pen" either after clicking the data model, or in the data-models list, see images below.</p>
