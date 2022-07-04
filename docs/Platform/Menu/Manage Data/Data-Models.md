@@ -1,40 +1,50 @@
 # What is a datamodel? 
-A datamodel is made up of of 3 tables (from the sources), an interaction, user and item table. Each line in the interaction table is linked to a user and an item in the item and user table. When we have chosen what sources should make up our interaction, item and user table we can create a datamodel. After this we can start creating additional information through expressions. These can later be used in dashboards (dashboards are based upon a datamodel).
+A datamodel is made up of of 3 tables (from the sources):
+
+* Interaction table
+* User table 
+* Item table 
+
+Each line in the interaction table is linked to a user and an item in the item and user table. When we have chosen what sources should be our interaction, item and user tables we can create a datamodel. After this we can start creating additional information through expressions. These can later be used in dashboards (dashboards are based upon a datamodel).
 
 ```mermaid
 classDiagram
-`Interaction table` --* Datamodel
-`Item table` --* Datamodel
-`User table` --* Datamodel
+`Interaction table` --> Datamodel
+`Item table` --> Datamodel
+`User table` --> Datamodel
 Datamodel: Fields
 Datamodel: Expressions
-Datamodel --* Dashboards
-Datamodel --* Segmentation
-Datamodel --* Recommendations
+Datamodel --> Dashboards
+Datamodel --> Segmentations
+Datamodel --> Recommendations
 ```
 
 When a datamodel is used for email analysis, the interaction becomes a specific `email sent to a user`, the user becomes `the one receiving the email`, and the email that was sent is treated as an item.
 
+## Edit a data model
+To edit and see the detailed info about a data model, you need to edit it. You can edit it by clicking the "pen" either after clicking the data model, or in the data-models list, see images below.
+
+<img width="988" alt="Screenshot 2022-07-01 at 11 52 24" src="https://user-images.githubusercontent.com/4352260/176871921-4f7f72ce-e6de-453d-b24d-ad035c61e38b.png">
+
+<img width="782" alt="Screenshot 2022-07-01 at 11 52 33" src="https://user-images.githubusercontent.com/4352260/176872229-94b65f4b-35b1-447d-aa21-3c8eb40f66d6.png">
 
 
 # Interaction config
+
+The interaction table specifies info about the interaction (a user interacting with an item) that includes a timestamp (ts). An interaction config can look something like below:
+
+<img width="948" alt="Screenshot 2022-07-01 at 11 51 54" src="https://user-images.githubusercontent.com/4352260/176872296-06aea3bd-878a-499c-bc0e-8767dc6796a8.png">
 
 
 
 ## Fields
 
-
-
 ### field
 This is the name of the given in the source query (it can not be changed in the data model).  
-
-
 
 ### alias
 By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation.
 In Recommendation the field name is allways shown even if an alias is added.
-
-
 
 ### role
 **Categories**  
@@ -70,18 +80,22 @@ All fields that can not be classified as a **Number** are classified as a **Cate
 **EnumCategories**  
 
 
-
-
 ### Active
 The Active toggle button lets you activate/deactivate a field. a deactivated field can not be used in dashboards.
 
+### Info
 
+Click here to see some data from the table.
 
 ## Interaction Expressions
 
 
 
 # Item config
+
+The item table specifies info about the items, i.e. the products.
+
+<img width="976" alt="Screenshot 2022-07-01 at 11 58 21" src="https://user-images.githubusercontent.com/4352260/176872773-89453cc1-56eb-4175-88c1-e5aa6de16019.png">
 
 
 
@@ -126,7 +140,6 @@ dont know as in Interaction...
 dont know as in Interaction...  
 
 
-
 ### MLMeta
 The MLMeta toggle button controles what is returned when when you make an API call. This is to give you control what data you want to return to the customer. you dont want to activate MLMeta on all fields because this will result in you return alot of "trash columns" to the customer that they have to filter in turn get the relevant data. [Note that you also have to select the role `Image` and `Format` for the product to show]
 (MLMeta is only relevant in the recomendations view)
@@ -149,8 +162,12 @@ Same as in Interaction
 
 
 
+
 # User config
 
+The user table specifies info about the users, i.e. the customers. 
+
+<img width="968" alt="Screenshot 2022-07-01 at 12 00 26" src="https://user-images.githubusercontent.com/4352260/176873224-8e8d99ba-3f06-48bf-80f7-3b289ab2b266.png">
 
 
 ## Fields
@@ -233,8 +250,6 @@ multiIf(name = 'red', colour, name = 'big', 'size', 'no data')
 
 # Data model expression examples 
 
-
-
 ## Interaction expression
 
 **Days since previous order cohort**  
@@ -294,14 +309,7 @@ multiIf(returned_quantity > 0, 'Return', 'No return')
 **Available quantity**  
 SUM(item.variant_product_size_size_available_now_quantity)/count()
 
-
-
-## User expressions
-
-**Users > 1 order**  
-uniqIf(user,user.agg.orders>1)/uniq(user)
-
-## ITEM expressions  
+## Item expressions  
 Sold items [item based dashboards]  
 SUM(article_number.agg.trans)  
 
@@ -312,4 +320,7 @@ SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price)
 SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)  
 
 
+## User expressions
 
+**Users > 1 order**  
+uniqIf(user,user.agg.orders>1)/uniq(user)

@@ -4,21 +4,7 @@ Auto-targeting identifies optimal combinations of items and users that helps inc
 
 The result is groups with recommended users-items combinations to use in the advertisements, see the overview below:
 
-```mermaid
-graph TD;
-    Campaign-->SelectRecipients;
-    SelectRecipients-->Advertisement1;
-    SelectRecipients-->Advertisement2;
-    SelectRecipients-->Advertisement3;
-    Advertisement1-->SelectItems1;
-    Advertisement2-->SelectItems2;
-    Advertisement3-->SelectItems3;
-    SelectItems1-->AddFilters1;
-    SelectItems2-->AddFilters2;
-    SelectItems3-->AddFilters3;
-```
-
-
+<img width="600" alt="Screenshot 2022-06-28 at 14 54 24" src="https://user-images.githubusercontent.com/4352260/176858714-803dade8-166a-4936-9e24-645ed4d18f1b.png">
 
 ### Step 1: Initiate auto-targeting campaign
 
@@ -62,16 +48,3 @@ This will trigger some settings to pop up above.
 9. The result will look similar to the image below. You can see the products included in the advertisement, the number of recipients, and an average recipient score and its distribution. The recipient score is a value from 0 to 1, where 1 indicates a very strong match between the user and the advertisement. In this case, a recommendation would be to only use the first 30% recipients or so in the advertisement, since the scores for the long tail of users is low. 
 
 <img src="../../../images/Segmentations/segmentations-5.png" width="849"/>
-
-
-
-# Clustering
-
-Clustering makes it possible to group users and items into a specified number of clusters. For finding cluster, there are three different algorithms that can be used:
-1. `embedding` with item clusters from the trained machine-learning model and users assigned to the most connected cluster,
-2. `plsa`, [Probabilistic Latent Semantic Analysis](https://en.wikipedia.org/wiki/Probabilistic_latent_semantic_analysis) run separately, and
-3. `modularity`, network-based [modularity optimization](https://en.wikipedia.org/wiki/Louvain_modularity)run separately.
-
-`embedding` is the fastest method since it uses the trained machine-learning model.
-
-

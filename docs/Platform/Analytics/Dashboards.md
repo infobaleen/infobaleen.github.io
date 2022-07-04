@@ -4,9 +4,8 @@ You can customize dashboards to visualize various information and results based 
 
 Dashboards can be created by clicking the + icon in the dropdown menu, or by clicking the purple plus sign in the upper right corner of the dashboard card.
 
-<img width="479" alt="Screenshot 2022-06-28 at 14 39 01" src="https://user-images.githubusercontent.com/4352260/176180577-0b7eec7b-516d-487d-938a-823aed14d26a.png">
-
-<img width="825" alt="Screenshot 2022-06-28 at 14 39 42" src="https://user-images.githubusercontent.com/4352260/176180678-e9e00ee6-f207-4160-9774-16fc66284bee.png">
+<img width="479" alt="Screenshot 2022-06-28 at 14 39 01" src="https://user-images.githubusercontent.com/4352260/176860359-ec0b5ec4-a1f3-48f0-91cb-0be050ada8fd.png">
+<img width="825" alt="Screenshot 2022-06-28 at 14 39 42" src="https://user-images.githubusercontent.com/4352260/176860364-e988c2c1-d539-4da2-bdf4-3b498c883bc2.png">
 
 When you create a dashboard your are asked for the below fieds:
 
@@ -18,6 +17,8 @@ When you create a dashboard your are asked for the below fieds:
 <img width="846" alt="Screenshot 2022-06-28 at 14 41 45" src="https://user-images.githubusercontent.com/4352260/176181082-ec55c555-6a8c-4731-afbd-e7b345f2e235.png">
 
 Click `Create` to create the dashboard. You are now ready to add elements!
+
+**Note!** After adding elements or editing the dashboard, remember to click `Save` in the top right corner.
 
 <img width="863" alt="Screenshot 2022-06-28 at 14 47 35" src="https://user-images.githubusercontent.com/4352260/176182387-0007cbff-e150-42e1-8946-302f8718fe88.png">
 
