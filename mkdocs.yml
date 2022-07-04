@@ -25,7 +25,7 @@ nav:
             - Secrets: Platform/Menu/Admin/Secrets.md
         - Documentation:
             - Agent: Platform/Menu/Documentation/Agent.md
-            - API: Platform/Menu/Documentation/API.md
+            - Recommendations API: Platform/Menu/Documentation/Recommendations.md
             - New Issue: Platform/Menu/Documentation/New-Issue.md
         - Manage Data:
             - Data Models: Platform/Menu/Manage Data/Data-Models.md
