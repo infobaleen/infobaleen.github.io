@@ -16,7 +16,6 @@ extra_css:
   - custom/extra.css
 nav:
     - Home: index.md
-
     - Analytics:
         - Dashboards: Platform/Analytics/Dashboards.md
         - Customer Insights: Platform/Analytics/Customer-Insights.md
@@ -24,7 +23,7 @@ nav:
         - Auto-targeting: Platform/Segmentations/Auto-targeting.md
         - Clustering: Platform/Segmentations/Clustering.md
     - Recommendations:
-        - Platform/Recommendations/Recommendations.md
+        - Platform/Recommendations/Overview.md
         - Platform/Recommendations/Settings.md
         - Platform/Recommendations/Front page.md
         - Platform/Recommendations/Data available in recommendations.md

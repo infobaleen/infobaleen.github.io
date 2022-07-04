@@ -1,4 +1,4 @@
-## Dashboards 
+## Create dashboards 
 
 You can customize dashboards to visualize various information and results based on your data.
 
