@@ -15,7 +15,7 @@ theme:
         # Palette toggle for dark mode
         - scheme: slate
           toggle:
-            icon: material/brightness-4
+            icon: material/brightness-auto
             name: Switch to light mode
     logo: assets/logo.png
     favicon: assets/favicon.ico
@@ -40,7 +40,7 @@ nav:
         - Platform/Recommendations/Data available in recommendations.md
         - Platform/Recommendations/Recommendations in emails.md
         - Platform/Recommendations/Infobaleen recommended recommendation profiles.md
-    - Menu:
+    - Configure the platform:
         - Account:
             - API Keys: Platform/Menu/Account/API-Keys.md
             - Logout: Platform/Menu/Account/Logout.md

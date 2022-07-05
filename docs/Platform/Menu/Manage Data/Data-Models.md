@@ -1,4 +1,4 @@
-# What is a datamodel? 
+## What is a datamodel? 
 A datamodel is made up of of 3 tables (from the sources):
 
 * Interaction table
@@ -37,16 +37,16 @@ The interaction table specifies info about the interaction (a user interacting w
 
 
 
-## Fields
+### Fields
 
-### field
+#### field
 This is the name of the given in the source query (it can not be changed in the data model).  
 
-### alias
+#### alias
 By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation.
 In Recommendation the field name is allways shown even if an alias is added.
 
-### role
+#### role
 **Categories**  
 `Categories` is used when data is made up of multiple `category`'s. The data format for `categories` has to be [`category1`;`category2`;`category3`;`etc`]
 
@@ -80,14 +80,14 @@ All fields that can not be classified as a **Number** are classified as a **Cate
 **EnumCategories**  
 
 
-### Active
+#### Active
 The Active toggle button lets you activate/deactivate a field. a deactivated field can not be used in dashboards.
 
-### Info
+#### Info
 
 Click here to see some data from the table.
 
-## Interaction Expressions
+### Interaction Expressions
 
 
 
@@ -99,21 +99,21 @@ The item table specifies info about the items, i.e. the products.
 
 
 
-## Fields
+### Fields
 
 
 
-### field
+#### field
 same as in Interaction  
 
 
 
-### alias
+#### alias
 same as in Interaction  
 
 
 
-### role
+#### role
 **Categories**  
 same as in Interaction  
 
@@ -134,57 +134,57 @@ same as in Interaction
 same as in Interaction  
 
 **Enum**  
-dont know as in Interaction...  
+
 
 **EnumCategories**  
-dont know as in Interaction...  
 
 
-### MLMeta
+
+#### MLMeta
 The MLMeta toggle button controles what is returned when when you make an API call. This is to give you control what data you want to return to the customer. you dont want to activate MLMeta on all fields because this will result in you return alot of "trash columns" to the customer that they have to filter in turn get the relevant data. [Note that you also have to select the role `Image` and `Format` for the product to show]
 (MLMeta is only relevant in the recomendations view)
 
 
 
-### MLFilter
+#### MLFilter
 The MLFilter lets you write expressions and filter your data in in the [Recommendations](https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Recommendations/Recommendation-profiles.md "Open: Recommendation profiles"). You should only activate MLFilter for the fields you actually want to create a filter for, the reason for this is that when you activate **MLFilter** for a field this will store all data in the memory and every time the API calls for a recommendation the datamodel have to itterate through all fields with **MLFilter** resulting in a bad performance on the customers side (when the customer want to load our recomendations on their site the load speed will depend on how many **MLFilters** you have activated.  
 
 <img width="892" alt="Screenshot 2022-06-10 at 08 16 47" src="https://user-images.githubusercontent.com/4352260/173002754-8885b8fa-1b5c-4dad-a74d-732f1d409eda.png">
 
 
 
-### Active
+#### Active
 Same as in Interaction  
 
 
 
-## Item Expressions
+### Item Expressions
 
 
 
 
-# User config
+## User config
 
 The user table specifies info about the users, i.e. the customers. 
 
 <img width="968" alt="Screenshot 2022-07-01 at 12 00 26" src="https://user-images.githubusercontent.com/4352260/176873224-8e8d99ba-3f06-48bf-80f7-3b289ab2b266.png">
 
 
-## Fields
+### Fields
 
 
 
-### field
+#### field
 same as in Interaction  
 
 
 
-### alias
+#### alias
 same as in Interaction  
 
 
 
-### role
+#### role
 **Categories**  
 same as in Interaction  
 
@@ -202,18 +202,18 @@ same as in Interaction
 same as in Interaction  
 
 **Enum**  
-????  
+
 
 **EnumCategories**  
-????
 
 
 
-## User Expressions
+
+### User Expressions
 
 
 
-### Persona
+#### Persona
 The Persona toggle button controles what columns are used in the recommendations. For example, if we activate the field `gender` as a Persona, the recommendation engine will base the recommendations on what gender the user has. If we active the field `age` it will be used as a dimension in the recommendation, and so on.
 
 **Note:** Use a maximum of 2 columns to define persona. Alternatively, make sure that the cardinality (number of groups) is less than 1000. (ex gender: 2 different and cities: 500 different, which means `2*500 = 1000` groups)
@@ -222,13 +222,13 @@ The Persona toggle button controles what columns are used in the recommendations
 
 
 
-# Custom properties
+## Custom properties
 Great feature with good UX **BUT**
 only works for a specific preprogrammed examples (RFM, CustomerLifcycle).  
 
 
 
-# Expression syntax (Click house)
+## Expression syntax (Click house)
 
 `SUM()` Summarize a value, for example SUM(returned_quantity) returns the total amount of returned quantity (over chosen period of time) 
 
@@ -248,9 +248,9 @@ multiIf(name = 'red', colour, name = 'big', 'size', 'no data')
 
 
 
-# Data model expression examples 
+## Data model expression examples 
 
-## Interaction expression
+### Interaction expression
 
 **Days since previous order cohort**  
 multiIf (agg.daysFromPrev <=30,'1.<30', agg.daysFromPrev <=60,'2.30-60', agg.daysFromPrev <=90,'3.60-90', agg.daysFromPrev <=180,'4.90-180', agg.daysFromPrev <=360,'5.180-360', agg.daysFromPrev <=720,'6. 360-720', agg.daysFromPrev <=4000,'7.>720', '8.New')
@@ -306,10 +306,8 @@ SUM(returned_quantity)
 **Returned or not returned**  
 multiIf(returned_quantity > 0, 'Return', 'No return')
 
-**Available quantity**  
-SUM(item.variant_product_size_size_available_now_quantity)/count()
 
-## Item expressions  
+### Item expressions  
 Sold items [item based dashboards]  
 SUM(article_number.agg.trans)  
 
@@ -320,7 +318,7 @@ SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price)
 SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)  
 
 
-## User expressions
+### User expressions
 
 **Users > 1 order**  
 uniqIf(user,user.agg.orders>1)/uniq(user)
