@@ -1297,11 +1297,11 @@ SUM(quantity)/uniq(user,ts)</p>
 SUM(returned_quantity)/SUM(quantity)</p>
 <p><strong>LTV 30d</strong><br />
 We usually do 5 different LTV metrics, just remember to change name accordingly to selected amount of days  </p>
-<p>sumIf(revenue, ts &lt; user.agg.first + 30 AND addDays(user.agg.first, 30) &lt;= now())/uniqIf(user,addDays(user.agg.first, 30) &lt;= now())
-sumIf(revenue, ts &lt; user.agg.first + 60 AND addDays(user.agg.first, 60) &lt;= now())/uniqIf(user,addDays(user.agg.first, 60) &lt;= now())
-sumIf(revenue, ts &lt; user.agg.first + 90 AND addDays(user.agg.first, 90) &lt;= now())/uniqIf(user,addDays(user.agg.first, 90) &lt;= now())
-sumIf(revenue, ts &lt; user.agg.first + 180 AND addDays(user.agg.first, 180) &lt;= now())/uniqIf(user,addDays(user.agg.first, 180) &lt;= now())
-sumIf(revenue, ts &lt; user.agg.first + 365 AND addDays(user.agg.first, 365) &lt;= now())/uniqIf(user,addDays(user.agg.first, 365) &lt;= now())</p>
+<p>sumIf(revenue, ts &lt; user.agg.first + 30 AND addDays(user.agg.first, 30) &lt;= now())/uniqIf(user,addDays(user.agg.first, 30) &lt;= now())<br />
+sumIf(revenue, ts &lt; user.agg.first + 60 AND addDays(user.agg.first, 60) &lt;= now())/uniqIf(user,addDays(user.agg.first, 60) &lt;= now())<br />
+sumIf(revenue, ts &lt; user.agg.first + 90 AND addDays(user.agg.first, 90) &lt;= now())/uniqIf(user,addDays(user.agg.first, 90) &lt;= now())<br />
+sumIf(revenue, ts &lt; user.agg.first + 180 AND addDays(user.agg.first, 180) &lt;= now())/uniqIf(user,addDays(user.agg.first, 180) &lt;= now())<br />
+sumIf(revenue, ts &lt; user.agg.first + 365 AND addDays(user.agg.first, 365) &lt;= now())/uniqIf(user,addDays(user.agg.first, 365) &lt;= now())  </p>
 <p><strong>Returned quantity</strong><br />
 SUM(returned_quantity)</p>
 <p><strong>Returned or not returned</strong><br />
