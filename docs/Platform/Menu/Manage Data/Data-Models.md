@@ -102,6 +102,12 @@ The item table specifies info about the items, i.e. the products.
 ### Fields
 
 
+| Name      | Description |
+| ----------- | ----------- |
+| field      | same as in Interaction         |
+| alias    | same as in Interaction          |
+
+
 
 #### field
 same as in Interaction  
@@ -248,8 +254,10 @@ multiIf(name = 'red', colour, name = 'big', 'size', 'no data')
 
 
 
-## Data model expression examples 
+# Data model expression examples 
+Expressions can be used to calculate certain variables, for example the amount of returned items `(SUM(returned_quantity)` or divide certain users into different categories, for example dividing the customer base into customers with or without > 1 purchases. Expressions are made in the edit mode of a datamodel, and later can be found and used in dashboards as parameters and metrics. 
 
+When writing expressions, remember to check and/or modify so that the variables like `revenue`, `ts` (timestamp), `quantity` is correct according to your data. returned quantity can for example be written in different ways (example: `returnedQuantity` / `returned_quantity`)  depending on data source. returnedQuantity, returned_quantity depending on the dataset.
 ### Interaction expression
 
 **Days since previous order cohort**  
@@ -295,10 +303,15 @@ SUM(returned_quantity)/SUM(quantity)
 We usually do 5 different LTV metrics, just remember to change name accordingly to selected amount of days  
 
 sumIf(revenue, ts < user.agg.first + 30 AND addDays(user.agg.first, 30) <= now())/uniqIf(user,addDays(user.agg.first, 30) <= now())  
+  
 sumIf(revenue, ts < user.agg.first + 60 AND addDays(user.agg.first, 60) <= now())/uniqIf(user,addDays(user.agg.first, 60) <= now())  
+  
 sumIf(revenue, ts < user.agg.first + 90 AND addDays(user.agg.first, 90) <= now())/uniqIf(user,addDays(user.agg.first, 90) <= now())  
+  
 sumIf(revenue, ts < user.agg.first + 180 AND addDays(user.agg.first, 180) <= now())/uniqIf(user,addDays(user.agg.first, 180) <= now())  
+  
 sumIf(revenue, ts < user.agg.first + 365 AND addDays(user.agg.first, 365) <= now())/uniqIf(user,addDays(user.agg.first, 365) <= now())  
+  
 
 **Returned quantity**  
 SUM(returned_quantity)
@@ -308,10 +321,10 @@ multiIf(returned_quantity > 0, 'Return', 'No return')
 
 
 ### Item expressions  
-Sold items [item based dashboards]  
+Sold items [item based dashboards]  `(item based dashboards here means that item is chosen as Role when creating the dashboard)`  
 SUM(article_number.agg.trans)  
 
-Available quantity [item based dashboards]  
+Available quantity [item based dashboards]  `(item based dashboards here means that item is chosen as Role when creating the dashboard)`  
 SUM(item.in_stock)  
 
 SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price)   

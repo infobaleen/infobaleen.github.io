@@ -291,11 +291,36 @@ toFloat()
 
 unixTimestamp()
 
-split()
+## split() and slice() and slicestr()
 
-slice()
+These expressions can be used to edit strings, see an example below:
 
-etc...
+```        
+Insert into a
+SELECT * FROM `raw:
+a   b
+1   ABCDE`
+;
+
+SELECT 
+    a AS a,
+    split(b,'') AS step1,
+    slice(split(b,''),0,3) AS step2,
+    replace(slice(split(b,''),0,3),',','') AS step3,
+    length(b),
+    slicestr(b,1,2)
+FROM a
+```
+
+The result will be:
+```
+a	step1	     step2.     step3	 length(b)    slicestr(b, 1, 2)
+1	A,B,C,D,E.   A,B,C	ABC	 5            BC
+```
+	
+
+
+	
 
 
 
