@@ -11,7 +11,7 @@
       
       
       <link rel="icon" href="../../../../assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.9">
     
     
       
@@ -1139,7 +1139,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#data-model-expression-examples" class="md-nav__link">
     Data model expression examples
   </a>
@@ -1165,11 +1170,6 @@
   <a href="#user-expressions_1" class="md-nav__link">
     User expressions
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1604,7 +1604,12 @@
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#data-model-expression-examples" class="md-nav__link">
     Data model expression examples
   </a>
@@ -1630,11 +1635,6 @@
   <a href="#user-expressions_1" class="md-nav__link">
     User expressions
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1719,6 +1719,24 @@ All fields that can not be classified as a <strong>Number</strong> are classifie
 <p>The item table specifies info about the items, i.e. the products.</p>
 <p><img width="976" alt="Screenshot 2022-07-01 at 11 58 21" src="https://user-images.githubusercontent.com/4352260/176872773-89453cc1-56eb-4175-88c1-e5aa6de16019.png"></p>
 <h3 id="fields_1">Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>same as in Interaction</td>
+</tr>
+<tr>
+<td>alias</td>
+<td>same as in Interaction</td>
+</tr>
+</tbody>
+</table>
 <h4 id="field_1">field</h4>
 <p>same as in Interaction  </p>
 <h4 id="alias_1">alias</h4>
@@ -1787,7 +1805,9 @@ sumIf(Value that will be summarized when, X = N)  <code>Example</code>: sumIf(re
 <p><code>uniqIf()</code></p>
 <p>multiIf(boolean, result_1, boolean, result_2, ..., boolean, result_n, else_this)<br />
 multiIf(name = 'red', colour, name = 'big', 'size', 'no data')</p>
-<h2 id="data-model-expression-examples">Data model expression examples</h2>
+<h1 id="data-model-expression-examples">Data model expression examples</h1>
+<p>Expressions can be used to calculate certain variables, for example the amount of returned items <code>(SUM(returned_quantity)</code> or divide certain users into different categories, for example dividing the customer base into customers with or without &gt; 1 purchases. Expressions are made in the edit mode of a datamodel, and later can be found and used in dashboards as parameters and metrics. </p>
+<p>When writing expressions, remember to check and/or modify so that the variables like <code>revenue</code>, <code>ts</code> (timestamp), <code>quantity</code> is correct according to your data. returned quantity can for example be written in different ways (example: <code>returnedQuantity</code> / <code>returned_quantity</code>)  depending on data source. returnedQuantity, returned_quantity depending on the dataset.</p>
 <h3 id="interaction-expression">Interaction expression</h3>
 <p><strong>Days since previous order cohort</strong><br />
 multiIf (agg.daysFromPrev &lt;=30,'1.&lt;30', agg.daysFromPrev &lt;=60,'2.30-60', agg.daysFromPrev &lt;=90,'3.60-90', agg.daysFromPrev &lt;=180,'4.90-180', agg.daysFromPrev &lt;=360,'5.180-360', agg.daysFromPrev &lt;=720,'6. 360-720', agg.daysFromPrev &lt;=4000,'7.&gt;720', '8.New')</p>
@@ -1817,19 +1837,19 @@ SUM(quantity)/uniq(user,ts)</p>
 SUM(returned_quantity)/SUM(quantity)</p>
 <p><strong>LTV 30d</strong><br />
 We usually do 5 different LTV metrics, just remember to change name accordingly to selected amount of days  </p>
-<p>sumIf(revenue, ts &lt; user.agg.first + 30 AND addDays(user.agg.first, 30) &lt;= now())/uniqIf(user,addDays(user.agg.first, 30) &lt;= now())<br />
-sumIf(revenue, ts &lt; user.agg.first + 60 AND addDays(user.agg.first, 60) &lt;= now())/uniqIf(user,addDays(user.agg.first, 60) &lt;= now())<br />
-sumIf(revenue, ts &lt; user.agg.first + 90 AND addDays(user.agg.first, 90) &lt;= now())/uniqIf(user,addDays(user.agg.first, 90) &lt;= now())<br />
-sumIf(revenue, ts &lt; user.agg.first + 180 AND addDays(user.agg.first, 180) &lt;= now())/uniqIf(user,addDays(user.agg.first, 180) &lt;= now())<br />
-sumIf(revenue, ts &lt; user.agg.first + 365 AND addDays(user.agg.first, 365) &lt;= now())/uniqIf(user,addDays(user.agg.first, 365) &lt;= now())  </p>
+<p>sumIf(revenue, ts &lt; user.agg.first + 30 AND addDays(user.agg.first, 30) &lt;= now())/uniqIf(user,addDays(user.agg.first, 30) &lt;= now())  </p>
+<p>sumIf(revenue, ts &lt; user.agg.first + 60 AND addDays(user.agg.first, 60) &lt;= now())/uniqIf(user,addDays(user.agg.first, 60) &lt;= now())  </p>
+<p>sumIf(revenue, ts &lt; user.agg.first + 90 AND addDays(user.agg.first, 90) &lt;= now())/uniqIf(user,addDays(user.agg.first, 90) &lt;= now())  </p>
+<p>sumIf(revenue, ts &lt; user.agg.first + 180 AND addDays(user.agg.first, 180) &lt;= now())/uniqIf(user,addDays(user.agg.first, 180) &lt;= now())  </p>
+<p>sumIf(revenue, ts &lt; user.agg.first + 365 AND addDays(user.agg.first, 365) &lt;= now())/uniqIf(user,addDays(user.agg.first, 365) &lt;= now())  </p>
 <p><strong>Returned quantity</strong><br />
 SUM(returned_quantity)</p>
 <p><strong>Returned or not returned</strong><br />
 multiIf(returned_quantity &gt; 0, 'Return', 'No return')</p>
 <h3 id="item-expressions_1">Item expressions</h3>
-<p>Sold items [item based dashboards]<br />
+<p>Sold items [item based dashboards]  <code>(item based dashboards here means that item is chosen as Role when creating the dashboard)</code><br />
 SUM(article_number.agg.trans)  </p>
-<p>Available quantity [item based dashboards]<br />
+<p>Available quantity [item based dashboards]  <code>(item based dashboards here means that item is chosen as Role when creating the dashboard)</code><br />
 SUM(item.in_stock)  </p>
 <p>SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price) <br />
 SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)  </p>
@@ -1906,7 +1926,7 @@ uniqIf(user,user.agg.orders&gt;1)/uniq(user)</p>
     <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand"], "search": "../../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.0238f547.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
       
     
   </body>
