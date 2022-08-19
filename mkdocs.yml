@@ -66,6 +66,8 @@ nav:
             - Products: Platform/Menu/Model/Products.md
             - Users: Platform/Menu/Model/Users.md
         - Other: Platform/Menu/Other/Overlaps.md
+    - Other:
+        - Data Specification: Other/Data-Specification.md
 
 markdown_extensions:
   - pymdownx.superfences:
