@@ -1131,29 +1131,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encoding" class="md-nav__link">
-    Encoding
+  <a href="#data-encoding" class="md-nav__link">
+    Data encoding
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#transactions" class="md-nav__link">
-    Transactions
+  <a href="#transaction-data" class="md-nav__link">
+    Transaction data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#products" class="md-nav__link">
-    Products
+  <a href="#product-data" class="md-nav__link">
+    Product data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#users" class="md-nav__link">
-    Users
+  <a href="#user-data" class="md-nav__link">
+    User data
   </a>
   
 </li>
@@ -1211,29 +1211,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#encoding" class="md-nav__link">
-    Encoding
+  <a href="#data-encoding" class="md-nav__link">
+    Data encoding
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#transactions" class="md-nav__link">
-    Transactions
+  <a href="#transaction-data" class="md-nav__link">
+    Transaction data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#products" class="md-nav__link">
-    Products
+  <a href="#product-data" class="md-nav__link">
+    Product data
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#users" class="md-nav__link">
-    Users
+  <a href="#user-data" class="md-nav__link">
+    User data
   </a>
   
 </li>
@@ -1260,8 +1260,13 @@
   <h1>Data Specification</h1>
 
 <h2 id="infobaleen-data-specification">Infobaleen - Data Specification</h2>
-<h3 id="encoding">Encoding</h3>
-<p>Data must be encoded as UTF-8 + RFC 4180 (https://tools.ietf.org/html/rfc4180). Below are some specifics regarding the cell and row formatting.</p>
+<p>A datamodel in Infobaleen is made up of three data tables. Each line in the interaction table is linked to a specific user and item in the item and user tables. </p>
+<pre class="mermaid"><code>classDiagram
+`Transaction data` --&gt; Datamodel
+`Product data` --&gt; Datamodel
+`User data` --&gt; Datamodel</code></pre>
+<h3 id="data-encoding">Data encoding</h3>
+<p>Data must be encoded as UTF-8 + RFC 4180 (see more info at <a href="https://tools.ietf.org/html/rfc4180">https://tools.ietf.org/html/rfc4180</a>). Below are some specifics regarding the cell and row formatting.</p>
 <table>
 <thead>
 <tr>
@@ -1297,7 +1302,7 @@
 1,&quot;Hello, world!&quot;,123.45
 2,&quot;14&quot;&quot; TV&quot;,123.45
 </code></pre></div>
-<h3 id="transactions">Transactions</h3>
+<h3 id="transaction-data">Transaction data</h3>
 <p>Provide a file containing transactional data between your products and users. Usually represents order rows.</p>
 <p>If necessary, you may provide an additional file with data that is associated with an order number. An example would be an order header containing shipping cost, payment fee etc. In this case, provide an order number in the transactional data, and use the order number as the unique identifier in the orders file. </p>
 <table>
@@ -1416,8 +1421,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="products">Products</h3>
-<p>Provide a file containing product meta data. Make sure all product ids that are present in the transactions are also present in this file.</p>
+<h3 id="product-data">Product data</h3>
+<p>Provide a file containing product (item) meta data. Make sure all product ids that are present in the transactions are also present in this file.</p>
 <p>Categorical data in hierarchical structure should be added as separate columns: <code>category_1</code>, <code>category_2</code>, etc. If a product can have multiple categories but without hierarchy, provide them as a semi-colon separated string: <code>“categoryA;categoryC:categoryE”</code>. An example would be genres for a movie, as a movie can be associated with multiple genres in no particular order.</p>
 <table>
 <thead>
@@ -1495,7 +1500,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="users">Users</h3>
+<h3 id="user-data">User data</h3>
 <p>Provide a file containing user meta data. Make sure all user ids that are present in the transactions are also present in this file.</p>
 <p>In order to have deletes propagate to our side, provide users with empty data on all fields except id or a <code>“is_deleted”</code> field that we will use to clear all metadata.</p>
 <table>
