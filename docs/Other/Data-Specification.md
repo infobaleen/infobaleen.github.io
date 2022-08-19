@@ -1,9 +1,19 @@
 ## Infobaleen - Data Specification
 
+A datamodel in Infobaleen is made up of three data tables. Each line in the interaction table is linked to a specific user and item in the item and user tables. 
 
-### Encoding
 
-Data must be encoded as UTF-8 + RFC 4180 (https://tools.ietf.org/html/rfc4180). Below are some specifics regarding the cell and row formatting.
+```mermaid
+classDiagram
+`Transaction data` --> Datamodel
+`Product data` --> Datamodel
+`User data` --> Datamodel
+```
+
+
+### Data encoding
+
+Data must be encoded as UTF-8 + RFC 4180 (see more info at [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)). Below are some specifics regarding the cell and row formatting.
 
 | Case      | Example |
 | ----------- | ----------- |
@@ -22,7 +32,7 @@ id,value,number
 2,"14"" TV",123.45
 ```
 
-### Transactions
+### Transaction data
 Provide a file containing transactional data between your products and users. Usually represents order rows.
 
 If necessary, you may provide an additional file with data that is associated with an order number. An example would be an order header containing shipping cost, payment fee etc. In this case, provide an order number in the transactional data, and use the order number as the unique identifier in the orders file. 
@@ -51,8 +61,8 @@ If necessary, you may provide an additional file with data that is associated wi
 | shipping_price | Number | | 
 | ...< ANY > |  Number, String | Additional metadata may be added that you find interesting to examine in our analytics. | 
 
-### Products
-Provide a file containing product meta data. Make sure all product ids that are present in the transactions are also present in this file.
+### Product data
+Provide a file containing product (item) meta data. Make sure all product ids that are present in the transactions are also present in this file.
 
 Categorical data in hierarchical structure should be added as separate columns: `category_1`, `category_2`, etc. If a product can have multiple categories but without hierarchy, provide them as a semi-colon separated string: `“categoryA;categoryC:categoryE”`. An example would be genres for a movie, as a movie can be associated with multiple genres in no particular order.
 
@@ -72,7 +82,7 @@ Categorical data in hierarchical structure should be added as separate columns: 
 | category_1 … | String | Use multiple columns if hierarchical structure.| | 
 | ...< ANY > | Number, String | Additional metadata may be added that you find interesting to examine in our analytics. | 
 
-### Users
+### User data
 Provide a file containing user meta data. Make sure all user ids that are present in the transactions are also present in this file.
 
 In order to have deletes propagate to our side, provide users with empty data on all fields except id or a `“is_deleted”` field that we will use to clear all metadata.
