@@ -907,6 +907,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#curl-example" class="md-nav__link">
+    cURL example
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1267,6 +1274,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#curl-example" class="md-nav__link">
+    cURL example
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1464,7 +1478,7 @@ Given a user id, a list of recommended items is returned.</p>
 </tr>
 </tbody>
 </table>
-<p><strong>cURL</strong> example</p>
+<h4 id="curl-example"><strong>cURL</strong> example</h4>
 <div class="highlight"><pre><span></span><code>curl -X POST ${IB_API_URL}/api/v1/data-models/&lt;id&gt;/recommendations/user-to-items \
 -H &quot;Authorization: ${IB_API_KEY}&quot; \
 -d &#39;{&quot;User&quot;: &quot;123&quot;, &quot;Limit&quot;: 10, &quot;Recurring&quot;: false}&#39;

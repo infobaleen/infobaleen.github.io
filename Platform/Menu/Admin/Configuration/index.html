@@ -1219,26 +1219,6 @@
 <h2 id="integrations">Integrations</h2>
 <p>An integration configuration is set up to export data from the platform.  It can look something like the facebook-export in the image below (emails are exported to Facebook). Note that a parameter like <code>${fb-token}</code> needs to be added in the <code>Secrets</code> page.</p>
 <p><img width="837" alt="Screenshot 2022-07-01 at 11 34 13" src="https://user-images.githubusercontent.com/4352260/176868658-b99b6f52-8a53-48f6-8e9e-b42275d10329.png"></p>
-<h1 id="partner-configuration">Partner configuration</h1>
-<h2 id="voyado">Voyado</h2>
-<p>The voyado config needs three parameters that are the same for all lakes. These can be found on Bitwarden under Infobaleen/Voyado. The fourth parameter is the lake endpoint. This is found in Voyado's <a href="(#find-voyado-files-to-import)">Azure data lake</a></p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>{&quot;Root&quot;:&quot;/voyado/export&quot;, &quot;Directories&quot;: [&#39;receipts&#39;], &quot;ClientId&quot;: &quot;${CLIENT_ID}&quot;, &quot;ClientSecret&quot;: &quot;${CLIENT_SECRET}&quot;, &quot;DirectoryId&quot;: &quot;${DIRECTORY_ID}&quot;, &quot;LakeUri&quot;:&quot;bangerhadcorestordlsprod.azuredatalakestore.net&quot;}
-</code></pre></div>
-<p>Some comments:
-* <code>"Directories"</code>: These are the directories that can be found in the <a href="(#find-voyado-files-to-import)">Azure data lake</a>
-* There are defauly directories that will be accessible without specifying them, these are <code>store/</code>, <code>receiptItems/</code>, <code>article/</code> and <code>allContacts/</code></p>
-<h2 id="rule">Rule</h2>
-<p><em>Integration with rule enables you export your </em><em>Segmentation</em><em> campaigns to rule</em>  </p>
-<p><strong>Name:</strong> should be set to <code>rule</code> as standard<br />
-<strong>Driver:</strong> rule<br />
-<strong>config:</strong> {"ApiKey":"${rule_api_key}","KeyField":"email"}<br />
-where <code>"ApiKey":"${rule_api_key}"</code> is set in Secrets<br />
-and "KeyField":"email" is set 
-<strong>Default User Field:</strong> <code>field name</code> + <code>KeyField</code> wich is set to <code>email</code> in this case<br />
-ex. if field name = email the Default user field becomes <code>email email</code>
-<strong>Name used in exports:</strong> ${PARENT_NAME}: ${INDEX_NAME}
-<strong>Optional User Fields:</strong> No idea.</p>
 
               
             </article>
