@@ -143,7 +143,8 @@ Similar to barchart, categories let's you choose what category to show data for,
 
 
 ### Text Content
-The text content element is the most used element, it's basically just text that can be adapted through markdown language, for example # = header1 (largest) ## = header2, ### header3 etc.  
+The text content element is the most used element. It's basically just text that can be adapted through either markdown or HTML.
+
 ![image](https://user-images.githubusercontent.com/103515314/169791387-54ccec3b-5099-44aa-90e6-303bde780b7d.png)
 
 

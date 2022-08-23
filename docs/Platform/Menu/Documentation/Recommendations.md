@@ -59,7 +59,7 @@ __Request parameters__ (JSON body)
 | Limit                      | integer          | Maximum number of items returned, default=0                           |
 | Offset                     | integer          | Items to skip                                                         |
 
-__cURL__ example
+#### __cURL__ example
 
 ```
 curl -X POST ${IB_API_URL}/api/v1/data-models/<id>/recommendations/user-to-items \

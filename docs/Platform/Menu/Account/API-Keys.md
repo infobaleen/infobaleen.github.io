@@ -1,7 +1,7 @@
 # API Keys
 API keys are primarily used for accessing the recommendation API to fetch product recommendations to your website or your email campaigns. 
 
-#" Test your API request
+## Test your API request
 * Create a new API key
 * Open ubuntu
 * Copy from your  API key 
