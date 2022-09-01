@@ -15,9 +15,18 @@ Columns are the data columns that can be used to create filters and rules. These
 <img width="890" alt="Screenshot 2022-07-01 at 11 01 15" src="https://user-images.githubusercontent.com/4352260/176862636-6659b5fd-594f-4049-a349-45e774c39201.png">
 
 ### Filter expression
-Here you can write an expression that creates a filter for your recommendation profile. For example, perhaps you just want to recommend products in a specific category, then you would write something like `category = 'Kaffe & Te'`, or `price` > `100`
+Here you can write an expression that creates a filter for your recommendation profile. Some example configurations:
+
+#### Recommend products in a specific category
+To recommend prodcuts in a specific category you can use something like `category = 'Kaffe & Te'`, or `price` > `100`
 
 If the expression is `True` the product will be included in the recommendation, and it the expression is `False` the product will be filtered. In the case of `price` > `100`, the expression will return `True` for all products with a price larger than 100 thus removing all items with a price lower than 100 from the recommendations.
+
+#### Recommend products with specific names or characters
+To recommended products that does not contain either `HOOK`, `TAPE` nor `AA`, you can configure the filter according to: 
+```
+(contains(articleName, 'HOOK') OR contains(articleName, 'TAPE') OR contains(articleName, 'AA')) = false
+```
 
 ### Boost expression
 
@@ -52,7 +61,16 @@ Create an advanced filter.
 * Field: the field wich you are taking data from
 * Option: "all" means all items in the users purchase history. "items" means all items sent in through the API by the customer. When the customer makes an API call for the recommendation they can include items in the API call. for example items in the basket, the item you are currently looking at etc.
 
-See an example below:
+See some example advanced filters below:
+
+#### Rotation parameters recommendations
+| Parameter | Description |
+| --- | --- | 
+| RotateLength (float 0-1) | RotateLength bestämmer hur stor andel av alla kandidater vi tillåter rekommenderas, så 0.9 => 90% av produkterna. |
+| RotateSeed (int) | Med RotateSeed > 0 slumpas ordningen av kandidaterna. En och samma seed ger en viss ordning och är unikt per användare. Vi kommer alltså inte ignorera samma 50% av produktutbudet vid RotateLength=0.5 för alla användare. Ex `"RotateSeed":"now()"`|
+| RotateOffset (float 0-1): | Anger från vilken andel av kandidaterna vi börjar göra urvalet. RotateOffset tillsammans med RotateLength skapar möjlighet att “paginera” urvalet. Man kan ex skapa 4 separata set av slumpade produkter som man roterar på genom att använda RotateLength:0.25 och anropa APIi:t med RotateOffset: 0, 0.25, 0.5, 0.75.|
+
+Man bör komma ihåg att inte använda för små set om man vet att man har få produkter att röra sig med i profilen, ex om man har många filter. Det kan sluta med att vi inte kan uppfylla den Limit man vill ha.
 
 #### Example of advanced quey
 ```

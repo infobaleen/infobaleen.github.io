@@ -149,7 +149,7 @@ lets you reload previously run queries
 #### Preprocessor directives
 when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.  
 ```
-SELECT * FROM `url:https://files.channable.com/o2lQPJiYXk7KrY1DW2BJ3A==.xml`  
+SELECT * FROM `url:https://...`  
 ```
 [Note that you have to write **url:** before https://]  
 

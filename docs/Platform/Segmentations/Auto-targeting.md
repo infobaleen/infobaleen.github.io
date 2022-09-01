@@ -49,10 +49,9 @@ After the campaign has been created, now it's time to set the recipients (audien
 7. Name the advertisement and click the + icon and `Select items to target`
 
 This will trigger some settings to pop up above. 
-
-* **ignore already consumed**: used to block so that users do not end up in a campaign that they already bought from. For example, if you have a campaign including Product1 and a user has already bought that product, then you may want to make sure that the user can not end up in a campaign inlcuding that product. 
-* **Trend**: If you choose a high trend value, then seasonal trends in sales will have higher weight (e.g. during Christmas more Santa Claus-products are probably sold)
-* **Item.multiplier (?) and Recipient multiplier (?)**: These can be ignored. The idea is that you can weight the score for a user or item. Ex: item.price, or user.propensity for item resp. user. But it is experimental and seldom used. 
+  * **ignore already consumed**: used to block so that users do not end up in a campaign that they already bought from. For example, if you have a campaign including Product1 and a user has already bought that product, then you may want to make sure that the user can not end up in a campaign inlcuding that product. 
+  * **Trend**: If you choose a high trend value, then seasonal trends in sales will have higher weight (e.g. during Christmas more Santa Claus-products are probably sold)
+  * **Item.multiplier (?) and Recipient multiplier (?)**: These can be ignored. The idea is that you can weight the score for a user or item. Ex: item.price, or user.propensity for item resp. user. But it is experimental and seldom used. 
 
 <img src="../../../images/Segmentations/segmentations-4.png" width="867"/>
 
