@@ -147,9 +147,11 @@ Define the type of connection for the data to be added to the source.
 lets you reload previously run queries
 
 #### Preprocessor directives
+
+##### xml file
 when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.  
 ```
-SELECT * FROM `url:https://...`  
+SELECT * FROM `url:https://...xml`  
 ```
 [Note that you have to write **url:** before https://]  
 
@@ -177,6 +179,31 @@ In the first image example, the resulting preprocessing directives to fetch the 
 resulting in this outcome
 ![image](https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png)
 
+##### json file
+
+an example json file could look like:
+```
+[
+    {
+        "id": "",
+        "user_id": "",
+        "username": ""
+    },
+    {
+        "id": "",
+        "user_id": "",
+        "username": ""
+    }
+]
+
+```
+
+```
+SELECT * FROM `url:https://...json`  
+```
+##### preprocessing directive for json
+`decoder=json`  
+`json_prefix=[0]`
 
 ### Query expressions
 You need to enclose variable names that contain other characters than letters and numbers with `backticks` ` `,  
@@ -235,8 +262,33 @@ ex.
 ```
 LEFT JOIN <table_name> ON <table_name>.id = XXX.id
 ```
-#### LEFT JOIN
-LEFT JOIN lets you append more columns to an existing table 
+#### LEFT JOIN and JOIN
+LEFT JOIN lets you append more columns to an existing table, while join only keeps the ones matching. See below a code example where you can change `left join` to `join` to see the effects.
+
+```
+INSERT INTO countries SELECT * FROM `raw:
+id,country
+1,se
+2,no
+`;
+
+INSERT INTO currencies SELECT * FROM `raw:
+country,currency
+se,sek
+us,usd
+`;
+
+
+select * from countries
+left join currencies ON countries.country = currencies.country
+
+```
+<img width="382" alt="Screenshot 2022-09-29 at 13 59 46" src="https://user-images.githubusercontent.com/4352260/193025738-7c19e893-fb95-448e-9a61-8e6bc5e52b11.png">
+
+<img width="385" alt="Screenshot 2022-09-29 at 13 59 36" src="https://user-images.githubusercontent.com/4352260/193025736-ef6f50a2-76b4-424d-bee6-d3a39d0f41a3.png">
+
+
+
 
 #### firstSeen()
 firstseen(<field>) saves only the first encountered row for 
@@ -273,8 +325,28 @@ The result will be:
 a	step1	     step2.     step3	 length(b)    slicestr(b, 1, 2)
 1	A,B,C,D,E.   A,B,C	ABC	 5            BC
 ```
-	
 
+#### groupconcat_ws
+```	
+Insert into a
+SELECT * FROM `raw:
+Id,user,ordernr,item,price
+1,100,1,A,"10SEK"
+2,100,1,B,"20SEK"
+3,100,1,C,"30SEK"`
+;
+SELECT user, ordernr, groupconcat_ws(price, ',') price_list FROM a
+```
+	
+The result will be:
+```
+user	ordernr	price_list
+100	1	10SEK,20SEK,30SEK
+```
+
+	
+	
+	
 #### create a custom user.agg.<field>
 the datamodel creates aggregate functions such as user.agg.revenue.
 to create one yourself do the following.

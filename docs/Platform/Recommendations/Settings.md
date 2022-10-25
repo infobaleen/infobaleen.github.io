@@ -29,7 +29,16 @@ To recommended products that does not contain either `HOOK`, `TAPE` nor `AA`, yo
 ```
 
 ### Boost expression
-
+every item has a "relevence rank" for each user, the products with the highest relevance rank are the products that get recommended.  
+if you set a limit of 4 products the 4 products with the highest relevance rank are shown.  
+you can affect the relevance rank by applying a boost expression.   
+What you write in the boost expression is multiplied with the relevance rank.   
+if you write for example   
+boost expression: `2`  
+this means you are multiplying all ranks with 2, thus not changing anything since all ranks are multiplied.  
+if you create the expression: `1+1.0*(product_group = 'bags')`  
+all ranks are multiplied by `1` but products in the product_group `bags` are multiplied by `2` thus increasing their rank relative to other products by 100%  
+if you change the expression to: `1+0.5*(product_group = 'bags')` the rank for bags relative to other products are increased by 50%  
 
 ### InteractionFilter
 
