@@ -556,6 +556,26 @@
     Filter expression
   </a>
   
+    <nav class="md-nav" aria-label="Filter expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommend-products-in-a-specific-category" class="md-nav__link">
+    Recommend products in a specific category
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommend-products-with-specific-names-or-characters" class="md-nav__link">
+    Recommend products with specific names or characters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -621,6 +641,13 @@
   
     <nav class="md-nav" aria-label="Advanced">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotation-parameters-recommendations" class="md-nav__link">
+    Rotation parameters recommendations
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#example-of-advanced-quey" class="md-nav__link">
@@ -1326,6 +1353,26 @@
     Filter expression
   </a>
   
+    <nav class="md-nav" aria-label="Filter expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommend-products-in-a-specific-category" class="md-nav__link">
+    Recommend products in a specific category
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommend-products-with-specific-names-or-characters" class="md-nav__link">
+    Recommend products with specific names or characters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1391,6 +1438,13 @@
   
     <nav class="md-nav" aria-label="Advanced">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rotation-parameters-recommendations" class="md-nav__link">
+    Rotation parameters recommendations
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#example-of-advanced-quey" class="md-nav__link">
@@ -1461,9 +1515,25 @@
 <p>Columns are the data columns that can be used to create filters and rules. These are activated in the data model with the <code>MlFilter</code> toggle (MlFilter = Machine Learning Filter), see the image below. </p>
 <p><img width="890" alt="Screenshot 2022-07-01 at 11 01 15" src="https://user-images.githubusercontent.com/4352260/176862636-6659b5fd-594f-4049-a349-45e774c39201.png"></p>
 <h3 id="filter-expression">Filter expression</h3>
-<p>Here you can write an expression that creates a filter for your recommendation profile. For example, perhaps you just want to recommend products in a specific category, then you would write something like <code>category = 'Kaffe &amp; Te'</code>, or <code>price</code> &gt; <code>100</code></p>
+<p>Here you can write an expression that creates a filter for your recommendation profile. Some example configurations:</p>
+<h4 id="recommend-products-in-a-specific-category">Recommend products in a specific category</h4>
+<p>To recommend prodcuts in a specific category you can use something like <code>category = 'Kaffe &amp; Te'</code>, or <code>price</code> &gt; <code>100</code></p>
 <p>If the expression is <code>True</code> the product will be included in the recommendation, and it the expression is <code>False</code> the product will be filtered. In the case of <code>price</code> &gt; <code>100</code>, the expression will return <code>True</code> for all products with a price larger than 100 thus removing all items with a price lower than 100 from the recommendations.</p>
+<h4 id="recommend-products-with-specific-names-or-characters">Recommend products with specific names or characters</h4>
+<p>To recommended products that does not contain either <code>HOOK</code>, <code>TAPE</code> nor <code>AA</code>, you can configure the filter according to: 
+<div class="highlight"><pre><span></span><code>(contains(articleName, &#39;HOOK&#39;) OR contains(articleName, &#39;TAPE&#39;) OR contains(articleName, &#39;AA&#39;)) = false
+</code></pre></div></p>
 <h3 id="boost-expression">Boost expression</h3>
+<p>every item has a "relevence rank" for each user, the products with the highest relevance rank are the products that get recommended.<br />
+if you set a limit of 4 products the 4 products with the highest relevance rank are shown.<br />
+you can affect the relevance rank by applying a boost expression. <br />
+What you write in the boost expression is multiplied with the relevance rank. <br />
+if you write for example <br />
+boost expression: <code>2</code><br />
+this means you are multiplying all ranks with 2, thus not changing anything since all ranks are multiplied.<br />
+if you create the expression: <code>1+1.0*(product_group = 'bags')</code><br />
+all ranks are multiplied by <code>1</code> but products in the product_group <code>bags</code> are multiplied by <code>2</code> thus increasing their rank relative to other products by 100%<br />
+if you change the expression to: <code>1+0.5*(product_group = 'bags')</code> the rank for bags relative to other products are increased by 50%  </p>
 <h3 id="interactionfilter">InteractionFilter</h3>
 <h3 id="trend">Trend</h3>
 <p>Trend limits the time interval for the data that the recomendations are based on. <code>Max trend</code> uses a short time interval resulting in the machine-learning model only recommending products that are trending last few weeks.</p>
@@ -1485,7 +1555,31 @@ by enabling <code>shuffled</code> it still recommends the top 10 items but the o
 <li>Field: the field wich you are taking data from</li>
 <li>Option: "all" means all items in the users purchase history. "items" means all items sent in through the API by the customer. When the customer makes an API call for the recommendation they can include items in the API call. for example items in the basket, the item you are currently looking at etc.</li>
 </ul>
-<p>See an example below:</p>
+<p>See some example advanced filters below:</p>
+<h4 id="rotation-parameters-recommendations">Rotation parameters recommendations</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RotateLength (float 0-1)</td>
+<td>RotateLength bestämmer hur stor andel av alla kandidater vi tillåter rekommenderas, så 0.9 =&gt; 90% av produkterna.</td>
+</tr>
+<tr>
+<td>RotateSeed (int)</td>
+<td>Med RotateSeed &gt; 0 slumpas ordningen av kandidaterna. En och samma seed ger en viss ordning och är unikt per användare. Vi kommer alltså inte ignorera samma 50% av produktutbudet vid RotateLength=0.5 för alla användare. Ex <code>"RotateSeed":"now()"</code></td>
+</tr>
+<tr>
+<td>RotateOffset (float 0-1):</td>
+<td>Anger från vilken andel av kandidaterna vi börjar göra urvalet. RotateOffset tillsammans med RotateLength skapar möjlighet att “paginera” urvalet. Man kan ex skapa 4 separata set av slumpade produkter som man roterar på genom att använda RotateLength:0.25 och anropa APIi:t med RotateOffset: 0, 0.25, 0.5, 0.75.</td>
+</tr>
+</tbody>
+</table>
+<p>Man bör komma ihåg att inte använda för små set om man vet att man har få produkter att röra sig med i profilen, ex om man har många filter. Det kan sluta med att vi inte kan uppfylla den Limit man vill ha.</p>
 <h4 id="example-of-advanced-quey">Example of advanced quey</h4>
 <p><div class="highlight"><pre><span></span><code>{&quot;Context&quot;:[{&quot;Name&quot;:&quot;bought_phone_model&quot;,&quot;Field&quot;:&quot;phone_model&quot;,&quot;Option&quot;:&quot;all&quot;}]}
 </code></pre></div>

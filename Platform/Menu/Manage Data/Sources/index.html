@@ -1206,6 +1206,33 @@
     Preprocessor directives
   </a>
   
+    <nav class="md-nav" aria-label="Preprocessor directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xml-file" class="md-nav__link">
+    xml file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-file" class="md-nav__link">
+    json file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessing-directive-for-json" class="md-nav__link">
+    preprocessing directive for json
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1243,8 +1270,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#left-join" class="md-nav__link">
-    LEFT JOIN
+  <a href="#left-join-and-join" class="md-nav__link">
+    LEFT JOIN and JOIN
   </a>
   
 </li>
@@ -1259,6 +1286,13 @@
           <li class="md-nav__item">
   <a href="#split-and-slice-and-slicestr" class="md-nav__link">
     split() and slice() and slicestr()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groupconcat_ws" class="md-nav__link">
+    groupconcat_ws
   </a>
   
 </li>
@@ -1721,6 +1755,33 @@
     Preprocessor directives
   </a>
   
+    <nav class="md-nav" aria-label="Preprocessor directives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#xml-file" class="md-nav__link">
+    xml file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#json-file" class="md-nav__link">
+    json file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preprocessing-directive-for-json" class="md-nav__link">
+    preprocessing directive for json
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1758,8 +1819,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#left-join" class="md-nav__link">
-    LEFT JOIN
+  <a href="#left-join-and-join" class="md-nav__link">
+    LEFT JOIN and JOIN
   </a>
   
 </li>
@@ -1774,6 +1835,13 @@
           <li class="md-nav__item">
   <a href="#split-and-slice-and-slicestr" class="md-nav__link">
     split() and slice() and slicestr()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#groupconcat_ws" class="md-nav__link">
+    groupconcat_ws
   </a>
   
 </li>
@@ -1910,8 +1978,9 @@ User,ts,item is sorted first on user, then on ts and lastly on item.  </p>
 <h4 id="load-saved-query">Load saved query</h4>
 <p>lets you reload previously run queries</p>
 <h4 id="preprocessor-directives">Preprocessor directives</h4>
+<h5 id="xml-file">xml file</h5>
 <p>when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.<br />
-<div class="highlight"><pre><span></span><code>SELECT * FROM `url:https://files.channable.com/o2lQPJiYXk7KrY1DW2BJ3A==.xml`  
+<div class="highlight"><pre><span></span><code>SELECT * FROM `url:https://...xml`  
 </code></pre></div>
 [Note that you have to write <strong>url:</strong> before https://]  </p>
 <p>start by writing<br />
@@ -1932,6 +2001,26 @@ to show the file structure, in this case it looks like this.
 <code>pluck=google_product_category,price</code><br />
 resulting in this outcome
 <img alt="image" src="https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png" /></p>
+<h5 id="json-file">json file</h5>
+<p>an example json file could look like:
+<div class="highlight"><pre><span></span><code>[
+    {
+        &quot;id&quot;: &quot;&quot;,
+        &quot;user_id&quot;: &quot;&quot;,
+        &quot;username&quot;: &quot;&quot;
+    },
+    {
+        &quot;id&quot;: &quot;&quot;,
+        &quot;user_id&quot;: &quot;&quot;,
+        &quot;username&quot;: &quot;&quot;
+    }
+]
+</code></pre></div></p>
+<div class="highlight"><pre><span></span><code>SELECT * FROM `url:https://...json`  
+</code></pre></div>
+<h5 id="preprocessing-directive-for-json">preprocessing directive for json</h5>
+<p><code>decoder=json</code><br />
+<code>json_prefix=[0]</code></p>
 <h3 id="query-expressions">Query expressions</h3>
 <p>You need to enclose variable names that contain other characters than letters and numbers with <code>backticks</code> <code></code>,<br />
 this includes whitespace ' ', dot '.', etc...</p>
@@ -1977,8 +2066,26 @@ When using the table you created with INSERT INTO you use the <table_name> not t
 ex.
 <div class="highlight"><pre><span></span><code>LEFT JOIN &lt;table_name&gt; ON &lt;table_name&gt;.id = XXX.id
 </code></pre></div></p>
-<h4 id="left-join">LEFT JOIN</h4>
-<p>LEFT JOIN lets you append more columns to an existing table </p>
+<h4 id="left-join-and-join">LEFT JOIN and JOIN</h4>
+<p>LEFT JOIN lets you append more columns to an existing table, while join only keeps the ones matching. See below a code example where you can change <code>left join</code> to <code>join</code> to see the effects.</p>
+<p><div class="highlight"><pre><span></span><code>INSERT INTO countries SELECT * FROM `raw:
+id,country
+1,se
+2,no
+`;
+
+INSERT INTO currencies SELECT * FROM `raw:
+country,currency
+se,sek
+us,usd
+`;
+
+
+select * from countries
+left join currencies ON countries.country = currencies.country
+</code></pre></div>
+<img width="382" alt="Screenshot 2022-09-29 at 13 59 46" src="https://user-images.githubusercontent.com/4352260/193025738-7c19e893-fb95-448e-9a61-8e6bc5e52b11.png"></p>
+<p><img width="385" alt="Screenshot 2022-09-29 at 13 59 36" src="https://user-images.githubusercontent.com/4352260/193025736-ef6f50a2-76b4-424d-bee6-d3a39d0f41a3.png"></p>
 <h4 id="firstseen">firstSeen()</h4>
 <p>firstseen(<field>) saves only the first encountered row for </p>
 <p>coalese</p>
@@ -2004,6 +2111,20 @@ FROM a
 <p>The result will be:
 <div class="highlight"><pre><span></span><code>a   step1        step2.     step3    length(b)    slicestr(b, 1, 2)
 1   A,B,C,D,E.   A,B,C  ABC  5            BC
+</code></pre></div></p>
+<h4 id="groupconcat_ws">groupconcat_ws</h4>
+<div class="highlight"><pre><span></span><code>Insert into a
+SELECT * FROM `raw:
+Id,user,ordernr,item,price
+1,100,1,A,&quot;10SEK&quot;
+2,100,1,B,&quot;20SEK&quot;
+3,100,1,C,&quot;30SEK&quot;`
+;
+SELECT user, ordernr, groupconcat_ws(price, &#39;,&#39;) price_list FROM a
+</code></pre></div>
+<p>The result will be:
+<div class="highlight"><pre><span></span><code>user    ordernr price_list
+100 1   10SEK,20SEK,30SEK
 </code></pre></div></p>
 <h4 id="create-a-custom-useragg">create a custom user.agg.<field></h4>
 <p>the datamodel creates aggregate functions such as user.agg.revenue.
