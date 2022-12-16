@@ -1277,6 +1277,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#not-in" class="md-nav__link">
+    NOT IN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#firstseen" class="md-nav__link">
     firstSeen()
   </a>
@@ -1826,6 +1833,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#not-in" class="md-nav__link">
+    NOT IN
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#firstseen" class="md-nav__link">
     firstSeen()
   </a>
@@ -2086,6 +2100,22 @@ left join currencies ON countries.country = currencies.country
 </code></pre></div>
 <img width="382" alt="Screenshot 2022-09-29 at 13 59 46" src="https://user-images.githubusercontent.com/4352260/193025738-7c19e893-fb95-448e-9a61-8e6bc5e52b11.png"></p>
 <p><img width="385" alt="Screenshot 2022-09-29 at 13 59 36" src="https://user-images.githubusercontent.com/4352260/193025736-ef6f50a2-76b4-424d-bee6-d3a39d0f41a3.png"></p>
+<h4 id="not-in">NOT IN</h4>
+<p>Only selects rows that do not match, example</p>
+<div class="highlight"><pre><span></span><code>SELECT * from `raw:
+id,name
+1,anni-frid
+2,agnetha
+3,björn
+4,benny
+`
+WHERE name NOT IN (&#39;anni-frid&#39;, &#39;agnetha&#39;)
+</code></pre></div>
+<p>Will return </p>
+<div class="highlight"><pre><span></span><code>id,name
+3,björn
+4,benny
+</code></pre></div>
 <h4 id="firstseen">firstSeen()</h4>
 <p>firstseen(<field>) saves only the first encountered row for </p>
 <p>coalese</p>
