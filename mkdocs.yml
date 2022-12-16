@@ -41,31 +41,32 @@ nav:
         - Platform/Recommendations/Recommendations in emails.md
         - Platform/Recommendations/Infobaleen recommended recommendation profiles.md
     - Configure the platform:
-        - Account:
-            - API Keys: Platform/Menu/Account/API-Keys.md
-            - Logout: Platform/Menu/Account/Logout.md
-            - Users: Platform/Menu/Account/Users.md
-        - Admin:
-            - Clear CH chache: Platform/Menu/Admin/Clear-CH-chache.md
-            - Configuration: Platform/Menu/Admin/Configuration.md
-            - Connections: Platform/Menu/Admin/Connections.md
-            - Events: Platform/Menu/Admin/Events.md
-            - Secrets: Platform/Menu/Admin/Secrets.md
-        - Documentation:
-            - Agent: Platform/Menu/Documentation/Agent.md
-            - Recommendations API: Platform/Menu/Documentation/Recommendations.md
-            - New Issue: Platform/Menu/Documentation/New-Issue.md
-        - Manage Data:
-            - Data Models: Platform/Menu/Manage Data/Data-Models.md
-            - Import Files: Platform/Menu/Manage Data/Import-Files.md
-            - Results: Platform/Menu/Manage Data/Results.md
-            - Sources: Platform/Menu/Manage Data/Sources.md
         - Model:
             - Interactions: Platform/Menu/Model/Interactions.md
             - Overview: Platform/Menu/Model/Overview.md
             - Products: Platform/Menu/Model/Products.md
             - Users: Platform/Menu/Model/Users.md
-        - Other: Platform/Menu/Other/Overlaps.md
+        - Manage Data:
+            - Data Models: Platform/Menu/Manage Data/Data-Models.md
+            - Import Files: Platform/Menu/Manage Data/Import-Files.md
+            - Results: Platform/Menu/Manage Data/Results.md
+            - Sources: Platform/Menu/Manage Data/Sources.md
+        - Documentation:
+            - Agent: Platform/Menu/Documentation/Agent.md
+            - Recommendations API: Platform/Menu/Documentation/Recommendations.md
+            - New Issue: Platform/Menu/Documentation/New-Issue.md
+        - Account:
+            - API Keys: Platform/Menu/Account/API-Keys.md
+            - Logout: Platform/Menu/Account/Logout.md
+            - Users: Platform/Menu/Account/Users.md
+        # - Admin:
+        #     - Clear CH chache: Platform/Menu/Admin/Clear-CH-chache.md
+        #     - Configuration: Platform/Menu/Admin/Configuration.md
+        #     - Connections: Platform/Menu/Admin/Connections.md
+        #     - Events: Platform/Menu/Admin/Events.md
+        #     - Secrets: Platform/Menu/Admin/Secrets.md
+
+        #- Other: Platform/Menu/Other/Overlaps.md
     - Other:
         - Data Specification: Other/Data-Specification.md
 
