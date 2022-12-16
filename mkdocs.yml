@@ -71,6 +71,7 @@ nav:
         - Data Specification: Other/Data-Specification.md
 
 markdown_extensions:
+  - attr_list
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

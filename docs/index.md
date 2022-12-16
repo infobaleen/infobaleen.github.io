@@ -1,4 +1,6 @@
-# Welcome to the docs!
+# 
+
+<h1><center>Welcome to the documentation!</center></h1>
 
 ![Image title](assets/infobaleen.png)
 
