@@ -289,6 +289,27 @@ left join currencies ON countries.country = currencies.country
 
 
 
+#### NOT IN
+Only selects rows that do not match, example
+
+```
+SELECT * from `raw:
+id,name
+1,anni-frid
+2,agnetha
+3,björn
+4,benny
+`
+WHERE name NOT IN ('anni-frid', 'agnetha')
+```
+
+Will return 
+
+```
+id,name
+3,björn
+4,benny
+```
 
 #### firstSeen()
 firstseen(<field>) saves only the first encountered row for 
