@@ -1,20 +1,27 @@
 ## Settings
 
-Here we explain the different settings fields that can be seen after clicing the cog wheel.
+Here we explain the different settings fields that can be seen after clicking the cog wheel.
 
 <img width="1019" alt="Screenshot 2022-07-01 at 11 12 12" src="https://user-images.githubusercontent.com/4352260/176864507-439bac1e-4029-4aa3-800e-d4c14e8423e0.png">
 
+---
 
-### Search
+#### Search
+Here you can search on all the items included in the machine learning (for example only items sold > X times). If you select an item you will see the recommendations provided by the platform for that specific product(s).
 
 
-### Columns
+#### Columns
+<details class="optional-class"><summary>Show More Info</summary>
 
 Columns are the data columns that can be used to create filters and rules. These are activated in the data model with the `MlFilter` toggle (MlFilter = Machine Learning Filter), see the image below. 
 
 <img width="890" alt="Screenshot 2022-07-01 at 11 01 15" src="https://user-images.githubusercontent.com/4352260/176862636-6659b5fd-594f-4049-a349-45e774c39201.png">
+</details>
 
-### Filter expression
+
+
+#### Filter expression
+<details class="optional-class"><summary>Show More Info</summary>
 Here you can write an expression that creates a filter for your recommendation profile. Some example configurations:
 
 #### Recommend products in a specific category
@@ -27,9 +34,14 @@ To recommended products that does not contain either `HOOK`, `TAPE` nor `AA`, yo
 ```
 (contains(articleName, 'HOOK') OR contains(articleName, 'TAPE') OR contains(articleName, 'AA')) = false
 ```
+</details>
 
-### Boost expression
-every item has a "relevence rank" for each user, the products with the highest relevance rank are the products that get recommended.  
+---
+
+#### Boost expression
+<details class="optional-class"><summary>Show More Info</summary>
+
+Each item has a "relevence rank" for each user, the products with the highest relevance rank are the products that get recommended.  
 if you set a limit of 4 products the 4 products with the highest relevance rank are shown.  
 you can affect the relevance rank by applying a boost expression.   
 What you write in the boost expression is multiplied with the relevance rank.   
@@ -39,31 +51,64 @@ this means you are multiplying all ranks with 2, thus not changing anything sinc
 if you create the expression: `1+1.0*(product_group = 'bags')`  
 all ranks are multiplied by `1` but products in the product_group `bags` are multiplied by `2` thus increasing their rank relative to other products by 100%  
 if you change the expression to: `1+0.5*(product_group = 'bags')` the rank for bags relative to other products are increased by 50%  
+</details>
 
-### InteractionFilter
+---
 
+#### InteractionFilter
+<details class="optional-class"><summary>Show More Info</summary>
+This allows you to filter on purchase history, for example if you send in a user who has bought 2 items, and you have a filter removing 1 of the item types, the products returned will be based only on the item not filtered out.
+</details>
 
-### Trend
+---
+
+#### Trend
+<details class="optional-class"><summary>Show More Info</summary>
 Trend limits the time interval for the data that the recomendations are based on. `Max trend` uses a short time interval resulting in the machine-learning model only recommending products that are trending last few weeks.
+</details>
 
-### Limit
+---
+
+#### Limit
+<details class="optional-class"><summary>Show More Info</summary>
 Limit decides how many recomended items are returned. For example, Limit 4 = Four recommended items. Limit 12 = 12 recommended items.
+</details>
 
-### Max orders
+---
+
+#### Max orders
+<details class="optional-class"><summary>Show More Info</summary>
+
 Number of orders that are taken into concideration when recommending products. `Max orders = 1` means only the items included in the latest order are used as purchase history for that user. `Max orders = 2` means the items in the two latest orders are taken into account.
+</details>
 
-### Max interactions
+---
+
+#### Max interactions
+<details class="optional-class"><summary>Show More Info</summary>
+
 Number of items that are taken into concideration when recommending products. `Max items = 1` means only the latest purchased item is used as purchase history for that user. `Max items = 2` means the two latest items are taken into account.
+</details>
 
-### Allow items from history
+---
+
+#### Allow items from history
+<details class="optional-class"><summary>Show More Info</summary>
 Sets a filter so that all items the user have bought cannot be recommended. 
+</details>
 
-### Shuffled
+---
+
+#### Shuffled
+<details class="optional-class"><summary>Show More Info</summary>
 If Limit is set to 10 the items are recomended in order (most likly next purchase is at the top).  
 by enabling `shuffled` it still recommends the top 10 items but the order of the top 10 items are shuffled. 
+</details>
 
+---
 
-### Advanced
+#### Advanced
+<details class="optional-class"><summary>Show More Info</summary>
 Create an advanced filter. 
 
 * Name: is the variable name.
@@ -71,8 +116,7 @@ Create an advanced filter.
 * Option: "all" means all items in the users purchase history. "items" means all items sent in through the API by the customer. When the customer makes an API call for the recommendation they can include items in the API call. for example items in the basket, the item you are currently looking at etc.
 
 See some example advanced filters below:
-
-#### Rotation parameters recommendations
+<details class="optional-class"><summary>Show example 1: Rotation parameter recommendations</summary>
 | Parameter | Description |
 | --- | --- | 
 | RotateLength (float 0-1) | RotateLength bestämmer hur stor andel av alla kandidater vi tillåter rekommenderas, så 0.9 => 90% av produkterna. |
@@ -80,8 +124,9 @@ See some example advanced filters below:
 | RotateOffset (float 0-1): | Anger från vilken andel av kandidaterna vi börjar göra urvalet. RotateOffset tillsammans med RotateLength skapar möjlighet att “paginera” urvalet. Man kan ex skapa 4 separata set av slumpade produkter som man roterar på genom att använda RotateLength:0.25 och anropa APIi:t med RotateOffset: 0, 0.25, 0.5, 0.75.|
 
 Man bör komma ihåg att inte använda för små set om man vet att man har få produkter att röra sig med i profilen, ex om man har många filter. Det kan sluta med att vi inte kan uppfylla den Limit man vill ha.
+</details>
+<details class="optional-class"><summary>Show an example of an advanced query</summary>
 
-#### Example of advanced quey
 ```
 {"Context":[{"Name":"bought_phone_model","Field":"phone_model","Option":"all"}]}
 ```
@@ -108,15 +153,31 @@ If you change the expression to `hasAny(split(bought_phone_model,","),makeArray(
 See example:
 ![image](https://user-images.githubusercontent.com/102239423/171145795-877fb7b8-6e02-4bf0-857b-985deafe6efd.png)
 
+</details>
+</details>
 
-### Add field limit 
+---
+
+
+#### Add field limit 
+<details class="optional-class"><summary>Show More Info</summary>
 Field limit lets you set a filter on how many of each category should be recommended. This is usually used on product category where you only want to include ex. max 2 of each product category.
+</details>
 
-### Save as new profile
+---
+
+
+#### Save as new profile
 Saves the current configuration as a profile new
 
-### Save profile
+---
+
+
+#### Save profile
 Overrides the current profile with the current configuration.
 
-### Delete profile
+---
+
+
+#### Delete profile
 Delets selected profile.
