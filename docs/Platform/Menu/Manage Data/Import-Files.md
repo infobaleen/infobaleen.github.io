@@ -16,6 +16,7 @@ Uploaded files are available from the "imports (csv-fs)" database connection whe
 </details>
 
 ## Using a feed (Google Feed for example)
+
 <details class="optional-class"><summary>Show more information</summary>
 
 A feed is a file that contains a list of products that often is used to advertise through Google Merchant Center. Often these feeds are updated with latest information which means Infobaleen can use the feed to add relevant product details to the platform, such as image link data.
@@ -23,7 +24,8 @@ A feed is a file that contains a list of products that often is used to advertis
 Feeds are most often published as a public URL in format `.xml`.
 </details>
 
-### Adding a feed as a data source
+<h3> Adding a feed as a data source </h3>
+
 <details class="optional-class"><summary>Show more information</summary>
 
 1. Get the public URL of the feed
@@ -35,19 +37,19 @@ SELECT
 FROM `url:https://exampleurl.com/plugin-export/shoppingfeed/se`  
 ```
 
-[Note that you have to write **url:** before https://]  
+[Note that you have to write url: before https://]  
 
 
-#### Preprocessor directives
+<h3> Preprocessor directives </h3>
 
 
 Start by writing `decoder=xml` (or `=feed`) to show the file structure, it will in the preview window show the content.
 
 
-**decoder:** describes what file format, xml, csv, json etc.  
-**root:** navigates the file and shows where you want to read data.  
-**rowtag:** selects the object.  
-**pluck:** inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  
+decoder: describes what file format, xml, csv, json etc.  
+root: navigates the file and shows where you want to read data.  
+rowtag: selects the object.  
+pluck: inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  
 
 Below is an example of what to write in the preprocessor to fetch feed data correctly:
 `decoder=xml`  
@@ -57,7 +59,7 @@ Below is an example of what to write in the preprocessor to fetch feed data corr
 
 You can then run `EXECUTE PREVIEW QUERY` to see the result.
 
-#### JSON Files
+<h4> JSON Files </h4>
 <details class="optional-class"><summary>Show more information</summary>
 An example json file could look like:
 ```
@@ -69,20 +71,19 @@ An example json file could look like:
     },
     {
         "id": "",
-        "user_id": "",
+        "user_id": ""
         "username": ""
     }
 ]
 
-```
-
-```
 SELECT * FROM `url:https://...json`  
-```
-##### preprocessing directive for json
+
+
+<h3> preprocessing directive for json </h3>
+
 `decoder=json`  
 `json_prefix=[0]`
-```
+
 </details>
 </details>
 
@@ -104,7 +105,7 @@ Add a database and name the `Database` based on the what system they use (centra
 #### Make arbitrary query 
 <details class="optional-class"><summary>Show more information</summary>
 
-Create a source and make an arbitrary query similar to ``` SELECT * FROM `users.gz` ``` for Centra. You can list possible paths by using ``` SELECT * FROM `*` ```. 
+Create a source and make an arbitrary query similar to SELECT * FROM `users.gz` for Centra. You can list possible paths by using SELECT * FROM `*` . 
 
 This will trigger a proxy sync, and in the case of a Centra customer as in the example image below, the `.gz` files will appear once completed. This normally takes 1-5 hours.
 
@@ -115,7 +116,8 @@ This will trigger a proxy sync, and in the case of a Centra customer as in the e
 #### How to verify that the sync works
 <details class="optional-class"><summary>Show more information</summary>
 
-Choose the source you created and press the pen to edit it. Go to the `ADD QUERY` tab and choose ```“SELECT * FROM `*`”```. 
+Choose the source you created and press the pen to edit it. Go to the `ADD QUERY` tab and choose SELECT * FROM `*`. 
+<br>
 
 If the sync is ready, you will see a list of files to choose from, for example, `users.gz`, `items.gz`, `interactions.gz`, see image below. If you see the files imported you are now ready to [create sources!](https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md)
 

@@ -20,40 +20,37 @@ Given a user id, a list of recommended items is returned.
 __Request parameters__ (JSON body)
 
 #### Input parameters
-<details class="optional-class"><summary>Show more information</summary>
 
-| Parameter                  | Type              | Description                                                                                                                                                                                          |
-|----------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| User                       | string            | User id to fetch item recommendations for                                                                                                                                                            |
-| Items                      | array of strings  | Item IDs to build the recommendations from                                                                                                                                                           |
-| MinInteractionTs           | int               | Min timestamp for interactions to base the recommendations on                                                                                                                                        |
-| MaxInteractions            | int               | Pick orders until `MaxInteractions` interactions are included                                                                                                                                        |
-| MaxOrders                  | int               | Pick orders until `MaxOrders` orders are included                                                                                                                                                    |
-| InteractionFilter          | SQL               | To select from history based on SQL query                                                                                                                                                            |
-| Persona                    | Object            | `{"gender": "Female", "country_code": "SE"}`                                                                                                                                                         |
+| Parameter                  | Type              | Description|
+|----------------------------|-------------------|------------|
+| User                       | string            | User id to fetch item recommendations for|
+| Items                      | array of strings  | Item IDs to build the recommendations from|
+| MinInteractionTs           | int               | Min timestamp for interactions to base the recommendations on|
+| MaxInteractions            | int               | Pick orders until `MaxInteractions` interactions are included|
+| MaxOrders                  | int               | Pick orders until `MaxOrders` orders are included|
+| InteractionFilter          | SQL               | To select from history based on SQL query|
+| Persona                    | Object            | "{"gender": "Female", "country_code": "SE"}"|
 
-</details>
 
 #### Logical parameters
-<details class="optional-class"><summary>Show more information</summary>
 
-| Parameter                  | Type              | Description                                                                                                                                                                                          |
-|----------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| TrendFactor                | float             | Value between 0 and 1. 0 is used to base recommendations on similarity only, and 1 weights the recommendations on the current trend/popularity. Default is 1.                                        | 
-| Recurring                  | boolean           | Allow recommending items already consumed by the user. Default is false.                                                                                                                             |
-| AllowedItems               | array of item ids | Only items in `AllowedItems` is returned in the response                                                                                                                                             |
-| ForcedItems                | array of item ids | All items in `ForcedItems` is returned in the response                                                                                                                                               | 
-| BlockedItems               | array of item ids | No items in the `BlockedItems` is returned in the response                                                                                                                                           |
-| Candidates                 | int               | number of items to consider. Default to all available items. Can be used for faster calculations.                                                                                                    |
-| ItemFilterExpression       | SQL               | `"price>100"`                                                                                                                                                                                        |
-| ItemBoostExpression        | SQL               | `"toFloat(margin)"`                                                                                                                                                                                  |
-| Search                     | string            | Experimental Full-text-search. Filter and boost based on search string.                                                                                                                              | 
-| FieldLimits                | array of objects  | Ex: `[{"Field":"name", "Limit": 2}]` makes sure to not return more than 2 items of the same color.                                                                                                   |
-| Context                    | See example       | `[{"Name":"ageLimit", "FloatValue":11},{"Name": "genres", "ArrayValues": "action,thriller"}, {"Name": "gender", "StringValue": "female"},{"Name": "ages", "Field": "AgeLimitSv", "Option": "last"}]` | 
-</details>
+| Parameter                  | Type              | Description|
+|----------------------------|-------------------|---------|
+| TrendFactor                | float             | Value between 0 and 1. 0 is used to base recommendations on similarity only, and 1 weights the recommendations on the current trend/popularity. Default is 1.| 
+| Recurring                  | boolean           | Allow recommending items already consumed by the user. Default is false.|
+| AllowedItems               | array of item ids | Only items in `AllowedItems` is returned in the response|
+| ForcedItems                | array of item ids | All items in `ForcedItems` is returned in the response| 
+| BlockedItems               | array of item ids | No items in the `BlockedItems` is returned in the response|
+| Candidates                 | int               | number of items to consider. Default to all available items. Can be used for faster calculations.|
+| ItemFilterExpression       | SQL               | `"price>100"`|
+| ItemBoostExpression        | SQL               | `"toFloat(margin)"`|
+| Search                     | string            | Experimental Full-text-search. Filter and boost based on search string.| 
+| FieldLimits                | array of objects  | Ex: `[{"Field":"name", "Limit": 2}]` makes sure to not return more than 2 items of the same color.|
+| Context                    | See example       | `[{"Name":"ageLimit", "FloatValue":11},{"Name": "genres", "ArrayValues": "action,thriller"}, {"Name": "gender", "StringValue": "female"},{"Name": "ages", "Field": "AgeLimitSv", "Option": "last"}]`| 
+
 
 #### Output parameters
-<details class="optional-class"><summary>Show more information</summary>
+
 
 | Parameter                  | Type             | Description                                                           |
 |:---------------------------|------------------|-----------------------------------------------------------------------|
@@ -64,8 +61,6 @@ __Request parameters__ (JSON body)
 | Columns                    | array of strings | Meta data columns to include in the response                          |
 | Limit                      | integer          | Maximum number of items returned, default=0                           |
 | Offset                     | integer          | Items to skip                                                         |
-
-</details>
 
 #### __cURL__ example
 

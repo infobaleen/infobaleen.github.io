@@ -5,31 +5,35 @@ functions and some practical examples that might be useful when setting up your 
 
 ## Operators and Functions
 <details class="optional-class"><summary>Show more information</summary>
-
-* `x LIKE format`
-* `x IN(a,b,...)`
-* `a OR b`
-* `a AND b`
-* `a = b`
-* `a < b`
-* `a > b`
-* `a <= b`
-* `a >= b`
-* `a <> b`
-* `multiIf(cond1,val1,...,defaultVal)` Ex: `multiIf(a > 1, 'a>1', 'a<=1')`
-* `sleep(millisec)`
+<ul>
+  <li>`x LIKE format`</li>
+  <li>`x IN(a,b,...)`</li>
+  <li>`a OR b`</li>
+  <li>`a AND b`</li>
+  <li>`a = b`</li>
+  <li>`a < b`</li>
+  <li>`a > b`</li>
+  <li>`a <= b`</li>
+  <li>`a >= b`</li>
+  <li>`a <> b`</li>
+  <li>`multiIf(cond1,val1,...,defaultVal)` Ex: `multiIf(a > 1, 'a>1', 'a<=1')`</li>
+  <li>`sleep(millisec)`</li>
+</ul>
 
 </details>
 
 ### Numerical
 <details class="optional-class"><summary>Show more information</summary>
 
-* `abs(x)`
-* `floor(x)`
-* `ceil(x)`
-* `round(x)`
-* `least(a,b)`
-* `greatest(a,b)`
+<ul>
+    <li>`abs(x)` </li>
+    <li>`floor(x)` </li>
+    <li>`ceil(x)` </li>
+    <li>`round(x)` </li>
+    <li>`least(a,b)` </li>
+    <li>`greatest(a,b)` </li>
+</ul>
+
 </details>
 
 ### Time (uses go's time formatting: eg. 2006-01-02 15:04:05)
@@ -38,7 +42,6 @@ functions and some practical examples that might be useful when setting up your 
 * `now()` Ex: `now()` => `1571038684`
 
 ### String
-<details class="optional-class"><summary>Show more information</summary>
 
 * `sluggify(x)` Ex: `sluggify('HelloWorld')` => `hello-world`
 * `queryescape(x)` QueryEscape escapes the string so it can be safely placed inside a URL query.
@@ -53,14 +56,13 @@ functions and some practical examples that might be useful when setting up your 
 * `lower(x)`
 * `upper(x)`
 * `length(x)`
-</details>
+
 
 ### JSON
+
 * `pickJson(x, fields...)` Ex: `pickJson('{"foo":1, "bar":2, "baz":3}', 'foo', 'bar')` => `{"foo":1, "bar":2}`
 
 ### Hash/rand
-<details class="optional-class"><summary>Show more information</summary>
-
 * `rand()`
 * `randInt()`
 * `randInt(x)`
@@ -68,7 +70,6 @@ functions and some practical examples that might be useful when setting up your 
 * `xxHash63(x)`
 * `xxHash64(x)`
 * `identity(x)` Ex: `identity('a')` => `a`
-</details>
 
 ### File Details 
 * `size()`
@@ -95,7 +96,6 @@ SELECT * from `transactions.csv` WHERE user_id IN (SELECT id FROM `users.csv`) t
 ```
 
 ## Practical Examples
-<details class="optional-class"><summary>Show examples</summary>
 
 ### Convert date to unix timestamp
 Uploaded interaction data requires a column with unix timestamp data, making this function useful.
@@ -138,5 +138,3 @@ multiIf(
     store_id = "8d46721c-2368-480b-913a-a69100e940e9","Stockholm",
 'unknown_store') as store,
 ```
-
-</details>

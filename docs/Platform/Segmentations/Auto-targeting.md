@@ -112,7 +112,7 @@ You can also go back and readjust your advertisements by clicking the pencil on 
 
 ---
 ## Below is further information about the Auto-targeting.
-## Filter Settings
+### Filter Settings
 Below is a description of all the different buttons, toggles etc in the segmentation/auto-targeting on the platform.
 
 ### Disable Filter

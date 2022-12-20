@@ -6,35 +6,44 @@ Here we explain the different settings fields that can be seen after clicking th
 
 ## Using The Recommendations Page
 <details class="optional-class"><summary>Show More Info</summary>
-## Front page
 
-### Search for items
+<h3> Front page</h3>
+
+<h4>Search for items</h4>
 Items added in the search items window are counted as items given to the platform through the API call. This means they dont not affected by `boughtArticleGroup` but affects `basketArticleGroup`. 
 
-### Profile
+<h4>Profile</h4>
 Saved profiles
+<br>
 
-### Refresh
+<h4>Refresh</h4>
+<br>
 
-### Clear user and items
+<h4>Clear user and items</h4>
 Removes selected items and user
+<br>
 
-### Bench
+<h4>Bench</h4>
 Shows how fast the recommendation are returend when making an API call. (if your datamodel has MLFilter active for many fields the recommendations will be slower).
+<br>
 
-### Add random item
+<h4>Add random item</h4>
 Same as **search for items** but adds a random item.
+<br>
 
-### Add random user
+<h4>Add random user</h4>
 Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. 
+<br>
 
-## Data available in recommendations
+<h4>Data available in recommendations</h4>
 <details class="optional-class"><summary>Show More Info</summary>
+<br>
 
-### MlMeta
+<h4>MlMeta</h4>
 To show an image and name on your recomendations page you have to choose a format field in the data model edit mode, as well as an image field under items (also in the data model edit mode), and lastly activate the ml meta for these fields wanted.
+<br>
 
-### MlFilter
+<h4>MlFilter</h4>
 To write filter expressions based on fields you have to activate ml filter for these fields, this is done in the edit mode of the data model.
 </details>
 
@@ -46,7 +55,7 @@ To write filter expressions based on fields you have to activate ml filter for t
 Here you can search on all the items included in the machine learning (for example only items sold > X times). If you select an item you will see the recommendations provided by the platform for that specific product(s).
 
 
-#### Columns
+Columns
 <details class="optional-class"><summary>Show More Info</summary>
 
 Columns are the data columns that can be used to create filters and rules. These are activated in the data model with the `MlFilter` toggle (MlFilter = Machine Learning Filter), see the image below. 
@@ -56,23 +65,23 @@ Columns are the data columns that can be used to create filters and rules. These
 
 
 
-#### Filter expression
+Filter expression
 <details class="optional-class"><summary>Show More Info</summary>
 Here you can write an expression that creates a filter for your recommendation profile. Some example configurations:
 
-#### Recommend products in a specific category
+Recommend products in a specific category
 To recommend prodcuts in a specific category you can use something like `category = 'Kaffe & Te'`, or `price` > `100`
 
 If the expression is `True` the product will be included in the recommendation, and it the expression is `False` the product will be filtered. In the case of `price` > `100`, the expression will return `True` for all products with a price larger than 100 thus removing all items with a price lower than 100 from the recommendations.
 
-#### Recommend products with specific names or characters
+Recommend products with specific names or characters
 To recommended products that does not contain either `HOOK`, `TAPE` nor `AA`, you can configure the filter according to: 
 ```
 (contains(articleName, 'HOOK') OR contains(articleName, 'TAPE') OR contains(articleName, 'AA')) = false
 ```
 </details>
 
-#### Boost expression
+Boost expression
 <details class="optional-class"><summary>Show More Info</summary>
 
 Each item has a "relevence rank" for each user, the products with the highest relevance rank are the products that get recommended.  
@@ -87,48 +96,48 @@ all ranks are multiplied by `1` but products in the product_group `bags` are mul
 if you change the expression to: `1+0.5*(product_group = 'bags')` the rank for bags relative to other products are increased by 50%  
 </details>
 
-#### InteractionFilter
+InteractionFilter
 <details class="optional-class"><summary>Show More Info</summary>
 This allows you to filter on purchase history, for example if you send in a user who has bought 2 items, and you have a filter removing 1 of the item types, the products returned will be based only on the item not filtered out.
 </details>
 
-#### Trend
+Trend
 <details class="optional-class"><summary>Show More Info</summary>
 Trend limits the time interval for the data that the recomendations are based on. `Max trend` uses a short time interval resulting in the machine-learning model only recommending products that are trending last few weeks.
 </details>
 
-#### Limit
+Limit
 <details class="optional-class"><summary>Show More Info</summary>
 Limit decides how many recomended items are returned. For example, Limit 4 = Four recommended items. Limit 12 = 12 recommended items.
 </details>
 
 
-#### Max orders
+Max orders
 <details class="optional-class"><summary>Show More Info</summary>
 
 Number of orders that are taken into concideration when recommending products. `Max orders = 1` means only the items included in the latest order are used as purchase history for that user. `Max orders = 2` means the items in the two latest orders are taken into account.
 </details>
 
 
-#### Max interactions
+Max interactions
 <details class="optional-class"><summary>Show More Info</summary>
 
 Number of items that are taken into concideration when recommending products. `Max items = 1` means only the latest purchased item is used as purchase history for that user. `Max items = 2` means the two latest items are taken into account.
 </details>
 
-#### Allow items from history
+Allow items from history
 <details class="optional-class"><summary>Show More Info</summary>
 Sets a filter so that all items the user have bought cannot be recommended. 
 </details>
 
-#### Shuffled
+Shuffled
 <details class="optional-class"><summary>Show More Info</summary>
 If Limit is set to 10 the items are recomended in order (most likly next purchase is at the top).  
 by enabling `shuffled` it still recommends the top 10 items but the order of the top 10 items are shuffled. 
 </details>
 
 
-#### Advanced
+<h3>Advanced</h3>
 <details class="optional-class"><summary>Show More Info</summary>
 Create an advanced filter. 
 
@@ -145,7 +154,6 @@ See some example advanced filters below:
 | RotateSeed (int) | Med RotateSeed > 0 slumpas ordningen av kandidaterna. En och samma seed ger en viss ordning och är unikt per användare. Vi kommer alltså inte ignorera samma 50% av produktutbudet vid RotateLength=0.5 för alla användare. Ex `"RotateSeed":"now()"`|
 | RotateOffset (float 0-1): | Anger från vilken andel av kandidaterna vi börjar göra urvalet. RotateOffset tillsammans med RotateLength skapar möjlighet att “paginera” urvalet. Man kan ex skapa 4 separata set av slumpade produkter som man roterar på genom att använda RotateLength:0.25 och anropa APIi:t med RotateOffset: 0, 0.25, 0.5, 0.75.|
 
-Man bör komma ihåg att inte använda för små set om man vet att man har få produkter att röra sig med i profilen, ex om man har många filter. Det kan sluta med att vi inte kan uppfylla den Limit man vill ha.
 </details>
 <details class="optional-class"><summary>Show an example of an advanced query</summary>
 
