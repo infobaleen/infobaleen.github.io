@@ -1114,27 +1114,27 @@ See below an example image from source view, with a source named `transactions`.
 
 Here is a short explanation of the columns (note that not all columns are shown in the above image):
 
-### Name
+</h4> Name </h4>
 Name of source
 
-### id
+<h4> id </h4>
 Every source has an unique id which is used to show dependencies between sources.
 
-### Cnf Version
-
-### Count
+<h4> Count </h4>
 Count describes how many rows the source have. There can only be 1 row for every unique key column. if there are multiple rows with the same key all but 1 is removed.
 
-### Tags
+<h4> Tags </h4>
 You can tag a source to keep track of how it is used.
 
-### Drivers
+<h4> Drivers </h4>
 The drivers show what driver is used and also if it is active (green) or inactive (red). If a source has multiple queries there will be multiple drivers, here you can see wich source is active and wich are not.
 
-### Sync
+<h4> Sync </h4>
 You can set a daily sync for the source, for example `DailyAt:6`.
+<br>
 
-### Dependencies 
+<h4> Dependencies </h4>
+
 Dependencies for a source show what other sources the are used to build up the source.  An example for this is 
 <div class="highlight"><pre><span></span><code>SELECT * FROM Source1  
 LEFT JOIN Source2 on Source2.id = Source1.id  
@@ -1144,43 +1144,41 @@ SELECT * FROM Source3
 This will show the id for source 1,2,3 in the Dependencies for the new source.
 
 
-### Updated At
+<h4> Updated At </h4>
 Shows how long ago the source was last modified.
 
-### Synced At
+<h4> Synced At </h4>
 Shows how long ago the source was last synced.
 
 
 
-## Top Menu
+<h4> Top Menu </h4>
 
 In the source view there are also some funcationality that can be accessed using the icons in the top right corner.
 
 <img src="../../../../images/Menu/sources2.png" width="921"/>
 
-
-
-### Delete
+<h4> Delete </h4>
 Delete the selected source.
 
 
-### Tag
+<h4> Tag </h4>
 Select a source, click Tag and write a new tag or select an old tag.
 
-### Set sync schedule 
+ <h4> Set sync schedule </h4> 
 Configure a daily data sync to update the source on a regular basis.
 
-### Migrate
+<h4> Migrate </h4>
 
 
-### Truncate
+<h4> Truncate </h4>
 Truncate wipes the source of all data. This is usefull if you have changed key column for example because if you just sync the data the old data is not removed. 
 [Note that some sources only read 1 week data at the time to save time, if you truc a source like this all historic data is removed wich is bad]
 
-### Sync
+<h4> Sync </h4>
 Manually syncs the source.
 
-### Create
+<h4> Create </h4>
 Creates a new source.
 </details>
 
@@ -1192,12 +1190,12 @@ When clicking a source, you find the edit mode by clicking the "pen" in the top 
 <img src="../../../../images/Menu/sources3.png" width="921"/>
 
 
-### Settings
+<h3> Settings <h3>
 
-#### Name
+<h4> Name </h4>
 Just a name
 
-#### Id columns 
+<h4> Id columns </h4>
 The Id columns has to be choosen to be unique. if the id is not unique (the same id for many rows) only 1 row will be saved and all others are removed.  
 For the interaction table the id has to contain user AND id or ts,item. The reason user has to be an id column is because when user is the first id column all interactions are sorted on user first. this lets you use expressions such as agg.i wich count number of interactions a user has made. if the interaction table is not sorted on user first the aggregation functions doesnt work.  
 For multiple id columns they are sorted in the order they are written.
@@ -1205,33 +1203,32 @@ User,ts,item is sorted first on user, then on ts and lastly on item.
 
 SELECT CUSTOM COLUMNS is usefull if you want other names than the predefined such as SKU.
 
-#### RunEvery
-Set a sync
+<h4> RunEvery </h4>
+Set a sync time
 
+<h4> Comment </h4>
 
-#### Comment
-
-#### Merge filter 
+<h4> Merge filter </h4>
 lets you filter out your query before you save it.
 
 A Merge filter discards everything that is not true before saving the table. For example if you add a query similar to `toFloat(ts) > now()-100*24*3600`, then all timestamp (ts) data from later than 100 days will be discarded.
 
 
-### Overview
+<h4> Overview </h4>
 Shows what is in the source currently
 
-### Query
+<h4> Query </h4>
 
-#### Database connection
+<h4> Database connection </h4>
 Define the type of connection for the data to be added to the source.
 
-#### Load saved query
+<h4> Load saved query </h4>
 lets you reload previously run queries
 
-#### Preprocessor directives
+<h4> Preprocessor directives </h4>
 Preprocessor information can be found under the "Import Files" section of the documentation.
 
-### Query expressions
+<h4> Query expressions <h4>
 You need to enclose variable names that contain other characters than letters and numbers with `backticks` ` `,  
 this includes whitespace ' ', dot '.', etc...
 
@@ -1245,9 +1242,9 @@ id,item
 1,item1
 2,item2`
 this returns a table.
+<br>
 
-
-#### UNION 
+UNION 
 <details class="optional-class"><summary>Show more information</summary>
 
 A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order
@@ -1278,7 +1275,7 @@ A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates
 
 </details>
 
-#### INSERT INTO
+INSERT INTO
 <details class="optional-class"><summary>Show more information</summary>
 
 insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.
@@ -1293,7 +1290,7 @@ ex.
 </code></pre></div>
 </details>
 
-#### LEFT JOIN and JOIN
+LEFT JOIN and JOIN
 <details class="optional-class"><summary>Show more information</summary>
 LEFT JOIN lets you append more columns to an existing table, while join only keeps the ones matching. See below a code example where you can change `left join` to `join` to see the effects.
 
@@ -1320,7 +1317,7 @@ left join currencies ON countries.country = currencies.country
 </details>
 
 
-#### NOT IN
+NOT IN
 <details class="optional-class"><summary>Show more information</summary>
 Only selects rows that do not match, example
 
@@ -1342,7 +1339,7 @@ Will return
 </code></pre></div>
 </details>
 
-#### firstSeen()
+firstSeen()
 <details class="optional-class"><summary>Show more information</summary>
 
 firstseen(<field>) saves only the first encountered row for 
@@ -1354,7 +1351,7 @@ toFloat()
 unixTimestamp()
 </details>
 
-#### split() and slice() and slicestr()
+split() and slice() and slicestr()
 <details class="optional-class"><summary>Show more information</summary>
 
 These expressions can be used to edit strings, see an example below:
@@ -1382,7 +1379,7 @@ The result will be:
 
 </details>
 
-#### groupconcat_ws
+groupconcat_ws
 
 <details class="optional-class"><summary>Show more information</summary>
 <div class="highlight"><pre><span></span><code>Insert into a
@@ -1401,7 +1398,7 @@ The result will be:
 </code></pre></div>
 </details>
 
-#### create a custom user.agg.<field>
+Create a custom user.agg.(field)
 <details class="optional-class"><summary>Show more information</summary>
 
 the datamodel creates aggregate functions such as user.agg.revenue.

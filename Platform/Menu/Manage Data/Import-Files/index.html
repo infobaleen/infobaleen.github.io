@@ -746,19 +746,6 @@
     Using a feed (Google Feed for example)
   </a>
   
-    <nav class="md-nav" aria-label="Using a feed (Google Feed for example)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-feed-as-a-data-source" class="md-nav__link">
-    Adding a feed as a data source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1085,19 +1072,6 @@
     Using a feed (Google Feed for example)
   </a>
   
-    <nav class="md-nav" aria-label="Using a feed (Google Feed for example)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-feed-as-a-data-source" class="md-nav__link">
-    Adding a feed as a data source
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -1171,7 +1145,8 @@ A feed is a file that contains a list of products that often is used to advertis
 Feeds are most often published as a public URL in format `.xml`.
 </details>
 
-<h3 id="adding-a-feed-as-a-data-source">Adding a feed as a data source</h3>
+<h3> Adding a feed as a data source </h3>
+
 <details class="optional-class"><summary>Show more information</summary>
 
 1. Get the public URL of the feed
@@ -1182,19 +1157,19 @@ Feeds are most often published as a public URL in format `.xml`.
 FROM `url:https://exampleurl.com/plugin-export/shoppingfeed/se`  
 </code></pre></div>
 
-[Note that you have to write **url:** before https://]  
+[Note that you have to write url: before https://]  
 
 
-#### Preprocessor directives
+<h3> Preprocessor directives </h3>
 
 
 Start by writing `decoder=xml` (or `=feed`) to show the file structure, it will in the preview window show the content.
 
 
-**decoder:** describes what file format, xml, csv, json etc.  
-**root:** navigates the file and shows where you want to read data.  
-**rowtag:** selects the object.  
-**pluck:** inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  
+decoder: describes what file format, xml, csv, json etc.  
+root: navigates the file and shows where you want to read data.  
+rowtag: selects the object.  
+pluck: inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  
 
 Below is an example of what to write in the preprocessor to fetch feed data correctly:
 `decoder=xml`  
@@ -1204,29 +1179,31 @@ Below is an example of what to write in the preprocessor to fetch feed data corr
 
 You can then run `EXECUTE PREVIEW QUERY` to see the result.
 
-#### JSON Files
+<h4> JSON Files </h4>
 <details class="optional-class"><summary>Show more information</summary>
 An example json file could look like:
-<div class="highlight"><pre><span></span><code>[
+```
+[
     {
-        &quot;id&quot;: &quot;&quot;,
-        &quot;user_id&quot;: &quot;&quot;,
-        &quot;username&quot;: &quot;&quot;
+        "id": "",
+        "user_id": "",
+        "username": ""
     },
     {
-        &quot;id&quot;: &quot;&quot;,
-        &quot;user_id&quot;: &quot;&quot;,
-        &quot;username&quot;: &quot;&quot;
+        "id": "",
+        "user_id": ""
+        "username": ""
     }
 ]
-</code></pre></div>
 
-<div class="highlight"><pre><span></span><code>SELECT * FROM `url:https://...json`  
-</code></pre></div>
-##### preprocessing directive for json
+SELECT * FROM `url:https://...json`  
+
+
+<h3> preprocessing directive for json </h3>
+
 `decoder=json`  
 `json_prefix=[0]`
-```
+
 </details>
 </details>
 
@@ -1240,7 +1217,7 @@ An example json file could look like:
 <h4 id="make-arbitrary-query">Make arbitrary query</h4>
 <details class="optional-class"><summary>Show more information</summary>
 
-Create a source and make an arbitrary query similar to ``` SELECT * FROM `users.gz` ``` for Centra. You can list possible paths by using ``` SELECT * FROM `*` ```. 
+Create a source and make an arbitrary query similar to SELECT * FROM `users.gz` for Centra. You can list possible paths by using SELECT * FROM `*` . 
 
 This will trigger a proxy sync, and in the case of a Centra customer as in the example image below, the `.gz` files will appear once completed. This normally takes 1-5 hours.
 
@@ -1250,7 +1227,8 @@ This will trigger a proxy sync, and in the case of a Centra customer as in the e
 <h4 id="how-to-verify-that-the-sync-works">How to verify that the sync works</h4>
 <details class="optional-class"><summary>Show more information</summary>
 
-Choose the source you created and press the pen to edit it. Go to the `ADD QUERY` tab and choose ```“SELECT * FROM `*`”```. 
+Choose the source you created and press the pen to edit it. Go to the `ADD QUERY` tab and choose SELECT * FROM `*`. 
+<br>
 
 If the sync is ready, you will see a list of files to choose from, for example, `users.gz`, `items.gz`, `interactions.gz`, see image below. If you see the files imported you are now ready to [create sources!](https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md)
 
