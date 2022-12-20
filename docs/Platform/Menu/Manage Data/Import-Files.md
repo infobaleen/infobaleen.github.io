@@ -32,7 +32,7 @@ Feeds are most often published as a public URL in format `.xml`.
 ```
 SELECT
     *
-FROM `url:https://shop.com/plugin-export/shoppingfeed/se`  
+FROM `url:https://exampleurl.com/plugin-export/shoppingfeed/se`  
 ```
 
 [Note that you have to write **url:** before https://]  
@@ -55,8 +55,7 @@ Below is an example of what to write in the preprocessor to fetch feed data corr
 `rowtag=item`  
 `pluck=google_product_category,price`  
 
-resulting in this outcome
-![image](https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png)
+You can then run `EXECUTE PREVIEW QUERY` to see the result.
 
 #### JSON Files
 <details class="optional-class"><summary>Show more information</summary>
