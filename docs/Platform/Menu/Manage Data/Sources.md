@@ -25,7 +25,7 @@ The import file is now done, press sync and save to exit.
 
 
 ## Frontpage columns
-
+<details class="optional-class"><summary>Show more information</summary>
 See below an example image from source view, with a source named `transactions`.
 
 <img src="../../../../images/Menu/sources.png" width="921"/>
@@ -101,9 +101,10 @@ Manually syncs the source.
 
 ### Create
 Creates a new source.
-
+</details>
 
 ## Edit a source
+<details class="optional-class"><summary>Show more information</summary>
 
 When clicking a source, you find the edit mode by clicking the "pen" in the top right corner. This will open a view as can be seen in the image below. 
 
@@ -147,71 +148,17 @@ Define the type of connection for the data to be added to the source.
 lets you reload previously run queries
 
 #### Preprocessor directives
-
-##### xml file
-when importing data from a link such as product feed you need to add preprocessor directives to know how to read the file.  
-```
-SELECT * FROM `url:https://...xml`  
-```
-[Note that you have to write **url:** before https://]  
-
-start by writing  
-`decoder=xml`  
-to show the file structure, in this case it looks like this.
-![image](https://user-images.githubusercontent.com/102239423/169991270-10e97b4e-b5fd-4df8-968c-320119f9ee71.png)
-
-**decoder:** describes what file format, xml, csv, json etc.  
-**root:** navigates the file and shows where you want to read data.  
-**rowtag:** selects the object.  
-**pluck:** inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  
-
-Below is one example with `root=feed.channel` and one example with `root=rss.channel`:
-
-<img width="543" alt="Screenshot 2022-06-10 at 08 26 05" src="https://user-images.githubusercontent.com/4352260/173004337-734dcc11-992c-4920-975b-3d87f5ad362d.png">
-<img width="549" alt="Screenshot 2022-06-10 at 08 26 46" src="https://user-images.githubusercontent.com/4352260/173004348-827d98b1-e609-4d09-aa5f-63ce9034443e.png">
-
-In the first image example, the resulting preprocessing directives to fetch the feed are:  
-
-`decoder=xml`  
-`root=rss.channel`  
-`rowtag=item`  
-`pluck=google_product_category,price`  
-resulting in this outcome
-![image](https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png)
-
-##### json file
-
-an example json file could look like:
-```
-[
-    {
-        "id": "",
-        "user_id": "",
-        "username": ""
-    },
-    {
-        "id": "",
-        "user_id": "",
-        "username": ""
-    }
-]
-
-```
-
-```
-SELECT * FROM `url:https://...json`  
-```
-##### preprocessing directive for json
-`decoder=json`  
-`json_prefix=[0]`
+Preprocessor information can be found under the "Import Files" section of the documentation.
 
 ### Query expressions
 You need to enclose variable names that contain other characters than letters and numbers with `backticks` ` `,  
 this includes whitespace ' ', dot '.', etc...
 
+</details>
 
+## Below is further information about more advanced queries
+<details class="optional-class"><summary>Show more information</summary>
 
-#### create a custom source
 SELECT * FROM `raw: 
 id,item
 1,item1
@@ -220,6 +167,8 @@ this returns a table.
 
 
 #### UNION 
+<details class="optional-class"><summary>Show more information</summary>
+
 A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order
 ```
 SELECT * FROM `table 1`
@@ -249,7 +198,11 @@ this will show that all overlapping ids will have item from `table 1`.
 
 A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates, meaning much faster execution but leaves duplicate rows if they exist.
 
+</details>
+
 #### INSERT INTO
+<details class="optional-class"><summary>Show more information</summary>
+
 insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.
 ```
 INSERT INTO <table_name>
@@ -262,7 +215,10 @@ ex.
 ```
 LEFT JOIN <table_name> ON <table_name>.id = XXX.id
 ```
+</details>
+
 #### LEFT JOIN and JOIN
+<details class="optional-class"><summary>Show more information</summary>
 LEFT JOIN lets you append more columns to an existing table, while join only keeps the ones matching. See below a code example where you can change `left join` to `join` to see the effects.
 
 ```
@@ -287,9 +243,11 @@ left join currencies ON countries.country = currencies.country
 
 <img width="385" alt="Screenshot 2022-09-29 at 13 59 36" src="https://user-images.githubusercontent.com/4352260/193025736-ef6f50a2-76b4-424d-bee6-d3a39d0f41a3.png">
 
+</details>
 
 
 #### NOT IN
+<details class="optional-class"><summary>Show more information</summary>
 Only selects rows that do not match, example
 
 ```
@@ -310,8 +268,11 @@ id,name
 3,björn
 4,benny
 ```
+</details>
 
 #### firstSeen()
+<details class="optional-class"><summary>Show more information</summary>
+
 firstseen(<field>) saves only the first encountered row for 
 
 coalese
@@ -319,8 +280,10 @@ coalese
 toFloat()
 
 unixTimestamp()
+</details>
 
 #### split() and slice() and slicestr()
+<details class="optional-class"><summary>Show more information</summary>
 
 These expressions can be used to edit strings, see an example below:
 
@@ -347,7 +310,11 @@ a	step1	     step2.     step3	 length(b)    slicestr(b, 1, 2)
 1	A,B,C,D,E.   A,B,C	ABC	 5            BC
 ```
 
+</details>
+
 #### groupconcat_ws
+
+<details class="optional-class"><summary>Show more information</summary>
 ```	
 Insert into a
 SELECT * FROM `raw:
@@ -364,11 +331,11 @@ The result will be:
 user	ordernr	price_list
 100	1	10SEK,20SEK,30SEK
 ```
-
-	
-	
+</details>
 	
 #### create a custom user.agg.<field>
+<details class="optional-class"><summary>Show more information</summary>
+
 the datamodel creates aggregate functions such as user.agg.revenue.
 to create one yourself do the following.
 In the below example I create `user.agg.margin` similar to `user.agg.revenue`
@@ -392,7 +359,8 @@ LEFT JOIN margin ON margin.user = UI.user
 Note that you need to add `concat('',)` to the sum expression.
 this is because you cant LEFT JOIN a float. `concat('',)` converts it into a string.
 `concat('',SUM(margin)) AS total_margin`
-
+</details>
+</details>
 
 
 

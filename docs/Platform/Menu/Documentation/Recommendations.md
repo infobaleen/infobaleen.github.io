@@ -20,6 +20,7 @@ Given a user id, a list of recommended items is returned.
 __Request parameters__ (JSON body)
 
 #### Input parameters
+<details class="optional-class"><summary>Show more information</summary>
 
 | Parameter                  | Type              | Description                                                                                                                                                                                          |
 |----------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -31,7 +32,10 @@ __Request parameters__ (JSON body)
 | InteractionFilter          | SQL               | To select from history based on SQL query                                                                                                                                                            |
 | Persona                    | Object            | `{"gender": "Female", "country_code": "SE"}`                                                                                                                                                         |
 
+</details>
+
 #### Logical parameters
+<details class="optional-class"><summary>Show more information</summary>
 
 | Parameter                  | Type              | Description                                                                                                                                                                                          |
 |----------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -46,8 +50,10 @@ __Request parameters__ (JSON body)
 | Search                     | string            | Experimental Full-text-search. Filter and boost based on search string.                                                                                                                              | 
 | FieldLimits                | array of objects  | Ex: `[{"Field":"name", "Limit": 2}]` makes sure to not return more than 2 items of the same color.                                                                                                   |
 | Context                    | See example       | `[{"Name":"ageLimit", "FloatValue":11},{"Name": "genres", "ArrayValues": "action,thriller"}, {"Name": "gender", "StringValue": "female"},{"Name": "ages", "Field": "AgeLimitSv", "Option": "last"}]` | 
+</details>
 
 #### Output parameters
+<details class="optional-class"><summary>Show more information</summary>
 
 | Parameter                  | Type             | Description                                                           |
 |:---------------------------|------------------|-----------------------------------------------------------------------|
@@ -58,6 +64,8 @@ __Request parameters__ (JSON body)
 | Columns                    | array of strings | Meta data columns to include in the response                          |
 | Limit                      | integer          | Maximum number of items returned, default=0                           |
 | Offset                     | integer          | Items to skip                                                         |
+
+</details>
 
 #### __cURL__ example
 

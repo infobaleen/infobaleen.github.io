@@ -1,11 +1,47 @@
-## Settings
+## Recommendation Profiles
 
-Here we explain the different settings fields that can be seen after clicking the cog wheel.
+Here we explain the different settings fields that can be seen after clicking the cog wheel, as well as what data you find and can use.
 
 <img width="1019" alt="Screenshot 2022-07-01 at 11 12 12" src="https://user-images.githubusercontent.com/4352260/176864507-439bac1e-4029-4aa3-800e-d4c14e8423e0.png">
 
----
+## Using The Recommendations Page
+<details class="optional-class"><summary>Show More Info</summary>
+## Front page
 
+### Search for items
+Items added in the search items window are counted as items given to the platform through the API call. This means they dont not affected by `boughtArticleGroup` but affects `basketArticleGroup`. 
+
+### Profile
+Saved profiles
+
+### Refresh
+
+### Clear user and items
+Removes selected items and user
+
+### Bench
+Shows how fast the recommendation are returend when making an API call. (if your datamodel has MLFilter active for many fields the recommendations will be slower).
+
+### Add random item
+Same as **search for items** but adds a random item.
+
+### Add random user
+Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. 
+
+## Data available in recommendations
+<details class="optional-class"><summary>Show More Info</summary>
+
+### MlMeta
+To show an image and name on your recomendations page you have to choose a format field in the data model edit mode, as well as an image field under items (also in the data model edit mode), and lastly activate the ml meta for these fields wanted.
+
+### MlFilter
+To write filter expressions based on fields you have to activate ml filter for these fields, this is done in the edit mode of the data model.
+</details>
+
+</details>
+
+## Filters And Customization Options
+<details class="optional-class"><summary>Show More Info</summary>
 #### Search
 Here you can search on all the items included in the machine learning (for example only items sold > X times). If you select an item you will see the recommendations provided by the platform for that specific product(s).
 
@@ -36,8 +72,6 @@ To recommended products that does not contain either `HOOK`, `TAPE` nor `AA`, yo
 ```
 </details>
 
----
-
 #### Boost expression
 <details class="optional-class"><summary>Show More Info</summary>
 
@@ -53,28 +87,21 @@ all ranks are multiplied by `1` but products in the product_group `bags` are mul
 if you change the expression to: `1+0.5*(product_group = 'bags')` the rank for bags relative to other products are increased by 50%  
 </details>
 
----
-
 #### InteractionFilter
 <details class="optional-class"><summary>Show More Info</summary>
 This allows you to filter on purchase history, for example if you send in a user who has bought 2 items, and you have a filter removing 1 of the item types, the products returned will be based only on the item not filtered out.
 </details>
-
----
 
 #### Trend
 <details class="optional-class"><summary>Show More Info</summary>
 Trend limits the time interval for the data that the recomendations are based on. `Max trend` uses a short time interval resulting in the machine-learning model only recommending products that are trending last few weeks.
 </details>
 
----
-
 #### Limit
 <details class="optional-class"><summary>Show More Info</summary>
 Limit decides how many recomended items are returned. For example, Limit 4 = Four recommended items. Limit 12 = 12 recommended items.
 </details>
 
----
 
 #### Max orders
 <details class="optional-class"><summary>Show More Info</summary>
@@ -82,7 +109,6 @@ Limit decides how many recomended items are returned. For example, Limit 4 = Fou
 Number of orders that are taken into concideration when recommending products. `Max orders = 1` means only the items included in the latest order are used as purchase history for that user. `Max orders = 2` means the items in the two latest orders are taken into account.
 </details>
 
----
 
 #### Max interactions
 <details class="optional-class"><summary>Show More Info</summary>
@@ -90,14 +116,10 @@ Number of orders that are taken into concideration when recommending products. `
 Number of items that are taken into concideration when recommending products. `Max items = 1` means only the latest purchased item is used as purchase history for that user. `Max items = 2` means the two latest items are taken into account.
 </details>
 
----
-
 #### Allow items from history
 <details class="optional-class"><summary>Show More Info</summary>
 Sets a filter so that all items the user have bought cannot be recommended. 
 </details>
-
----
 
 #### Shuffled
 <details class="optional-class"><summary>Show More Info</summary>
@@ -105,7 +127,6 @@ If Limit is set to 10 the items are recomended in order (most likly next purchas
 by enabling `shuffled` it still recommends the top 10 items but the order of the top 10 items are shuffled. 
 </details>
 
----
 
 #### Advanced
 <details class="optional-class"><summary>Show More Info</summary>
@@ -117,6 +138,7 @@ Create an advanced filter.
 
 See some example advanced filters below:
 <details class="optional-class"><summary>Show example 1: Rotation parameter recommendations</summary>
+
 | Parameter | Description |
 | --- | --- | 
 | RotateLength (float 0-1) | RotateLength bestämmer hur stor andel av alla kandidater vi tillåter rekommenderas, så 0.9 => 90% av produkterna. |
@@ -165,7 +187,9 @@ Field limit lets you set a filter on how many of each category should be recomme
 </details>
 
 ---
+</details>
 
+## Other Actions
 
 #### Save as new profile
 Saves the current configuration as a profile new
