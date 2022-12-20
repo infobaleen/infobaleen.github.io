@@ -230,7 +230,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Recommendations/Recommendations/" class="md-tabs__link">
+      <a href="../../../Recommendations/Overview/" class="md-tabs__link">
         Recommendations
       </a>
     </li>
@@ -488,8 +488,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Recommendations/Recommendations/" class="md-nav__link">
-        Recommendations
+      <a href="../../../Recommendations/Overview/" class="md-nav__link">
+        Overview
       </a>
     </li>
   
@@ -502,8 +502,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Recommendations/Overview/" class="md-nav__link">
-        Overview
+      <a href="../../../Recommendations/Example%20Use%20Cases/" class="md-nav__link">
+        Example Use Cases
       </a>
     </li>
   
@@ -1162,166 +1162,53 @@ Given a user id, a list of recommended items is returned.</p>
 <p><code>POST /api/v1/data-models/&lt;id&gt;/recommendations/user-to-items</code></p>
 <p><strong>Request parameters</strong> (JSON body)</p>
 <h4 id="input-parameters">Input parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>User</td>
-<td>string</td>
-<td>User id to fetch item recommendations for</td>
-</tr>
-<tr>
-<td>Items</td>
-<td>array of strings</td>
-<td>Item IDs to build the recommendations from</td>
-</tr>
-<tr>
-<td>MinInteractionTs</td>
-<td>int</td>
-<td>Min timestamp for interactions to base the recommendations on</td>
-</tr>
-<tr>
-<td>MaxInteractions</td>
-<td>int</td>
-<td>Pick orders until <code>MaxInteractions</code> interactions are included</td>
-</tr>
-<tr>
-<td>MaxOrders</td>
-<td>int</td>
-<td>Pick orders until <code>MaxOrders</code> orders are included</td>
-</tr>
-<tr>
-<td>InteractionFilter</td>
-<td>SQL</td>
-<td>To select from history based on SQL query</td>
-</tr>
-<tr>
-<td>Persona</td>
-<td>Object</td>
-<td><code>{"gender": "Female", "country_code": "SE"}</code></td>
-</tr>
-</tbody>
-</table>
+<details class="optional-class"><summary>Show more information</summary>
+
+| Parameter                  | Type              | Description                                                                                                                                                                                          |
+|----------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| User                       | string            | User id to fetch item recommendations for                                                                                                                                                            |
+| Items                      | array of strings  | Item IDs to build the recommendations from                                                                                                                                                           |
+| MinInteractionTs           | int               | Min timestamp for interactions to base the recommendations on                                                                                                                                        |
+| MaxInteractions            | int               | Pick orders until `MaxInteractions` interactions are included                                                                                                                                        |
+| MaxOrders                  | int               | Pick orders until `MaxOrders` orders are included                                                                                                                                                    |
+| InteractionFilter          | SQL               | To select from history based on SQL query                                                                                                                                                            |
+| Persona                    | Object            | `{"gender": "Female", "country_code": "SE"}`                                                                                                                                                         |
+
+</details>
+
 <h4 id="logical-parameters">Logical parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TrendFactor</td>
-<td>float</td>
-<td>Value between 0 and 1. 0 is used to base recommendations on similarity only, and 1 weights the recommendations on the current trend/popularity. Default is 1.</td>
-</tr>
-<tr>
-<td>Recurring</td>
-<td>boolean</td>
-<td>Allow recommending items already consumed by the user. Default is false.</td>
-</tr>
-<tr>
-<td>AllowedItems</td>
-<td>array of item ids</td>
-<td>Only items in <code>AllowedItems</code> is returned in the response</td>
-</tr>
-<tr>
-<td>ForcedItems</td>
-<td>array of item ids</td>
-<td>All items in <code>ForcedItems</code> is returned in the response</td>
-</tr>
-<tr>
-<td>BlockedItems</td>
-<td>array of item ids</td>
-<td>No items in the <code>BlockedItems</code> is returned in the response</td>
-</tr>
-<tr>
-<td>Candidates</td>
-<td>int</td>
-<td>number of items to consider. Default to all available items. Can be used for faster calculations.</td>
-</tr>
-<tr>
-<td>ItemFilterExpression</td>
-<td>SQL</td>
-<td><code>"price&gt;100"</code></td>
-</tr>
-<tr>
-<td>ItemBoostExpression</td>
-<td>SQL</td>
-<td><code>"toFloat(margin)"</code></td>
-</tr>
-<tr>
-<td>Search</td>
-<td>string</td>
-<td>Experimental Full-text-search. Filter and boost based on search string.</td>
-</tr>
-<tr>
-<td>FieldLimits</td>
-<td>array of objects</td>
-<td>Ex: <code>[{"Field":"name", "Limit": 2}]</code> makes sure to not return more than 2 items of the same color.</td>
-</tr>
-<tr>
-<td>Context</td>
-<td>See example</td>
-<td><code>[{"Name":"ageLimit", "FloatValue":11},{"Name": "genres", "ArrayValues": "action,thriller"}, {"Name": "gender", "StringValue": "female"},{"Name": "ages", "Field": "AgeLimitSv", "Option": "last"}]</code></td>
-</tr>
-</tbody>
-</table>
+<details class="optional-class"><summary>Show more information</summary>
+
+| Parameter                  | Type              | Description                                                                                                                                                                                          |
+|----------------------------|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| TrendFactor                | float             | Value between 0 and 1. 0 is used to base recommendations on similarity only, and 1 weights the recommendations on the current trend/popularity. Default is 1.                                        | 
+| Recurring                  | boolean           | Allow recommending items already consumed by the user. Default is false.                                                                                                                             |
+| AllowedItems               | array of item ids | Only items in `AllowedItems` is returned in the response                                                                                                                                             |
+| ForcedItems                | array of item ids | All items in `ForcedItems` is returned in the response                                                                                                                                               | 
+| BlockedItems               | array of item ids | No items in the `BlockedItems` is returned in the response                                                                                                                                           |
+| Candidates                 | int               | number of items to consider. Default to all available items. Can be used for faster calculations.                                                                                                    |
+| ItemFilterExpression       | SQL               | `"price>100"`                                                                                                                                                                                        |
+| ItemBoostExpression        | SQL               | `"toFloat(margin)"`                                                                                                                                                                                  |
+| Search                     | string            | Experimental Full-text-search. Filter and boost based on search string.                                                                                                                              | 
+| FieldLimits                | array of objects  | Ex: `[{"Field":"name", "Limit": 2}]` makes sure to not return more than 2 items of the same color.                                                                                                   |
+| Context                    | See example       | `[{"Name":"ageLimit", "FloatValue":11},{"Name": "genres", "ArrayValues": "action,thriller"}, {"Name": "gender", "StringValue": "female"},{"Name": "ages", "Field": "AgeLimitSv", "Option": "last"}]` | 
+</details>
+
 <h4 id="output-parameters">Output parameters</h4>
-<table>
-<thead>
-<tr>
-<th align="left">Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Shuffled</td>
-<td>bool</td>
-<td>shuffle recommendations</td>
-</tr>
-<tr>
-<td align="left">StrictAfterFieldLimitCheck</td>
-<td>bool</td>
-<td>Return error if we can not find <code>Limit</code> valid items after FieldLimits</td>
-</tr>
-<tr>
-<td align="left">BestEffort</td>
-<td>bool</td>
-<td>Return all valid items even if it is less than <code>Limit</code></td>
-</tr>
-<tr>
-<td align="left">Format</td>
-<td>string</td>
-<td>Response format/encoding, available options: <code>json</code>, <code>og</code></td>
-</tr>
-<tr>
-<td align="left">Columns</td>
-<td>array of strings</td>
-<td>Meta data columns to include in the response</td>
-</tr>
-<tr>
-<td align="left">Limit</td>
-<td>integer</td>
-<td>Maximum number of items returned, default=0</td>
-</tr>
-<tr>
-<td align="left">Offset</td>
-<td>integer</td>
-<td>Items to skip</td>
-</tr>
-</tbody>
-</table>
+<details class="optional-class"><summary>Show more information</summary>
+
+| Parameter                  | Type             | Description                                                           |
+|:---------------------------|------------------|-----------------------------------------------------------------------|
+| Shuffled                   | bool             | shuffle recommendations                                               |
+| StrictAfterFieldLimitCheck | bool             | Return error if we can not find `Limit` valid items after FieldLimits |
+| BestEffort                 | bool             | Return all valid items even if it is less than `Limit`                |
+| Format                     | string           | Response format/encoding, available options: `json`, `og`             |
+| Columns                    | array of strings | Meta data columns to include in the response                          |
+| Limit                      | integer          | Maximum number of items returned, default=0                           |
+| Offset                     | integer          | Items to skip                                                         |
+
+</details>
+
 <h4 id="curl-example"><strong>cURL</strong> example</h4>
 <div class="highlight"><pre><span></span><code>curl -X POST ${IB_API_URL}/api/v1/data-models/&lt;id&gt;/recommendations/user-to-items \
 -H &quot;Authorization: ${IB_API_KEY}&quot; \

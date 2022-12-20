@@ -230,7 +230,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../Recommendations/Recommendations/" class="md-tabs__link">
+      <a href="../../../Recommendations/Overview/" class="md-tabs__link">
         Recommendations
       </a>
     </li>
@@ -488,8 +488,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Recommendations/Recommendations/" class="md-nav__link">
-        Recommendations
+      <a href="../../../Recommendations/Overview/" class="md-nav__link">
+        Overview
       </a>
     </li>
   
@@ -502,8 +502,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../Recommendations/Overview/" class="md-nav__link">
-        Overview
+      <a href="../../../Recommendations/Example%20Use%20Cases/" class="md-nav__link">
+        Example Use Cases
       </a>
     </li>
   
@@ -735,6 +735,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#uploading-files-to-the-platform-csv-for-example" class="md-nav__link">
+    Uploading files to the platform (CSV for example)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-feed-google-feed-for-example" class="md-nav__link">
+    Using a feed (Google Feed for example)
+  </a>
+  
+    <nav class="md-nav" aria-label="Using a feed (Google Feed for example)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-feed-as-a-data-source" class="md-nav__link">
+    Adding a feed as a data source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-a-database-connection" class="md-nav__link">
     Using a database connection
   </a>
@@ -758,41 +785,7 @@
         
           <li class="md-nav__item">
   <a href="#how-to-verify-that-the-sync-works" class="md-nav__link">
-    How to verify that the sync works?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-a-file" class="md-nav__link">
-    Using a file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-a-feed" class="md-nav__link">
-    Using a feed
-  </a>
-  
-    <nav class="md-nav" aria-label="Using a feed">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-feed-as-a-data-source" class="md-nav__link">
-    Adding a feed as a data source
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preprocessor-directives" class="md-nav__link">
-    Preprocessor directives
+    How to verify that the sync works
   </a>
   
 </li>
@@ -1081,6 +1074,33 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#uploading-files-to-the-platform-csv-for-example" class="md-nav__link">
+    Uploading files to the platform (CSV for example)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-a-feed-google-feed-for-example" class="md-nav__link">
+    Using a feed (Google Feed for example)
+  </a>
+  
+    <nav class="md-nav" aria-label="Using a feed (Google Feed for example)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#adding-a-feed-as-a-data-source" class="md-nav__link">
+    Adding a feed as a data source
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-a-database-connection" class="md-nav__link">
     Using a database connection
   </a>
@@ -1104,41 +1124,7 @@
         
           <li class="md-nav__item">
   <a href="#how-to-verify-that-the-sync-works" class="md-nav__link">
-    How to verify that the sync works?
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-a-file" class="md-nav__link">
-    Using a file
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-a-feed" class="md-nav__link">
-    Using a feed
-  </a>
-  
-    <nav class="md-nav" aria-label="Using a feed">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#adding-a-feed-as-a-data-source" class="md-nav__link">
-    Adding a feed as a data source
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#preprocessor-directives" class="md-nav__link">
-    Preprocessor directives
+    How to verify that the sync works
   </a>
   
 </li>
@@ -1165,58 +1151,114 @@
 
 <h1 id="import-data-to-the-platform">Import data to the platform</h1>
 <p>There are various ways to import data to the platform, here we present the most common use cases.</p>
+<hr />
+<h2 id="uploading-files-to-the-platform-csv-for-example">Uploading files to the platform (CSV for example)</h2>
+<details class="optional-class"><summary>Show more information</summary>
+Go to the platform and then to `Manage data -> Import files` (can be found at the top right menu by clicking the three dots, see example image below). 
+
+Drag the file to the drop-box in order to upload it to the platform
+
+Uploaded files are available from the "imports (csv-fs)" database connection when creating new sources (see next step).
+
+<img width="1216" alt="Screenshot 2022-05-10 at 10 31 52" src="https://user-images.githubusercontent.com/4352260/167585247-b7f840a9-a43a-4a7d-bf76-1757e4f688cb.png">
+</details>
+
+<h2 id="using-a-feed-google-feed-for-example">Using a feed (Google Feed for example)</h2>
+<details class="optional-class"><summary>Show more information</summary>
+
+A feed is a file that contains a list of products that often is used to advertise through Google Merchant Center. Often these feeds are updated with latest information which means Infobaleen can use the feed to add relevant product details to the platform, such as image link data.
+
+Feeds are most often published as a public URL in format `.xml`.
+</details>
+
+<h3 id="adding-a-feed-as-a-data-source">Adding a feed as a data source</h3>
+<details class="optional-class"><summary>Show more information</summary>
+
+1. Get the public URL of the feed
+2. Add a new `source`, often it is a good idea to add a "Merge Filter" to avoid fetching too much data (you can for example add `now() < toFloat(last_seen) + 7*24*3600`)
+3. Add a query similar to below and also add `decoder=head` in the field `Preprocessor directives` to show the file structure. Note that you have to write `url:` before `https://`, see example below
+<div class="highlight"><pre><span></span><code>SELECT
+    *
+FROM `url:https://exampleurl.com/plugin-export/shoppingfeed/se`  
+</code></pre></div>
+
+[Note that you have to write **url:** before https://]  
+
+
+#### Preprocessor directives
+
+
+Start by writing `decoder=xml` (or `=feed`) to show the file structure, it will in the preview window show the content.
+
+
+**decoder:** describes what file format, xml, csv, json etc.  
+**root:** navigates the file and shows where you want to read data.  
+**rowtag:** selects the object.  
+**pluck:** inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  
+
+Below is an example of what to write in the preprocessor to fetch feed data correctly:
+`decoder=xml`  
+`root=rss.channel`  
+`rowtag=item`  
+`pluck=google_product_category,price`  
+
+You can then run `EXECUTE PREVIEW QUERY` to see the result.
+
+#### JSON Files
+<details class="optional-class"><summary>Show more information</summary>
+An example json file could look like:
+<div class="highlight"><pre><span></span><code>[
+    {
+        &quot;id&quot;: &quot;&quot;,
+        &quot;user_id&quot;: &quot;&quot;,
+        &quot;username&quot;: &quot;&quot;
+    },
+    {
+        &quot;id&quot;: &quot;&quot;,
+        &quot;user_id&quot;: &quot;&quot;,
+        &quot;username&quot;: &quot;&quot;
+    }
+]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>SELECT * FROM `url:https://...json`  
+</code></pre></div>
+##### preprocessing directive for json
+`decoder=json`  
+`json_prefix=[0]`
+```
+</details>
+</details>
+
+<hr />
 <h2 id="using-a-database-connection">Using a database connection</h2>
 <p>First, make sure you know the origin files to fetch. If files are fetched from </p>
 <p>Go to the platform and then to <code>Admin -&gt; Configuration</code> (can be found at the top right menu by clicking the three dots, see example image below).</p>
-<h3 id="set-up-a-configuration">Set up a configuration</h3>
+<h4 id="set-up-a-configuration">Set up a configuration</h4>
 <p>Add a database and name the <code>Database</code> based on the what system they use (centra, voyado, etc), and choose the matching <code>Driver</code>. In the <code>Config</code> field, check the standard URL provided by the corresponding ecommerce platform. </p>
 <p><strong>Note:</strong> A key or token is most often needed to access databases. This key can be added under <code>Admin -&gt; Secrets</code>. </p>
-<h3 id="make-arbitrary-query">Make arbitrary query</h3>
-<p>Create a source and make an arbitrary query similar to <code>SELECT * FROM `users.gz`</code> for Centra. You can list possible paths by using <code>SELECT * FROM `*`</code>. </p>
-<p>This will trigger a proxy sync, and in the case of a Centra customer as in the example image below, the <code>.gz</code> files will appear once completed. This normally takes 1-5 hours.</p>
-<p><img width="1198" alt="Screenshot 2022-05-10 at 10 31 03" src="https://user-images.githubusercontent.com/4352260/167585099-4bbcfd77-008e-455d-93bf-89e257d6b306.png"></p>
-<h3 id="how-to-verify-that-the-sync-works">How to verify that the sync works?</h3>
-<p>Choose the source you created and press the pen to edit it. Go to the <code>ADD QUERY</code> tab and choose <code>“SELECT * FROM `*`”</code>. </p>
-<p>If the sync is ready, you will see a list of files to choose from, for example, <code>users.gz</code>, <code>items.gz</code>, <code>interactions.gz</code>, see image below. If you see the files imported you are now ready to <a href="https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md">create sources!</a></p>
-<p><img width="954" alt="Screenshot 2022-05-10 at 14 59 33" src="https://user-images.githubusercontent.com/4352260/167635009-bee5c795-271c-49f9-a92c-840a415f120f.png"></p>
-<h2 id="using-a-file">Using a file</h2>
-<p>Go to the platform and then to <code>Manage data -&gt; Import files</code> (can be found at the top right menu by clicking the three dots, see example image below). </p>
-<p>If the customer sent their data in a csv-file, drag it to the drop box for importing files.</p>
-<p>Uploaded files are available from the "imports (csv-fs)" database connection when creating new sources (see next step).</p>
-<p><img width="1216" alt="Screenshot 2022-05-10 at 10 31 52" src="https://user-images.githubusercontent.com/4352260/167585247-b7f840a9-a43a-4a7d-bf76-1757e4f688cb.png"></p>
-<h2 id="using-a-feed">Using a feed</h2>
-<p>A feed is a file that contains a list of products that often is used to advertise through Google Merchant Center. Often these feeds are updated with latest information which means Infobaleen can use the feed to add relevant product details to the platform, such as image link data.</p>
-<p>Feeds are most often published as a public URL in format <code>.xml</code>, see below an example:</p>
-<p><img width="842" alt="Screenshot 2022-06-03 at 15 59 39" src="https://user-images.githubusercontent.com/4352260/171869182-84200505-15de-48e9-a099-d5ed04c8bdca.png"></p>
-<h3 id="adding-a-feed-as-a-data-source">Adding a feed as a data source</h3>
-<ol>
-<li>Get the public URL of the feed</li>
-<li>Add a new <code>source</code>, often it is a good idea to add a "Merge Filter" to avoid fetching too much data (you can for example add <code>now() &lt; toFloat(last_seen) + 7*24*3600</code>)</li>
-<li>Add a query similar to below and also add <code>decoder=head</code> in the field <code>Preprocessor directives</code> to show the file structure. Note that you have to write <code>url:</code> before <code>https://</code>, see example below
-<div class="highlight"><pre><span></span><code>SELECT
-    *
-FROM `url:https://shop.com/plugin-export/shoppingfeed/se`  
-</code></pre></div></li>
-</ol>
-<p>[Note that you have to write <strong>url:</strong> before https://]  </p>
-<h3 id="preprocessor-directives">Preprocessor directives</h3>
-<p>Start by writing <code>decoder=xml</code> (or <code>=feed</code>)</p>
-<p>to show the file structure, in this case it looks like this.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/102239423/169991270-10e97b4e-b5fd-4df8-968c-320119f9ee71.png" /></p>
-<p><strong>decoder:</strong> describes what file format, xml, csv, json etc.<br />
-<strong>root:</strong> navigates the file and shows where you want to read data.<br />
-<strong>rowtag:</strong> selects the object.<br />
-<strong>pluck:</strong> inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  </p>
-<p>Below is one example with <code>root=feed.channel</code> and one example with <code>root=rss.channel</code>:</p>
-<p><img width="543" alt="Screenshot 2022-06-10 at 08 26 05" src="https://user-images.githubusercontent.com/4352260/173004337-734dcc11-992c-4920-975b-3d87f5ad362d.png">
-<img width="549" alt="Screenshot 2022-06-10 at 08 26 46" src="https://user-images.githubusercontent.com/4352260/173004348-827d98b1-e609-4d09-aa5f-63ce9034443e.png"></p>
-<p>In the first image example, the resulting preprocessing directives to fetch the feed are:  </p>
-<p><code>decoder=xml</code><br />
-<code>root=rss.channel</code><br />
-<code>rowtag=item</code><br />
-<code>pluck=google_product_category,price</code><br />
-resulting in this outcome
-<img alt="image" src="https://user-images.githubusercontent.com/102239423/169994099-991016fc-cdb8-4e63-a60a-83726a1f7e87.png" /></p>
+<h4 id="make-arbitrary-query">Make arbitrary query</h4>
+<details class="optional-class"><summary>Show more information</summary>
+
+Create a source and make an arbitrary query similar to ``` SELECT * FROM `users.gz` ``` for Centra. You can list possible paths by using ``` SELECT * FROM `*` ```. 
+
+This will trigger a proxy sync, and in the case of a Centra customer as in the example image below, the `.gz` files will appear once completed. This normally takes 1-5 hours.
+
+
+</details>
+
+<h4 id="how-to-verify-that-the-sync-works">How to verify that the sync works</h4>
+<details class="optional-class"><summary>Show more information</summary>
+
+Choose the source you created and press the pen to edit it. Go to the `ADD QUERY` tab and choose ```“SELECT * FROM `*`”```. 
+
+If the sync is ready, you will see a list of files to choose from, for example, `users.gz`, `items.gz`, `interactions.gz`, see image below. If you see the files imported you are now ready to [create sources!](https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md)
+
+<img width="954" alt="Screenshot 2022-05-10 at 14 59 33" src="https://user-images.githubusercontent.com/4352260/167635009-bee5c795-271c-49f9-a92c-840a415f120f.png">
+
+</details>
+
+<hr />
 
 
 
