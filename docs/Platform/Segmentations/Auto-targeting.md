@@ -11,15 +11,15 @@ Auto-targeting identifies optimal combinations of items and users that helps inc
 <details class="optional-class"><summary>Why use auto-targeting?</summary>
 <p>
 
-You can use Infobaleens AI to answer the questions:  
+You can use Infobaleens auto-targering AI to answer the below questions:  
 <ul>
-  <li>You want to make a targeted campaign to a group of customers, what products should you send to this customer group?</li>
+  <li>What products should I use in my targeted campaign to a specific customer group?</li>
 </ul>
 
 Infobaleens AI ranks the products based on what products are most likely to trigger a purchase given the selected group of customers.
 
 <ul>
-  <li>You want to create a campaign with specific products, who should you send this campaign to?</li>
+  <li>Which customers should I send a campaign with specific products to?</li>
 </ul>
 
 Infobaleens AI ranks the users based on who are most probable to make a purchase given the products in your campaign. 
@@ -31,7 +31,7 @@ Using this information you can avoid sending email to customers that would consi
 
 
 
-## Below is descriptions of the different steps in order to create an auto-targeting campaign, as well as adjustments etc.
+## Step-by-step tutorial to create an AI-based auto-targeting campaign
 ---
 
 ### Step 1: Create auto-targeting campaign
