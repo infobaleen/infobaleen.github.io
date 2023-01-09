@@ -31,6 +31,7 @@ nav:
         - Dashboards: Platform/Analytics/Dashboards.md
         - Customer Insights: Platform/Analytics/Customer-Insights.md
     - Segmentations:
+        - Overview: Platform/Segmentations/Segmentation_overview.md
         - Auto-targeting: Platform/Segmentations/Auto-targeting.md
         - Clustering: Platform/Segmentations/Clustering.md
     - Recommendations:
