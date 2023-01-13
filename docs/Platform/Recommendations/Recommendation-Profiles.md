@@ -1,45 +1,52 @@
-## Example Recommendation Profiles
-
 ### On-site
 
-<b>Similar products recommendation</b>: Similar
-Recommend products from the same category
-Purpose: High recognition factor
+<b>Similar products recommendation</b>
 
-<b>Inspiration recommendation</b>: Inspiration
-Recommend products in categories that the customer has not purchased from before / selected product
-Purpose: Inspire purchases in the most relevant categories that have not yet been purchased from / the product is not in
+* Recommend products from the same category
+* Purpose: High recognition factor
 
-<b>Check-out recommendation</b>: Check-out
-Recommend cheaper products based on what the customer has placed in their shopping cart
-Purpose: Increase AOV with a relevant product in the lower price segment
-Expression: tofloat(Price) < tofloat(last(basketArticlePrice))*0.8
+<b>Inspiration recommendation</b>
 
-<b>On sale recommendations</b>: On sale
-Recommend products that are on sale
-Purpose: Increase the sale percentage by showing relevant products on sale.
+* Recommend products in categories that the customer has not purchased from before / selected product
+* Purpose: Inspire purchases in the most relevant categories that have not yet been purchased from / the product is not in
 
-<b>Cross-sell recommendations</b>: Cross-sell
-Recommend products from other categories than what you're currently looking at
+<b>Check-out recommendation</b>
+
+* Recommend cheaper products based on what the customer has placed in their shopping cart
+* Purpose: Increase AOV with a relevant product in the lower price segment
+* Expression: tofloat(Price) < tofloat(last(basketArticlePrice))*0.8
+
+<b>On sale recommendations</b>
+
+* Recommend products that are on sale
+* Purpose: Increase the sale percentage by showing relevant products on sale.
+
+<b>Cross-sell recommendations</b>
+
+* Recommend products from other categories than what you're currently looking at
 
 
 ### In E-Mail
 
-<b>Standard recommendation</b>: Standard
-Recommend the most likely next purchase (medium trend)
-Purpose: High likelihood of conversion
+<b>Standard recommendation</b>
 
-<b>Win-back recommendation</b>: Win-back
-Recommend the most likely products a customer will purchase based on historical purchasing behavior
-Purpose: Present the products that a churned customer is most likely to buy
+* Recommend the most likely next purchase (medium trend)
+* Purpose: High likelihood of conversion
 
-<b>Thanks for the last order recommendation</b>: Last purchase
-Recommend the most likely products based on the customer's last order
-Purpose: Increase the number of customers who make another purchase
+<b>Win-back recommendation</b>
 
-<b>On sale recommendations</b>: On sale
-Recommend products that are on sale
-Purpose: Increase the sale percentage by showing relevant products on sale.
+* Recommend the most likely products a customer will purchase based on historical purchasing behavior
+* Purpose: Present the products that a churned customer is most likely to buy
+
+<b>Thanks for the last order recommendation</b>
+
+* Recommend the most likely products based on the customer's last order
+* Purpose: Increase the number of customers who make another purchase
+
+<b>On sale recommendations</b>
+
+* Recommend products that are on sale
+* Purpose: Increase the sale percentage by showing relevant products on sale.
 
 
 ### Recommendations in emails

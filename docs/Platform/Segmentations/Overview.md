@@ -1,4 +1,4 @@
-# Segmentation Overview
+# Segmentations Overview
 
 The segmentation section of the platform focuses on finding optimal groups of customers for different types of campaigns. There's two different types of segmentation as follows below.
 

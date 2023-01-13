@@ -1,7 +1,3 @@
-## Create dashboards 
-
-You can customize dashboards to visualize various information and results based on your data.
-
 Dashboards can be created by clicking the + icon in the dropdown menu. When you create a dashboard you are asked for a name, this name can be changed later.
 
 ![Image title](../../images/Analytics/analytics1.png){:style="width:400px" .center}

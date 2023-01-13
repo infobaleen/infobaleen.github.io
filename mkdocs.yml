@@ -34,31 +34,33 @@ extra_css:
 nav:
     - Home: index.md
     - Analytics:
+        - Overview: Platform/Analytics/Overview.md
         - Dashboards: Platform/Analytics/Dashboards.md
         - Customer Insights: Platform/Analytics/Customer-Insights.md
     - Segmentations:
-        - Overview: Platform/Segmentations/Segmentation_overview.md
+        - Overview: Platform/Segmentations/Overview.md
         - Auto-targeting: Platform/Segmentations/Auto-targeting.md
         - Clustering: Platform/Segmentations/Clustering.md
     - Recommendations:
-        - Platform/Recommendations/Overview.md
-        - Platform/Recommendations/Example Use Cases.md
-        - Platform/Recommendations/Settings.md
-       # - Platform/Recommendations/Front page.md
-       # - Platform/Recommendations/Data available in recommendations.md
-       # - Platform/Recommendations/Recommendations in emails.md
-       # - Platform/Recommendations/Infobaleen recommended recommendation profiles.md
+        - Overview: Platform/Recommendations/Overview.md
+        - Recommendation Profiles: Platform/Recommendations/Recommendation-Profiles.md
+        - Settings: Platform/Recommendations/Settings.md
+       # - Platform/Recommendations/Front-Page.md
+       # - Platform/Recommendations/Data-Available-In-Recommendations.md
+       # - Platform/Recommendations/Recommendations-In-Emails.md
+       # - Platform/Recommendations/Infobaleen-Recommended-Recommendation-Profiles.md
     - Configure the platform:
+        - Platform/Menu/Overview.md
         - Model:
             - Overview: Platform/Menu/Model/Overview.md
             - Interactions: Platform/Menu/Model/Interactions.md
             - Products: Platform/Menu/Model/Products.md
             - Users: Platform/Menu/Model/Users.md
         - Manage Data:
-            - Data Models: Platform/Menu/Manage Data/Data-Models.md
-            - Import Files: Platform/Menu/Manage Data/Import-Files.md
-            - Results: Platform/Menu/Manage Data/Results.md
-            - Sources: Platform/Menu/Manage Data/Sources.md
+            - Data Models: Platform/Menu/Manage-Data/Data-Models.md
+            - Import Files: Platform/Menu/Manage-Data/Import-Files.md
+            - Results: Platform/Menu/Manage-Data/Results.md
+            - Sources: Platform/Menu/Manage-Data/Sources.md
         - Documentation:
             - Agent: Platform/Menu/Documentation/Agent.md
             - Recommendations API: Platform/Menu/Documentation/Recommendations.md
