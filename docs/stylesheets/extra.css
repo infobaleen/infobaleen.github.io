@@ -1,0 +1,11 @@
+:root {
+  --md-primary-fg-color:        #7056f5;
+  --md-primary-fg-color--light: #7056f5;
+  --md-primary-fg-color--dark:  #7056f5;
+  --md-accent-fg-color:        #7056f5;
+}
+
+.md-typeset h1,h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
