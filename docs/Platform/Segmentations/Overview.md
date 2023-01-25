@@ -11,7 +11,6 @@ Set your customer/product filters and let our AI divide your customers into opti
 
 ![image](https://user-images.githubusercontent.com/103515314/211313269-d5f2d9c5-dc85-4854-839f-6a380ed0a242.png)
 
-<b>Read more about Auto-targeting under the Auto-targeting tab</b>
 
 ### Clustering
 Can be used to make the platform find similar sub-groups of customers within your customer base. You can then use these clusters for analysis and targeting etc.
