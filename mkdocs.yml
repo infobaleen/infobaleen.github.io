@@ -3,7 +3,7 @@ site_description: Documentation for the Infobaleen Platform
 theme:
     name: material
     font:
-        text: Roboto
+        text: Arial
     # palette:
 
     #     # Palette toggle for light mode
@@ -24,7 +24,6 @@ theme:
     custom_dir: overrides
     features:
         - navigation.tabs
-        - navigation.tabs.sticky
         - navigation.sections
         - navigation.expand
 extra_javascript:
@@ -82,8 +81,14 @@ nav:
 
 markdown_extensions:
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  # - toc:
+  #     title: :material-format-align-left: On this page
+  #     permalink: true

@@ -5,7 +5,23 @@
   --md-accent-fg-color:        #7056f5;
 }
 
-.md-typeset h1,h2 {
-  font-family: 'Montserrat', sans-serif;
+.md-typeset p,h1,h2 {
+  font-family: 'Arial', sans-serif;
+  /*font-weight: bold;*/
 }
 
+
+.md-nav--secondary {
+
+font-size: 13px;
+color: grey;
+
+}
+
+.md-icon {
+:material-format-align-left: 
+}
+
+p {
+	font-size: 15px;
+}
