@@ -1,6 +1,6 @@
 # Segmentations Overview
 
-The segmentation section of the platform focuses on finding optimal groups of customers for different types of campaigns. There's two different types of segmentation as follows below.
+The segmentation section of the platform focuses on finding optimal groups of customers for different types of campaigns. There are two different types of segmentation as follows below.
 
 ### Auto-targeting
 Set your customer/product filters and let our AI divide your customers into optimized subgroups for your products, you can either choose the products yourself, or let the AI find suitable products to recommend for each sub-group.

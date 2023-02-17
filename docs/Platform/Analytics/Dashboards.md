@@ -32,7 +32,8 @@ To add an element to your dashboard, click the <code>Add element</code> seen bel
 
 
 ### Metric
-A metric is a single number, wich means that you can not show a field in a metric element (a field is an array of metrics). you can convert a field into a metric by writing an expression ex. SUM(field) this returns a metric.  
+A metric is a single number, wich means that you can not show a field in a metric element (a field is an array of metrics). you can convert a field into a metric by writing an expression ex. SUM(field) this returns a metric.
+
 ![image](https://user-images.githubusercontent.com/103515314/169268739-3bfe1569-0bc7-4bf6-b02b-2fe887f7c84e.png){: style="width:400px"}
 
 
@@ -46,7 +47,8 @@ A bar chart shows `categorical data` with rectangular bars indicating the `distr
 
 ### Line Chart
 A line chart plots a graph with data points connected to a chosen metric, example below for example shows revenue over time.  
-Hovering over the line chart data points, the revenue for that time will show.  
+Hovering over the line chart data points, the revenue for that time will show.
+
 ![image](https://user-images.githubusercontent.com/103515314/169269164-27b0ddf6-1a72-4641-b929-7e2ac5f72377.png){: style="width:400px"}
 
 
@@ -82,13 +84,15 @@ By filtering out a category in the bar chart the line representing this category
 
 
 ### Histogram
-A histogram is a graphical representation that shows data in specified ranges as vertical bins. It's similar to a bar chart.  
+A histogram is a graphical representation that shows data in specified ranges as vertical bins.
+
 ![image](https://user-images.githubusercontent.com/103515314/169790400-89b40628-b7b3-4bd9-b98d-0795c974f512.png){: style="width:400px"}
 
 
 
 ### Date filter
-The `Date filter` lets you adapt your dashboards to only show data for a chosen period of time, there are some premade limits, for example last week, last year etc. These can be found and chosen on the top of the date filter box after pressing it, you can also select a specified range of days by using the calendar.  
+The `Date filter` lets you adapt your dashboards to only show data for a chosen period of time, there are some premade limits, for example last week, last year etc. These can be found and chosen on the top of the date filter box after pressing it, you can also select a specified range of days by using the calendar.
+
 ![image](https://user-images.githubusercontent.com/103515314/169789844-0fc3eb0c-c776-4623-b016-f473464ffbda.png){: style="width:400px"}
 
 
@@ -100,13 +104,15 @@ The `Range filter` allows you to only show data in the dashboards where a chosen
 
 
 ### Filter
-The `Filter` can be used to only show one category of chosen metric, and update the dashboard accordingly.  
+The `Filter` can be used to only show one category of chosen metric, and update the dashboard accordingly.
+
 ![image](https://user-images.githubusercontent.com/103515314/169792451-0d7d5128-fc8f-4a3a-ac7d-320ff9e54a65.png){: style="width:400px"}
 
 
 
 ### Metric selector
-In the different `elements` added to your dashboard, for example a bar chart or line chart, there's the opportunity to select `*metric*`, if you then add a `Metric selector` and choose a metric, all the elements where `*metric*` has been chosen, will be updated to match the chosen metric in the `Metric selector`. Using this will allow quicker changes of the data shown, as you can use the metric selector instead of manually changing the other elements.  
+In the different `elements` added to your dashboard, for example a bar chart or line chart, there's the opportunity to select `*metric*`, if you then add a `Metric selector` and choose a metric, all the elements where `*metric*` has been chosen, will be updated to match the chosen metric in the `Metric selector`. Using this will allow quicker changes of the data shown, as you can use the metric selector instead of manually changing the other elements.
+
 ![image](https://user-images.githubusercontent.com/103515314/169789635-791ba427-1f84-474f-bad4-8ae9019a5461.png){: style="width:400px"}
  
 
@@ -127,7 +133,8 @@ This element adds a table to the dashboard, if the table gets to wide there's a 
 
 
 ### Pivot
-A pivot table is used to visualize patterns and trends in large amounts of data, it can for example be used to show amount of lapsed customers per order cohort shown in the example below. 
+A pivot table is used to visualize patterns and trends in large amounts of data, it can for example be used to show amount of lapsed customers per order cohort shown in the example below.
+
 ![image](https://user-images.githubusercontent.com/103515314/169789394-1f691c1e-f189-4fab-bc3b-b01d13ecb467.png){: style="width:400px"}
 
 
