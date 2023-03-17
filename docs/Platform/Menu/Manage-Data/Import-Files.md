@@ -19,7 +19,7 @@ Uploaded files are available from the "imports (csv-fs)" database connection whe
 
 <details class="optional-class"><summary>Show more information</summary>
 
-A feed is a file that contains a list of products that often is used to advertise through Google Merchant Center. Often these feeds are updated with latest information which means Infobaleen can use the feed to add relevant product details to the platform, such as image link data.
+A feed is a file that contains a list of products that often is used to advertise through Google Merchant Center. Often these feeds are updated with latest information which means Sift Lab can use the feed to add relevant product details to the platform, such as image link data.
 
 Feeds are most often published as a public URL in format `.xml`.
 </details>
@@ -119,7 +119,7 @@ This will trigger a proxy sync, and in the case of a Centra customer as in the e
 Choose the source you created and press the pen to edit it. Go to the `ADD QUERY` tab and choose SELECT * FROM `*`. 
 <br>
 
-If the sync is ready, you will see a list of files to choose from, for example, `users.gz`, `items.gz`, `interactions.gz`, see image below. If you see the files imported you are now ready to [create sources!](https://github.com/infobaleen/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md)
+If the sync is ready, you will see a list of files to choose from, for example, `users.gz`, `items.gz`, `interactions.gz`, see image below. If you see the files imported you are now ready to [create sources!](https://github.com/Sift Lab/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md)
 
 <img width="954" alt="Screenshot 2022-05-10 at 14 59 33" src="https://user-images.githubusercontent.com/4352260/167635009-bee5c795-271c-49f9-a92c-840a415f120f.png">
 

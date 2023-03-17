@@ -1,6 +1,6 @@
-## Infobaleen - Data Specification
+## Sift Lab - Data Specification
 
-A datamodel in Infobaleen is made up of three data tables. Each line in the interaction table is linked to a specific user and item in the item and user tables. 
+A datamodel in Sift Lab is made up of three data tables. Each line in the interaction table is linked to a specific user and item in the item and user tables. 
 
 
 ```mermaid

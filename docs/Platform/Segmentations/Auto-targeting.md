@@ -11,18 +11,18 @@ Auto-targeting identifies optimal combinations of items and users that helps inc
 <details class="optional-class"><summary>Why use auto-targeting?</summary>
 <p>
 
-You can use Infobaleens auto-targering AI to answer the below questions:  
+You can use Sift Labs auto-targering AI to answer the below questions:  
 <ul>
   <li>What products should I use in my targeted campaign to a specific customer group?</li>
 </ul>
 
-Infobaleens AI ranks the products based on what products are most likely to trigger a purchase given the selected group of customers.
+Sift Labs AI ranks the products based on what products are most likely to trigger a purchase given the selected group of customers.
 
 <ul>
   <li>Which customers should I send a campaign with specific products to?</li>
 </ul>
 
-Infobaleens AI ranks the users based on who are most probable to make a purchase given the products in your campaign. 
+Sift Labs AI ranks the users based on who are most probable to make a purchase given the products in your campaign. 
 Using this information you can avoid sending email to customers that would consider it spam by only selecting customers that show the highest affinity to the product you want to promote.
 
 

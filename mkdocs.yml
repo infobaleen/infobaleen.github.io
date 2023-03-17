@@ -1,5 +1,5 @@
 site_name: Documentation
-site_description: Documentation for the Infobaleen Platform
+site_description: Documentation for the Sift Lab Platform
 theme:
     name: material
     font:
@@ -47,7 +47,7 @@ nav:
        # - Platform/Recommendations/Front-Page.md
        # - Platform/Recommendations/Data-Available-In-Recommendations.md
        # - Platform/Recommendations/Recommendations-In-Emails.md
-       # - Platform/Recommendations/Infobaleen-Recommended-Recommendation-Profiles.md
+       # - Platform/Recommendations/Siftlab-Recommended-Recommendation-Profiles.md
     - Configure the platform:
         - Platform/Menu/Overview.md
         - Model:

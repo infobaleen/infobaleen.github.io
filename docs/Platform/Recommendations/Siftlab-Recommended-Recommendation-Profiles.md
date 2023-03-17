@@ -165,7 +165,7 @@ Once the recommendation flow is set up and an initial export has been sent, the 
 **Note:** Historically there has been some issues due to contacts being labeled as "Contact" instead of "Member". This should be resolved as of April 2022, but to be safe, it could be a good idea to locate and include a user labeled "Contact" that has a purchase history. 
 
 
-# Infobaleen recommended recommendation profiles
+# Sift Lab recommended recommendation profiles
 
 
 
