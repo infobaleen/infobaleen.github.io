@@ -1,24 +1,78 @@
-# 
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 600px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
 
 <h1><center>Welcome to the documentation!</center></h1>
 
-![Image title](assets/infobaleen.png)
+<h2>Our features.</h2>
 
-<style>
-table th:first-of-type {
-    width: 33%;
-}
-table th:nth-of-type(2) {
-    width: 33%;
-}
-table th:nth-of-type(3) {
-    width: 33%;
-}
-table th:nth-of-type(4) {
-    width: 30%;
-}
-</style>
+<div class="row">
+  <div class="column" style="background-color:#160E29;color:white">
+    <h2>AI-powered insights and analytics</h2>
+    <p>Experience powerful explorative analytics through AI combined with interactive dashboards.<p>
+    	<p> Insights through interactive dashboards:<p>
+		<ul>
+		  <li>Sales</li>
+		  <li>Customer / CRM</li>
+		  <li>Marketing</li>
+		  <li>Product</li>
+		  <li>Supplier / Inventory</li>
+		</ul>
+		<br>
+		<u><a style="color:white" href="https://infobaleen.github.io/Platform/Analytics/Dashboards/">Dashboards &#187;</a></u>
+  </div>
+  <div class="column" style="background-color:#F9306C;color:white">
+    <h2>AI-powered segmentation </h2>
+    <p>Segment customers and find the best audiences for campaigns in any channel.<p>
+    <p>Optimal audiences for your campaigns:<p>
+    	<ul>
+		  <li>Email</li>
+		  <li>SMS</li>
+		  <li>Meta</li>
+		  <li>Google</li>
+		  <li>TikTok</li>
+		</ul>
+		<br> <u><a style="color:white"href="https://infobaleen.github.io/Platform/Segmentations/Auto-targeting/">Auto-targeting &#187;</a></u><br><u><a style="color:white" href="https://infobaleen.github.io/Platform/Segmentations/Clustering/">Clustering &#187;</a></u>
+</p>
+  </div>
+  <div class="column" style="background-color:#F7D96D">
+    <h2>AI-powered product recommendations</h2>
+    <p>Combine recommendations with custom rules to optimize your business omnichannel.<p>
+	<p>Customized personalized recommendations</p>
+		 <ul>
+		  <li>Winback</li>
+		  <li>Last order</li>
+		  <li>Cross-sell</li>
+		  <li>Checkout</li>
+		  <li>Only on discount</li>
+		  <br> <u><a href="https://infobaleen.github.io/Platform/Recommendations/Overview/">Recommendations &#187;</a></u>
+		</ul> 
 
-| <h2><b>Analytics</b></h2>      | <h2><b>Segmentations</b></h2>   |    <h2><b>Recommendations</b></h2>                 |
-| ----------- | -----------------| ------------------- |
-| Gain insights on your business from our interactive and customizable dashboards by diving deep into your trove of data. Learn what drives your new customers, find out what makes your customers churn, explore your clusters and segments and much more. <br><br> <a href="https://infobaleen.github.io/Platform/Analytics/Dashboards/">Dashboards &#187;</a>    | Make powerful segmentations for your marketing campaigns and export your results directly to your CRM-system or a marketing tool like Facebook Ads or Google Ads. Target specific products and let our machine learning model segment users optimally according to products you want to sell and your campaign goals. <br><br> <a href="https://infobaleen.github.io/Platform/Segmentations/Auto-targeting/">Auto-targeting &#187;</a><br><a href="https://infobaleen.github.io/Platform/Segmentations/Clustering/">Clustering &#187;</a> | Use personalized product recommendations in your marketing to make your products relevant at all times. Add them on your landing page, in your checkout flow or use them to automate your email content. Create customizable API profiles with filters and rules based on your product meta data, and apply them to different use cases. Ex one for your landing page, one for your user browse sessions and one for your email content. <br><br> <a href="https://infobaleen.github.io/Platform/Recommendations/Overview/">Recommendations &#187;</a> |
+  </div>
+</div>
+
+</body>
+</html>
