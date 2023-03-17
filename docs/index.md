@@ -45,7 +45,7 @@
 		<u><a style="color:white" href="https://infobaleen.github.io/Platform/Analytics/Dashboards/">Dashboards &#187;</a></u>
   </div>
   <div class="column" style="background-color:#F9306C;color:white">
-    <h2>AI-powered segmentation </h2>
+    <h2>AI-powered segmentation and clustering</h2>
     <p>Segment customers and find the best audiences for campaigns in any channel.<p>
     <p>Optimal audiences for your campaigns:<p>
     	<ul>
