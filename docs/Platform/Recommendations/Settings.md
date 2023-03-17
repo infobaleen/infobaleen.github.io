@@ -4,12 +4,8 @@ Here we explain the different settings fields that can be seen after clicking th
 
 <img width="1019" alt="Screenshot 2022-07-01 at 11 12 12" src="https://user-images.githubusercontent.com/4352260/176864507-439bac1e-4029-4aa3-800e-d4c14e8423e0.png">
 
-## Using The Recommendations Page
-<details class="optional-class"><summary>Show More Info</summary>
 
-<h3> Front page</h3>
-
-<h4>Search for items</h4>
+<h4>Search</h4>
 Items added in the search items window are counted as items given to the platform through the API call. This means they dont not affected by `boughtArticleGroup` but affects `basketArticleGroup`. 
 
 <h4>Profile</h4>
@@ -35,9 +31,7 @@ Same as **search for items** but adds a random item.
 Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. 
 <br>
 
-<h4>Data available in recommendations</h4>
-<details class="optional-class"><summary>Show More Info</summary>
-<br>
+## Data available in recommendations
 
 <h4>MlMeta</h4>
 To show an image and name on your recomendations page you have to choose a format field in the data model edit mode, as well as an image field under items (also in the data model edit mode), and lastly activate the ml meta for these fields wanted.
@@ -50,95 +44,72 @@ To write filter expressions based on fields you have to activate ml filter for t
 </details>
 
 ## Filters And Customization Options
-<details class="optional-class"><summary>Show More Info</summary>
+
 #### Search
 Here you can search on all the items included in the machine learning (for example only items sold > X times). If you select an item you will see the recommendations provided by the platform for that specific product(s).
 
 
-Columns
-<details class="optional-class"><summary>Show More Info</summary>
+#### Columns
 
 Columns are the data columns that can be used to create filters and rules. These are activated in the data model with the `MlFilter` toggle (MlFilter = Machine Learning Filter), see the image below. 
 
 <img width="890" alt="Screenshot 2022-07-01 at 11 01 15" src="https://user-images.githubusercontent.com/4352260/176862636-6659b5fd-594f-4049-a349-45e774c39201.png">
-</details>
 
 
-
-Filter expression
-<details class="optional-class"><summary>Show More Info</summary>
+### Filter expression
 Here you can write an expression that creates a filter for your recommendation profile. Some example configurations:
 
-Recommend products in a specific category
+#### Recommend products in a specific category
 To recommend prodcuts in a specific category you can use something like `category = 'Kaffe & Te'`, or `price` > `100`
 
 If the expression is `True` the product will be included in the recommendation, and it the expression is `False` the product will be filtered. In the case of `price` > `100`, the expression will return `True` for all products with a price larger than 100 thus removing all items with a price lower than 100 from the recommendations.
 
-Recommend products with specific names or characters
+#### Recommend products with specific names or characters
 To recommended products that does not contain either `HOOK`, `TAPE` nor `AA`, you can configure the filter according to: 
 ```
 (contains(articleName, 'HOOK') OR contains(articleName, 'TAPE') OR contains(articleName, 'AA')) = false
 ```
-</details>
 
-Boost expression
-<details class="optional-class"><summary>Show More Info</summary>
 
-Each item has a "relevence rank" for each user, the products with the highest relevance rank are the products that get recommended.  
-if you set a limit of 4 products the 4 products with the highest relevance rank are shown.  
-you can affect the relevance rank by applying a boost expression.   
-What you write in the boost expression is multiplied with the relevance rank.   
-if you write for example   
-boost expression: `2`  
-this means you are multiplying all ranks with 2, thus not changing anything since all ranks are multiplied.  
-if you create the expression: `1+1.0*(product_group = 'bags')`  
-all ranks are multiplied by `1` but products in the product_group `bags` are multiplied by `2` thus increasing their rank relative to other products by 100%  
+### Boost expression
+Each item has a "relevence rank" for each user, the products with the highest relevance rank are the products that get recommended. Uf you set a limit of 4 products the 4 products with the highest relevance rank are shown.  You can affect the relevance rank by applying a boost expression.   
+
+
+Your boost expression is multiplied with the relevance rank. So if you for for example set boost expression: `2`, this means that you are multiplying all ranks with 2, thus not changing anything in the relative order for recommendations since all ranks are multiplied.  
+
+If you instead create the boost expression: `1+1.0*(product_group = 'bags')`, all ranks are multiplied by `1` but products in the product_group `bags` are multiplied by `2` thus increasing their rank relative to other products by 100%. 
+
 if you change the expression to: `1+0.5*(product_group = 'bags')` the rank for bags relative to other products are increased by 50%  
-</details>
 
-InteractionFilter
-<details class="optional-class"><summary>Show More Info</summary>
+
+### InteractionFilter
 This allows you to filter on purchase history, for example if you send in a user who has bought 2 items, and you have a filter removing 1 of the item types, the products returned will be based only on the item not filtered out.
-</details>
 
-Trend
-<details class="optional-class"><summary>Show More Info</summary>
+
+### Trend
 Trend limits the time interval for the data that the recomendations are based on. `Max trend` uses a short time interval resulting in the machine-learning model only recommending products that are trending last few weeks.
-</details>
 
-Limit
-<details class="optional-class"><summary>Show More Info</summary>
+
+### Limit
 Limit decides how many recomended items are returned. For example, Limit 4 = Four recommended items. Limit 12 = 12 recommended items.
-</details>
 
-
-Max orders
-<details class="optional-class"><summary>Show More Info</summary>
-
+### Max orders
 Number of orders that are taken into concideration when recommending products. `Max orders = 1` means only the items included in the latest order are used as purchase history for that user. `Max orders = 2` means the items in the two latest orders are taken into account.
-</details>
 
 
-Max interactions
-<details class="optional-class"><summary>Show More Info</summary>
+### Max interactions
+Number of items that are taken into concideration when recommending products. `Max items = 1` means only the latest purchased item is used as purchase history for that user. `Max items = 2` means the two latest items are taken into account.</details>
 
-Number of items that are taken into concideration when recommending products. `Max items = 1` means only the latest purchased item is used as purchase history for that user. `Max items = 2` means the two latest items are taken into account.
-</details>
-
-Allow items from history
-<details class="optional-class"><summary>Show More Info</summary>
+### Allow items from history
 Sets a filter so that all items the user have bought cannot be recommended. 
-</details>
 
-Shuffled
-<details class="optional-class"><summary>Show More Info</summary>
+
+### Shuffled
 If Limit is set to 10 the items are recomended in order (most likly next purchase is at the top).  
-by enabling `shuffled` it still recommends the top 10 items but the order of the top 10 items are shuffled. 
-</details>
+by enabling `shuffled` it still recommends the top 10 items but the order of the top 10 items are shuffled. </details>
 
 
-<h3>Advanced</h3>
-<details class="optional-class"><summary>Show More Info</summary>
+### Advanced
 Create an advanced filter. 
 
 * Name: is the variable name.
@@ -146,7 +117,7 @@ Create an advanced filter.
 * Option: "all" means all items in the users purchase history. "items" means all items sent in through the API by the customer. When the customer makes an API call for the recommendation they can include items in the API call. for example items in the basket, the item you are currently looking at etc.
 
 See some example advanced filters below:
-<details class="optional-class"><summary>Show example 1: Rotation parameter recommendations</summary>
+#### Example 1: Rotation parameter recommendations</summary>
 
 | Parameter | Description |
 | --- | --- | 
@@ -154,8 +125,8 @@ See some example advanced filters below:
 | RotateSeed (int) | Med RotateSeed > 0 slumpas ordningen av kandidaterna. En och samma seed ger en viss ordning och är unikt per användare. Vi kommer alltså inte ignorera samma 50% av produktutbudet vid RotateLength=0.5 för alla användare. Ex `"RotateSeed":"now()"`|
 | RotateOffset (float 0-1): | Anger från vilken andel av kandidaterna vi börjar göra urvalet. RotateOffset tillsammans med RotateLength skapar möjlighet att “paginera” urvalet. Man kan ex skapa 4 separata set av slumpade produkter som man roterar på genom att använda RotateLength:0.25 och anropa APIi:t med RotateOffset: 0, 0.25, 0.5, 0.75.|
 
-</details>
-<details class="optional-class"><summary>Show an example of an advanced query</summary>
+
+#### Example 2: Advanced query
 
 ```
 {"Context":[{"Name":"bought_phone_model","Field":"phone_model","Option":"all"}]}
@@ -166,7 +137,7 @@ hasAny(split(bought_phone_model,","),makeArray(phone_model))
 ```
 `split(bought_phone_model,",")` returns an array of your purchase history `("Field":"phone_model"): ['bought_phone_model_1','bought_phone_model_2','bought_phone_model_3','bought_phone_model_4']`
 
-`makeArray(phone_model)` returns an array of all `phone_model`: ['phone_model_1','phone_model_2','phone_model_3','phone_model_n']  
+`makeArray(phone_model)` returns an array of all `phone_model`: `['phone_model_1','phone_model_2','phone_model_3','phone_model_n']`
 
 `hasAny` checks if elements in `array 1` is contained in `array 2`  
 
@@ -183,19 +154,17 @@ If you change the expression to `hasAny(split(bought_phone_model,","),makeArray(
 See example:
 ![image](https://user-images.githubusercontent.com/102239423/171145795-877fb7b8-6e02-4bf0-857b-985deafe6efd.png)
 
-</details>
-</details>
+
 
 ---
 
 
 #### Add field limit 
-<details class="optional-class"><summary>Show More Info</summary>
 Field limit lets you set a filter on how many of each category should be recommended. This is usually used on product category where you only want to include ex. max 2 of each product category.
-</details>
+
 
 ---
-</details>
+
 
 ## Other Actions
 
