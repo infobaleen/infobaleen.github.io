@@ -12,7 +12,7 @@
   float: left;
   width: 33.33%;
   padding: 10px;
-  height: 600px;
+  height: 750px;
 }
 
 /* Clear floats after the columns */
