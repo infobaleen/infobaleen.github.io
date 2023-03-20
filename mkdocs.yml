@@ -33,51 +33,51 @@ extra_css:
 nav:
     - Home: index.md
     - Analytics:
-        - Overview: Platform/Analytics/Overview.md
-        - Dashboards: Platform/Analytics/Dashboards.md
-        - Customer Insights: Platform/Analytics/Customer-Insights.md
+        - Overview: External/Analytics/Overview.md
+        - Dashboards: External/Analytics/Dashboards.md
+        - Customer Insights: External/Analytics/Customer-Insights.md
     - Segmentations:
-        - Overview: Platform/Segmentations/Overview.md
-        - Auto-targeting: Platform/Segmentations/Auto-targeting.md
-        - Clustering: Platform/Segmentations/Clustering.md
+        - Overview: External/Segmentations/Overview.md
+        - Auto-targeting: External/Segmentations/Auto-targeting.md
+        - Clustering: External/Segmentations/Clustering.md
     - Recommendations:
-        - Overview: Platform/Recommendations/Overview.md
-        - Recommendation Profiles: Platform/Recommendations/Recommendation-Profiles.md
-        - Settings: Platform/Recommendations/Settings.md
-       # - Platform/Recommendations/Front-Page.md
-       # - Platform/Recommendations/Data-Available-In-Recommendations.md
-       # - Platform/Recommendations/Recommendations-In-Emails.md
-       # - Platform/Recommendations/Siftlab-Recommended-Recommendation-Profiles.md
+        - Overview: External/Recommendations/Overview.md
+        - Recommendation Profiles: External/Recommendations/Recommendation-Profiles.md
+        - Settings: External/Recommendations/Settings.md
+       # - External/Recommendations/Front-Page.md
+       # - External/Recommendations/Data-Available-In-Recommendations.md
+       # - External/Recommendations/Recommendations-In-Emails.md
+       # - External/Recommendations/Siftlab-Recommended-Recommendation-Profiles.md
     - Configure the platform:
-        - Platform/Menu/Overview.md
+        - External/Menu/Overview.md
         - Model:
-            - Overview: Platform/Menu/Model/Overview.md
-            - Interactions: Platform/Menu/Model/Interactions.md
-            - Products: Platform/Menu/Model/Products.md
-            - Users: Platform/Menu/Model/Users.md
+            - Overview: External/Menu/Model/Overview.md
+            - Interactions: External/Menu/Model/Interactions.md
+            - Products: External/Menu/Model/Products.md
+            - Users: External/Menu/Model/Users.md
         - Manage Data:
-            - Data Models: Platform/Menu/Manage-Data/Data-Models.md
-            - Import Files: Platform/Menu/Manage-Data/Import-Files.md
-            - Results: Platform/Menu/Manage-Data/Results.md
-            - Sources: Platform/Menu/Manage-Data/Sources.md
+            - Data Models: External/Menu/Manage-Data/Data-Models.md
+            - Import Files: External/Menu/Manage-Data/Import-Files.md
+            - Results: External/Menu/Manage-Data/Results.md
+            - Sources: External/Menu/Manage-Data/Sources.md
         - Documentation:
-            - Agent: Platform/Menu/Documentation/Agent.md
-            - Recommendations API: Platform/Menu/Documentation/Recommendations.md
-            - New Issue: Platform/Menu/Documentation/New-Issue.md
+            - Agent: External/Menu/Documentation/Agent.md
+            - Recommendations API: External/Menu/Documentation/Recommendations.md
+            - New Issue: External/Menu/Documentation/New-Issue.md
         - Account:
-            - API Keys: Platform/Menu/Account/API-Keys.md
-            - Logout: Platform/Menu/Account/Logout.md
-            - Users: Platform/Menu/Account/Users.md
+            - API Keys: External/Menu/Account/API-Keys.md
+            - Logout: External/Menu/Account/Logout.md
+            - Users: External/Menu/Account/Users.md
         # - Admin:
-        #     - Clear CH chache: Platform/Menu/Admin/Clear-CH-chache.md
-        #     - Configuration: Platform/Menu/Admin/Configuration.md
-        #     - Connections: Platform/Menu/Admin/Connections.md
-        #     - Events: Platform/Menu/Admin/Events.md
-        #     - Secrets: Platform/Menu/Admin/Secrets.md
+        #     - Clear CH chache: External/Menu/Admin/Clear-CH-chache.md
+        #     - Configuration: External/Menu/Admin/Configuration.md
+        #     - Connections: External/Menu/Admin/Connections.md
+        #     - Events: External/Menu/Admin/Events.md
+        #     - Secrets: External/Menu/Admin/Secrets.md
 
-        #- Other: Platform/Menu/Other/Overlaps.md
+        #- Other: External/Menu/Other/Overlaps.md
     - Other:
-        - Data Specification: Other/Data-Specification.md
+        - Data Specification: External/Other/Data-Specification.md
 
 markdown_extensions:
   - attr_list
