@@ -19,37 +19,24 @@ When a data model is used for email analysis, the interaction becomes a specific
 To edit and see the detailed info about a data model, you need to edit it. You can edit it by clicking the "pen" either after clicking the data model, or in the data-models list, see images below.
 
 <img width="988" alt="Screenshot 2022-07-01 at 11 52 24" src="https://user-images.githubusercontent.com/4352260/176871921-4f7f72ce-e6de-453d-b24d-ad035c61e38b.png">
+
 <details class="optional-class"><summary>Show another place to access the edit mode</summary>
 <img width="782" alt="Screenshot 2022-07-01 at 11 52 33" src="https://user-images.githubusercontent.com/4352260/176872229-94b65f4b-35b1-447d-aa21-3c8eb40f66d6.png">
-
 </details>
 
 ## Interaction Configuration
-<details class="optional-class"><summary>Show more information</summary>
-
 The interaction table specifies info about the interaction (a user interacting with an item) that includes a timestamp (ts). An interaction config can look something like below:
 
 <img width="948" alt="Screenshot 2022-07-01 at 11 51 54" src="https://user-images.githubusercontent.com/4352260/176872296-06aea3bd-878a-499c-bc0e-8767dc6796a8.png">
 
 
-
 <h4> Field</h4>
-<details class="optional-class"><summary>Show more information</summary>
-
 This is the name of the given in the source query (it can not be changed in the data model).  
 
-</details>
-
 <h4> Alias</h4>
-<details class="optional-class"><summary>Show more information</summary>
-
 By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation. In Recommendation the field name is always shown even if an alias is added.
-</details>
-
 
 <h4> Role </h4>
-<details class="optional-class"><summary>Show more information</summary>
-
 <table>
 <thead>
 <tr>
@@ -102,50 +89,27 @@ By adding an alias the the field name is replaced by the alias name in the dashb
 </table>
 
 
-</details>
-
 <h4> Active </h4>
-
-<details class="optional-class"><summary>Show more information</summary>
 
 The Active toggle button lets you activate/deactivate a field. a deactivated field can not be used in dashboards.
 
-</details>
-
-
 
 <h4> Info </h4>
-
-
-<details class="optional-class"><summary>Show more information</summary>
-
 Click on the small `i` button to see a preview of how the data looks/is formatted.
-
-</details>
-
-</details>
-
 
 
 ## Item Configuration
-<details class="optional-class"><summary>Show more information</summary>
-
 The item table specifies info about the items, i.e. the products.
 
 <img width="976" alt="Screenshot 2022-07-01 at 11 58 21" src="https://user-images.githubusercontent.com/4352260/176872773-89453cc1-56eb-4175-88c1-e5aa6de16019.png">
 
 <h4>  Fields</h4>
-<details class="optional-class"><summary>Show more information</summary>
 This is the name of the given in the source query (it can not be changed in the data model).  
-</details>
 
 <h4> Alias</h4>
-<details class="optional-class"><summary>Show more information</summary>
 By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation. In Recommendation the field name is always shown even if an alias is added.
-</details>
 
 <h4> Role</h4>
-<details class="optional-class"><summary>Show more information</summary>
 
 <table>
 <thead>
@@ -191,55 +155,40 @@ By adding an alias the the field name is replaced by the alias name in the dashb
 </table>
 
 
-</details>
-
 <h4>  MLMeta</h4>
-<details class="optional-class"><summary>Show more information</summary>
 The MLMeta toggle button controls what is returned when when you make an API call. This is to give you control what data you want to return to the customer. You don't want to activate MLMeta on all fields because this will result in returning a lot of "trash columns" to the customer that they have to filter in turn get the relevant data. Note that you also have to select the role `Image` and `Format` for the product to show. MLMeta is only relevant in the recommendations view.
-</details>
 
 <h4>  MLFilter</h4>
-<details class="optional-class"><summary>Show more information</summary>
 The MLFilter lets you write expressions and filter your data in in the recommendations. You should only activate MLFilter for the fields you actually want to create a filter for, the reason for this is that when you activate **MLFilter** for a field this will store all data in the memory and every time the API calls for a recommendation the data model have to iterate through all fields with **MLFilter** resulting in a bad performance on the customers side (when the customer want to load our recommendations on their site the load speed will depend on how many **MLFilters** you have activated.  
 
 <img width="892" alt="Screenshot 2022-06-10 at 08 16 47" src="https://user-images.githubusercontent.com/4352260/173002754-8885b8fa-1b5c-4dad-a74d-732f1d409eda.png">
-</details>
+
 
 <h4> Active </h4>
 
-<details class="optional-class"><summary>Show more information</summary>
 The Active toggle button lets you activate/deactivate a field. a deactivated field can not be used in dashboards.
-</details>
+
 
 
 <h4>  Info</h4>
-<details class="optional-class"><summary>Show more information</summary>
 Click on the small `i` button to see a preview of how the data looks/is formatted.
-</details>
-
-
-</details>
 
 
 ## User config
-<details class="optional-class"><summary>Show more information</summary>
 The user table specifies info about the users, i.e. the customers. 
 
 <img width="968" alt="Screenshot 2022-07-01 at 12 00 26" src="https://user-images.githubusercontent.com/4352260/176873224-8e8d99ba-3f06-48bf-80f7-3b289ab2b266.png">
 
 
 <h4> Field</h4>
-<details class="optional-class"><summary>Show more information</summary>
 This is the name of the given in the source query (it can not be changed in the data model).  
-</details>
+
 
 <h4> Alias </h4>
-<details class="optional-class"><summary>Show more information</summary>
 By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation. In Recommendation the field name is always shown even if an alias is added.
-</details>
+
 
 <h4> Role</h4>
-<details class="optional-class"><summary>Show more information</summary>
 
 <table>
 <thead>
@@ -282,12 +231,9 @@ By adding an alias the the field name is replaced by the alias name in the dashb
 </tr>
 </tbody>
 </table>
-<p></details></p>
-
 
 
 <h4> Persona</h4>
-<details class="optional-class"><summary>Show more information</summary>
 
 The Persona toggle button controls what columns are used in the recommendations. For example, if we activate the field `gender` as a Persona, the recommendation engine will base the recommendations on what gender the user has. If we active the field `age` it will be used as a dimension in the recommendation, and so on.
 
@@ -296,14 +242,10 @@ The Persona toggle button controls what columns are used in the recommendations.
 <img width="883" alt="Screenshot 2022-06-10 at 08 16 38" src="https://user-images.githubusercontent.com/4352260/173002716-64dd3abf-fc87-4b0d-942b-19b46b6e98b7.png">
 
 
-</details>
 
-
-
-</details>
 
 ## Custom properties
-<details class="optional-class"><summary>Show more information</summary>
+
 The Custom properties-section lets you define custom user group based on your data. The feature exploits the aggregated user data that can be found in the menu at `Model->Users`, see the image below.
 
 <img src="../../../../images/Menu/custom_properties2.png" width="921"/>
@@ -311,10 +253,9 @@ The Custom properties-section lets you define custom user group based on your da
 Using for example `user.agg.first` and `user.agg.orders` as parameters `first` and `orders` it is possible to create, for example, a customer lifecycle definition as in the image below.  
 
 <img src="../../../../images/Menu/custom_properties.png" width="921"/>
-</details>
+
 
 ## Expression syntax
-<details class="optional-class"><summary>Show more information</summary>
 
 
 <table>
@@ -353,16 +294,12 @@ Using for example `user.agg.first` and `user.agg.orders` as parameters `first` a
 </table>
 
 
-</details>
-
-
 # Data model expression examples 
 Expressions can be used to calculate certain variables, for example the amount of returned items `(SUM(returned_quantity)` or divide certain users into different categories, for example dividing the customer base into customers with or without > 1 purchases. Expressions are made in the edit mode of a data model, and later can be found and used in dashboards as parameters and metrics. 
 
 When writing expressions, remember to check and/or modify so that the variables like `revenue`, `ts` (timestamp), `quantity` is correct according to your data. returned quantity can for example be written in different ways (example: `returnedQuantity` / `returned_quantity`)  depending on data source. returnedQuantity, returned_quantity depending on the dataset.
 
 ### Interaction expressions
-<details class="optional-class"><summary>Show more information</summary>
 
 <table>
 <thead>
@@ -440,10 +377,7 @@ When writing expressions, remember to check and/or modify so that the variables 
 </table>
 
 
-</details>
-
 ### Item expressions  
-<details class="optional-class"><summary>Show more information</summary>
 
 <table>
 <thead>
@@ -473,10 +407,7 @@ When writing expressions, remember to check and/or modify so that the variables 
 </table>
 
 
-</details>
-
 ### User expressions
-<details class="optional-class"><summary>Show more information</summary>
 
 <table>
 <thead>
@@ -494,4 +425,3 @@ When writing expressions, remember to check and/or modify so that the variables 
 </table>
 
 
-</details>

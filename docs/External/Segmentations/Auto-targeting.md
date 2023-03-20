@@ -112,47 +112,32 @@ You can also go back and readjust your advertisements by clicking the pencil on 
 
 ---
 ## Below is further information about the Auto-targeting.
+
 ### Filter Settings
 Below is a description of all the different buttons, toggles etc in the segmentation/auto-targeting on the platform.
 
 ### Disable Filter
-
-<details class="optional-class"><summary>Details</summary>
-<p>
-
 By toggling <b>Enable filter</b> (see figure below) you can disable the whole filter group. This can be used to easier see the effect a filter has on the customer base.
 
 <img width="846" alt="Screenshot 2022-06-28 at 14 41 45" src="https://user-images.githubusercontent.com/102239423/205082010-8a7a44b0-8649-4a2e-bec5-727cda9e35f8.png">
-</p></details>
+
 
 ### Exclude
-
-<details class="optional-class"><summary>Details</summary>
-<p>
-
 By toggling <b>Exclude</b> (see figure below) you invert the filter. In this example this means we are looking at customers that live in Stockholm or Skåne, that <b>HAS NOT</b> made a purchase in the category Hudvård
 
 We can also chose to exclude on the <b>item</b> level instead of on the <b>interaction</b> level (see below). In this example this means we are looking att customers that live in Stockholm or Skåne that <b>HAS</b> made a purchase in any category <b>Except</b> in the category Hudvård.
 
 <img width="846" alt="Screenshot 2022-06-28 at 14 41 45" src="https://user-images.githubusercontent.com/102239423/205082718-285808b5-fb9c-40dd-90ae-d26b9860119a.png">
-</p></details>
+
 
 ### Match Any
-
-<details class="optional-class"><summary>Details</summary>
-<p>
 
 By toggling <b>Match</b> Any** (see figure below) you change how the filtergroups interact from <b>AND</b> to <b>OR</b>. when <b>Match Any</b> is not active only the users that fill the criterias of <b>ALL</b> the filter groups are included.
 By activating <b>Match Any</b> users that fill the criterias of <b>ANY</b> filter is included
 
 <img width="846" alt="Screenshot 2022-06-28 at 14 41 45" src="https://user-images.githubusercontent.com/102239423/205088668-8a746db4-feda-4e8f-b84a-b61443ed52db.png">
-</p></details>
-
 
 ### Filter options for category, number and timestamps
-
-<details class="optional-class"><summary>Details</summary>
-<p>
 
 In the datamodel you can assign different roles to a field depending on how it should behave. 
 
@@ -194,9 +179,6 @@ With a <b>Timestamp</b> you can use the date format to filter on dates larger th
 <li>Before</li>
 <li>After</li>
 </ul>
-
-
-</p></details>
 
 
 

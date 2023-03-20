@@ -25,7 +25,6 @@ The import file is now done, press sync and save to exit.
 
 
 ## Frontpage columns
-<details class="optional-class"><summary>Show more information</summary>
 See below an example image from source view, with a source named `transactions`.
 
 <img src="../../../../images/Menu/sources.png" width="921"/>
@@ -99,10 +98,9 @@ Manually syncs the source.
 
 <h4> Create </h4>
 Creates a new source.
-</details>
+
 
 ## Edit a source
-<details class="optional-class"><summary>Show more information</summary>
 
 When clicking a source, you find the edit mode by clicking the "pen" in the top right corner. This will open a view as can be seen in the image below. 
 
@@ -151,10 +149,8 @@ Preprocessor information can be found under the "Import Files" section of the do
 You need to enclose variable names that contain other characters than letters and numbers with `backticks` ` `,  
 this includes whitespace ' ', dot '.', etc...
 
-</details>
 
 ## Below is further information about more advanced queries
-<details class="optional-class"><summary>Show more information</summary>
 
 SELECT * FROM `raw: 
 id,item
@@ -164,7 +160,6 @@ this returns a table.
 <br>
 
 UNION 
-<details class="optional-class"><summary>Show more information</summary>
 
 A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order
 ```
@@ -195,10 +190,9 @@ this will show that all overlapping ids will have item from `table 1`.
 
 A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates, meaning much faster execution but leaves duplicate rows if they exist.
 
-</details>
 
 INSERT INTO
-<details class="optional-class"><summary>Show more information</summary>
+
 
 insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.
 ```
@@ -212,10 +206,10 @@ ex.
 ```
 LEFT JOIN <table_name> ON <table_name>.id = XXX.id
 ```
-</details>
+
 
 LEFT JOIN and JOIN
-<details class="optional-class"><summary>Show more information</summary>
+
 LEFT JOIN lets you append more columns to an existing table, while join only keeps the ones matching. See below a code example where you can change `left join` to `join` to see the effects.
 
 ```
@@ -240,11 +234,10 @@ left join currencies ON countries.country = currencies.country
 
 <img width="385" alt="Screenshot 2022-09-29 at 13 59 36" src="https://user-images.githubusercontent.com/4352260/193025736-ef6f50a2-76b4-424d-bee6-d3a39d0f41a3.png">
 
-</details>
 
 
 NOT IN
-<details class="optional-class"><summary>Show more information</summary>
+
 Only selects rows that do not match, example
 
 ```
@@ -265,10 +258,10 @@ id,name
 3,björn
 4,benny
 ```
-</details>
+
 
 firstSeen()
-<details class="optional-class"><summary>Show more information</summary>
+
 
 firstseen(<field>) saves only the first encountered row for 
 
@@ -277,10 +270,10 @@ coalese
 toFloat()
 
 unixTimestamp()
-</details>
+
 
 split() and slice() and slicestr()
-<details class="optional-class"><summary>Show more information</summary>
+
 
 These expressions can be used to edit strings, see an example below:
 
@@ -307,11 +300,10 @@ a	step1	     step2.     step3	 length(b)    slicestr(b, 1, 2)
 1	A,B,C,D,E.   A,B,C	ABC	 5            BC
 ```
 
-</details>
 
 groupconcat_ws
 
-<details class="optional-class"><summary>Show more information</summary>
+
 ```	
 Insert into a
 SELECT * FROM `raw:
@@ -328,10 +320,10 @@ The result will be:
 user	ordernr	price_list
 100	1	10SEK,20SEK,30SEK
 ```
-</details>
+
 	
 Create a custom user.agg.(field)
-<details class="optional-class"><summary>Show more information</summary>
+
 
 the datamodel creates aggregate functions such as user.agg.revenue.
 to create one yourself do the following.
@@ -356,9 +348,5 @@ LEFT JOIN margin ON margin.user = UI.user
 Note that you need to add `concat('',)` to the sum expression.
 this is because you cant LEFT JOIN a float. `concat('',)` converts it into a string.
 `concat('',SUM(margin)) AS total_margin`
-</details>
-</details>
-
-
 
 
