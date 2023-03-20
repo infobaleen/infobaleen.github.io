@@ -1,0 +1,1655 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Sift Lab Platform">
+      
+      
+      
+      
+        <link rel="prev" href="../Recommendation-Profiles/">
+      
+      
+        <link rel="next" href="../../Menu/Overview/">
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Settings - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#recommendation-profiles" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Analytics/Overview/" class="md-tabs__link">
+        Analytics
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Segmentations/Overview/" class="md-tabs__link">
+        Segmentations
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Overview/" class="md-tabs__link md-tabs__link--active">
+        Recommendations
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Menu/Overview/" class="md-tabs__link">
+        Configure the platform
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Other/Data-Specification/" class="md-tabs__link">
+        Other
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../assets/logo.png" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Analytics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analytics/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analytics/Dashboards/" class="md-nav__link">
+        Dashboards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Analytics/Customer-Insights/" class="md-nav__link">
+        Customer Insights
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Segmentations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Segmentations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Segmentations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Segmentations/Auto-targeting/" class="md-nav__link">
+        Auto-targeting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Segmentations/Clustering/" class="md-nav__link">
+        Clustering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Recommendations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Recommendation-Profiles/" class="md-nav__link">
+        Recommendation Profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Settings
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Settings
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommendation-profiles" class="md-nav__link">
+    Recommendation Profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-available-in-recommendations" class="md-nav__link">
+    Data available in recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters-and-customization-options" class="md-nav__link">
+    Filters And Customization Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Filters And Customization Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    Columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-expression" class="md-nav__link">
+    Filter expression
+  </a>
+  
+    <nav class="md-nav" aria-label="Filter expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommend-products-in-a-specific-category" class="md-nav__link">
+    Recommend products in a specific category
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommend-products-with-specific-names-or-characters" class="md-nav__link">
+    Recommend products with specific names or characters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boost-expression" class="md-nav__link">
+    Boost expression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactionfilter" class="md-nav__link">
+    InteractionFilter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trend" class="md-nav__link">
+    Trend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    Limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max-orders" class="md-nav__link">
+    Max orders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max-interactions" class="md-nav__link">
+    Max interactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allow-items-from-history" class="md-nav__link">
+    Allow items from history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shuffled" class="md-nav__link">
+    Shuffled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    Advanced
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-rotation-parameter-recommendations" class="md-nav__link">
+    Example 1: Rotation parameter recommendations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-advanced-query" class="md-nav__link">
+    Example 2: Advanced query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-field-limit" class="md-nav__link">
+    Add field limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-actions" class="md-nav__link">
+    Other Actions
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-as-new-profile" class="md-nav__link">
+    Save as new profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-profile" class="md-nav__link">
+    Save profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-profile" class="md-nav__link">
+    Delete profile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Configure the platform
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Configure the platform
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Overview/" class="md-nav__link">
+        Analytics Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          Model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Model/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Model/Interactions/" class="md-nav__link">
+        Interactions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Model/Products/" class="md-nav__link">
+        Products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Model/Users/" class="md-nav__link">
+        Users
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Manage Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Manage Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Manage-Data/Data-Models/" class="md-nav__link">
+        Data Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Manage-Data/Import-Files/" class="md-nav__link">
+        Import Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Manage-Data/Results/" class="md-nav__link">
+        Results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Manage-Data/Sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Documentation/Agent/" class="md-nav__link">
+        Agent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Documentation/Recommendations/" class="md-nav__link">
+        Recommendations API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Documentation/New-Issue/" class="md-nav__link">
+        New Issue
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          Account
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Account
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Account/API-Keys/" class="md-nav__link">
+        API Keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Account/Logout/" class="md-nav__link">
+        Logout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Menu/Account/Users/" class="md-nav__link">
+        Users
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Other/Data-Specification/" class="md-nav__link">
+        Data Specification
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#recommendation-profiles" class="md-nav__link">
+    Recommendation Profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-available-in-recommendations" class="md-nav__link">
+    Data available in recommendations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#filters-and-customization-options" class="md-nav__link">
+    Filters And Customization Options
+  </a>
+  
+    <nav class="md-nav" aria-label="Filters And Customization Options">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    Search
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columns" class="md-nav__link">
+    Columns
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-expression" class="md-nav__link">
+    Filter expression
+  </a>
+  
+    <nav class="md-nav" aria-label="Filter expression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recommend-products-in-a-specific-category" class="md-nav__link">
+    Recommend products in a specific category
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recommend-products-with-specific-names-or-characters" class="md-nav__link">
+    Recommend products with specific names or characters
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boost-expression" class="md-nav__link">
+    Boost expression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactionfilter" class="md-nav__link">
+    InteractionFilter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trend" class="md-nav__link">
+    Trend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    Limit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max-orders" class="md-nav__link">
+    Max orders
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max-interactions" class="md-nav__link">
+    Max interactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#allow-items-from-history" class="md-nav__link">
+    Allow items from history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shuffled" class="md-nav__link">
+    Shuffled
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    Advanced
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-rotation-parameter-recommendations" class="md-nav__link">
+    Example 1: Rotation parameter recommendations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-advanced-query" class="md-nav__link">
+    Example 2: Advanced query
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-field-limit" class="md-nav__link">
+    Add field limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-actions" class="md-nav__link">
+    Other Actions
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Actions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#save-as-new-profile" class="md-nav__link">
+    Save as new profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-profile" class="md-nav__link">
+    Save profile
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-profile" class="md-nav__link">
+    Delete profile
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Settings</h1>
+
+<h2 id="recommendation-profiles">Recommendation Profiles</h2>
+<p>Here we explain the different settings fields that can be seen after clicking the cog wheel, as well as what data you find and can use.</p>
+<p><img width="1019" alt="Screenshot 2022-07-01 at 11 12 12" src="https://user-images.githubusercontent.com/4352260/176864507-439bac1e-4029-4aa3-800e-d4c14e8423e0.png"></p>
+<h4>Search</h4>
+<p>Items added in the search items window are counted as items given to the platform through the API call. This means they dont not affected by <code>boughtArticleGroup</code> but affects <code>basketArticleGroup</code>. </p>
+<h4>Profile</h4>
+<p>Saved profiles
+<br></p>
+<h4>Refresh</h4>
+<p><br></p>
+<h4>Clear user and items</h4>
+<p>Removes selected items and user
+<br></p>
+<h4>Bench</h4>
+<p>Shows how fast the recommendation are returend when making an API call. (if your datamodel has MLFilter active for many fields the recommendations will be slower).
+<br></p>
+<h4>Add random item</h4>
+<p>Same as <strong>search for items</strong> but adds a random item.
+<br></p>
+<h4>Add random user</h4>
+<p>Selects a random user and shows what items this user has previously bought and the returned recommended items based on this. 
+<br></p>
+<h2 id="data-available-in-recommendations">Data available in recommendations</h2>
+<h4>MlMeta</h4>
+<p>To show an image and name on your recomendations page you have to choose a format field in the data model edit mode, as well as an image field under items (also in the data model edit mode), and lastly activate the ml meta for these fields wanted.
+<br></p>
+<h4>MlFilter</h4>
+<p>To write filter expressions based on fields you have to activate ml filter for these fields, this is done in the edit mode of the data model.
+</details></p>
+</details>
+<h2 id="filters-and-customization-options">Filters And Customization Options</h2>
+<h4 id="search">Search</h4>
+<p>Here you can search on all the items included in the machine learning (for example only items sold &gt; X times). If you select an item you will see the recommendations provided by the platform for that specific product(s).</p>
+<h4 id="columns">Columns</h4>
+<p>Columns are the data columns that can be used to create filters and rules. These are activated in the data model with the <code>MlFilter</code> toggle (MlFilter = Machine Learning Filter), see the image below. </p>
+<p><img width="890" alt="Screenshot 2022-07-01 at 11 01 15" src="https://user-images.githubusercontent.com/4352260/176862636-6659b5fd-594f-4049-a349-45e774c39201.png"></p>
+<h3 id="filter-expression">Filter expression</h3>
+<p>Here you can write an expression that creates a filter for your recommendation profile. Some example configurations:</p>
+<h4 id="recommend-products-in-a-specific-category">Recommend products in a specific category</h4>
+<p>To recommend prodcuts in a specific category you can use something like <code>category = 'Kaffe &amp; Te'</code>, or <code>price</code> &gt; <code>100</code></p>
+<p>If the expression is <code>True</code> the product will be included in the recommendation, and it the expression is <code>False</code> the product will be filtered. In the case of <code>price</code> &gt; <code>100</code>, the expression will return <code>True</code> for all products with a price larger than 100 thus removing all items with a price lower than 100 from the recommendations.</p>
+<h4 id="recommend-products-with-specific-names-or-characters">Recommend products with specific names or characters</h4>
+<p>To recommended products that does not contain either <code>HOOK</code>, <code>TAPE</code> nor <code>AA</code>, you can configure the filter according to: 
+<div class="highlight"><pre><span></span><code>(contains(articleName, &#39;HOOK&#39;) OR contains(articleName, &#39;TAPE&#39;) OR contains(articleName, &#39;AA&#39;)) = false
+</code></pre></div></p>
+<h3 id="boost-expression">Boost expression</h3>
+<p>Each item has a "relevence rank" for each user, the products with the highest relevance rank are the products that get recommended. Uf you set a limit of 4 products the 4 products with the highest relevance rank are shown.  You can affect the relevance rank by applying a boost expression.   </p>
+<p>Your boost expression is multiplied with the relevance rank. So if you for for example set boost expression: <code>2</code>, this means that you are multiplying all ranks with 2, thus not changing anything in the relative order for recommendations since all ranks are multiplied.  </p>
+<p>If you instead create the boost expression: <code>1+1.0*(product_group = 'bags')</code>, all ranks are multiplied by <code>1</code> but products in the product_group <code>bags</code> are multiplied by <code>2</code> thus increasing their rank relative to other products by 100%. </p>
+<p>if you change the expression to: <code>1+0.5*(product_group = 'bags')</code> the rank for bags relative to other products are increased by 50%  </p>
+<h3 id="interactionfilter">InteractionFilter</h3>
+<p>This allows you to filter on purchase history, for example if you send in a user who has bought 2 items, and you have a filter removing 1 of the item types, the products returned will be based only on the item not filtered out.</p>
+<h3 id="trend">Trend</h3>
+<p>Trend limits the time interval for the data that the recomendations are based on. <code>Max trend</code> uses a short time interval resulting in the machine-learning model only recommending products that are trending last few weeks.</p>
+<h3 id="limit">Limit</h3>
+<p>Limit decides how many recomended items are returned. For example, Limit 4 = Four recommended items. Limit 12 = 12 recommended items.</p>
+<h3 id="max-orders">Max orders</h3>
+<p>Number of orders that are taken into concideration when recommending products. <code>Max orders = 1</code> means only the items included in the latest order are used as purchase history for that user. <code>Max orders = 2</code> means the items in the two latest orders are taken into account.</p>
+<h3 id="max-interactions">Max interactions</h3>
+<p>Number of items that are taken into concideration when recommending products. <code>Max items = 1</code> means only the latest purchased item is used as purchase history for that user. <code>Max items = 2</code> means the two latest items are taken into account.</details></p>
+<h3 id="allow-items-from-history">Allow items from history</h3>
+<p>Sets a filter so that all items the user have bought cannot be recommended. </p>
+<h3 id="shuffled">Shuffled</h3>
+<p>If Limit is set to 10 the items are recomended in order (most likly next purchase is at the top).<br />
+by enabling <code>shuffled</code> it still recommends the top 10 items but the order of the top 10 items are shuffled. </details></p>
+<h3 id="advanced">Advanced</h3>
+<p>Create an advanced filter. </p>
+<ul>
+<li>Name: is the variable name.</li>
+<li>Field: the field wich you are taking data from</li>
+<li>Option: "all" means all items in the users purchase history. "items" means all items sent in through the API by the customer. When the customer makes an API call for the recommendation they can include items in the API call. for example items in the basket, the item you are currently looking at etc.</li>
+</ul>
+<p>See some example advanced filters below:</p>
+<h4 id="example-1-rotation-parameter-recommendations">Example 1: Rotation parameter recommendations</summary></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RotateLength (float 0-1)</td>
+<td>RotateLength bestämmer hur stor andel av alla kandidater vi tillåter rekommenderas, så 0.9 =&gt; 90% av produkterna.</td>
+</tr>
+<tr>
+<td>RotateSeed (int)</td>
+<td>Med RotateSeed &gt; 0 slumpas ordningen av kandidaterna. En och samma seed ger en viss ordning och är unikt per användare. Vi kommer alltså inte ignorera samma 50% av produktutbudet vid RotateLength=0.5 för alla användare. Ex <code>"RotateSeed":"now()"</code></td>
+</tr>
+<tr>
+<td>RotateOffset (float 0-1):</td>
+<td>Anger från vilken andel av kandidaterna vi börjar göra urvalet. RotateOffset tillsammans med RotateLength skapar möjlighet att “paginera” urvalet. Man kan ex skapa 4 separata set av slumpade produkter som man roterar på genom att använda RotateLength:0.25 och anropa APIi:t med RotateOffset: 0, 0.25, 0.5, 0.75.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="example-2-advanced-query">Example 2: Advanced query</h4>
+<p><div class="highlight"><pre><span></span><code>{&quot;Context&quot;:[{&quot;Name&quot;:&quot;bought_phone_model&quot;,&quot;Field&quot;:&quot;phone_model&quot;,&quot;Option&quot;:&quot;all&quot;}]}
+</code></pre></div>
+<em>Filter expression:</em>
+<div class="highlight"><pre><span></span><code>hasAny(split(bought_phone_model,&quot;,&quot;),makeArray(phone_model))
+</code></pre></div>
+<code>split(bought_phone_model,",")</code> returns an array of your purchase history <code>("Field":"phone_model"): ['bought_phone_model_1','bought_phone_model_2','bought_phone_model_3','bought_phone_model_4']</code></p>
+<p><code>makeArray(phone_model)</code> returns an array of all <code>phone_model</code>: <code>['phone_model_1','phone_model_2','phone_model_3','phone_model_n']</code></p>
+<p><code>hasAny</code> checks if elements in <code>array 1</code> is contained in <code>array 2</code>  </p>
+<p>in this case the customers purchase history includes <code>iPhone 12/Pro MagSafe</code> and <code>iPhone 12/Pro</code>
+The expression <code>hasAny(split(bought_phone_model,","),makeArray(phone_model))</code> will thus return <code>true</code> for all pruducts where <code>phone_model</code> = <code>iPhone 12/Pro MagSafe</code> or <code>iPhone 12/Pro</code> and <code>false</code> for all other products. Thus only products with the same <code>phone_model</code> will be recommended.</p>
+<p>If you change the expression to <code>hasAny(split(bought_phone_model,","),makeArray(phone_model)) = FALSE</code> everything will be inverted thus only recomending products where the <code>phone_model</code> <strong>!=</strong> <code>iPhone 12/Pro MagSafe</code> or <code>iPhone 12/Pro</code>.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/102239423/171135517-3d3eaeeb-7785-460e-a242-2a6e3cfaceb4.png" />
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/171135706-fcc4ad7f-7066-441a-8e4d-c4162cacebec.png" /></p>
+<p>[NOTE! when adding an item to in the <code>Search for items</code> you <strong>DO NOT</strong> add this item to your purchase history, these items are sent in from the API meaning they will only be affected by a filter expression if you use the option <code>item</code> instead of <code>all</code>]  </p>
+<p>See example:
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/171145795-877fb7b8-6e02-4bf0-857b-985deafe6efd.png" /></p>
+<hr />
+<h4 id="add-field-limit">Add field limit</h4>
+<p>Field limit lets you set a filter on how many of each category should be recommended. This is usually used on product category where you only want to include ex. max 2 of each product category.</p>
+<hr />
+<h2 id="other-actions">Other Actions</h2>
+<h4 id="save-as-new-profile">Save as new profile</h4>
+<p>Saves the current configuration as a profile new</p>
+<hr />
+<h4 id="save-profile">Save profile</h4>
+<p>Overrides the current profile with the current configuration.</p>
+<hr />
+<h4 id="delete-profile">Delete profile</h4>
+<p>Delets selected profile.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="../Recommendation-Profiles/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Recommendation Profiles" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Recommendation Profiles
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../Menu/Overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Analytics Overview" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Analytics Overview
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+  <center>
+    <a href="https://www.infobaleen.com/" target="_blank" rel="noopener">
+      Sift Lab AB
+    </a>
+    2023
+  </center>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"></script>
+      
+    
+  </body>
+</html>

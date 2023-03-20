@@ -1,0 +1,1547 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Sift Lab Platform">
+      
+      
+      
+      
+        <link rel="prev" href="../Results/">
+      
+      
+        <link rel="next" href="../../Documentation/Agent/">
+      
+      <link rel="icon" href="../../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Sources - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#create-sources" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sources
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Analytics/Overview/" class="md-tabs__link">
+        Analytics
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Segmentations/Overview/" class="md-tabs__link">
+        Segmentations
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Recommendations/Overview/" class="md-tabs__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Overview/" class="md-tabs__link md-tabs__link--active">
+        Configure the platform
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Other/Data-Specification/" class="md-tabs__link">
+        Other
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Analytics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Analytics/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Analytics/Dashboards/" class="md-nav__link">
+        Dashboards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Analytics/Customer-Insights/" class="md-nav__link">
+        Customer Insights
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Segmentations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Segmentations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Segmentations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Segmentations/Auto-targeting/" class="md-nav__link">
+        Auto-targeting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Segmentations/Clustering/" class="md-nav__link">
+        Clustering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Recommendations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Recommendations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Recommendations/Recommendation-Profiles/" class="md-nav__link">
+        Recommendation Profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Recommendations/Settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Configure the platform
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Configure the platform
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/" class="md-nav__link">
+        Analytics Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          Model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Model/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Model/Interactions/" class="md-nav__link">
+        Interactions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Model/Products/" class="md-nav__link">
+        Products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Model/Users/" class="md-nav__link">
+        Users
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Manage Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Manage Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Models/" class="md-nav__link">
+        Data Models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import-Files/" class="md-nav__link">
+        Import Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Results/" class="md-nav__link">
+        Results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Sources
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Sources
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-sources" class="md-nav__link">
+    Create sources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontpage-columns" class="md-nav__link">
+    Frontpage columns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-source" class="md-nav__link">
+    Edit a source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#below-is-further-information-about-more-advanced-queries" class="md-nav__link">
+    Below is further information about more advanced queries
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/Agent/" class="md-nav__link">
+        Agent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/Recommendations/" class="md-nav__link">
+        Recommendations API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/New-Issue/" class="md-nav__link">
+        New Issue
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          Account
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Account
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Account/API-Keys/" class="md-nav__link">
+        API Keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Account/Logout/" class="md-nav__link">
+        Logout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Account/Users/" class="md-nav__link">
+        Users
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Other/Data-Specification/" class="md-nav__link">
+        Data Specification
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-sources" class="md-nav__link">
+    Create sources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontpage-columns" class="md-nav__link">
+    Frontpage columns
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-source" class="md-nav__link">
+    Edit a source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#below-is-further-information-about-more-advanced-queries" class="md-nav__link">
+    Below is further information about more advanced queries
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Sources</h1>
+
+<h2 id="create-sources">Create sources</h2>
+<p>When the <a href="../Import-Files/">data has been imported</a>, go to <code>Manage Data -&gt; Sources</code> and create a new source by clicking the purple plus sign as seen in the below image. </p>
+<ol>
+<li>Name the source <code>import_[source of data]_[type of data]</code> where <code>[source of data]</code> specifies where the data comes from (centra, voyado, etc), and the <code>[type of data]</code> specifies the data type (items, users, interactions, etc). </li>
+</ol>
+<p><img width="1050" alt="Screenshot 2022-05-10 at 10 53 48" src="https://user-images.githubusercontent.com/4352260/167589964-27e4a8fe-d3d0-4382-a696-21d759331cd9.png"></p>
+<ol>
+<li>Choose an identifier for the source using the <code>Id columns</code> field.  If the source you’re creating is for:<ul>
+<li><strong>interactions</strong>: we want to identify each interaction through a user, an item and the time of the purchase, therefore choose user,ts,item under id columns and then press create.</li>
+<li><strong>items</strong>: we want to identify each item by using an item id (often sku or variant). </li>
+<li><strong>users</strong>: we want to identify each user by using a user id. </li>
+</ul>
+</li>
+</ol>
+<p>The fields <code>Comment</code> and <code>Merge Filter</code> can be left empty, and you can press <code>CREATE</code>. </p>
+<ol>
+<li>Choose database connection and create a <code>QUERY</code> 
+If it’s a centra/voyado customer choose that option, if the files were uploaded manually, choose imports.</li>
+</ol>
+<p>You can now see the query stage, as standard <code>“SELECT * FROM `*`”</code> will show, if you press “EXECUTE PREVIEW SUMMARY” you will see all the imported files you can choose to gather data from. Copy the filename you want to use and enter that name in the query above, like <code>SELECT * FROM [ENTER FILENAME HERE]</code>.</p>
+<p>The import file is now done, press sync and save to exit. </p>
+<ol>
+<li>Now repeat the "Create source"-step 2 but name the file <code>model_[source of data]_[type of data]</code> (the use same identifier as in the import file). <ul>
+<li>In the <code>Choose database connection</code> now choose <code>source</code> instead, and press <code>execute preview summary</code>, now choose the import source file and edit the query to select from that, like "<code>SELECT * FROM ENTER_SOURCENAME_HERE</code>" and then press <code>Save and sync</code>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="frontpage-columns">Frontpage columns</h2>
+<details class="optional-class"><summary>Show more information</summary>
+See below an example image from source view, with a source named `transactions`.
+
+<img src="../../../../images/Menu/sources.png" width="921"/>
+
+Here is a short explanation of the columns (note that not all columns are shown in the above image):
+
+</h4> Name </h4>
+Name of source
+
+<h4> id </h4>
+Every source has an unique id which is used to show dependencies between sources.
+
+<h4> Count </h4>
+Count describes how many rows the source have. There can only be 1 row for every unique key column. if there are multiple rows with the same key all but 1 is removed.
+
+<h4> Tags </h4>
+You can tag a source to keep track of how it is used.
+
+<h4> Drivers </h4>
+The drivers show what driver is used and also if it is active (green) or inactive (red). If a source has multiple queries there will be multiple drivers, here you can see wich source is active and wich are not.
+
+<h4> Sync </h4>
+You can set a daily sync for the source, for example `DailyAt:6`.
+<br>
+
+<h4> Dependencies </h4>
+
+Dependencies for a source show what other sources the are used to build up the source.  An example for this is 
+<div class="highlight"><pre><span></span><code>SELECT * FROM Source1  
+LEFT JOIN Source2 on Source2.id = Source1.id  
+UNION  
+SELECT * FROM Source3  
+</code></pre></div>
+This will show the id for source 1,2,3 in the Dependencies for the new source.
+
+
+<h4> Updated At </h4>
+Shows how long ago the source was last modified.
+
+<h4> Synced At </h4>
+Shows how long ago the source was last synced.
+
+
+
+<h4> Top Menu </h4>
+
+In the source view there are also some funcationality that can be accessed using the icons in the top right corner.
+
+<img src="../../../../images/Menu/sources2.png" width="921"/>
+
+<h4> Delete </h4>
+Delete the selected source.
+
+
+<h4> Tag </h4>
+Select a source, click Tag and write a new tag or select an old tag.
+
+ <h4> Set sync schedule </h4> 
+Configure a daily data sync to update the source on a regular basis.
+
+<h4> Migrate </h4>
+
+
+<h4> Truncate </h4>
+Truncate wipes the source of all data. This is usefull if you have changed key column for example because if you just sync the data the old data is not removed. 
+[Note that some sources only read 1 week data at the time to save time, if you truc a source like this all historic data is removed wich is bad]
+
+<h4> Sync </h4>
+Manually syncs the source.
+
+<h4> Create </h4>
+Creates a new source.
+</details>
+
+<h2 id="edit-a-source">Edit a source</h2>
+<details class="optional-class"><summary>Show more information</summary>
+
+When clicking a source, you find the edit mode by clicking the "pen" in the top right corner. This will open a view as can be seen in the image below. 
+
+<img src="../../../../images/Menu/sources3.png" width="921"/>
+
+
+<h3> Settings <h3>
+
+<h4> Name </h4>
+Just a name
+
+<h4> Id columns </h4>
+The Id columns has to be choosen to be unique. if the id is not unique (the same id for many rows) only 1 row will be saved and all others are removed.  
+For the interaction table the id has to contain user AND id or ts,item. The reason user has to be an id column is because when user is the first id column all interactions are sorted on user first. this lets you use expressions such as agg.i wich count number of interactions a user has made. if the interaction table is not sorted on user first the aggregation functions doesnt work.  
+For multiple id columns they are sorted in the order they are written.
+User,ts,item is sorted first on user, then on ts and lastly on item.  
+
+SELECT CUSTOM COLUMNS is usefull if you want other names than the predefined such as SKU.
+
+<h4> RunEvery </h4>
+Set a sync time
+
+<h4> Comment </h4>
+
+<h4> Merge filter </h4>
+lets you filter out your query before you save it.
+
+A Merge filter discards everything that is not true before saving the table. For example if you add a query similar to `toFloat(ts) > now()-100*24*3600`, then all timestamp (ts) data from later than 100 days will be discarded.
+
+
+<h4> Overview </h4>
+Shows what is in the source currently
+
+<h4> Query </h4>
+
+<h4> Database connection </h4>
+Define the type of connection for the data to be added to the source.
+
+<h4> Load saved query </h4>
+lets you reload previously run queries
+
+<h4> Preprocessor directives </h4>
+Preprocessor information can be found under the "Import Files" section of the documentation.
+
+<h4> Query expressions <h4>
+You need to enclose variable names that contain other characters than letters and numbers with `backticks` ` `,  
+this includes whitespace ' ', dot '.', etc...
+
+</details>
+
+<h2 id="below-is-further-information-about-more-advanced-queries">Below is further information about more advanced queries</h2>
+<details class="optional-class"><summary>Show more information</summary>
+
+SELECT * FROM `raw: 
+id,item
+1,item1
+2,item2`
+this returns a table.
+<br>
+
+UNION 
+<details class="optional-class"><summary>Show more information</summary>
+
+A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order
+<div class="highlight"><pre><span></span><code>SELECT * FROM `table 1`
+UNION
+SELECT * FROM `table 2`
+</code></pre></div>
+if you have overlapping id rows in `table 1` and `table 2` the id in `table 1` will be saved and `table 2` will be discared.
+ex. 
+to try this, create a test source
+<div class="highlight"><pre><span></span><code>select 
+incr(1,50) AS id,
+&#39;table 1&#39; AS item
+from `&lt;RANDOM_SOURCE&gt;`
+
+UNION
+select 
+incr(1,1) AS id,
+&#39;table 2&#39; AS item
+from `&lt;RANDOM_SOURCE&gt;`
+</code></pre></div>
+then create a new source 
+<div class="highlight"><pre><span></span><code>SELECT * FROM `&lt;TEST_SOURCE&gt;`
+</code></pre></div>
+this will show that all overlapping ids will have item from `table 1`.
+
+A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates, meaning much faster execution but leaves duplicate rows if they exist.
+
+</details>
+
+INSERT INTO
+<details class="optional-class"><summary>Show more information</summary>
+
+insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.
+<div class="highlight"><pre><span></span><code>INSERT INTO &lt;table_name&gt;
+SELECT * FROM `&lt;source_name&gt;`
+;
+</code></pre></div>
+The `;` is needed to mark where the table end. 
+When using the table you created with INSERT INTO you use the <table_name> not the <source_name>
+ex.
+<div class="highlight"><pre><span></span><code>LEFT JOIN &lt;table_name&gt; ON &lt;table_name&gt;.id = XXX.id
+</code></pre></div>
+</details>
+
+LEFT JOIN and JOIN
+<details class="optional-class"><summary>Show more information</summary>
+LEFT JOIN lets you append more columns to an existing table, while join only keeps the ones matching. See below a code example where you can change `left join` to `join` to see the effects.
+
+<div class="highlight"><pre><span></span><code>INSERT INTO countries SELECT * FROM `raw:
+id,country
+1,se
+2,no
+`;
+
+INSERT INTO currencies SELECT * FROM `raw:
+country,currency
+se,sek
+us,usd
+`;
+
+
+select * from countries
+left join currencies ON countries.country = currencies.country
+</code></pre></div>
+<img width="382" alt="Screenshot 2022-09-29 at 13 59 46" src="https://user-images.githubusercontent.com/4352260/193025738-7c19e893-fb95-448e-9a61-8e6bc5e52b11.png">
+
+<img width="385" alt="Screenshot 2022-09-29 at 13 59 36" src="https://user-images.githubusercontent.com/4352260/193025736-ef6f50a2-76b4-424d-bee6-d3a39d0f41a3.png">
+
+</details>
+
+
+NOT IN
+<details class="optional-class"><summary>Show more information</summary>
+Only selects rows that do not match, example
+
+<div class="highlight"><pre><span></span><code>SELECT * from `raw:
+id,name
+1,anni-frid
+2,agnetha
+3,björn
+4,benny
+`
+WHERE name NOT IN (&#39;anni-frid&#39;, &#39;agnetha&#39;)
+</code></pre></div>
+
+Will return 
+
+<div class="highlight"><pre><span></span><code>id,name
+3,björn
+4,benny
+</code></pre></div>
+</details>
+
+firstSeen()
+<details class="optional-class"><summary>Show more information</summary>
+
+firstseen(<field>) saves only the first encountered row for 
+
+coalese
+
+toFloat()
+
+unixTimestamp()
+</details>
+
+split() and slice() and slicestr()
+<details class="optional-class"><summary>Show more information</summary>
+
+These expressions can be used to edit strings, see an example below:
+
+<div class="highlight"><pre><span></span><code>Insert into a
+SELECT * FROM `raw:
+a   b
+1   ABCDE`
+;
+
+SELECT 
+    a AS a,
+    split(b,&#39;&#39;) AS step1,
+    slice(split(b,&#39;&#39;),0,3) AS step2,
+    replace(slice(split(b,&#39;&#39;),0,3),&#39;,&#39;,&#39;&#39;) AS step3,
+    length(b),
+    slicestr(b,1,2)
+FROM a
+</code></pre></div>
+
+The result will be:
+<div class="highlight"><pre><span></span><code>a   step1        step2.     step3    length(b)    slicestr(b, 1, 2)
+1   A,B,C,D,E.   A,B,C  ABC  5            BC
+</code></pre></div>
+
+</details>
+
+groupconcat_ws
+
+<details class="optional-class"><summary>Show more information</summary>
+<div class="highlight"><pre><span></span><code>Insert into a
+SELECT * FROM `raw:
+Id,user,ordernr,item,price
+1,100,1,A,&quot;10SEK&quot;
+2,100,1,B,&quot;20SEK&quot;
+3,100,1,C,&quot;30SEK&quot;`
+;
+SELECT user, ordernr, groupconcat_ws(price, &#39;,&#39;) price_list FROM a
+</code></pre></div>
+
+The result will be:
+<div class="highlight"><pre><span></span><code>user    ordernr price_list
+100 1   10SEK,20SEK,30SEK
+</code></pre></div>
+</details>
+
+Create a custom user.agg.(field)
+<details class="optional-class"><summary>Show more information</summary>
+
+the datamodel creates aggregate functions such as user.agg.revenue.
+to create one yourself do the following.
+In the below example I create `user.agg.margin` similar to `user.agg.revenue`
+
+<div class="highlight"><pre><span></span><code>--aggregates margins per user same as user.agg.revenue but with margin
+INSERT INTO margin
+SELECT
+    user AS user,
+    concat(&#39;&#39;,SUM(margin)) AS total_margin
+FROM `s3 - transactions`;
+
+SELECT 
+UI.user AS user,
+margin.total_margin AS total_margin,
+UI.other fields...
+FROM `user_import` AS UI
+
+LEFT JOIN margin ON margin.user = UI.user
+</code></pre></div>
+Note that you need to add `concat('',)` to the sum expression.
+this is because you cant LEFT JOIN a float. `concat('',)` converts it into a string.
+`concat('',SUM(margin)) AS total_margin`
+</details>
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="../Results/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Results" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Results
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../Documentation/Agent/" class="md-footer__link md-footer__link--next" aria-label="Next: Agent" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Agent
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+  <center>
+    <a href="https://www.infobaleen.com/" target="_blank" rel="noopener">
+      Sift Lab AB
+    </a>
+    2023
+  </center>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"></script>
+      
+    
+  </body>
+</html>

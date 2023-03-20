@@ -1,0 +1,1731 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Sift Lab Platform">
+      
+      
+      
+      
+        <link rel="prev" href="../../Model/Users/">
+      
+      
+        <link rel="next" href="../Import-Files/">
+      
+      <link rel="icon" href="../../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Data Models - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Arial";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-models" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Documentation" class="md-header__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Models
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Analytics/Overview/" class="md-tabs__link">
+        Analytics
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Segmentations/Overview/" class="md-tabs__link">
+        Segmentations
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Recommendations/Overview/" class="md-tabs__link">
+        Recommendations
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Overview/" class="md-tabs__link md-tabs__link--active">
+        Configure the platform
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../Other/Data-Specification/" class="md-tabs__link">
+        Other
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Documentation" class="md-nav__button md-logo" aria-label="Documentation" data-md-component="logo">
+      
+  <img src="../../../../assets/logo.png" alt="logo">
+
+    </a>
+    Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Analytics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Analytics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Analytics/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Analytics/Dashboards/" class="md-nav__link">
+        Dashboards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Analytics/Customer-Insights/" class="md-nav__link">
+        Customer Insights
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Segmentations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Segmentations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Segmentations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Segmentations/Auto-targeting/" class="md-nav__link">
+        Auto-targeting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Segmentations/Clustering/" class="md-nav__link">
+        Clustering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Recommendations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Recommendations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Recommendations/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Recommendations/Recommendation-Profiles/" class="md-nav__link">
+        Recommendation Profiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Recommendations/Settings/" class="md-nav__link">
+        Settings
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Configure the platform
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Configure the platform
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/" class="md-nav__link">
+        Analytics Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          Model
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Model
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Model/Overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Model/Interactions/" class="md-nav__link">
+        Interactions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Model/Products/" class="md-nav__link">
+        Products
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Model/Users/" class="md-nav__link">
+        Users
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Manage Data
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Manage Data
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Data Models
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-data-model" class="md-nav__link">
+    What is a data model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-data-model" class="md-nav__link">
+    Edit a data model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-configuration" class="md-nav__link">
+    Interaction Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#item-configuration" class="md-nav__link">
+    Item Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-config" class="md-nav__link">
+    User config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-properties" class="md-nav__link">
+    Custom properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-syntax" class="md-nav__link">
+    Expression syntax
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Import-Files/" class="md-nav__link">
+        Import Files
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Results/" class="md-nav__link">
+        Results
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Sources/" class="md-nav__link">
+        Sources
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          Documentation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Documentation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/Agent/" class="md-nav__link">
+        Agent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/Recommendations/" class="md-nav__link">
+        Recommendations API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Documentation/New-Issue/" class="md-nav__link">
+        New Issue
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          Account
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Account
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Account/API-Keys/" class="md-nav__link">
+        API Keys
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Account/Logout/" class="md-nav__link">
+        Logout
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Account/Users/" class="md-nav__link">
+        Users
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Other
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Other
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Other/Data-Specification/" class="md-nav__link">
+        Data Specification
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-data-model" class="md-nav__link">
+    What is a data model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#edit-a-data-model" class="md-nav__link">
+    Edit a data model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-configuration" class="md-nav__link">
+    Interaction Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#item-configuration" class="md-nav__link">
+    Item Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-config" class="md-nav__link">
+    User config
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-properties" class="md-nav__link">
+    Custom properties
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#expression-syntax" class="md-nav__link">
+    Expression syntax
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="data-models">Data models</h1>
+<h2 id="what-is-a-data-model">What is a data model?</h2>
+<p>A data model is made up of of 3 tables (from the sources):</p>
+<ul>
+<li>Interaction table</li>
+<li>User table </li>
+<li>Item table </li>
+</ul>
+<p>Each line in the interaction table is linked to a user and an item in the item and user table. When we have chosen what sources should be our interaction, item and user tables we can create a data model. After this we can start creating additional information through expressions. These expressions can later be used in dashboards. The relations and overview can be seen in the below image.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/103515314/208437594-113fe10f-acbd-41c5-82ab-6a59e1272618.png" /></p>
+<p>When a data model is used for email analysis, the interaction becomes a specific <code>email sent to a user</code>, the user becomes <code>the one receiving the email</code>, and the email that was sent is treated as an item.</p>
+<h2 id="edit-a-data-model">Edit a data model</h2>
+<p>To edit and see the detailed info about a data model, you need to edit it. You can edit it by clicking the "pen" either after clicking the data model, or in the data-models list, see images below.</p>
+<p><img width="988" alt="Screenshot 2022-07-01 at 11 52 24" src="https://user-images.githubusercontent.com/4352260/176871921-4f7f72ce-e6de-453d-b24d-ad035c61e38b.png"></p>
+<details class="optional-class"><summary>Show another place to access the edit mode</summary>
+<img width="782" alt="Screenshot 2022-07-01 at 11 52 33" src="https://user-images.githubusercontent.com/4352260/176872229-94b65f4b-35b1-447d-aa21-3c8eb40f66d6.png">
+
+</details>
+
+<h2 id="interaction-configuration">Interaction Configuration</h2>
+<details class="optional-class"><summary>Show more information</summary>
+
+The interaction table specifies info about the interaction (a user interacting with an item) that includes a timestamp (ts). An interaction config can look something like below:
+
+<img width="948" alt="Screenshot 2022-07-01 at 11 51 54" src="https://user-images.githubusercontent.com/4352260/176872296-06aea3bd-878a-499c-bc0e-8767dc6796a8.png">
+
+
+
+<h4> Field</h4>
+<details class="optional-class"><summary>Show more information</summary>
+
+This is the name of the given in the source query (it can not be changed in the data model).  
+
+</details>
+
+<h4> Alias</h4>
+<details class="optional-class"><summary>Show more information</summary>
+
+By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation. In Recommendation the field name is always shown even if an alias is added.
+</details>
+
+
+<h4> Role </h4>
+<details class="optional-class"><summary>Show more information</summary>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Categories</td>
+<td><code>Categories</code> is used when data is made up of multiple <code>category</code>&#39;s. The data format for <code>categories</code> has to be [<code>category1</code>;<code>category2</code>;<code>category3</code>;<code>etc</code>]</td>
+</tr>
+<tr>
+<td>Revenue</td>
+<td>Revenue can only be set on 1 field and should be <code>sales price (EX VAT)</code>. The reason you set mark your <code>sales price (EX VAT)</code> with the revenue role is to generate suggested revenue related expressions.</td>
+</tr>
+<tr>
+<td>Quantity</td>
+<td>If a user buys multiple items of the same SKU at the same time this will be either represented as <strong>1</strong> interaction row with quantity <code>x</code> In this case that field should be set to <code>Quantity</code>. for some data souces this will be represented as <code>x</code> interaction rows without a quantity row.</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>The timestamp role should only be set to the field that represent the interaction timestamp (when the interaction took place). other timestamps such as <code>return date</code> etc. should instead be set to number. The timestamp role is needed to create suggested expressions.</td>
+</tr>
+<tr>
+<td>User</td>
+<td>The User role is set to the key-field that connects the interaction table to the user table.</td>
+</tr>
+<tr>
+<td>Item</td>
+<td>The Item role is set to the key-field that connects the interaction table to the Item table.</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>The Number role is automatically set to all fields that only contains numbers (you can make toFloat(<code>field</code>) without error). The number role lets you interact with a field as a number meaning you can make an calculation expressions such as if(<code>field</code> &gt; 100). If you want to make a histogram you can only use fields with role <strong>Number</strong> because you specify the <code>bin width</code> wich can only be done if the field is concidered a Number (does not work if the field is a <strong>Category</strong>).</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>All fields that can not be classified as a <strong>Number</strong> are classified as a <strong>Category</strong>. <strong>Category</strong>&#39;s are used in for example Bar charts.</td>
+</tr>
+<tr>
+<td>Enum</td>
+<td></td>
+</tr>
+<tr>
+<td>EnumCategories</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+</details>
+
+<h4> Active </h4>
+
+<details class="optional-class"><summary>Show more information</summary>
+
+The Active toggle button lets you activate/deactivate a field. a deactivated field can not be used in dashboards.
+
+</details>
+
+
+
+<h4> Info </h4>
+
+
+<details class="optional-class"><summary>Show more information</summary>
+
+Click on the small `i` button to see a preview of how the data looks/is formatted.
+
+</details>
+
+</details>
+
+<h2 id="item-configuration">Item Configuration</h2>
+<details class="optional-class"><summary>Show more information</summary>
+
+The item table specifies info about the items, i.e. the products.
+
+<img width="976" alt="Screenshot 2022-07-01 at 11 58 21" src="https://user-images.githubusercontent.com/4352260/176872773-89453cc1-56eb-4175-88c1-e5aa6de16019.png">
+
+<h4>  Fields</h4>
+<details class="optional-class"><summary>Show more information</summary>
+This is the name of the given in the source query (it can not be changed in the data model).  
+</details>
+
+<h4> Alias</h4>
+<details class="optional-class"><summary>Show more information</summary>
+By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation. In Recommendation the field name is always shown even if an alias is added.
+</details>
+
+<h4> Role</h4>
+<details class="optional-class"><summary>Show more information</summary>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Categories</td>
+<td><code>Categories</code> is used when data is made up of multiple <code>category</code>&#39;s. The data format for <code>categories</code> has to be [<code>category1</code>;<code>category2</code>;<code>category3</code>;<code>etc</code>]</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>The timestamp lets you work with unixtimestamp and shows the result in as a datetime (readable format).</td>
+</tr>
+<tr>
+<td>Format</td>
+<td>The format role represent the name of the item and is what is shown in the Image grid in the dashboards and in the recommendations</td>
+</tr>
+<tr>
+<td>Image</td>
+<td>The image role represent what field will be shown as a image in the Image grid in the dashboards and in the recommendations. The image field is usually called something with <code>url</code>.</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>The Number role is automatically set to all fields that only contains numbers (you can make toFloat(<code>field</code>) without error). The number role lets you interact with a field as a number meaning you can make an calculation expressions such as if(<code>field</code> &gt; 100). If you want to make a histogram you can only use fields with role <strong>Number</strong> because you specify the <code>bin width</code> wich can only be done if the field is concidered a Number (does not work if the field is a <strong>Category</strong>).</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>All fields that can not be classified as a <strong>Number</strong> are classified as a <strong>Category</strong>. <strong>Category</strong>&#39;s are used in for example Bar charts.</td>
+</tr>
+<tr>
+<td>Enum</td>
+<td></td>
+</tr>
+<tr>
+<td>EnumCategories</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+
+</details>
+
+<h4>  MLMeta</h4>
+<details class="optional-class"><summary>Show more information</summary>
+The MLMeta toggle button controls what is returned when when you make an API call. This is to give you control what data you want to return to the customer. You don't want to activate MLMeta on all fields because this will result in returning a lot of "trash columns" to the customer that they have to filter in turn get the relevant data. Note that you also have to select the role `Image` and `Format` for the product to show. MLMeta is only relevant in the recommendations view.
+</details>
+
+<h4>  MLFilter</h4>
+<details class="optional-class"><summary>Show more information</summary>
+The MLFilter lets you write expressions and filter your data in in the recommendations. You should only activate MLFilter for the fields you actually want to create a filter for, the reason for this is that when you activate **MLFilter** for a field this will store all data in the memory and every time the API calls for a recommendation the data model have to iterate through all fields with **MLFilter** resulting in a bad performance on the customers side (when the customer want to load our recommendations on their site the load speed will depend on how many **MLFilters** you have activated.  
+
+<img width="892" alt="Screenshot 2022-06-10 at 08 16 47" src="https://user-images.githubusercontent.com/4352260/173002754-8885b8fa-1b5c-4dad-a74d-732f1d409eda.png">
+</details>
+
+<h4> Active </h4>
+
+<details class="optional-class"><summary>Show more information</summary>
+The Active toggle button lets you activate/deactivate a field. a deactivated field can not be used in dashboards.
+</details>
+
+
+<h4>  Info</h4>
+<details class="optional-class"><summary>Show more information</summary>
+Click on the small `i` button to see a preview of how the data looks/is formatted.
+</details>
+
+
+</details>
+
+<h2 id="user-config">User config</h2>
+<details class="optional-class"><summary>Show more information</summary>
+The user table specifies info about the users, i.e. the customers. 
+
+<img width="968" alt="Screenshot 2022-07-01 at 12 00 26" src="https://user-images.githubusercontent.com/4352260/176873224-8e8d99ba-3f06-48bf-80f7-3b289ab2b266.png">
+
+
+<h4> Field</h4>
+<details class="optional-class"><summary>Show more information</summary>
+This is the name of the given in the source query (it can not be changed in the data model).  
+</details>
+
+<h4> Alias </h4>
+<details class="optional-class"><summary>Show more information</summary>
+By adding an alias the the field name is replaced by the alias name in the dashboard and segmentation. In Recommendation the field name is always shown even if an alias is added.
+</details>
+
+<h4> Role</h4>
+<details class="optional-class"><summary>Show more information</summary>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Categories</td>
+<td><code>Categories</code> is used when data is made up of multiple <code>category</code>&#39;s. The data format for <code>categories</code> has to be [<code>category1</code>;<code>category2</code>;<code>category3</code>;<code>etc</code>]</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>The timestamp lets you work with unixtimestamp and shows the result in as a datetime (readable format).</td>
+</tr>
+<tr>
+<td>Pll</td>
+<td></td>
+</tr>
+<tr>
+<td>Email</td>
+<td></td>
+</tr>
+<tr>
+<td>Number</td>
+<td>The Number role is automatically set to all fields that only contains numbers (you can make toFloat(<code>field</code>) without error). The number role lets you interact with a field as a number meaning you can make an calculation expressions such as if(<code>field</code> &gt; 100). If you want to make a histogram you can only use fields with role <strong>Number</strong> because you specify the <code>bin width</code> which can only be done if the field is considered a Number (does not work if the field is a <strong>Category</strong>).</td>
+</tr>
+<tr>
+<td>Category</td>
+<td>All fields that can not be classified as a <strong>Number</strong> are classified as a <strong>Category</strong>. <strong>Category</strong>&#39;s are used in for example Bar .</td>
+</tr>
+<tr>
+<td>Enum</td>
+<td></td>
+</tr>
+<tr>
+<td>EnumCategories</td>
+</tr>
+</tbody>
+</table>
+<p></details></p>
+
+
+
+<h4> Persona</h4>
+<details class="optional-class"><summary>Show more information</summary>
+
+The Persona toggle button controls what columns are used in the recommendations. For example, if we activate the field `gender` as a Persona, the recommendation engine will base the recommendations on what gender the user has. If we active the field `age` it will be used as a dimension in the recommendation, and so on.
+
+<b>Note:</b> Use a maximum of 2 columns to define persona. Alternatively, make sure that the cardinality (number of groups) is less than 1000. (ex gender: 2 different and cities: 500 different, which means `2*500 = 1000` groups)
+
+<img width="883" alt="Screenshot 2022-06-10 at 08 16 38" src="https://user-images.githubusercontent.com/4352260/173002716-64dd3abf-fc87-4b0d-942b-19b46b6e98b7.png">
+
+
+</details>
+
+
+
+</details>
+
+<h2 id="custom-properties">Custom properties</h2>
+<details class="optional-class"><summary>Show more information</summary>
+The Custom properties-section lets you define custom user group based on your data. The feature exploits the aggregated user data that can be found in the menu at `Model->Users`, see the image below.
+
+<img src="../../../../images/Menu/custom_properties2.png" width="921"/>
+
+Using for example `user.agg.first` and `user.agg.orders` as parameters `first` and `orders` it is possible to create, for example, a customer lifecycle definition as in the image below.  
+
+<img src="../../../../images/Menu/custom_properties.png" width="921"/>
+</details>
+
+<h2 id="expression-syntax">Expression syntax</h2>
+<details class="optional-class"><summary>Show more information</summary>
+
+
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SUM()</code></td>
+<td>Summarize a value, for example SUM(returned_quantity) returns the total amount of returned quantity (over chosen period of time)</td>
+</tr>
+<tr>
+<td><code>uniq()</code></td>
+<td>counts the amount of unique values, for example uniq(user) returns the amount of unique users.</td>
+</tr>
+<tr>
+<td><code>uniqExact()</code></td>
+<td>Is almost the same as uniq(), however uniq() may have a very small inaccuracy (that most often doesn&#39;t matter at all), but if it&#39;s important to have for example 100.002 (correct) instead of 100.000, use uniqExact(). The reason for this is simply that uniq() is less demanding.</td>
+</tr>
+<tr>
+<td><code>countIf()</code></td>
+<td>this counts +1 for each time an argument is correct on an interaction (row). <code>Example</code>: let&#39;s say there&#39;s 10 interactions (ten rows) in a table with a column that&#39;s currency. On 7 of the 10 rows the currency column consists of &#39;SEK&#39;, if we now use countIf(currency = &#39;SEK&#39;) we will get the value 7.</td>
+</tr>
+<tr>
+<td><code>sumIf()</code></td>
+<td>sumIf(Value that will be summarized when, X = N)  <code>Example</code>: sumIf(revenue, currency = &#39;SEK&#39;)</td>
+</tr>
+<tr>
+<td><code>uniqIf()</code></td>
+<td>multiIf(boolean, result_1, boolean, result_2, ..., boolean, result_n, else_this) multiIf(name = &#39;red&#39;, colour, name = &#39;big&#39;, &#39;size&#39;, &#39;no data&#39;)</td>
+</tr>
+</tbody>
+</table>
+
+
+</details>
+
+<h1 id="data-model-expression-examples">Data model expression examples</h1>
+<p>Expressions can be used to calculate certain variables, for example the amount of returned items <code>(SUM(returned_quantity)</code> or divide certain users into different categories, for example dividing the customer base into customers with or without &gt; 1 purchases. Expressions are made in the edit mode of a data model, and later can be found and used in dashboards as parameters and metrics. </p>
+<p>When writing expressions, remember to check and/or modify so that the variables like <code>revenue</code>, <code>ts</code> (timestamp), <code>quantity</code> is correct according to your data. returned quantity can for example be written in different ways (example: <code>returnedQuantity</code> / <code>returned_quantity</code>)  depending on data source. returnedQuantity, returned_quantity depending on the dataset.</p>
+<h3 id="interaction-expressions">Interaction expressions</h3>
+<details class="optional-class"><summary>Show more information</summary>
+
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Days since previous order cohort</strong></td>
+<td>multiIf (agg.daysFromPrev &lt;=30,&#39;1.<30', agg.daysFromPrev <=60,'2.30-60', agg.daysFromPrev <=90,'3.60-90', agg.daysFromPrev <=180,'4.90-180', agg.daysFromPrev <=360,'5.180-360', agg.daysFromPrev <=720,'6. 360-720', agg.daysFromPrev <=4000,'7.>720&#39;, &#39;8.New&#39;)</td>
+</tr>
+<tr>
+<td><strong>Has return</strong></td>
+<td>multiIf(returned_quantity &gt; 0, &#39;Return&#39;, &#39;No return&#39;)</td>
+</tr>
+<tr>
+<td><strong>First order (month</strong></td>
+<td>toStartOfMonth(user.agg.first)</td>
+</tr>
+<tr>
+<td><strong>Active week</strong></td>
+<td>toMonday(ts)</td>
+</tr>
+<tr>
+<td><strong>Active month</strong></td>
+<td>toStartOfMonth(ts)</td>
+</tr>
+<tr>
+<td><strong>% discount</strong></td>
+<td>SUM(full_price-revenue)/SUM(full_price)</td>
+</tr>
+<tr>
+<td><strong>Revenue</strong></td>
+<td>SUM(revenue)</td>
+</tr>
+<tr>
+<td><strong>Price per item</strong></td>
+<td>SUM(revenue)/SUM(quantity)</td>
+</tr>
+<tr>
+<td><strong>Revenue per user</strong></td>
+<td>SUM(revenue)/uniq(user)</td>
+</tr>
+<tr>
+<td><strong>Average order value</strong></td>
+<td>SUM(revenue)/uniq(user,ts)</td>
+</tr>
+<tr>
+<td><strong>Sold items</strong></td>
+<td>SUM(quantity)</td>
+</tr>
+<tr>
+<td><strong>Items per order</strong></td>
+<td>SUM(quantity)/uniq(user,ts)</td>
+</tr>
+<tr>
+<td><strong>% returned quantity</strong></td>
+<td>SUM(returned_quantity)/SUM(quantity)</td>
+</tr>
+<tr>
+<td><strong>LTV 30d</strong></td>
+<td>We usually do 5 different LTV metrics, just remember to change name accordingly to selected amount of days. <code>sumIf(revenue, ts &lt; user.agg.first + 30 AND addDays(user.agg.first, 30) &lt;= now())/uniqIf(user,addDays(user.agg.first, 30) &lt;= now())</code>, <code>sumIf(revenue, ts &lt; user.agg.first + 60 AND addDays(user.agg.first, 60) &lt;= now())/uniqIf(user,addDays(user.agg.first, 60) &lt;= now())</code>, <code>sumIf(revenue, ts &lt; user.agg.first + 90 AND addDays(user.agg.first, 90) &lt;= now())/uniqIf(user,addDays(user.agg.first, 90) &lt;= now())</code>, <code>sumIf(revenue, ts &lt; user.agg.first + 180 AND addDays(user.agg.first, 180) &lt;= now())/uniqIf(user,addDays(user.agg.first, 180) &lt;= now())</code>, <code>sumIf(revenue, ts &lt; user.agg.first + 365 AND addDays(user.agg.first, 365) &lt;= now())/uniqIf(user,addDays(user.agg.first, 365) &lt;= now())</code></td>
+</tr>
+<tr>
+<td><strong>Returned quantity</strong></td>
+<td>SUM(returned_quantity)</td>
+</tr>
+<tr>
+<td><strong>Returned or not returned</strong></td>
+<td>multiIf(returned_quantity &gt; 0, &#39;Return&#39;, &#39;No return&#39;)</td>
+</tr>
+</tbody>
+</table>
+
+
+</details>
+
+<h3 id="item-expressions">Item expressions</h3>
+<details class="optional-class"><summary>Show more information</summary>
+
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sold items [item based dashboards] <code>(item based dashboards here means that item is chosen as Role when creating the dashboard)</code></td>
+<td>SUM(article_number.agg.trans)</td>
+</tr>
+<tr>
+<td>Available quantity [item based dashboards] <code>(item based dashboards here means that item is chosen as Role when creating the dashboard)</code></td>
+<td>SUM(item.in_stock)</td>
+</tr>
+<tr>
+<td></td>
+<td>SUM(full_price-PriceExVatIncDiscSEK)/SUM(full_price)</td>
+</tr>
+<tr>
+<td></td>
+<td>SUM(DiscountSEK) / SUM((DiscountSEK + PriceIncVatIncDiscSEK)</td>
+</tr>
+</tbody>
+</table>
+
+
+</details>
+
+<h3 id="user-expressions">User expressions</h3>
+<details class="optional-class"><summary>Show more information</summary>
+
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Expression</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Users &gt; 1 order</td>
+<td>uniqIf(user,user.agg.orders&gt;1)/uniq(user)</td>
+</tr>
+</tbody>
+</table>
+
+
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="" >
+      
+        
+        <a href="../../Model/Users/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Users" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Users
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Import-Files/" class="md-footer__link md-footer__link--next" aria-label="Next: Import Files" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Import Files
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+  <center>
+    <a href="https://www.infobaleen.com/" target="_blank" rel="noopener">
+      Sift Lab AB
+    </a>
+    2023
+  </center>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"></script>
+      
+    
+  </body>
+</html>
