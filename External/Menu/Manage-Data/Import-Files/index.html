@@ -1162,61 +1162,40 @@
 <p>There are various ways to import data to the platform, here we present the most common use cases.</p>
 <hr />
 <h2 id="uploading-files-to-the-platform-csv-for-example">Uploading files to the platform (CSV for example)</h2>
-<details class="optional-class"><summary>Show more information</summary>
-Go to the platform and then to `Manage data -> Import files` (can be found at the top right menu by clicking the three dots, see example image below). 
-
-Drag the file to the drop-box in order to upload it to the platform
-
-Uploaded files are available from the "imports (csv-fs)" database connection when creating new sources (see next step).
-
-<img width="1216" alt="Screenshot 2022-05-10 at 10 31 52" src="https://user-images.githubusercontent.com/4352260/167585247-b7f840a9-a43a-4a7d-bf76-1757e4f688cb.png">
-</details>
-
+<p>Go to the platform and then to <code>Manage data -&gt; Import files</code> (can be found at the top right menu by clicking the three dots, see example image below). </p>
+<p>Drag the file to the drop-box in order to upload it to the platform</p>
+<p>Uploaded files are available from the "imports (csv-fs)" database connection when creating new sources (see next step).</p>
+<p><img width="1216" alt="Screenshot 2022-05-10 at 10 31 52" src="https://user-images.githubusercontent.com/4352260/167585247-b7f840a9-a43a-4a7d-bf76-1757e4f688cb.png"></p>
 <h2 id="using-a-feed-google-feed-for-example">Using a feed (Google Feed for example)</h2>
-<details class="optional-class"><summary>Show more information</summary>
-
-A feed is a file that contains a list of products that often is used to advertise through Google Merchant Center. Often these feeds are updated with latest information which means Sift Lab can use the feed to add relevant product details to the platform, such as image link data.
-
-Feeds are most often published as a public URL in format `.xml`.
-</details>
-
+<p>A feed is a file that contains a list of products that often is used to advertise through Google Merchant Center. Often these feeds are updated with latest information which means Sift Lab can use the feed to add relevant product details to the platform, such as image link data.</p>
+<p>Feeds are most often published as a public URL in format <code>.xml</code>.</p>
 <h3> Adding a feed as a data source </h3>
 
-<details class="optional-class"><summary>Show more information</summary>
-
-1. Get the public URL of the feed
-2. Add a new `source`, often it is a good idea to add a "Merge Filter" to avoid fetching too much data (you can for example add `now() < toFloat(last_seen) + 7*24*3600`)
-3. Add a query similar to below and also add `decoder=head` in the field `Preprocessor directives` to show the file structure. Note that you have to write `url:` before `https://`, see example below
+<ol>
+<li>Get the public URL of the feed</li>
+<li>Add a new <code>source</code>, often it is a good idea to add a "Merge Filter" to avoid fetching too much data (you can for example add <code>now() &lt; toFloat(last_seen) + 7*24*3600</code>)</li>
+<li>Add a query similar to below and also add <code>decoder=head</code> in the field <code>Preprocessor directives</code> to show the file structure. Note that you have to write <code>url:</code> before <code>https://</code>, see example below
 <div class="highlight"><pre><span></span><code>SELECT
     *
 FROM `url:https://exampleurl.com/plugin-export/shoppingfeed/se`  
-</code></pre></div>
-
-[Note that you have to write url: before https://]  
-
-
+</code></pre></div></li>
+</ol>
+<p>[Note that you have to write url: before https://]  </p>
 <h3> Preprocessor directives </h3>
 
-
-Start by writing `decoder=xml` (or `=feed`) to show the file structure, it will in the preview window show the content.
-
-
-decoder: describes what file format, xml, csv, json etc.  
-root: navigates the file and shows where you want to read data.  
-rowtag: selects the object.  
-pluck: inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  
-
-Below is an example of what to write in the preprocessor to fetch feed data correctly:
-`decoder=xml`  
-`root=rss.channel`  
-`rowtag=item`  
-`pluck=google_product_category,price`  
-
-You can then run `EXECUTE PREVIEW QUERY` to see the result.
-
+<p>Start by writing <code>decoder=xml</code> (or <code>=feed</code>) to show the file structure, it will in the preview window show the content.</p>
+<p>decoder: describes what file format, xml, csv, json etc.<br />
+root: navigates the file and shows where you want to read data.<br />
+rowtag: selects the object.<br />
+pluck: inside your rowtag you can have multiple data columns, pluck lets you choose wich you want to get.  </p>
+<p>Below is an example of what to write in the preprocessor to fetch feed data correctly:
+<code>decoder=xml</code><br />
+<code>root=rss.channel</code><br />
+<code>rowtag=item</code><br />
+<code>pluck=google_product_category,price</code>  </p>
+<p>You can then run <code>EXECUTE PREVIEW QUERY</code> to see the result.</p>
 <h4> JSON Files </h4>
-<details class="optional-class"><summary>Show more information</summary>
-An example json file could look like:
+<p>An example json file could look like:
 ```
 [
     {
@@ -1229,19 +1208,12 @@ An example json file could look like:
         "user_id": ""
         "username": ""
     }
-]
-
-SELECT * FROM `url:https://...json`  
-
-
+]</p>
+<p>SELECT * FROM <code>url:https://...json</code>  </p>
 <h3> preprocessing directive for json </h3>
 
-`decoder=json`  
-`json_prefix=[0]`
-
-</details>
-</details>
-
+<p><code>decoder=json</code><br />
+<code>json_prefix=[0]</code></p>
 <hr />
 <h2 id="using-a-database-connection">Using a database connection</h2>
 <p>First, make sure you know the origin files to fetch. If files are fetched from </p>
@@ -1250,27 +1222,13 @@ SELECT * FROM `url:https://...json`
 <p>Add a database and name the <code>Database</code> based on the what system they use (centra, voyado, etc), and choose the matching <code>Driver</code>. In the <code>Config</code> field, check the standard URL provided by the corresponding ecommerce platform. </p>
 <p><strong>Note:</strong> A key or token is most often needed to access databases. This key can be added under <code>Admin -&gt; Secrets</code>. </p>
 <h4 id="make-arbitrary-query">Make arbitrary query</h4>
-<details class="optional-class"><summary>Show more information</summary>
-
-Create a source and make an arbitrary query similar to SELECT * FROM `users.gz` for Centra. You can list possible paths by using SELECT * FROM `*` . 
-
-This will trigger a proxy sync, and in the case of a Centra customer as in the example image below, the `.gz` files will appear once completed. This normally takes 1-5 hours.
-
-
-</details>
-
+<p>Create a source and make an arbitrary query similar to SELECT * FROM <code>users.gz</code> for Centra. You can list possible paths by using SELECT * FROM <code>*</code> . </p>
+<p>This will trigger a proxy sync, and in the case of a Centra customer as in the example image below, the <code>.gz</code> files will appear once completed. This normally takes 1-5 hours.</p>
 <h4 id="how-to-verify-that-the-sync-works">How to verify that the sync works</h4>
-<details class="optional-class"><summary>Show more information</summary>
-
-Choose the source you created and press the pen to edit it. Go to the `ADD QUERY` tab and choose SELECT * FROM `*`. 
-<br>
-
-If the sync is ready, you will see a list of files to choose from, for example, `users.gz`, `items.gz`, `interactions.gz`, see image below. If you see the files imported you are now ready to [create sources!](https://github.com/Sift Lab/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md)
-
-<img width="954" alt="Screenshot 2022-05-10 at 14 59 33" src="https://user-images.githubusercontent.com/4352260/167635009-bee5c795-271c-49f9-a92c-840a415f120f.png">
-
-</details>
-
+<p>Choose the source you created and press the pen to edit it. Go to the <code>ADD QUERY</code> tab and choose SELECT * FROM <code>*</code>. 
+<br></p>
+<p>If the sync is ready, you will see a list of files to choose from, for example, <code>users.gz</code>, <code>items.gz</code>, <code>interactions.gz</code>, see image below. If you see the files imported you are now ready to <a href="https://github.com/Sift Lab/customer-success/blob/main/Documentation/Platform/Menu/Manage%20Data/Sources.md">create sources!</a></p>
+<p><img width="954" alt="Screenshot 2022-05-10 at 14 59 33" src="https://user-images.githubusercontent.com/4352260/167635009-bee5c795-271c-49f9-a92c-840a415f120f.png"></p>
 <hr />
 
 

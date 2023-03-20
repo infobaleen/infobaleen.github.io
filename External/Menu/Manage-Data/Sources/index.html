@@ -805,13 +805,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#below-is-further-information-about-more-advanced-queries" class="md-nav__link">
-    Below is further information about more advanced queries
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1090,13 +1083,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#below-is-further-information-about-more-advanced-queries" class="md-nav__link">
-    Below is further information about more advanced queries
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1142,89 +1128,57 @@ If it’s a centra/voyado customer choose that option, if the files were uploade
 </li>
 </ol>
 <h2 id="frontpage-columns">Frontpage columns</h2>
-<details class="optional-class"><summary>Show more information</summary>
-See below an example image from source view, with a source named `transactions`.
-
-<img src="../../../../images/Menu/sources.png" width="921"/>
-
-Here is a short explanation of the columns (note that not all columns are shown in the above image):
-
-</h4> Name </h4>
-Name of source
-
+<p>See below an example image from source view, with a source named <code>transactions</code>.</p>
+<p><img src="../../../../images/Menu/sources.png" width="921"/></p>
+<p>Here is a short explanation of the columns (note that not all columns are shown in the above image):</p>
+<p></h4> Name </h4>
+Name of source</p>
 <h4> id </h4>
-Every source has an unique id which is used to show dependencies between sources.
-
+<p>Every source has an unique id which is used to show dependencies between sources.</p>
 <h4> Count </h4>
-Count describes how many rows the source have. There can only be 1 row for every unique key column. if there are multiple rows with the same key all but 1 is removed.
-
+<p>Count describes how many rows the source have. There can only be 1 row for every unique key column. if there are multiple rows with the same key all but 1 is removed.</p>
 <h4> Tags </h4>
-You can tag a source to keep track of how it is used.
-
+<p>You can tag a source to keep track of how it is used.</p>
 <h4> Drivers </h4>
-The drivers show what driver is used and also if it is active (green) or inactive (red). If a source has multiple queries there will be multiple drivers, here you can see wich source is active and wich are not.
-
+<p>The drivers show what driver is used and also if it is active (green) or inactive (red). If a source has multiple queries there will be multiple drivers, here you can see wich source is active and wich are not.</p>
 <h4> Sync </h4>
-You can set a daily sync for the source, for example `DailyAt:6`.
-<br>
-
+<p>You can set a daily sync for the source, for example <code>DailyAt:6</code>.
+<br></p>
 <h4> Dependencies </h4>
 
-Dependencies for a source show what other sources the are used to build up the source.  An example for this is 
+<p>Dependencies for a source show what other sources the are used to build up the source.  An example for this is 
 <div class="highlight"><pre><span></span><code>SELECT * FROM Source1  
 LEFT JOIN Source2 on Source2.id = Source1.id  
 UNION  
 SELECT * FROM Source3  
 </code></pre></div>
-This will show the id for source 1,2,3 in the Dependencies for the new source.
-
-
+This will show the id for source 1,2,3 in the Dependencies for the new source.</p>
 <h4> Updated At </h4>
-Shows how long ago the source was last modified.
-
+<p>Shows how long ago the source was last modified.</p>
 <h4> Synced At </h4>
-Shows how long ago the source was last synced.
-
-
-
+<p>Shows how long ago the source was last synced.</p>
 <h4> Top Menu </h4>
 
-In the source view there are also some funcationality that can be accessed using the icons in the top right corner.
-
-<img src="../../../../images/Menu/sources2.png" width="921"/>
-
+<p>In the source view there are also some funcationality that can be accessed using the icons in the top right corner.</p>
+<p><img src="../../../../images/Menu/sources2.png" width="921"/></p>
 <h4> Delete </h4>
-Delete the selected source.
-
-
+<p>Delete the selected source.</p>
 <h4> Tag </h4>
-Select a source, click Tag and write a new tag or select an old tag.
-
- <h4> Set sync schedule </h4> 
-Configure a daily data sync to update the source on a regular basis.
-
+<p>Select a source, click Tag and write a new tag or select an old tag.</p>
+<h4> Set sync schedule </h4>
+<p>Configure a daily data sync to update the source on a regular basis.</p>
 <h4> Migrate </h4>
 
-
 <h4> Truncate </h4>
-Truncate wipes the source of all data. This is usefull if you have changed key column for example because if you just sync the data the old data is not removed. 
-[Note that some sources only read 1 week data at the time to save time, if you truc a source like this all historic data is removed wich is bad]
-
+<p>Truncate wipes the source of all data. This is usefull if you have changed key column for example because if you just sync the data the old data is not removed. 
+[Note that some sources only read 1 week data at the time to save time, if you truc a source like this all historic data is removed wich is bad]</p>
 <h4> Sync </h4>
-Manually syncs the source.
-
+<p>Manually syncs the source.</p>
 <h4> Create </h4>
-Creates a new source.
-</details>
-
+<p>Creates a new source.</p>
 <h2 id="edit-a-source">Edit a source</h2>
-<details class="optional-class"><summary>Show more information</summary>
-
-When clicking a source, you find the edit mode by clicking the "pen" in the top right corner. This will open a view as can be seen in the image below. 
-
-<img src="../../../../images/Menu/sources3.png" width="921"/>
-
-
+<p>When clicking a source, you find the edit mode by clicking the "pen" in the top right corner. This will open a view as can be seen in the image below. </p>
+<p><img src="../../../../images/Menu/sources3.png" width="921"/></p>
 <h3> Settings <h3>
 
 <h4> Name </h4>
@@ -1267,10 +1221,8 @@ Preprocessor information can be found under the "Import Files" section of the do
 You need to enclose variable names that contain other characters than letters and numbers with `backticks` ` `,  
 this includes whitespace ' ', dot '.', etc...
 
-</details>
 
-<h2 id="below-is-further-information-about-more-advanced-queries">Below is further information about more advanced queries</h2>
-<details class="optional-class"><summary>Show more information</summary>
+## Below is further information about more advanced queries
 
 SELECT * FROM `raw: 
 id,item
@@ -1280,7 +1232,6 @@ this returns a table.
 <br>
 
 UNION 
-<details class="optional-class"><summary>Show more information</summary>
 
 A UNION merges two data sources by including all unique rows from both. When making a union the columns need to have the same name and be in the same order
 <div class="highlight"><pre><span></span><code>SELECT * FROM `table 1`
@@ -1308,10 +1259,9 @@ this will show that all overlapping ids will have item from `table 1`.
 
 A UNION can also be suffixed by ALL, where UNION ALL will not discard duplicates, meaning much faster execution but leaves duplicate rows if they exist.
 
-</details>
 
 INSERT INTO
-<details class="optional-class"><summary>Show more information</summary>
+
 
 insert into lets you create multiple tables in the same query that you can use to create a UNION or LEFT JOIN.
 <div class="highlight"><pre><span></span><code>INSERT INTO &lt;table_name&gt;
@@ -1323,10 +1273,10 @@ When using the table you created with INSERT INTO you use the <table_name> not t
 ex.
 <div class="highlight"><pre><span></span><code>LEFT JOIN &lt;table_name&gt; ON &lt;table_name&gt;.id = XXX.id
 </code></pre></div>
-</details>
+
 
 LEFT JOIN and JOIN
-<details class="optional-class"><summary>Show more information</summary>
+
 LEFT JOIN lets you append more columns to an existing table, while join only keeps the ones matching. See below a code example where you can change `left join` to `join` to see the effects.
 
 <div class="highlight"><pre><span></span><code>INSERT INTO countries SELECT * FROM `raw:
@@ -1349,11 +1299,10 @@ left join currencies ON countries.country = currencies.country
 
 <img width="385" alt="Screenshot 2022-09-29 at 13 59 36" src="https://user-images.githubusercontent.com/4352260/193025736-ef6f50a2-76b4-424d-bee6-d3a39d0f41a3.png">
 
-</details>
 
 
 NOT IN
-<details class="optional-class"><summary>Show more information</summary>
+
 Only selects rows that do not match, example
 
 <div class="highlight"><pre><span></span><code>SELECT * from `raw:
@@ -1372,10 +1321,10 @@ Will return
 3,björn
 4,benny
 </code></pre></div>
-</details>
+
 
 firstSeen()
-<details class="optional-class"><summary>Show more information</summary>
+
 
 firstseen(<field>) saves only the first encountered row for 
 
@@ -1384,10 +1333,10 @@ coalese
 toFloat()
 
 unixTimestamp()
-</details>
+
 
 split() and slice() and slicestr()
-<details class="optional-class"><summary>Show more information</summary>
+
 
 These expressions can be used to edit strings, see an example below:
 
@@ -1412,11 +1361,10 @@ The result will be:
 1   A,B,C,D,E.   A,B,C  ABC  5            BC
 </code></pre></div>
 
-</details>
 
 groupconcat_ws
 
-<details class="optional-class"><summary>Show more information</summary>
+
 <div class="highlight"><pre><span></span><code>Insert into a
 SELECT * FROM `raw:
 Id,user,ordernr,item,price
@@ -1431,10 +1379,10 @@ The result will be:
 <div class="highlight"><pre><span></span><code>user    ordernr price_list
 100 1   10SEK,20SEK,30SEK
 </code></pre></div>
-</details>
+
 
 Create a custom user.agg.(field)
-<details class="optional-class"><summary>Show more information</summary>
+
 
 the datamodel creates aggregate functions such as user.agg.revenue.
 to create one yourself do the following.
@@ -1458,8 +1406,6 @@ LEFT JOIN margin ON margin.user = UI.user
 Note that you need to add `concat('',)` to the sum expression.
 this is because you cant LEFT JOIN a float. `concat('',)` converts it into a string.
 `concat('',SUM(margin)) AS total_margin`
-</details>
-</details>
 
 
 
