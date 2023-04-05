@@ -78,6 +78,7 @@ nav:
         #- Other: External/Menu/Other/Overlaps.md
     - Other:
         - Data Specification: External/Other/Data-Specification.md
+        - Adding Data: External/Other/Add-Data.md
 
 markdown_extensions:
   - attr_list
