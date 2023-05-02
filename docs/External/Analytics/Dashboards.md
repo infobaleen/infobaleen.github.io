@@ -17,6 +17,20 @@ Dashboards can be created by clicking the + icon in the dropdown menu. When you 
 
 </p></details>
 
+## View/edit mode
+To see a preview of made changes, you can use the view/edit mode toggle on the top left side of the dashboard as seen below. This will allow you to gain an overview of the dashboard after your changes.
+
+![image](https://user-images.githubusercontent.com/103515314/235164068-14d2921c-a5c8-46ae-9056-5023831c4c91.png)
+
+
+## Sections
+A section can be seen as a group of elements. Applied filters in one section still applies to all the elements on the dashboard howeever. You can create multiple sections with different elements in each section. One of the positive aspects of using sections is that you can move a group of elements together without having to move each element individually, and also allowing to create copies of whole sections. To toggle on or off a section, you can use the two arrow icon, next to the clone icon.
+
+![image](https://user-images.githubusercontent.com/103515314/235162836-7a2fb485-7add-438f-b63e-7016ac9f7c76.png)
+
+
+
+
 
 ## Add element
 
@@ -29,6 +43,12 @@ To add an element to your dashboard, click the <code>Add element</code> seen bel
  -->
 
 **Note!** After adding elements or editing the dashboard, remember to click `Save` in the top right corner.
+
+### Clone an element
+To create a copy of an element in a fast and effective way, use the clone icone `+` as seen below. This will create a duplicate of the chosen element below.
+
+![image](https://user-images.githubusercontent.com/103515314/235164798-eb5376ef-80b5-4f98-bdf5-90a97411fb28.png) {: style width="400px"}
+
 
 
 ### Metric
@@ -44,12 +64,22 @@ A bar chart shows `categorical data` with rectangular bars indicating the `distr
 ![image](https://user-images.githubusercontent.com/103515314/169268249-5b36de6b-d749-4950-bae0-d777b15afd6f.png){: style="width:400px"}
 
 
+### Stacked Bar Chart
+A stacked bar chart is made in the same way as a barchart, but with an added group key. The group key can be found under `Edit element` --> `Advanced` --> `Select group key`. Below is an example of a bar chart showing regions, with a group key on gender. 
+![image](https://user-images.githubusercontent.com/103515314/235606475-c76c281f-675e-4523-9aea-108218ec7dff.png){: style="width:400px"}
+
+
+
 
 ### Line Chart
 A line chart plots a graph with data points connected to a chosen metric, example below for example shows revenue over time.  
 Hovering over the line chart data points, the revenue for that time will show.
 
 ![image](https://user-images.githubusercontent.com/103515314/169269164-27b0ddf6-1a72-4641-b929-7e2ac5f72377.png){: style="width:400px"}
+
+#### Group key setting can be found under `Edit element` --> `Advanced` --> `Select group key` and allows you to see lines split over a category, see example below where gender is used as group key: 
+![image](https://user-images.githubusercontent.com/103515314/235607446-d24a9a0c-0ab0-4949-a79e-9f3e061f88cb.png){: style="width:400px"}
+
 
 
 <details class="optional-class"><summary>Show More Info</summary>
@@ -75,11 +105,10 @@ By filtering out a category in the bar chart the line representing this category
 
 </p></details>
 
+### Donut chart
+A donut chart divides the data into sections, where each section represents a portion of the whole. The size of each section is proportional to the value it presents. If a section is too small to include or exceds the limit of sections found under settings, it will be included under the `others` section.
 
-
-
-##### 
-
+![image](https://user-images.githubusercontent.com/103515314/235159131-d4577d5e-c46d-453f-892e-79409fd80d56.png){: style="width:400px"}
 
 
 
@@ -133,10 +162,9 @@ This element adds a table to the dashboard, if the table gets to wide there's a 
 
 
 ### Pivot
-A pivot table is used to visualize patterns and trends in large amounts of data, it can for example be used to show amount of lapsed customers per order cohort shown in the example below.
+A pivot table is used to visualize patterns and trends in large amounts of data, it can for example be used to show amount of lapsed customers per order cohort shown in the example below. Under `Edit element` you can select to show summarized values for row or/and columns. Under `Advanced` you can also select if you want each cell to show value/percent or both. There is also the ability to change if you want the calculations to be based upon rows or columns.
 
-![image](https://user-images.githubusercontent.com/103515314/169789394-1f691c1e-f189-4fab-bc3b-b01d13ecb467.png){: style="width:400px"}
-
+![image](https://user-images.githubusercontent.com/103515314/235609217-24456572-ea40-4c3b-aa95-100b8da406df.png){: style="width:400px"}
 
 
 ### Image grid

@@ -96,6 +96,9 @@ Limit decides how many recomended items are returned. For example, Limit 4 = Fou
 ### Max orders
 Number of orders that are taken into concideration when recommending products. `Max orders = 1` means only the items included in the latest order are used as purchase history for that user. `Max orders = 2` means the items in the two latest orders are taken into account.
 
+To see what the orders included contains, the items excluded from the customers purchase history are marked with a red dot, as seen below:
+![image](https://user-images.githubusercontent.com/103515314/235160364-6a05deb5-3b17-4a57-ab36-d70014ab13dc.png){: style width="400px"}
+
 
 ### Max interactions
 Number of items that are taken into concideration when recommending products. `Max items = 1` means only the latest purchased item is used as purchase history for that user. `Max items = 2` means the two latest items are taken into account.</details>
