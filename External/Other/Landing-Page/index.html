@@ -11,17 +11,17 @@
       
       
       
-        <link rel="prev" href="../Landing-Page/">
+        <link rel="prev" href="../../Menu/Account/Users/">
       
       
-        <link rel="next" href="../Add-Data/">
+        <link rel="next" href="../Data-Specification/">
       
       <link rel="icon" href="../../../assets/favicon.ico">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
     
     
       
-        <title>Data Specification - Documentation</title>
+        <title>Landing Page - Documentation</title>
       
     
     
@@ -71,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sift-lab-data-specification" class="md-skip">
+        <a href="#landing-page" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Data Specification
+              Landing Page
             
           </span>
         </div>
@@ -247,7 +247,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../Landing-Page/" class="md-tabs__link md-tabs__link--active">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Other
       </a>
     </li>
@@ -971,20 +971,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../Landing-Page/" class="md-nav__link">
-        Landing Page
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -993,14 +979,16 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Data Specification
+          Landing Page
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Data Specification
+        Landing Page
       </a>
       
         
@@ -1008,6 +996,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
     <label class="md-nav__title" for="__toc">
@@ -1017,43 +1007,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sift-lab-data-specification" class="md-nav__link">
-    Sift Lab - Data Specification
-  </a>
-  
-    <nav class="md-nav" aria-label="Sift Lab - Data Specification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-encoding" class="md-nav__link">
-    Data encoding
+  <a href="#shortcuts" class="md-nav__link">
+    Shortcuts
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#transaction-data" class="md-nav__link">
-    Transaction data
+      
+        <li class="md-nav__item">
+  <a href="#activity" class="md-nav__link">
+    Activity
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#product-data" class="md-nav__link">
-    Product data
+      
+        <li class="md-nav__item">
+  <a href="#featured-dashboard" class="md-nav__link">
+    Featured dashboard
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-data" class="md-nav__link">
-    User data
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1061,6 +1031,20 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Data-Specification/" class="md-nav__link">
+        Data Specification
+      </a>
     </li>
   
 
@@ -1103,6 +1087,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1111,43 +1097,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#sift-lab-data-specification" class="md-nav__link">
-    Sift Lab - Data Specification
-  </a>
-  
-    <nav class="md-nav" aria-label="Sift Lab - Data Specification">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-encoding" class="md-nav__link">
-    Data encoding
+  <a href="#shortcuts" class="md-nav__link">
+    Shortcuts
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#transaction-data" class="md-nav__link">
-    Transaction data
+      
+        <li class="md-nav__item">
+  <a href="#activity" class="md-nav__link">
+    Activity
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#product-data" class="md-nav__link">
-    Product data
+      
+        <li class="md-nav__item">
+  <a href="#featured-dashboard" class="md-nav__link">
+    Featured dashboard
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#user-data" class="md-nav__link">
-    User data
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1166,313 +1132,25 @@
                   
 
 
-  <h1>Data Specification</h1>
-
-<h2 id="sift-lab-data-specification">Sift Lab - Data Specification</h2>
-<p>A datamodel in Sift Lab is made up of three data tables. Each line in the interaction table is linked to a specific user and item in the item and user tables. </p>
-<pre class="mermaid"><code>classDiagram
-`Transaction data` --&gt; Datamodel
-`Product data` --&gt; Datamodel
-`User data` --&gt; Datamodel</code></pre>
-<h3 id="data-encoding">Data encoding</h3>
-<p>Data must be encoded as UTF-8 + RFC 4180 (see more info at <a href="https://tools.ietf.org/html/rfc4180">https://tools.ietf.org/html/rfc4180</a>). Below are some specifics regarding the cell and row formatting.</p>
-<table>
-<thead>
-<tr>
-<th>Case</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Line break</td>
-<td>\n</td>
-</tr>
-<tr>
-<td>Quotes must be escaped</td>
-<td>“14”” TV”</td>
-</tr>
-<tr>
-<td>Cell wrap with double if the value contains , or \n</td>
-<td>“Hello, world”</td>
-</tr>
-<tr>
-<td>Number, avoid space and comma.</td>
-<td>12345678.9</td>
-</tr>
-<tr>
-<td>Timestamp/date, use unix timestamp or formatted date string.</td>
-<td>1591718519 or “2020-03-17 15:01:02” or “2006-01-02T15:04:05-0700”</td>
-</tr>
-</tbody>
-</table>
-<p>A valid example</p>
-<div class="highlight"><pre><span></span><code>id,value,number
-1,&quot;Hello, world!&quot;,123.45
-2,&quot;14&quot;&quot; TV&quot;,123.45
-</code></pre></div>
-<h3 id="transaction-data">Transaction data</h3>
-<p>Provide a file containing transactional data between your products and users. Usually represents order rows.</p>
-<p>If necessary, you may provide an additional file with data that is associated with an order number. An example would be an order header containing shipping cost, payment fee etc. In this case, provide an order number in the transactional data, and use the order number as the unique identifier in the orders file. </p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Data type</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a transaction/order row.</td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a user.</td>
-</tr>
-<tr>
-<td>product_Id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a product.</td>
-</tr>
-<tr>
-<td>timestamp</td>
-<td>Timestamp (required)</td>
-<td>Timestamp at which the interaction occurred.</td>
-</tr>
-<tr>
-<td>revenue</td>
-<td>Number</td>
-<td>(Product price x quantity) Use sales ex VAT</td>
-</tr>
-<tr>
-<td>vat_percent</td>
-<td>Number</td>
-<td></td>
-</tr>
-<tr>
-<td>margin</td>
-<td>Number</td>
-<td></td>
-</tr>
-<tr>
-<td>discount</td>
-<td>Number</td>
-<td>Discount for all items in the row.</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>exchange_rate</td>
-<td>Number</td>
-<td>If you have sales in different currencies.</td>
-</tr>
-<tr>
-<td>order_status</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>order_number</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>quantity</td>
-<td>Number</td>
-<td>Number columns must be adjusted for quantity, ex the Revenue/Margin column must be equal to the Total Revenue/Margin for that interaction.</td>
-</tr>
-<tr>
-<td>cancelled_quantity</td>
-<td>Number</td>
-<td></td>
-</tr>
-<tr>
-<td>returned_quantity</td>
-<td>Number</td>
-<td></td>
-</tr>
-<tr>
-<td>coupons/campaigns</td>
-<td>String</td>
-<td>If multiple, use semicolon separated list: “DiscountA;DiscountB”</td>
-</tr>
-<tr>
-<td>payment_method</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>payment_price</td>
-<td>Number</td>
-<td></td>
-</tr>
-<tr>
-<td>shipping_method</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>shipping_price</td>
-<td>Number</td>
-<td></td>
-</tr>
-<tr>
-<td>...&lt; ANY &gt;</td>
-<td>Number, String</td>
-<td>Additional metadata may be added that you find interesting to examine in our analytics.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="product-data">Product data</h3>
-<p>Provide a file containing product (item) meta data. Make sure all product ids that are present in the transactions are also present in this file.</p>
-<p>Categorical data in hierarchical structure should be added as separate columns: <code>category_1</code>, <code>category_2</code>, etc. If a product can have multiple categories but without hierarchy, provide them as a semi-colon separated string: <code>“categoryA;categoryC:categoryE”</code>. An example would be genres for a movie, as a movie can be associated with multiple genres in no particular order.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Data type</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a product.</td>
-</tr>
-<tr>
-<td>title</td>
-<td>String</td>
-<td>A name that will be associated with the product.</td>
-</tr>
-<tr>
-<td>image_url</td>
-<td>String</td>
-<td>URL to product image.</td>
-</tr>
-<tr>
-<td>brand</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>in_stock</td>
-<td>Number</td>
-<td>Number of items in stock.</td>
-</tr>
-<tr>
-<td>supplier</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>price</td>
-<td>Number</td>
-<td></td>
-</tr>
-<tr>
-<td>price_discounted</td>
-<td>Number</td>
-<td>Ex if there is a campaign present.</td>
-</tr>
-<tr>
-<td>product_url</td>
-<td>String</td>
-<td>URL if product recommendations are to be used.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>created</td>
-<td>Timestamp</td>
-<td></td>
-</tr>
-<tr>
-<td>category_1 …</td>
-<td>String</td>
-<td>Use multiple columns if hierarchical structure.</td>
-</tr>
-<tr>
-<td>...&lt; ANY &gt;</td>
-<td>Number, String</td>
-<td>Additional metadata may be added that you find interesting to examine in our analytics.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="user-data">User data</h3>
-<p>Provide a file containing user meta data. Make sure all user ids that are present in the transactions are also present in this file.</p>
-<p>In order to have deletes propagate to our side, provide users with empty data on all fields except id or a <code>“is_deleted”</code> field that we will use to clear all metadata.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Data type</th>
-<th>Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a user, same as in transactions.</td>
-</tr>
-<tr>
-<td>email</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>age</td>
-<td>Number</td>
-<td></td>
-</tr>
-<tr>
-<td>birthdate</td>
-<td>Date</td>
-<td>May be used to extract age by platform</td>
-</tr>
-<tr>
-<td>city</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>country</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>market</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>gender</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>created</td>
-<td>Timestamp</td>
-<td></td>
-</tr>
-<tr>
-<td>...&lt; ANY &gt;</td>
-<td>Number, String</td>
-<td>Additional metadata may be added that you find interesting to examine in our analytics.</td>
-</tr>
-</tbody>
-</table>
+<h1 id="landing-page">Landing page</h1>
+<p>The landing page gives you an overview of what is happening on the plattform and gives you quick access to the things that you are currently working with 
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/235164401-4b524c3f-cd8b-4c98-a218-aa77818609ee.png" /></p>
+<h2 id="shortcuts">Shortcuts</h2>
+<p>On the top you have shortcuts to create new segments and dashboards.
+Below you have 7 personal quicklinks to your most recently viewed dashboard or segments. that update everytime you view a dashboard or segment.
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/235163275-c30a351c-6573-405d-833b-f2353bcf7ca8.png" style="height:400px" /></p>
+<h2 id="activity">Activity</h2>
+<p>The activity shows who has been working with the platform and with what. 
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/235163722-6cd87d34-a35a-4347-a069-51c0c59a3820.png" style="height:400px" /></p>
+<h2 id="featured-dashboard">Featured dashboard</h2>
+<p>The featured dashboard allows you to pin one of your dashboards to the landing page for easy access.
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/235164160-7e1dbb90-4336-4819-afa7-6e1e9a61ba16.png" />
+You can change which dashboard is shown on the landing page by
+1. select the dashboard you want.
+2. click Edit
+3. go to Settings
+5. under <strong>Show in context</strong> select <strong>Data model - landing page</strong>
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/235167119-1edd8d18-91ce-4253-9117-74287146ada9.png" style="height:1000px" /></p>
 
 
 
@@ -1493,7 +1171,7 @@
     <nav class="md-footer__inner md-grid" aria-label="" >
       
         
-        <a href="../Landing-Page/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Landing Page" rel="prev">
+        <a href="../../Menu/Account/Users/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Users" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -1502,20 +1180,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Landing Page
+              Users
             </div>
           </div>
         </a>
       
       
         
-        <a href="../Add-Data/" class="md-footer__link md-footer__link--next" aria-label="Next: Adding Data" rel="next">
+        <a href="../Data-Specification/" class="md-footer__link md-footer__link--next" aria-label="Next: Data Specification" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Adding Data
+              Data Specification
             </div>
           </div>
           <div class="md-footer__button md-icon">
