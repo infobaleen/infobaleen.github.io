@@ -77,6 +77,7 @@ nav:
 
         #- Other: External/Menu/Other/Overlaps.md
     - Other:
+        - Landing Page: External/Other/Landing-Page.md
         - Data Specification: External/Other/Data-Specification.md
         - Adding Data: External/Other/Add-Data.md
 
