@@ -9,7 +9,7 @@ Set your customer/product filters and let our AI divide your customers into opti
 
 <br>
 
-![image](https://user-images.githubusercontent.com/103515314/211313269-d5f2d9c5-dc85-4854-839f-6a380ed0a242.png)
+![image](https://user-images.githubusercontent.com/103515314/235665313-2171e57a-bf1f-4f47-ae2b-33db36e0fe7b.png)
 
 
 ### Clustering

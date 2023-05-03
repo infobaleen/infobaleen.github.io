@@ -15,10 +15,15 @@ The activity shows who has been working with the platform and with what.
 The featured dashboard allows you to pin one of your dashboards to the landing page for easy access.
 ![image](https://user-images.githubusercontent.com/102239423/235164160-7e1dbb90-4336-4819-afa7-6e1e9a61ba16.png)
 You can change which dashboard is shown on the landing page by
-1. select the dashboard you want.
+
+1. select the dashboard you want
+
 2. click Edit
+
 3. go to Settings
-5. under **Show in context** select **Data model - landing page**
-![image](https://user-images.githubusercontent.com/102239423/235167119-1edd8d18-91ce-4253-9117-74287146ada9.png){: style="height:1000px"}
+
+4. under **Show in context** select **Data model - landing page**
+
+![image](https://user-images.githubusercontent.com/102239423/235167119-1edd8d18-91ce-4253-9117-74287146ada9.png){: style="height:700px"}
 
 

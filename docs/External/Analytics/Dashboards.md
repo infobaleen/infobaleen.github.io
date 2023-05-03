@@ -38,7 +38,7 @@ To add an element to your dashboard, click the <code>Add element</code> seen bel
 
 
 
-![Image title](../../images/Analytics/analytics2.png){: style="width:400px"}
+![image](https://user-images.githubusercontent.com/103515314/235663442-52d5ff0e-40e9-40a6-b949-1779f64ad7f8.png){: style="width:400px"}
 <!-- <img width="863" alt="Screenshot 2022-06-28 at 14 47 35" src="https://user-images.githubusercontent.com/4352260/176182387-0007cbff-e150-42e1-8946-302f8718fe88.png">
  -->
 
@@ -47,7 +47,7 @@ To add an element to your dashboard, click the <code>Add element</code> seen bel
 ### Clone an element
 To create a copy of an element in a fast and effective way, use the clone icone `+` as seen below. This will create a duplicate of the chosen element below.
 
-![image](https://user-images.githubusercontent.com/103515314/235164798-eb5376ef-80b5-4f98-bdf5-90a97411fb28.png) {: style width="400px"}
+![image](https://user-images.githubusercontent.com/103515314/235164798-eb5376ef-80b5-4f98-bdf5-90a97411fb28.png){: style="width:400px"}
 
 
 
@@ -66,6 +66,7 @@ A bar chart shows `categorical data` with rectangular bars indicating the `distr
 
 ### Stacked Bar Chart
 A stacked bar chart is made in the same way as a barchart, but with an added group key. The group key can be found under `Edit element` --> `Advanced` --> `Select group key`. Below is an example of a bar chart showing regions, with a group key on gender. 
+
 ![image](https://user-images.githubusercontent.com/103515314/235606475-c76c281f-675e-4523-9aea-108218ec7dff.png){: style="width:400px"}
 
 
@@ -157,14 +158,14 @@ An alluvial chart can be described as a flow diagram that represents changes in 
 ### Table
 This element adds a table to the dashboard, if the table gets to wide there's a scroll bar furthest down in the table allowing horizontal scrolling. The table can be `sorted` by pressing on the value/text you want to sort by. Under `Style` in the edit screen of a table, there's an opportunity to add a `Background bar` which visualize how large/small the different values in the table are in comparison to the others. 
 
-![Image title](../../images/Analytics/analytics4.png){: style="width:400px"}
+![Image title](../../images/Analytics/analytics4.png)
 
 
 
 ### Pivot
 A pivot table is used to visualize patterns and trends in large amounts of data, it can for example be used to show amount of lapsed customers per order cohort shown in the example below. Under `Edit element` you can select to show summarized values for row or/and columns. Under `Advanced` you can also select if you want each cell to show value/percent or both. There is also the ability to change if you want the calculations to be based upon rows or columns.
 
-![image](https://user-images.githubusercontent.com/103515314/235609217-24456572-ea40-4c3b-aa95-100b8da406df.png){: style="width:400px"}
+![image](https://user-images.githubusercontent.com/103515314/235609217-24456572-ea40-4c3b-aa95-100b8da406df.png)
 
 
 ### Image grid
