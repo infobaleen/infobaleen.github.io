@@ -1569,22 +1569,25 @@ by enabling <code>shuffled</code> it still recommends the top 10 items but the o
 </tbody>
 </table>
 <h4 id="example-2-advanced-query">Example 2: Advanced query</h4>
-<p><div class="highlight"><pre><span></span><code>{&quot;Context&quot;:[{&quot;Name&quot;:&quot;bought_phone_model&quot;,&quot;Field&quot;:&quot;phone_model&quot;,&quot;Option&quot;:&quot;all&quot;}]}
+<p><div class="highlight"><pre><span></span><code>{&quot;Context&quot;:[{
+  &quot;Name&quot;:&quot;item_cat3&quot;,
+  &quot;Field&quot;:&quot;category_level_3&quot;,
+  &quot;Option&quot;:&quot;items&quot;
+   }]}
 </code></pre></div>
 <em>Filter expression:</em>
-<div class="highlight"><pre><span></span><code>hasAny(split(bought_phone_model,&quot;,&quot;),makeArray(phone_model))
+<div class="highlight"><pre><span></span><code>hasAny(split(item_cat3,&quot;,&quot;),makeArray(category_level_3))
 </code></pre></div>
-<code>split(bought_phone_model,",")</code> returns an array of your purchase history <code>("Field":"phone_model"): ['bought_phone_model_1','bought_phone_model_2','bought_phone_model_3','bought_phone_model_4']</code></p>
-<p><code>makeArray(phone_model)</code> returns an array of all <code>phone_model</code>: <code>['phone_model_1','phone_model_2','phone_model_3','phone_model_n']</code></p>
+<code>split(item_cat3,",")</code> returns an array of your purchase history.</p>
+<p><code>makeArray(category_level_3)</code> returns an array of all items in category_level_3.</p>
 <p><code>hasAny</code> checks if elements in <code>array 1</code> is contained in <code>array 2</code>  </p>
-<p>in this case the customers purchase history includes <code>iPhone 12/Pro MagSafe</code> and <code>iPhone 12/Pro</code>
-The expression <code>hasAny(split(bought_phone_model,","),makeArray(phone_model))</code> will thus return <code>true</code> for all pruducts where <code>phone_model</code> = <code>iPhone 12/Pro MagSafe</code> or <code>iPhone 12/Pro</code> and <code>false</code> for all other products. Thus only products with the same <code>phone_model</code> will be recommended.</p>
-<p>If you change the expression to <code>hasAny(split(bought_phone_model,","),makeArray(phone_model)) = FALSE</code> everything will be inverted thus only recomending products where the <code>phone_model</code> <strong>!=</strong> <code>iPhone 12/Pro MagSafe</code> or <code>iPhone 12/Pro</code>.</p>
-<p><img alt="image" src="https://user-images.githubusercontent.com/102239423/171135517-3d3eaeeb-7785-460e-a242-2a6e3cfaceb4.png" />
-<img alt="image" src="https://user-images.githubusercontent.com/102239423/171135706-fcc4ad7f-7066-441a-8e4d-c4162cacebec.png" /></p>
+<p>in this case the customers purchase history includes a product in the category_level3 = <code>Watches</code> or <code>Handbags &amp; Wallets</code>
+The expression <code>hasAny(split(bought_phone_model,","),makeArray(phone_model))</code> will thus return <code>true</code> for all pruducts where <code>category_level_3</code> = <code>Watches</code> or <code>Handbags &amp; Wallets</code> and <code>false</code> for all other products. Thus only products with the same <code>category_level_3</code> will be recommended.</p>
+<p>If you change the expression to <code>hasAny(split(item_cat3,","),makeArray(category_level_3)) = FALSE</code> everything will be inverted thus only recomending products where the <code>category_level_3</code> <strong>!=</strong> <code>Watches</code> or <code>Handbags &amp; Wallets</code>.</p>
+<p><img alt="image" src="https://user-images.githubusercontent.com/102239423/235845614-35456de5-ac22-45c9-825e-d84f5c14be46.png" /></p>
 <p>[NOTE! when adding an item to in the <code>Search for items</code> you <strong>DO NOT</strong> add this item to your purchase history, these items are sent in from the API meaning they will only be affected by a filter expression if you use the option <code>item</code> instead of <code>all</code>]  </p>
 <p>See example:
-<img alt="image" src="https://user-images.githubusercontent.com/102239423/171145795-877fb7b8-6e02-4bf0-857b-985deafe6efd.png" /></p>
+<img alt="image" src="https://user-images.githubusercontent.com/102239423/235846026-425660fc-5487-42b8-a9f8-c491b42825be.png" /></p>
 <hr />
 <h4 id="add-field-limit">Add field limit</h4>
 <p>Field limit lets you set a filter on how many of each category should be recommended. This is usually used on product category where you only want to include ex. max 2 of each product category.</p>
