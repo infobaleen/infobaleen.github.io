@@ -42,6 +42,7 @@ nav:
         - Clustering: External/Segmentations/Clustering.md
     - Recommendations:
         - Overview: External/Recommendations/Overview.md
+        - Front Page: External/Recommendations/Front-Page.md
         - Recommendation Profiles: External/Recommendations/Recommendation-Profiles.md
         - Settings: External/Recommendations/Settings.md
        # - External/Recommendations/Front-Page.md
