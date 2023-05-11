@@ -1232,75 +1232,120 @@
 <thead>
 <tr>
 <th>Field</th>
-<th>Data type</th>
-<th>Note</th>
+<th>Role</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>user</td>
+<td>User (required)</td>
+<td>Must uniquely identify a user, same as in User table.</td>
+</tr>
+<tr>
 <td>id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a transaction/order row.</td>
+<td>Category (required)</td>
+<td>Must uniquely identify a transaction/order row. Can be created from combining other fields.</td>
 </tr>
 <tr>
-<td>user_id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a user.</td>
+<td>item</td>
+<td>Item (required)</td>
+<td>Must uniquely identify an item, same as in Item table</td>
 </tr>
 <tr>
-<td>product_Id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a product.</td>
-</tr>
-<tr>
-<td>timestamp</td>
+<td>date_time</td>
 <td>Timestamp (required)</td>
 <td>Timestamp at which the interaction occurred.</td>
 </tr>
 <tr>
 <td>revenue</td>
-<td>Number</td>
-<td>(Product price x quantity) Use sales ex VAT</td>
+<td>Revenue</td>
+<td>Revenue of transaction/order row (This is ex VAT)</td>
 </tr>
 <tr>
-<td>vat_percent</td>
+<td>quantity</td>
+<td>Quantity</td>
+<td>Number columns must be adjusted for quantity, ex the Revenue/Margin column must be equal to the Total Revenue/Margin for that interaction.</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>Category</td>
+<td>Must uniquely identify an order</td>
+</tr>
+<tr>
+<td>returned_quantity</td>
 <td>Number</td>
+<td>negative in the case of returns (placed as a new order with negative quantity)</td>
+</tr>
+<tr>
+<td>discount_percent</td>
+<td>Number</td>
+<td>Discount for all items in the row. Also called voucher/promo_code (format 25 not 0.25, divide by 100 in computations)</td>
+</tr>
+<tr>
+<td>tax_percent</td>
+<td>Number</td>
+<td>format 25 not 0.25, divide by 100 in computations</td>
+</tr>
+<tr>
+<td>payment_method</td>
+<td>Category</td>
 <td></td>
 </tr>
 <tr>
-<td>margin</td>
-<td>Number</td>
+<td>country</td>
+<td>Category</td>
 <td></td>
 </tr>
 <tr>
-<td>discount</td>
-<td>Number</td>
-<td>Discount for all items in the row.</td>
+<td>market</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>store</td>
+<td>Category</td>
+<td></td>
 </tr>
 <tr>
 <td>currency</td>
-<td>String</td>
-<td></td>
+<td>Category</td>
+<td>SEK, USD, EUR</td>
 </tr>
 <tr>
 <td>exchange_rate</td>
 <td>Number</td>
-<td>If you have sales in different currencies.</td>
+<td>Exchange rate for the currence at the time the purchase was made</td>
+</tr>
+<tr>
+<td>campaign</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>utm_tag</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>days_to_delivery</td>
+<td>Number</td>
+<td>Days from placed order to received shipment</td>
+</tr>
+<tr>
+<td>coupons</td>
+<td>Category</td>
+<td></td>
 </tr>
 <tr>
 <td>order_status</td>
-<td>String</td>
+<td>Category</td>
 <td></td>
 </tr>
 <tr>
-<td>order_number</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>quantity</td>
-<td>Number</td>
-<td>Number columns must be adjusted for quantity, ex the Revenue/Margin column must be equal to the Total Revenue/Margin for that interaction.</td>
+<td>is_return</td>
+<td>Category</td>
+<td>Yes/No/Partially</td>
 </tr>
 <tr>
 <td>cancelled_quantity</td>
@@ -1308,38 +1353,78 @@
 <td></td>
 </tr>
 <tr>
-<td>returned_quantity</td>
-<td>Number</td>
+<td>ship_to_country</td>
+<td>Category</td>
 <td></td>
 </tr>
 <tr>
-<td>coupons/campaigns</td>
-<td>String</td>
-<td>If multiple, use semicolon separated list: “DiscountA;DiscountB”</td>
-</tr>
-<tr>
-<td>payment_method</td>
-<td>String</td>
+<td>ship_to_city</td>
+<td>Category</td>
 <td></td>
 </tr>
 <tr>
-<td>payment_price</td>
+<td>shipping_fee</td>
 <td>Number</td>
 <td></td>
 </tr>
 <tr>
 <td>shipping_method</td>
-<td>String</td>
-<td></td>
+<td>Category</td>
+<td>Method used, such as: Home delivery, Click &amp; Collect</td>
 </tr>
 <tr>
-<td>shipping_price</td>
+<td>shipping_partner</td>
+<td>Category</td>
+<td>Transportation service provider</td>
+</tr>
+<tr>
+<td>full_price</td>
 <td>Number</td>
 <td></td>
 </tr>
 <tr>
+<td>revenue_after_returns</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>freight_cost</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>margin_gm1</td>
+<td>Number</td>
+<td>GM1 = Difference between frt rcvd and paid</td>
+</tr>
+<tr>
+<td>margin_gm2</td>
+<td>Number</td>
+<td>GM2 = Gross margin after labour</td>
+</tr>
+<tr>
+<td>margin_gm3</td>
+<td>Number</td>
+<td>GM3 = Gross margin after deductions</td>
+</tr>
+<tr>
+<td>margin_gm4</td>
+<td>Number</td>
+<td>GM4 = Gross margin after commission</td>
+</tr>
+<tr>
+<td>margin_gm5</td>
+<td>Number</td>
+<td>GM5 = Gross margin after interest</td>
+</tr>
+<tr>
+<td>margin_gm6</td>
+<td>Number</td>
+<td>GM6 = Gross margin after insurance</td>
+</tr>
+<tr>
 <td>...&lt; ANY &gt;</td>
-<td>Number, String</td>
+<td>Number, Category</td>
 <td>Additional metadata may be added that you find interesting to examine in our analytics.</td>
 </tr>
 </tbody>
@@ -1351,74 +1436,154 @@
 <thead>
 <tr>
 <th>Field</th>
-<th>Data type</th>
-<th>Note</th>
+<th>Role</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>ID (required)</td>
-<td>Must uniquely identify a product.</td>
+<td>item</td>
+<td>Item (required)</td>
+<td>Must uniquely identify a product, same as in transactions. This is what the machine learning trains on and is what will be used in recommendations</td>
 </tr>
 <tr>
 <td>title</td>
-<td>String</td>
-<td>A name that will be associated with the product.</td>
+<td>Format</td>
+<td>The displayed name that will be associated with the product.</td>
 </tr>
 <tr>
-<td>image_url</td>
-<td>String</td>
+<td>image</td>
+<td>Image</td>
 <td>URL to product image.</td>
 </tr>
 <tr>
-<td>brand</td>
-<td>String</td>
-<td></td>
+<td>link</td>
+<td>Category</td>
+<td>URL to product page</td>
+</tr>
+<tr>
+<td>sales_price</td>
+<td>Number</td>
+<td>Current selling price including discounts</td>
+</tr>
+<tr>
+<td>full_price</td>
+<td>Number</td>
+<td>Price without any discounts</td>
+</tr>
+<tr>
+<td>availability</td>
+<td>Category</td>
+<td>Yes / No</td>
 </tr>
 <tr>
 <td>in_stock</td>
 <td>Number</td>
-<td>Number of items in stock.</td>
+<td>How many units are sellable in stock</td>
+</tr>
+<tr>
+<td>sku</td>
+<td>Category</td>
+<td>Stock keeping unit (e.g. specific shirt in a certain color and size)</td>
+</tr>
+<tr>
+<td>product_variant</td>
+<td>Category</td>
+<td>Variation specified product, usually product page (e.g. specific shirt in a certain color, any size)</td>
+</tr>
+<tr>
+<td>parent_product</td>
+<td>Category</td>
+<td>The named product (e.g. specific shirt in any color or size)</td>
+</tr>
+<tr>
+<td>category_level_1</td>
+<td>Category</td>
+<td>The highest category level</td>
+</tr>
+<tr>
+<td>category_level_2</td>
+<td>Category</td>
+<td>2:nd highest category level</td>
+</tr>
+<tr>
+<td>category_level_3</td>
+<td>Category</td>
+<td>3:rd highest category level</td>
+</tr>
+<tr>
+<td>category_level_4</td>
+<td>Category</td>
+<td>4:th highest category level</td>
+</tr>
+<tr>
+<td>category_level_5,6,7...</td>
+<td>Category</td>
+<td>etc.</td>
+</tr>
+<tr>
+<td>size</td>
+<td>Category</td>
+<td>Standard size format (S/M/L, M6/M8/M10, 90/120/140)</td>
+</tr>
+<tr>
+<td>cogs</td>
+<td>Number</td>
+<td>Cost of goods</td>
+</tr>
+<tr>
+<td>description</td>
+<td>Category</td>
+<td>Description of item. Limited to 255 characters.</td>
+</tr>
+<tr>
+<td>color</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>brand</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>county_of_origin</td>
+<td>Category</td>
+<td>Where the product is produced</td>
+</tr>
+<tr>
+<td>condition</td>
+<td>Category</td>
+<td>Such as New or Used</td>
 </tr>
 <tr>
 <td>supplier</td>
-<td>String</td>
+<td>Category</td>
 <td></td>
 </tr>
 <tr>
-<td>price</td>
+<td>shipping_weight</td>
 <td>Number</td>
 <td></td>
 </tr>
 <tr>
-<td>price_discounted</td>
-<td>Number</td>
-<td>Ex if there is a campaign present.</td>
-</tr>
-<tr>
-<td>product_url</td>
-<td>String</td>
-<td>URL if product recommendations are to be used.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>created</td>
+<td>product_launch</td>
 <td>Timestamp</td>
-<td></td>
+<td>Date for product release</td>
 </tr>
 <tr>
-<td>category_1 …</td>
-<td>String</td>
-<td>Use multiple columns if hierarchical structure.</td>
+<td>data_source</td>
+<td>Category</td>
+<td>In the case of multiple datasources, this identifies which source the data is coming from.</td>
+</tr>
+<tr>
+<td>ml_blocked</td>
+<td>-</td>
+<td>Blocks specific items from the machine learning. Not the same as excluding them by filtration.</td>
 </tr>
 <tr>
 <td>...&lt; ANY &gt;</td>
-<td>Number, String</td>
+<td>Number, Category</td>
 <td>Additional metadata may be added that you find interesting to examine in our analytics.</td>
 </tr>
 </tbody>
@@ -1436,13 +1601,68 @@
 </thead>
 <tbody>
 <tr>
-<td>id</td>
-<td>ID (required)</td>
+<td>user</td>
+<td>User (required)</td>
 <td>Must uniquely identify a user, same as in transactions.</td>
 </tr>
 <tr>
+<td>market</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>country</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>region</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>area</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>disctrict</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>zip_code</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>customer_store</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>first_name</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
 <td>email</td>
-<td>String</td>
+<td>Email</td>
 <td></td>
 </tr>
 <tr>
@@ -1452,37 +1672,122 @@
 </tr>
 <tr>
 <td>birthdate</td>
-<td>Date</td>
-<td>May be used to extract age by platform</td>
-</tr>
-<tr>
-<td>city</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>country</td>
-<td>String</td>
-<td></td>
-</tr>
-<tr>
-<td>market</td>
-<td>String</td>
+<td>Timestamp</td>
 <td></td>
 </tr>
 <tr>
 <td>gender</td>
-<td>String</td>
+<td>Category</td>
 <td></td>
 </tr>
 <tr>
-<td>created</td>
+<td>phone_number</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>control_group</td>
+<td>Number</td>
+<td>Used during tests, can be imported or generated.</td>
+</tr>
+<tr>
+<td>mosaic_group</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>nps</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>accepts_communication</td>
+<td>Category</td>
+<td>Can be several fields depending on setup. Used to identify users that can be communicated with by Yes/No.</td>
+</tr>
+<tr>
+<td>subscribe_date</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>unsubscribe_date</td>
+<td>Timestamp</td>
+<td></td>
+</tr>
+<tr>
+<td>discount_cohort</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>returned_revenue_percent_cohort</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>returned_revenue_cohort</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>revenue_cohort</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>returned_quantity_percentage_cohort</td>
+<td>Category</td>
+<td></td>
+</tr>
+<tr>
+<td>quantity_sum</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>quantity_sum_returned</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>quantity_return_percentage</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>total_value_paid</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>total_value_returned</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>total_value_return_percentage</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>average_discount</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>customer_net_value</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>registration_date</td>
 <td>Timestamp</td>
 <td></td>
 </tr>
 <tr>
 <td>...&lt; ANY &gt;</td>
-<td>Number, String</td>
+<td>Number, Category</td>
 <td>Additional metadata may be added that you find interesting to examine in our analytics.</td>
 </tr>
 </tbody>
