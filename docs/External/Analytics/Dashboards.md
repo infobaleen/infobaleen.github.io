@@ -78,7 +78,7 @@ Hovering over the line chart data points, the revenue for that time will show.
 
 ![image](https://user-images.githubusercontent.com/103515314/169269164-27b0ddf6-1a72-4641-b929-7e2ac5f72377.png){: style="width:400px"}
 
-The **group key** setting can be found under `Edit element` --> `Advanced` --> `Select group key` and allows you to see lines split over a category, see example below where gender is used as group key: 
+The **Group key** setting can be found under `Edit element` --> `Advanced` --> `Select group key` and allows you to see lines split over a category, see example below where gender is used as group key: 
 ![image](https://user-images.githubusercontent.com/103515314/235607446-d24a9a0c-0ab0-4949-a79e-9f3e061f88cb.png){: style="width:400px"}
 
 
