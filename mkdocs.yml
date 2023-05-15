@@ -1,5 +1,9 @@
 site_name: Documentation
 site_description: Documentation for the Sift Lab Platform
+extra:
+  analytics:
+    provider: google
+    property: G-JZ52N23JV4
 theme:
     name: material
     font:
