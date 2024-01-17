@@ -53,6 +53,7 @@ If necessary, you may provide an additional file with data that is associated wi
 | country | Category |  | 
 | market | Category |  | 
 | store | Category |  | 
+| sales_channel | Category | ex. retail, ecomm, etc. | 
 | currency | Category | SEK, USD, EUR | 
 | exchange_rate | Number | Exchange rate for the currence at the time the purchase was made | 
 | campaign | Category |  | 
@@ -64,7 +65,8 @@ If necessary, you may provide an additional file with data that is associated wi
 | cancelled_quantity | Number |  | 
 | ship_to_country | Category |  | 
 | ship_to_city | Category |  | 
-| shipping_fee | Number |  | 
+| handling_fee | Number | cost of handling the order | 
+| shipping_fee | Number | cost of shipping | 
 | shipping_method | Category | Method used, such as: Home delivery, Click & Collect | 
 | shipping_partner | Category | Transportation service provider | 
 | full_price | Number |  | 
@@ -108,6 +110,7 @@ Categorical data in hierarchical structure should be added as separate columns: 
 | brand | Category |  |
 | county_of_origin | Category | Where the product is produced |
 | condition | Category | Such as New or Used |
+| collection | Category | such as SS19, SS20, SS21 etc. |
 | supplier | Category |  |
 | shipping_weight | Number |  |
 | product_launch | Timestamp | Date for product release |
