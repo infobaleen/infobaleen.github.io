@@ -1494,24 +1494,33 @@
 <p><b>Cherry-Pick Recommendations</b></p>
 <ul>
 <li>Manual merchandising involves consistently showcasing specific products based on their product IDs and the predetermined order of those IDs. It's essential to ensure that the selected products are currently in stock, as the Cherry-Pick method for manual merchandising aligns with the availability status of the items.</li>
-<li>Hand pick products you would like to showcase</li>
+<li>Hand-pick products you would like to showcase</li>
 </ul>
-<p><b>Check-out recommendations</b></p>
+<p><b>Check-Out Recommendation</b></p>
 <ul>
-<li>Recommend cheaper products based on what the customer has placed in their shopping cart</li>
-<li>Purpose: Increase AOV with a relevant product in the lower price segment</li>
-<li>Expression: tofloat(Price) &lt; tofloat(last(basketArticlePrice))&times;0.8</li>
+<li>Shopping cart recommendation displays products based on all products in the shopping cart, use filters and rules to showcase the most relevant products. The recommendation can be used to display free shipping products, cheaper than the ones in the basket, cross-sell etc to improve AOV etc. </li>
+<li>Purpose: Increase AOV, reach free shipping, low threshold products to purchase.</li>
 </ul>
-<p><b>Color &amp; Size affinity Recommendations</b></p>
+<p><b>Color &amp; Size Affinity Recommendations</b></p>
 <ul>
-<li>If the customer has a preferred size, color etc, Sift Lab can alter the recommendations shown to follow the chosen preference of the customer. Ensure to show i.e Size M for customers who are a size M and show Red items for customers who prefer color red. </li>
+<li>If the customer has a preferred size, color, etc, Sift Lab can alter the recommendations shown to follow the chosen preference of the customer. Ensure to show i.e Size M for customers who are a size M and show Red items for customers who prefer the color red. </li>
 <li>Purpose: Align recommendations with the preferred choice of the customer</li>
-<li>What is needed: Return the picked color/size to Sift Lab in the API call </li>
+<li>What is needed: Return the picked color/size to Sift Lab in the API call</li>
 </ul>
-<p><b>Cross-sell recommendations</b></p>
+<p><b>Custom Recommendation</b></p>
 <ul>
-<li>This feature presents product recommendations associated with the specific product that the visitor is currently viewing, known as "Customers Who Viewed This Also Viewed." It incorporates cross-selling and up-selling functionalities with include and exclude rules, enabling the filtering of recommended products. These rules allow for precise control over the type of products displayed in the recommendations, offering the ability to tailor whether the recommendations showcase alternatives, supplementary items, or other specified product categories. </li>
-<li>Purpose: Recommend products from other categories than what you're currently looking at</li>
+<li>Use filters, rules, trends, and boosting of products to create your preferred recommendation logic, to achieve your precise targets.</li>
+<li>Purpose: Achieve a custom-built/bespoke recommendation setup  </li>
+</ul>
+<p><b>Cross-sell Recommendation</b></p>
+<ul>
+<li>Product recommendations associated with the product the customer is browsing, known as "Customers Who Bought This Also Bought." It incorporates cross-selling and up-selling functionalities with rules and filters. These rules allow for precise control over the type of products displayed in the recommendations, offering the ability to tailor whether the recommendations showcase alternatives, supplementary items, or other specified product categories. </li>
+<li>Purpose: Recommend products from other categories than what you're currently browsing </li>
+</ul>
+<p><b>Loyalty Points Recommendations</b></p>
+<ul>
+<li>Recommend available products based on the loyalty points the customer has accumulated. </li>
+<li>Purpose: Improve customer loyalty and retention </li>
 </ul>
 <p><b>Order Related Recommendations</b></p>
 <ul>
@@ -1524,18 +1533,18 @@
 <li>Purpose: Improve AOV and make the customer reach free shipping limit</li>
 <li>Requirement: Return basket value and shipping limit in the API call.</li>
 </ul>
-<p><b>Inspiration recommendations</b></p>
+<p><b>Inspiration Recommendation</b></p>
 <ul>
 <li>Recommend products in categories that the customer has not purchased from before / selected product</li>
 <li>Purpose: Inspire purchases in the most relevant categories that have not yet been purchased from / the product is not in</li>
 </ul>
 <p><b>Landing Page Recommendations</b></p>
 <ul>
-<li>The Free Shipping Recommendation is based on the total cart value. It allows for tailored suggestions based on the total value of items in the shopping cart, providing an incentive for customers to qualify for free shipping.</li>
+<li>Recommendation displays products based on the source of traffic, read from the UTM parameters. Define products that should be displayed based on the source of the customers to enhance their experience coming to the site. </li>
 <li>Purpose: Tailor the recommendations based on the external source of the customer</li>
 <li>Requirement: Return UTM-tag in the API call</li>
 </ul>
-<p><b>On sale recommendations</b></p>
+<p><b>On Sale Recommendation</b></p>
 <ul>
 <li>Recommend products that are on sale</li>
 <li>Purpose: Increase the sale percentage by showing relevant products on sale.</li>
@@ -1551,31 +1560,41 @@
 </ul>
 <p><b>Replenish Recommendations</b></p>
 <ul>
-<li>You can exclude products to be shown during a set period of time to eliminate customers receiving unwanted products.</li>
-<li>Purpose: Occasionally bought products can be optimzed, i.e Toothpaste, Socks, Shampoo etc</li>
+<li>You can exclude products to be shown during a set period of time to eliminate customers receiving unwanted products. Further, use the recommendation to decide what time a product can be re-introduced to a customer. </li>
+<li>Purpose: Occasionally bought products can be optimized, i.e Toothpaste, Socks, Shampoo etc</li>
 </ul>
-<p><b>Similar products recommendation</b></p>
+<p><b>Similar products Recommendation</b></p>
 <ul>
 <li>Recommend products from the same category</li>
 <li>Purpose: High recognition factor</li>
 </ul>
+<p><b>Sustainable Recommendation</b></p>
+<ul>
+<li>Recommend products based on their level of sustainability. Use existing sustainability metrics to promote such products, such as material, shipping alternatives, returns etc. Enlighten your customers of your sustainable product line. </li>
+<li>Purpose: Promote your sustainable products to build awareness and loyalty </li>
+</ul>
+<p><b>Thank you page Recommendation</b></p>
+<ul>
+<li>Use the thank you page to introduce additional products tailored to the customer preferences. Use this to showcase supplementary products and/or limited offers to boost the sales. </li>
+<li>Purpose: Improve the AOV of the order and show limited offers</li>
+</ul>
 <h3 id="email-recommendations">Email recommendations</h3>
-<p><b>Standard recommendation</b></p>
+<p><b>Standard Recommendation</b></p>
 <ul>
 <li>Recommend the most likely next purchase (medium trend)</li>
 <li>Purpose: High likelihood of conversion</li>
 </ul>
-<p><b>Win-back recommendation</b></p>
+<p><b>Win-back Recommendation</b></p>
 <ul>
 <li>Recommend the most likely products a customer will purchase based on historical purchasing behavior</li>
 <li>Purpose: Present the products that a churned customer is most likely to buy</li>
 </ul>
-<p><b>Thanks for the last order recommendation</b></p>
+<p><b>Thanks for the last order Recommendation</b></p>
 <ul>
 <li>Recommend the most likely products based on the customer's last order</li>
 <li>Purpose: Increase the number of customers who make another purchase</li>
 </ul>
-<p><b>On sale recommendations</b></p>
+<p><b>On Sale Recommendation</b></p>
 <ul>
 <li>Recommend products that are on sale</li>
 <li>Purpose: Increase the sale percentage by showing relevant products on sale.</li>
