@@ -15,9 +15,9 @@
 * Manual merchandising involves consistently showcasing specific products based on their product IDs and the predetermined order of those IDs. It's essential to ensure that the selected products are currently in stock, as the Cherry-Pick method for manual merchandising aligns with the availability status of the items.
 * Hand-pick products you would like to showcase
 
-<b>Check-Out Recommendation</b>
+<b>Check-Out Recommendations</b>
 
-* Shopping cart recommendation displays products based on all products in the shopping cart, use filters and rules to showcase the most relevant products. The recommendation can be used to display free shipping products, cheaper than the ones in the basket, cross-sell etc to improve AOV etc. 
+* Shopping cart recommendation displays products based on all products in the shopping cart, use filters and rules to showcase the most relevant products. The recommendation can be used to display free shipping products, cheaper than the ones in the basket, cross-sell etc to improve AOV etc. Siftlab and Qliro offer this setup for common customers to enhance the customer experience. 
 * Purpose: Increase AOV, reach free shipping, low threshold products to purchase.
 
 <b>Color & Size Affinity Recommendations</b>
@@ -26,12 +26,12 @@
 * Purpose: Align recommendations with the preferred choice of the customer
 * What is needed: Return the picked color/size to Sift Lab in the API call
 
-<b>Custom Recommendation</b>
+<b>Custom Recommendations</b>
 
 *  Use filters, rules, trends, and boosting of products to create your preferred recommendation logic, to achieve your precise targets.
 *  Purpose: Achieve a custom-built/bespoke recommendation setup  
 
-<b>Cross-sell Recommendation</b>
+<b>Cross-sell Recommendations</b>
 
 * Product recommendations associated with the product the customer is browsing, known as "Customers Who Bought This Also Bought." It incorporates cross-selling and up-selling functionalities with rules and filters. These rules allow for precise control over the type of products displayed in the recommendations, offering the ability to tailor whether the recommendations showcase alternatives, supplementary items, or other specified product categories. 
 * Purpose: Recommend products from other categories than what you're currently browsing 
@@ -52,7 +52,7 @@
 * Purpose: Improve AOV and make the customer reach free shipping limit
 * Requirement: Return basket value and shipping limit in the API call.
 
-<b>Inspiration Recommendation</b>
+<b>Inspiration Recommendations</b>
 
 * Recommend products in categories that the customer has not purchased from before / selected product
 * Purpose: Inspire purchases in the most relevant categories that have not yet been purchased from / the product is not in
@@ -63,7 +63,7 @@
 * Purpose: Tailor the recommendations based on the external source of the customer
 * Requirement: Return UTM-tag in the API call
 
-<b>On Sale Recommendation</b>
+<b>On Sale Recommendations</b>
 
 * Recommend products that are on sale
 * Purpose: Increase the sale percentage by showing relevant products on sale.
@@ -82,39 +82,39 @@
 * You can exclude products to be shown during a set period of time to eliminate customers receiving unwanted products. Further, use the recommendation to decide what time a product can be re-introduced to a customer. 
 * Purpose: Occasionally bought products can be optimized, i.e Toothpaste, Socks, Shampoo etc
 
-<b>Similar products Recommendation</b>
+<b>Similar products Recommendations</b>
 
 * Recommend products from the same category
 * Purpose: High recognition factor
 
-<b>Sustainable Recommendation</b>
+<b>Sustainable Recommendations</b>
 
 * Recommend products based on their level of sustainability. Use existing sustainability metrics to promote such products, such as material, shipping alternatives, returns etc. Enlighten your customers of your sustainable product line. 
 * Purpose: Promote your sustainable products to build awareness and loyalty 
 
-<b>Thank you page Recommendation</b>
+<b>Thank you page Recommendations</b>
 
 * Use the thank you page to introduce additional products tailored to the customer preferences. Use this to showcase supplementary products and/or limited offers to boost the sales. 
 * Purpose: Improve the AOV of the order and show limited offers
 
 ### Email recommendations
 
-<b>Standard Recommendation</b>
+<b>Standard Recommendations</b>
 
 * Recommend the most likely next purchase (medium trend)
 * Purpose: High likelihood of conversion
 
-<b>Win-back Recommendation</b>
+<b>Win-back Recommendations</b>
 
 * Recommend the most likely products a customer will purchase based on historical purchasing behavior
 * Purpose: Present the products that a churned customer is most likely to buy
 
-<b>Thanks for the last order Recommendation</b>
+<b>Thanks for the last order Recommendations</b>
 
 * Recommend the most likely products based on the customer's last order
 * Purpose: Increase the number of customers who make another purchase
 
-<b>On Sale Recommendation</b>
+<b>On Sale Recommendations</b>
 
 * Recommend products that are on sale
 * Purpose: Increase the sale percentage by showing relevant products on sale.

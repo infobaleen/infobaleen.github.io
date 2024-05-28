@@ -43,12 +43,14 @@ If necessary, you may provide an additional file with data that is associated wi
 | id | Category (required) | Must uniquely identify a transaction/order row. Can be created from combining other fields. | 
 | item | Item (required) |Must uniquely identify an item, same as in Item table | 
 | date_time | Timestamp (required) | Timestamp at which the interaction occurred. |
+| timezone | Timezone | Timezone at which the interaction occurred. format (+6)|
 | revenue | Revenue | Revenue of transaction/order row (This is ex VAT) | 
 | quantity | Quantity | Number columns must be adjusted for quantity, ex the Revenue/Margin column must be equal to the Total Revenue/Margin for that interaction. | 
 | order_id | Category | Must uniquely identify an order | 
+| row_type | Category | specify what type of interaction it is Purchase, Return, etc. | 
 | returned_quantity | Number | negative in the case of returns (placed as a new order with negative quantity) | 
-| discount_percent | Number | Discount for all items in the row. Also called voucher/promo_code (format 25 not 0.25, divide by 100 in computations) | 
-| tax_percent | Number | format 25 not 0.25, divide by 100 in computations | 
+| discount_rate | Number | Discount for all items in the row. Also called voucher/promo_code (25% discount = 0.25 NOT 25) | 
+| tax_rate | Number | 25% discount = 0.25 NOT 25| 
 | payment_method | Category |  | 
 | country | Category |  | 
 | market | Category |  | 
