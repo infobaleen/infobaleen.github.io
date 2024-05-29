@@ -1,17 +1,16 @@
 # Exports
 
 ## Voyado
-In Voyado, you have the opportunity to use your segments from Sift Lab for emails, marketing automation, SMS marketing, and social pushing towards Instagram, Facebook, and Google. 
-You can easily export segments to Voyado from Sift Lab, where they are made available in two different ways depending on the use case.
+In Voyado, you have the option to leverage segments from Sift Lab for a variety of activities, including emails, marketing automation, SMS marketing, and social pushing to Instagram, Facebook, and Google. Segments can be easily exported from Sift Lab to Voyado, where they will be available in two different formats depending on the use case.
 
 These are
 
-* __Customer attributes__: Used for dynamic segmentations, those saved as `Scheduled: Automatic`, that are updated periodically, for example daily or weekly. Values are set on predefined attributes in Voyado with names like 'Sift Lab: Dynamic Segment 1', 'Sift Lab Dynamic Segment 2', etc., depending on the segmentation.
+* __Customer attributes__: Used for dynamic segmentations, i.e segments saved as `Scheduled: Automatic`, that are updated periodically, for example daily or weekly. Values are set on predefined attributes in Voyado with names like 'Sift Lab: Dynamic Segment 1', 'Sift Lab Dynamic Segment 2', and so on, depending on the segmentation.
 * __Labels__: Used for one-time segmentations, such as for one-off campaigns.
 
-To export segments to Voyado, filters are required on users to ensure they exist in Voyado, are not deleted, and have a contact type that supports labels or attributes.
+To successfully export segments to Voyado, you must apply filters on users to ensure they meet the following criteria: they exist in Voyado, they are not deleted, and they can receive communication in the desired channel.
 
-An exported segmentation usually becomes visible in Voyado within five to ten minutes depending on size. If this does not happen, please refer to the Troubleshooting section for more information.
+Exported segments usually becomes visible in Voyado within five to ten minutes depending on size. If this does not happen, please refer to the Troubleshooting section for more information.
 
 ### Filters
 To export segments to Voyado, a filter on users is required based on the targeted channel:
