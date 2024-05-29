@@ -19,9 +19,13 @@ color: grey;
 }
 
 .md-icon {
-:material-format-align-left: 
+:material-format-align-left:
 }
 
 p {
 	font-size: 15px;
+}
+
+li {
+    font-size: 15px;
 }
