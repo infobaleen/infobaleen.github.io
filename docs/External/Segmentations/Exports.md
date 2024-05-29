@@ -20,11 +20,9 @@ To export segments to Voyado, a filter on users is required based on the targete
 
 This ensures that the user is not deleted, has consent, and can receive communication in the chosen channel.
 
-Depending on your Voyado environment, you may also need a user filter on contact type to export segments, both for one-time segmentations and dynamic segmentations. Typically, a segmentation is filtered on contact types `member` and `contact`:
+Depending on your Voyado environment, you may also need a user filter on contact type to export segments, both for one-time segmentations and dynamic segmentations. Typically, a segmentation is filtered on contact types `member` and `contact`. For more information about the required contact types for your setup, please contact support@siftlab.com.
 
 * `Contact type in (member, contact)`
-
-You will receive information about the required filters for your setup from you customer success manager.
 
 It is also common to add filters on country depending on your business model.
 
